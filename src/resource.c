@@ -193,12 +193,14 @@ void archive_resource_set_config_free(archive_resource_t *archive_resource, bool
 }
 
 void archive_resource_set_config_free_default(archive_resource_t *archive_resource, bool delete_data_on_free) {
+
 	if ( archive_resource != NULL ) {
 	
 		archive_resource->delete_data_on_free 	= delete_data_on_free;
 		archive_resource->free_func 			= free;
 	
 	}
+
 }
 
 resource_search_result_t * archive_resource_search(archive_resource_t *archive_resource, const char *pattern) {
@@ -218,6 +220,7 @@ resource_file_t * resource_file_new_empty() {
 }
 
 resource_file_t * resource_file_new(const char *full_file_path, unsigned char 	*data, size_t	data_size) {
+
 	resource_file_t *new_file = resource_file_new_empty();
 	new_file->complete 	= copy_string(full_file_path);
 	new_file->data 		= data;
@@ -232,6 +235,7 @@ resource_file_t * resource_file_new(const char *full_file_path, unsigned char 	*
 }
 
 resource_file_t * resource_file_copy_deep(resource_file_t *file) {
+
 	resource_file_t *copy_file = resource_file_new_empty();
 	copy_file->complete 	= copy_string(file->complete);
 	copy_file->path = copy_string(file->path);
@@ -247,8 +251,11 @@ resource_file_t * resource_file_copy_deep(resource_file_t *file) {
 }
 
 void resource_file_free(resource_file_t **file) {
+
 	if ( file != NULL && *file != NULL ) {
+	
 		resource_file_t *to_deletefile = *file;
+	
 		free(to_deletefile->complete);
 		free(to_deletefile->path);
 		free(to_deletefile->file);
@@ -256,7 +263,9 @@ void resource_file_free(resource_file_t **file) {
 		free(to_deletefile->type);
 		free(to_deletefile->data);
 		free(to_deletefile);
+	
 		to_deletefile = NULL;
+	
 	}
 }
 
