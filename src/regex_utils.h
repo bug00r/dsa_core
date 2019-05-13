@@ -2,6 +2,7 @@
 #define REGEX_UTILS_H
 
 #include <stdbool.h>
+
 #if debug > 0
     #include <stdio.h>
 #endif 

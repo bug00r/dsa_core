@@ -1,8 +1,10 @@
 #include "resource.h"
 
+#if 0
 /*
 	################### PRIVATE SECTION ###################
 */
+#endif 
 
 static void* __resource_reade_entry_data_byte(la_int64_t entry_size, struct archive *a, int *status) {
 	int r;
@@ -91,7 +93,11 @@ static resource_search_result_t * __resource_load_resource(archive_resource_t * 
 	
 	int r = archive_read_open_memory(a, archive_resource->archive_data, (intptr_t)&archive_resource->size);
 	if (r == ARCHIVE_OK) {
-		printf("archive ok :)\n");
+
+		#if debug > 0
+			printf("archive ok :)\n");
+		#endif 
+
 		struct archive_entry *entry;
 		while (archive_read_next_header(a, &entry) == ARCHIVE_OK) {
 		  const char *pathname = archive_entry_pathname(entry);
@@ -107,9 +113,13 @@ static resource_search_result_t * __resource_load_resource(archive_resource_t * 
 
 		  }
 		}
-	} else {
-		printf("archive not ok!!!! :(\n");
+	} 
+
+	#if debug > 0 
+	if (r != ARCHIVE_OK) {
+			printf("archive not ok!!!! :(\n");
 	}
+	#endif
 	
 	resource_search_result_t *result = malloc(sizeof(resource_search_result_t));
 	result->cnt = cnt_files;
@@ -126,12 +136,15 @@ static resource_search_result_t * __resource_load_resource(archive_resource_t * 
 	
 	r = archive_read_close(a);
 	r = archive_read_free(a);
+
+	#if debug > 0 
 	if (r != ARCHIVE_OK) {
 		printf("archive free failed :(\n");
 	} else {
 		printf("archive free success :)\n");
 	}
-	
+	#endif
+
 	return result;
 }
 
@@ -152,9 +165,11 @@ static void __resource_search_result_free_raw(resource_search_result_t **result,
 	}
 }
 
+#if 0
 /*
 	################### EOF PRIVATE SECTION ###################
 */
+#endif 
 
 archive_resource_t * archive_resource_memory(const unsigned char *data, size_t size_in_bytes) {
 	archive_resource_t * new_ar = malloc(sizeof(archive_resource_t));
