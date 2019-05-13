@@ -1,0 +1,3392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<breeds>
+	<group name="Mittelländer" >
+		<breed image="/apps/dsa_tool/images/icon64.jpg" name="Die Mittelländer" >
+			<gp name="Generierungspunkte" value="0" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="schwarz" value="1-3" />
+					<color name="braun" value="4-7" />
+					<color name="dunkelblond" value="8-12" />
+					<color name="blond" value="13-16" />
+					<color name="weißblond" value="17-18" />
+					<color name="rot" value="19-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="dunkelbraun" value="1-2" />
+					<color name="braun" value="3-9" />
+					<color name="grün" value="10-11" />
+					<color name="blau" value="12-17" />
+					<color name="grau" value="18-19" />
+					<color name="schwarz" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.6" die="2w20" />
+			<body-weight name="Gewicht" value="-100" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="10" type="LeP" />
+				<au name="AU-Mod" value="10" type="AuP" />
+				<mr name="MR" value="-4" />
+			</mods>
+			<pros name="Vorteile" >
+				<improper>
+					<pro name="Herausragende Balance" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<improper>
+					<contra name="Nahrungsrestriktion" />
+				</improper>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Mittelländische Städte"/>
+					<culture name="Mittelländische Landbevölkerung"/>
+					<culture name="Andergast und Nostria"/>
+					<culture name="Bornland"/>
+					<culture name="Svellttal"/>
+					<culture name="Almada"/>
+					<culture name="Horasreich"/>
+					<culture name="Zyklopeninseln"/>
+					<culture name="Maraskan"/>
+					<culture name="Südaventurien"/>
+					<culture name="Bukanier"/>
+				</common>
+				<possible>
+					<culture name="Aranien"/>
+					<culture name="Tulamidische Stadtstaaten"/>
+					<culture name="Thorwal"/>
+					<culture name="Mhanadistan"/>
+					<culture name="Amazonenburg"/>
+				</possible>		
+			</cultures>
+		</breed>
+	</group>
+	<group name="Tulamiden" >
+		<breed image="/apps/dsa_tool/images/icon64.jpg" name="Die Tulamiden" >
+			<gp name="Generierungspunkte" value="0" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="schwarz" value="1-6" />
+					<color name="dunkelbraun" value="7-12" />
+					<color name="mittelbraun" value="13-14" />
+					<color name="hellbraun" value="15-17" />
+					<color name="blond" value="18-19" />
+					<color name="rot" value="20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="schwarz" value="1-4" />
+					<color name="dunkelbraun" value="5-12" />
+					<color name="braun" value="13-16" />
+					<color name="grau" value="17-18" />
+					<color name="grün" value="19" />
+					<color name="blau" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.55" die="2w20" />
+			<body-weight name="Gewicht" value="-105" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="10" type="LeP" />
+				<au name="AU-Mod" value="10" type="AuP" />
+				<mr name="MR" value="-4" />
+			</mods>
+			<pros name="Vorteile" >
+				<improper>
+					<pro name="Herausragende Balance" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<improper>
+					<contra name="Nahrungsrestriktion" />
+				</improper>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Aranien"/>
+					<culture name="Mhanadistan"/>
+					<culture name="Tulamidische Stadtstaaten"/>
+					<culture name="Novadi"/>
+					<culture name="Ferkina"/>
+					<culture name="Zahori"/>
+					<culture name="Maraskan"/>
+					<culture name="Südaventurien"/>
+					<culture name="Bukanier"/>
+				</common>
+				<possible>
+					<culture name="Mittelländische Städte"/>
+					<culture name="Almada"/>
+					<culture name="Amazonenburg"/>
+				</possible>		
+			</cultures>
+		</breed>
+	</group>
+	<group name="Thorwaler" >
+		<breed image="/apps/dsa_tool/images/icon64.jpg" name="Die Thorwaler" >
+			<gp name="Generierungspunkte" value="5" />
+			<colortypes>
+				<colors name="Haarfarbe" version="Thorwaler.Fjarninger" die="W20" >
+					<color name="blond" value="1-8" />
+					<color name="rotblond" value="9-13" />
+					<color name="weißblond" value="14-15" />
+					<color name="rot" value="16-17" />
+					<color name="dunkelblond" value="18" />
+					<color name="braun" value="19" />
+					<color name="schwarz" value="20" />
+				</colors>
+				<colors name="Augenfarbe" version="Thorwaler.Fjarninger" die="W20" >
+					<color name="dunkelbraun" value="1-2" />
+					<color name="braun" value="3-7" />
+					<color name="grün" value="8-11" />
+					<color name="blau" value="12-18" />
+					<color name="grau" value="19-20" />
+				</colors>
+				<colors name="Haarfarbe" version="Gjalskerländer" die="W20" >
+					<color name="blond" value="1-8" />
+					<color name="rotblond" value="9-13" />
+					<color name="rot" value="14-15" />
+					<color name="braun" value="16-17" />
+					<color name="schwarz" value="18" />
+				</colors>
+				<colors name="Augenfarbe" version="Gjalskerländer" die="W20" >
+					<color name="dunkelbraun" value="1-2" />
+					<color name="braun" value="3-10" />
+					<color name="grün" value="11-18" />
+					<color name="blau" value="19-20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" version="Thorwaler.Fjarninger" value="1.68" die="2w20" />
+			<body-height name="Körpergröße" version="Gjalskerländer" value="1.73" die="2w20" />
+			<body-weight name="Gewicht" value="-95" type="Stein" />
+			<mods>
+				<le><mod name="LeP" value="10" /></le>
+
+				<au><mod name="AuP" value="10" /></au>
+				<mr><mod name="MR" value="-4" /></mr>
+				<attributes>
+					<mod name="MU" value="1" />
+					<mod name="KO" value="1" />
+					<mod name="KK" value="1" />
+				</attributes>
+			</mods>
+			<pros name="Vorteile" >
+				<recommended>
+					<pro name="Eisern" />
+					<pro name="Hohe Lebenskraft" />
+					<pro name="Innerer Kompass" />
+					<pro name="Kälteresistenz" />
+					<pro name="Kampfrausch" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+				</recommended>
+				<improper>
+					<pro name="Herausragende Balance" />
+					<pro name="Hohe Magieresistenz" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Jähzorn" value="6" />
+				</automatic>
+				<improper>
+					<contra name="Nahrungsrestriktion" />
+					<contra name="Kleinwüchsig" />
+				</improper>
+				<recommended>
+					<contra name="Blutrausch" />
+					<contra name="Hitzeempfindlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Thorwal"/>
+					<culture name="Fjarninger"/> 
+					<culture name="Gjalskerländer"/>
+				</common>
+				<possible>
+					<culture name="Mittelländische Städte"/>
+					<culture name="Mittelländische Landbevölkerung"/>
+					<culture name="Andergast und Nostria"/>
+					<culture name="Bornland"/>
+					<culture name="Svellttal"/>
+					<culture name="Südaventurien"/>
+					<culture name="Tulamidische Stadtstaaten"/>
+					<culture name="Bukanier"/>
+				</possible>		
+			</cultures>
+		</breed>
+	</group>
+	<group name="Nivesen" >
+		<breed name="Die Nivesen" >
+			<gp name="Generierungspunkte" value="4" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="kupferrot" value="1-15" />
+					<color name="blond" value="16" />
+					<color name="braun" value="17-18" />
+					<color name="dunkelblond" value="19" />
+					<color name="schwarz" value="20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="braun" value="1-2" />
+					<color name="hellbraun" value="3-9" />
+					<color name="bernsteinfarben" value="10-14" />
+					<color name="grün" value="15-17" />
+					<color name="blau" value="18-19" />
+					<color name="grau" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.55" die="2w20" />
+			<body-weight name="Gewicht" value="-110" type="Stein" />
+			<mods>
+				<le><mod name="LeP" value="9" /></le>
+				<au><mod name="AuP" value="12" /></au>
+				<mr><mod name="MR" value="-5" /></mr>
+				<attributes>
+					<mod name="IN" value="1" />
+					<mod name="KO" value="1" />
+					<mod name="KK" value="1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Körper" >
+						<mod name="Schleichen" value="+1" />
+						<mod name="Selbstbeherrschung" value="+1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<mod name="Orientierung" value="+1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<improper>
+					<pro name="Herausragende Balance" />
+					<pro name="Hitzeresitenz" />
+				</improper>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Entfernungssinn" />
+					<pro name="Gefahreninstinkt" />
+					<pro name="Innerer Kompass" />
+					<pro name="Kälteresistenz" />
+					<pro name="Richtungssinn" />
+					<pro name="Wolfskind" />
+					<pro name="Zäher Hund" />
+				</recommended>
+			</pros>
+			<contras name="Nachteile" >
+				<improper>
+					<contra name="Nahrungsrestriktion" />
+					<contra name="Kälteempfindlich" />
+					<contra name="Platzangst" />
+				</improper>
+				<recommended>
+					<pro name="Hitzeempfindlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Nivesenstämme"/>
+					<culture name="Nuanaa-Lie"/>
+				</common>
+				<possible>
+					<culture name="Mittelländische Städte" restriction="Siedlerstädte des Nordens" />
+					<culture name="Mittelländische Landbevölkerung" restriction="ebenfalls im Norden" />
+					<culture name="Bornland"/>
+					<culture name="Svellttal"/>
+					<culture name="Thorwal"/>
+					<culture name="Gjalskerland"/>
+					<culture name="Fjarninger"/>
+					<culture name="Norbardensippen"/>
+				</possible>		
+			</cultures>
+		</breed>
+	</group>
+	<group name="Norbarden" >
+		<breed name="Die Norbarden" >
+			<gp name="Generierungspunkte" value="3" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="schwarz" value="1-17" />
+					<color name="kupferrot" value="18-19" />
+					<color name="blond" value="20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="schwarz" value="1-3" />
+					<color name="dunkelbraun" value="4-13" />
+					<color name="braun" value="14-17" />
+					<color name="grün" value="18-19" />
+					<color name="blau" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.58" die="2w20" />
+			<body-weight name="Gewicht" value="-100" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="11" type="LeP" />
+				<au name="AU-Mod" value="10" type="AuP" />
+				<mr name="MR" value="-4" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="CH" value="+1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Wissen" >
+						<talent name="Rechnen" value="+1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="+1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<improper>
+					<pro name="Herausragende Balance" />
+					<pro name="Hitzeresitenz" />
+				</improper>
+				<recommended>
+					<pro name="Gutes Gedächtnis" />
+					<pro name="Gefahreninstinkt" />
+					<pro name="Innerer Kompass" />
+					<pro name="Kälteresistenz" />
+					<pro name="Richtungssinn" />
+					<pro name="Wolfskind" />
+					<pro name="Zäher Hund" />
+				</recommended>
+			</pros>
+			<contras name="Nachteile" >
+				<improper>
+					<contra name="Nahrungsrestriktion" />
+					<contra name="Platzangst" />
+				</improper>
+				<recommended>
+					<pro name="Hitzeempfindlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Norbardensippen"/>
+				</common>
+				<possible>
+					<culture name="Mittelländische Städte" restriction="nördliche Städte" />
+					<culture name="Mittelländische Landbevölkerung" restriction="ebenfalls im Norden" />
+					<culture name="Bornland"/>
+					<culture name="Svellttal"/>
+					<culture name="Thorwal"/>
+					<culture name="Gjalskerland"/>
+					<culture name="Nivesenstämme"/>
+				</possible>		
+			</cultures>
+		</breed>
+	</group>
+	<group name="Trollzacker" >	
+		<breed name="Die Trollzacker" >
+			<gp name="Generierungspunkte" value="7" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="schwarz" value="1-15" />
+					<color name="dunkelbraun" value="16-17" />
+					<color name="mittelbraun" value="18" />
+					<color name="hellbraun" value="19" />
+					<color name="dunkelblond" value="20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="schwarz" value="1-16" />
+					<color name="dunkelbraun" value="17" />
+					<color name="braun" value="18" />
+					<color name="grün" value="20" />
+					<color name="grau" value="19" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.95" die="w20" />
+			<body-weight name="Gewicht" value="-100" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="11" type="LeP" />
+				<au name="AU-Mod" value="18" type="AuP" />
+				<mr name="MR" value="-5" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="MU" value="+2" />
+					<attribute name="KL" value="-1" />
+					<attribute name="KO" value="+1" />
+					<attribute name="KK" value="+1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Athletik" value="1"/>
+						<talent name="Klettern" value="1"/>
+						<talent name="Selbstbeherrschung" value="1"/>
+						<talent name="Sinnenschärfe" value="1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<improper>
+					<pro name="Gut Aussehend" />
+					<pro name="Herausragende Balance" />
+					<pro name="Wohlklang" />
+				</improper>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Balance" />
+					<pro name="Eisern" />
+					<pro name="Entfernungssinn" />
+					<pro name="Kampfrausch" />
+					<pro name="Hohe Lebenskraft" />
+					<pro name="Resistenz gegen Gift" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+				</recommended>
+			</pros>
+			<contras name="Nachteile" >
+				<recommended>
+					<contra name="Blutrausch" />
+					<contra name="Jähzorn" />
+					<contra name="Unangenehme Stimme" />
+					<contra name="Unansehnlich" />
+				</recommended>
+				<automatic>
+					<contra name="Platzangst" value="6" />
+				</automatic>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Trollzacken"/>
+				</common>
+				<possible>
+					<culture name="Ferkina"/>
+					<culture name="Mittelländische Landbevölkerung"/>
+					<culture name="Aranien"/>
+				</possible>		
+			</cultures>
+		</breed>
+		<breed name="Die Rochshaz-Trollzacker" version="Rochshaz" >
+			<gp name="Generierungspunkte" value="6" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="schwarz" value="1-15" />
+					<color name="dunkelbraun" value="16-17" />
+					<color name="mittelbraun" value="18" />
+					<color name="hellbraun" value="19" />
+					<color name="dunkelblond" value="20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="schwarz" value="1-16" />
+					<color name="dunkelbraun" value="17" />
+					<color name="braun" value="18" />
+					<color name="grün" value="20" />
+					<color name="grau" value="19" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="2.15" die="w20" />
+			<body-weight name="Gewicht" value="-95" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="12" type="LeP" />
+				<au name="AU-Mod" value="20" type="AuP" />
+				<mr name="MR" value="-5" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="MU" value="+2" />
+					<attribute name="KL" value="-1" />
+					<attribute name="GE" value="-1" />
+					<attribute name="FF" value="-1" />
+					<attribute name="KO" value="+2" />
+					<attribute name="KK" value="+2" />
+				</attributes>
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Athletik" value="2"/>
+						<talent name="Klettern" value="1"/>
+						<talent name="Selbstbeherrschung" value="1"/>
+						<talent name="Sinnenschärfe" value="1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<improper>
+					<pro name="Gut Aussehend" />
+					<pro name="Herausragende Balance" />
+					<pro name="Wohlklang" />
+				</improper>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Balance" />
+					<pro name="Eisern" />
+					<pro name="Entfernungssinn" />
+					<pro name="Kampfrausch" />
+					<pro name="Hohe Lebenskraft" />
+					<pro name="Resistenz gegen Gift" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+				</recommended>
+			</pros>
+			<contras name="Nachteile" >
+				<recommended>
+					<contra name="Blutrausch" />
+					<contra name="Jähzorn" />
+					<contra name="Unangenehme Stimme" />
+					<contra name="Unansehnlich" />
+					<contra name="Randgruppe" />
+				</recommended>
+				<automatic>
+					<contra name="Platzangst" value="6" />
+					<contra name="Jähzorn" value="6" />
+				</automatic>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Trollzacken"/>
+				</common>	
+			</cultures>
+		</breed>
+	</group>
+	<group name="Waldmenschen" >
+		<breed name="Die Waldmenschen" >
+			<gp name="Generierungspunkte" value="5" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="schwarz" value="1-5" />
+					<color name="blauschwarz" value="6-19" />
+					<color name="mittelbraun" value="20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="hellbraun" value="1-3" />
+					<color name="dunkelbraun" value="4-10" />
+					<color name="schwarz" value="11-20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.52" die="3w6" />
+			<body-weight name="Gewicht" value="-110" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="8" type="LeP" />
+				<au name="AU-Mod" value="12" type="AuP" />
+				<mr name="MR" value="-6" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="CH" value="+1" />>
+					<attribute name="GE" value="+1" />
+					<attribute name="KO" value="+1" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Körperbeherrschung" value="2"/>
+						<talent name="Klettern" value="1"/>
+						<talent name="Schleichen" value="2"/>
+						<talent name="Sinnenschärfe" value="3"/>
+						<talent name="Tanzen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<improper>
+					<pro name="Hohe Magieresistenz" />
+					<pro name="Kälteresistenz" />
+					<pro name="Schwer zu verzaubern" />
+				</improper>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Balance" />
+					<pro name="Flink" />
+					<pro name="Gefahreninstinkt" />
+					<pro name="Gut Ausehend" />
+					<pro name="Hitzeresistenz" />
+					<pro name="Resistenz gegen Gift" />
+					<pro name="Schlangenmensch" />
+				</recommended>
+			</pros>
+			<contras name="Nachteile" >
+				<improper>
+					<pro name="Hitzeempfindlich" />
+					<pro name="Nahrungsrestriktion" />
+				</improper>
+				<recommended>
+					<pro name="Kälteempfindlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Dschungelstämme"/>
+					<culture name="Verlorene Stämme"/>
+					<culture name="Miniwatu"/>
+					<culture name="Darna"/>
+					<culture name="Südventurien"/>
+					<culture name="Bukanier"/>
+				</common>
+				<possible>
+					<culture name="Tocamuyac"/>
+					<culture name="Horasreich"/>
+					<culture name="Aranien"/>
+					<culture name="Tulamidische Stadtstaaten"/>
+				</possible>
+			</cultures>
+		</breed>
+		<breed name="Die Tocamuyac-Waldmenschen">
+			<gp name="Generierungspunkte" value="3" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="blauschwarz" value="1-2" />
+					<color name="schwarz" value="3-4" />
+					<color name="dunkelbraun" value="5-10" />
+					<color name="mittelbraun" value="11-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="hellbraun" value="1-3" />
+					<color name="dunkelbraun" value="4-10" />
+					<color name="schwarz" value="11-20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.42" die="3w6" />
+			<body-weight name="Gewicht" value="-110" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="8" type="LeP" />
+				<au name="AU-Mod" value="12" type="AuP" />
+				<mr name="MR" value="-6" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="CH" value="+1" />
+					<attribute name="GE" value="+1" />
+					<attribute name="KO" value="+1" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Körperbeherrschung" value="3"/>
+						<talent name="Schwimmen" value="3"/>
+						<talent name="Sinnenschärfe" value="3"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<improper>
+					<pro name="Hohe Magieresistenz" />
+					<pro name="Kälteresistenz" />
+					<pro name="Schwer zu verzaubern" />
+				</improper>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Balance" />
+					<pro name="Flink" />
+					<pro name="Gefahreninstinkt" />
+					<pro name="Gut Ausehend" />
+					<pro name="Hitzeresistenz" />
+					<pro name="Resistenz gegen Gift" />
+					<pro name="Schlangenmensch" />
+				</recommended>
+			</pros>
+			<contras name="Nachteile" >
+				<improper>
+					<pro name="Hitzeempfindlich" />
+					<pro name="Nahrungsrestriktion" />
+					<pro name="Meeresangst" />
+				</improper>
+				<recommended>
+					<pro name="Kälteempfindlich" />
+				</recommended>
+				<automatic>
+					<pro name="Kleinwüchsig" />
+				</automatic>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Tocamuyac"/>
+				</common>
+				<possible>
+					<culture name="Dschungelstämme"/>
+					<culture name="Miniwatu"/>
+					<culture name="Waldinsel-Utulus"/>
+					<culture name="Südaventurien"/>
+					<culture name="Bukanier"/>
+					<culture name="Yaquirien"/>
+					<culture name="Aranien"/>
+					<culture name="Tulamidische Stadtstaaten"/>
+					<culture name="Mittelländische Städte" restriction="Vallusa" />
+				</possible>
+			</cultures>
+		</breed>
+		<breed name="Die Utulus">
+			<gp name="Generierungspunkte" value="9" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="schwarz" value="1-17" />
+					<color name="blauschwarz" value="18-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="hellbraun" value="1-3" />
+					<color name="dunkelbraun" value="4-10" />
+					<color name="schwarz" value="11-20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.65" die="2w20" />
+			<body-weight name="Gewicht" value="-110" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="11" type="LeP" />
+				<au name="AU-Mod" value="12" type="AuP" />
+				<mr name="MR" value="-6" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="GE" value="+1" />
+					<attribute name="KO" value="+1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Klettern" value="1"/>
+						<talent name="Körperbeherrschung" value="2"/>
+						<talent name="Schleichen" value="2"/>
+						<talent name="Sinnenschärfe" value="3"/>
+						<talent name="Tanzen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Hitzeresistenz" />
+				</automatic>
+				<improper>
+					<pro name="Hohe Magieresistenz" />
+					<pro name="Kälteresistenz" />
+					<pro name="Schwer zu verzaubern" />
+				</improper>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Balance" />
+					<pro name="Begabung Musizieren" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Gefahreninstinkt" />
+					<pro name="Gut Ausehend" />
+					<pro name="Hitzeresistenz" />
+					<pro name="Resistenz gegen Gift" />
+					<pro name="Schlangenmensch" />
+					<pro name="Wohlklang" />
+				</recommended>
+			</pros>
+			<contras name="Nachteile" >
+				<improper>
+					<pro name="Hitzeempfindlich" />
+					<pro name="Nahrungsrestriktion" />
+				</improper>
+				<recommended>
+					<pro name="Kälteempfindlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Waldinsel-Utulu"/>
+					<culture name="Dschungelstämme" restriction="Tschopukikuha" />
+					<culture name="Verlorene Stämme" restriction="Shokubunga" />
+					<culture name="Südaventurien" />
+					<culture name="Bukanier" />
+				</common>
+				<possible>
+					<culture name="Yaquirien"/>
+					<culture name="Aranien"/>
+					<culture name="Dschungelstämme" restriction="Alle Anderen" />
+					<culture name="Tocamuyac"/>
+					<culture name="Tulamidische Stadtstaaten"/>		
+					<culture name="Verlorene Stämme" restriction="Alle Anderen" />
+				</possible>
+			</cultures>
+		</breed>
+	</group>
+	<group name="Elfen" >
+		<breed name="Die Auelfen" >
+			<gp name="Generierungspunkte" value="20" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="blauschwarz" value="1" />
+					<color name="schwarz" value="2-3" />
+					<color name="silbern" value="4-5" />
+					<color name="weißblond" value="6-7" />
+					<color name="hellblond" value="8-11" />
+					<color name="mittelblond" value="12-17" />
+					<color name="dunkelblond" value="18-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="schwarzbraun" value="1-2" />
+					<color name="graublau" value="3-4" />
+					<color name="saphirblau" value="5-8" />
+					<color name="smaragdgrün" value="9-12" />
+					<color name="dunkelviolett" value="13-16" />
+					<color name="bernsteinfarben" value="17-18" />
+					<color name="goldgesprenkelt" value="19" />
+					<color name="amethystfarben" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.68" die="2w20" />
+			<body-weight name="Gewicht" value="-120" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="6" type="LeP" />
+				<au name="AU-Mod" value="12" type="AuP" />
+				<ae name="AU-Mod" value="12" type="AuP" />
+				<mr name="MR" value="-2" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="KL" value="-1" />
+					<attribute name="IN" value="+1" />
+					<attribute name="GE" value="+2" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Körperbeherrschung" value="3"/>
+						<talent name="Schleichen" value="2"/>
+						<talent name="Singen" value="2"/>
+						<talent name="Sinnenschärfe" value="5"/>
+						<talent name="Tanzen" value="1"/>
+						<talent name="Zechen" value="-2"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Altersresistenz" />
+					<pro name="Dämmerungssicht" />
+					<pro name="Gut Aussehend" />
+					<pro name="Herausragender Sinn" >
+						<option name="Gehör" />
+						<option name="Geruch" />
+						<option name="Sicht" />
+					</pro>
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Vollzauberer" />
+					<pro name="Wohlklang" />
+					<pro name="Zweistimmiger Gesang" />
+				</automatic>
+				<recommended>
+					<pro name="Astrale Regeneration" />
+					<pro name="Astralmacht" />
+					<pro name="Balance" />
+					<pro name="Begabung Musizieren" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Begabung Singen" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Beidhändig" />
+					<pro name="Feenfreund" />
+					<pro name="Flink" />
+					<pro name="Herausragende Balance" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Nachtsicht" />
+					<pro name="Nahrungsrestriktion" />
+					<pro name="Richtungssinn" />
+					<pro name="Schlangenmensche" />
+				</recommended>
+				<improper>
+					<pro name="Kampfrausch" />
+					<pro name="Schwer zu verzaubern" />
+					<pro name="Vom Schicksal begünstigt" />
+					<pro name="Zwergennase" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Sensibler Geruchssinn" value="6" />
+					<contra name="Unfähigkeit Zechen" />
+				</automatic>
+				<improper>
+					<contra name="Behäbig" />
+					<contra name="Blutrusch" />
+					<contra name="Eingeschränkter Sinn" />
+					<contra name="Fettleibig" />
+					<contra name="Kleinwüchsig" />
+					<contra name="Kurzatmig" />
+					<contra name="Nachtblind" />
+					<contra name="Platzangst" />
+					<contra name="Übler Geruch" />
+				</improper>
+				<recommended>
+					<contra name="Raumangst" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Auelfische Sippe"/>
+					<culture name="Steppenelfische Sippe" />
+					<culture name="Elfische Siedlung" />
+				</common>
+				<possible>
+					<culture name="Waldelfische Sippe"/>
+					<culture name="Andergast und Nostria"/>
+					<culture name="Bornland" />
+					<culture name="Mittelländische Städte"/>
+					<culture name="Mittelländische Stadtbevölkerung"/>		
+					<culture name="Norbardensippen" />
+					<culture name="Svellttal" />
+					<culture name="Almada" />
+				</possible>
+			</cultures>
+		</breed>
+		<breed name="Die Waldelfen" >
+			<gp name="Generierungspunkte" value="23" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="blauschwarz" value="1-3" />
+					<color name="schwarz" value="4-7" />
+					<color name="silbern" value="8-10" />
+					<color name="weißblond" value="11" />
+					<color name="hellblond" value="12-13" />
+					<color name="mittelblond" value="14-16" />
+					<color name="dunkelblond" value="17-19" />
+					<color name="goldblond" value="20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="schwarz" value="1-2" />
+					<color name="saphirblau" value="3-4" />
+					<color name="smaragdgrün" value="5-8" />
+					<color name="dunkelbraun" value="9-12" />
+					<color name="bernsteinfarben" value="13-16" />
+					<color name="goldgesprenkelt" value="17" />
+					<color name="rubinrot" value="18-19" />
+					<color name="amethystviolett" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.66" die="2w20+4w6" />
+			<body-weight name="Gewicht" value="-120" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="6" type="LeP" />
+				<au name="AU-Mod" value="10" type="AuP" />
+				<ae name="AU-Mod" value="12" type="AuP" />
+				<mr name="MR" value="-2" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="KL" value="-1" />
+					<attribute name="IN" value="+2" />
+					<attribute name="GE" value="+2" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Körperbeherrschung" value="4"/>
+						<talent name="Schleichen" value="2"/>
+						<talent name="Singen" value="2"/>
+						<talent name="Sinnenschärfe" value="5"/>
+						<talent name="Tanzen" value="1"/>
+						<talent name="Zechen" value="-2"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="2"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Altersresistenz" />
+					<pro name="Dämmerungssicht" />
+					<pro name="Gut Aussehend" />
+					<pro name="Herausragender Sinn" >
+						<option name="Gehör" />
+						<option name="Geruch" />
+					</pro>
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Richtungssinn" />
+					<pro name="Vollzauberer" />
+					<pro name="Wohlklang" />
+					<pro name="Zweistimmiger Gesang" />
+				</automatic>
+				<recommended>
+					<pro name="Astrale Regeneration" />
+					<pro name="Astralmacht" />
+					<pro name="Balance" />
+					<pro name="Begabung Musizieren" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Begabung Singen" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Beidhändig" />
+					<pro name="Feenfreund" />
+					<pro name="Flink" />
+					<pro name="Herausragende Balance" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Innerer Kompass" />
+					<pro name="Kälteresistenz" />
+					<pro name="Nachtsicht" />
+					<pro name="Schlangenmensche" />
+				</recommended>
+				<improper>
+					<pro name="Hitzeresistenz" />
+					<pro name="Kampfrausch" />
+					<pro name="Schwer zu verzaubern" />
+					<pro name="Vom Schicksal begünstigt" />
+					<pro name="Zwergennase" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Sensibler Geruchssinn" value="6" />
+					<contra name="Unfähigkeit Zechen" />
+				</automatic>
+				<improper>
+					<contra name="Blutrusch" />
+					<contra name="Eingeschränkter Sinn" />
+					<contra name="Fettleibig" />
+					<contra name="Höhenangst" />
+					<contra name="Kleinwüchsig" />
+					<contra name="Kurzatmig" />
+					<contra name="Nachtblind" />
+					<contra name="Platzangst" />
+					<contra name="Übler Geruch" />
+				</improper>
+				<recommended>
+					<contra name="Raumangst" />
+					<contra name="Nahrungsrestriktion" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Waldelfische Sippe"/>
+				</common>
+				<possible>
+					<culture name="Auelfische Sippe"/>
+					<culture name="Steppenelfische Sippe"/>
+					<culture name="Elfische Siedlung"/>
+					<culture name="Mittelländische Städte" restriction="Siedlerstädte des Nordens" />
+					<culture name="Mittelländische Landbevölkerung"/>		
+					<culture name="Norbardensippen" />
+					<culture name="Svellttal" />
+				</possible>
+			</cultures>
+		</breed>
+		<breed name="Die Firnelfen" >
+			<gp name="Generierungspunkte" value="24" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="blauschwarz" value="1" />
+					<color name="schwarz" value="2" />
+					<color name="silbern" value="3-5" />
+					<color name="schneeweiß" value="6-9" />
+					<color name="weißblond" value="10-14" />
+					<color name="hellblond" value="15-17" />
+					<color name="mittelblond" value="18-19" />
+					<color name="dunkelblond" value="20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="schwarz" value="1" />
+					<color name="silbergrau" value="2-3" />
+					<color name="eisgrau" value="4-7" />
+					<color name="saphirblau" value="8-11" />
+					<color name="smaragdgrün" value="12-15" />
+					<color name="bernsteinfarben" value="16-18" />
+					<color name="goldgesprenkelt" value="19" />
+					<color name="rubinrot" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.56" die="2w20" />
+			<body-weight name="Gewicht" value="-120" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="7" type="LeP" />
+				<au name="AU-Mod" value="15" type="AuP" />
+				<ae name="AU-Mod" value="12" type="AuP" />
+				<mr name="MR" value="-1" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="KL" value="-1" />
+					<attribute name="IN" value="+1" />
+					<attribute name="GE" value="+2" />
+					<attribute name="KO" value="+1" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Athletik" value="1"/>
+						<talent name="Körperbeherrschung" value="3"/>
+						<talent name="Schleichen" value="2"/>
+						<talent name="Singen" value="1"/>
+						<talent name="Sinnenschärfe" value="5"/>
+						<talent name="Zechen" value="-2"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="2"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Altersresistenz" />
+					<pro name="Dämmerungssicht" />
+					<pro name="Herausragender Sinn" >
+						<option name="Gehör" />
+						<option name="Geruch" />
+						<option name="Tast" />
+					</pro>
+					<pro name="Kälteresistenz" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Richtungssinn" />
+					<pro name="Vollzauberer" />
+					<pro name="Wohlklang" />
+					<pro name="Zweistimmiger Gesang" />
+				</automatic>
+				<recommended>
+					<pro name="Astrale Regeneration" />
+					<pro name="Astralmacht" />
+					<pro name="Ausdauernd" />
+					<pro name="Balance" />
+					<pro name="Begabung Musizieren" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Begabung Singen" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Beidhändig" />
+					<pro name="Feenfreund" />
+					<pro name="Flink" />
+					<pro name="Gefahreninstikt" />
+					<pro name="Gut Aussehend" />
+					<pro name="Herausragende Balance" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Innerer Kompass" />
+					<pro name="Nachtsicht" />
+					<pro name="Schlangenmensche" />
+				</recommended>
+				<improper>
+					<pro name="Hitzeresistenz" />
+					<pro name="Kampfrausch" />
+					<pro name="Schwer zu verzaubern" />
+					<pro name="Vom Schicksal begünstigt" />
+					<pro name="Zwergennase" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Hitzeempfindlich" />
+					<contra name="Sensibler Geruchssinn" value="6" />
+					<contra name="Unfähigkeit Zechen" />
+				</automatic>
+				<improper>
+					<contra name="Behäbig" />
+					<contra name="Eingeschränkter Sinn" />
+					<contra name="Fettleibig" />
+					<contra name="Glasknochen" />
+					<contra name="Kleinwüchsig" />
+					<contra name="Kurzatmig" />
+					<contra name="Nachtblind" />
+					<contra name="Platzangst" />
+					<contra name="Stubenhocker" />
+					<contra name="Übler Geruch" />
+					<contra name="Unanssehnlich" />
+				</improper>
+				<recommended>
+					<contra name="Albino" />
+					<contra name="Farbenblind" />
+					<contra name="Nahrungsrestriktion" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Firnelfische Sippe"/>
+				</common>
+				<possible>
+					<culture name="Auelfische Sippe"/>
+					<culture name="Steppenelfische Sippe"/>
+					<culture name="Elfische Siedlung"/>
+					<culture name="Fjarninger" />
+					<culture name="Gjalskerländer"/>		
+					<culture name="Nivesenstämme" />
+					<culture name="Norbarden" />
+					<culture name="Thorwal" />
+				</possible>
+			</cultures>
+		</breed>
+		<breed name="Die Halbelfen" >
+			<gp name="Generierungspunkte" value="3" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="rot" value="1-3" />
+					<color name="braun" value="4-6" />
+					<color name="dunkelblond" value="7-10" />
+					<color name="hellblond" value="11-15" />
+					<color name="weißblond" value="16-17" />
+					<color name="schwarz" value="18-19" />
+					<color name="blauschwarz" value="20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="schwarz" value="1-3" />
+					<color name="grau" value="4-6" />
+					<color name="blau" value="7-10" />
+					<color name="grün" value="11-14" />
+					<color name="dunkelbraun" value="15-16" />
+					<color name="hellbraun" value="17-18" />
+					<color name="bernsteinfarben" value="19" />
+					<color name="goldgesprenkelt" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.58" die="w20+4w6" />
+			<body-weight name="Gewicht" value="-120" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="8" type="LeP" />
+				<au name="AU-Mod" value="10" type="AuP" />
+				<ae name="AU-Mod" value="-6" type="AuP" />
+				<mr name="MR" value="-4" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="GE" value="+1" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Körperbeherrschung" value="2"/>
+						<talent name="Schleichen" value="1"/>
+						<talent name="Singen" value="1"/>
+						<talent name="Sinnenschärfe" value="2"/>
+						<talent name="Tanzen" value="1"/>
+						<talent name="Zechen" value="-1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Gut Aussehend" />
+					<pro name="Viertelzauberer" />
+				</automatic>
+				<recommended>
+					<pro name="Balance" />
+					<pro name="Begabung Musizieren" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Begabung Singen" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Beidhändig" />
+					<pro name="Dämmerungssicht"></pro>
+					<pro name="Feenfreund" />
+					<pro name="Flink" />
+					<pro name="Gefahreninstikt" />>
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Magiegespür" />
+					<pro name="Schlangenmensche" />
+					<pro name="Wohlklang" />
+					<pro name="Zweistimmiger Gesang" />
+				</recommended>
+				<improper>
+					<pro name="Kampfrausch" />
+					<pro name="Schwer zu verzaubern" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<improper>
+					
+					<contra name="Fettleibig" />
+					<contra name="Kleinwüchsig" />
+					<contra name="Krankheitsanfällig" />
+					<contra name="Unangenehme Stimmer" />
+				</improper>
+				<recommended>
+					<contra name="Nahrungsrestriktion" />
+					<contra name="Sensibler Geruchssinn" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Elfische Siedlung"/>
+					<culture name="Mittelländische Städte"/>
+					<culture name="Mittelländische Landbevölkerung"/>
+					<culture name="Andergast und Nostria"/>
+					<culture name="Almada"/>
+					<culture name="Svellttal"/>
+					<culture name="Nivesenstamm"/>
+					<culture name="Norbardensippe"/>
+				</common>
+				<possible>
+					<culture name="Auelfische Sippe"/>
+					<culture name="Waldelfische Sippe"/>
+					<culture name="Firnelfische Sippe"/>
+					<culture name="Aranien" />
+					<culture name="Thorwal"/>		
+					<culture name="Bornland" />
+					<culture name="Horasreich" />
+					<culture name="Fjarninger" />
+					<culture name="Gjalskerländer"/>
+				</possible>
+			</cultures>
+		</breed>
+		<breed name="Die Firnelfen-Halbelfen" >
+			<gp name="Generierungspunkte" value="5" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="rot" value="1-3" />
+					<color name="braun" value="4-6" />
+					<color name="dunkelblond" value="7-10" />
+					<color name="hellblond" value="11-15" />
+					<color name="weißblond" value="16-17" />
+					<color name="schwarz" value="18-19" />
+					<color name="blauschwarz" value="20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="schwarz" value="1-3" />
+					<color name="grau" value="4-6" />
+					<color name="blau" value="7-10" />
+					<color name="grün" value="11-14" />
+					<color name="dunkelbraun" value="15-16" />
+					<color name="hellbraun" value="17-18" />
+					<color name="bernsteinfarben" value="19" />
+					<color name="goldgesprenkelt" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.58" die="w20+4w6" />
+			<body-weight name="Gewicht" value="-120" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="8" type="LeP" />
+				<au name="AU-Mod" value="12" type="AuP" />
+				<ae name="AE-Mod" value="-6" type="AeP" />
+				<mr name="MR" value="-3" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="GE" value="+1" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Körperbeherrschung" value="2"/>
+						<talent name="Schleichen" value="1"/>
+						<talent name="Singen" value="1"/>
+						<talent name="Sinnenschärfe" value="2"/>
+						<talent name="Tanzen" value="1"/>
+						<talent name="Zechen" value="-1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Kälteresistenz" />
+					<pro name="Viertelzauberer" />
+				</automatic>
+				<recommended>
+					<pro name="Balance" />
+					<pro name="Begabung Musizieren" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Begabung Singen" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Beidhändig" />
+					<pro name="Dämmerungssicht"></pro>
+					<pro name="Feenfreund" />
+					<pro name="Flink" />
+					<pro name="Gefahreninstikt" />>
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Magiegespür" />
+					<pro name="Schlangenmensche" />
+					<pro name="Wohlklang" />
+					<pro name="Zweistimmiger Gesang" />
+				</recommended>
+				<improper>
+					<pro name="Kampfrausch" />
+					<pro name="Schwer zu verzaubern" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<improper>
+					<contra name="Fettleibig" />
+					<contra name="Kleinwüchsig" />
+					<contra name="Krankheitsanfällig" />
+					<contra name="Unangenehme Stimmer" />
+				</improper>
+				<recommended>
+					<contra name="Hitzeempfindlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Elfische Siedlung"/>
+					<culture name="Mittelländische Städte"/>
+					<culture name="Mittelländische Landbevölkerung"/>
+					<culture name="Andergast und Nostria"/>
+					<culture name="Almada"/>
+					<culture name="Svellttal"/>
+					<culture name="Nivesenstamm"/>
+					<culture name="Norbardensippe"/>
+				</common>
+				<possible>
+					<culture name="Auelfische Sippe"/>
+					<culture name="Waldelfische Sippe"/>
+					<culture name="Firnelfische Sippe"/>
+					<culture name="Aranien" />
+					<culture name="Thorwal"/>		
+					<culture name="Bornland" />
+					<culture name="Horasreich" />
+					<culture name="Fjarninger" />
+					<culture name="Gjalskerländer"/>
+				</possible>
+			</cultures>
+		</breed>
+		<breed name="Die Nivesen-Halbelfen" >
+			<gp name="Generierungspunkte" value="8" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="rot" value="1-3" />
+					<color name="braun" value="4-6" />
+					<color name="dunkelblond" value="7-10" />
+					<color name="hellblond" value="11-15" />
+					<color name="weißblond" value="16-17" />
+					<color name="schwarz" value="18-19" />
+					<color name="blauschwarz" value="20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="schwarz" value="1-3" />
+					<color name="grau" value="4-6" />
+					<color name="blau" value="7-10" />
+					<color name="grün" value="11-14" />
+					<color name="dunkelbraun" value="15-16" />
+					<color name="hellbraun" value="17-18" />
+					<color name="bernsteinfarben" value="19" />
+					<color name="goldgesprenkelt" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.58" die="w20+4w6" />
+			<body-weight name="Gewicht" value="-120" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="8" type="LeP" />
+				<au name="AU-Mod" value="11" type="AuP" />
+				<ae name="AE-Mod" value="-6" type="AeP" />
+				<mr name="MR" value="-4" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="GE" value="+1" />
+					<attribute name="KK" value="-1" />
+					<attribute name="IN" value="+1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Körperbeherrschung" value="2"/>
+						<talent name="Schleichen" value="1"/>
+						<talent name="Singen" value="1"/>
+						<talent name="Sinnenschärfe" value="2"/>
+						<talent name="Tanzen" value="1"/>
+						<talent name="Zechen" value="-1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<option>
+						<pro name="Wohlklang" />
+						<pro name="Zweistimmiger Gesang" />
+					</option>
+				</automatic>
+				<recommended>
+					<pro name="Balance" />
+					<pro name="Begabung Musizieren" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Begabung Singen" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Beidhändig" />
+					<pro name="Dämmerungssicht"></pro>
+					<pro name="Feenfreund" />
+					<pro name="Flink" />
+					<pro name="Gefahreninstikt" />>
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Magiegespür" />
+					<pro name="Schlangenmensche" />
+					<pro name="Wohlklang" />
+					<pro name="Zweistimmiger Gesang" />
+				</recommended>
+				<improper>
+					<pro name="Kampfrausch" />
+					<pro name="Schwer zu verzaubern" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Unfähigkeit Zechen" />
+				</automatic>
+				<improper>
+					<contra name="Fettleibig" />
+					<contra name="Kleinwüchsig" />
+					<contra name="Krankheitsanfällig" />
+					<contra name="Unangenehme Stimmer" />
+				</improper>
+				<recommended>
+					<contra name="Nahrungsrestriktion" />
+					<contra name="Sensibler Geruchssinn" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Elfische Siedlung"/>
+					<culture name="Mittelländische Städte"/>
+					<culture name="Mittelländische Landbevölkerung"/>
+					<culture name="Andergast und Nostria"/>
+					<culture name="Almada"/>
+					<culture name="Svellttal"/>
+					<culture name="Nivesenstamm"/>
+					<culture name="Norbardensippe"/>
+				</common>
+				<possible>
+					<culture name="Auelfische Sippe"/>
+					<culture name="Waldelfische Sippe"/>
+					<culture name="Firnelfische Sippe"/>
+					<culture name="Aranien" />
+					<culture name="Thorwal"/>		
+					<culture name="Bornland" />
+					<culture name="Horasreich" />
+					<culture name="Fjarninger" />
+					<culture name="Gjalskerländer"/>
+				</possible>
+			</cultures>
+		</breed>
+		<breed name="Die Thorwaler-Halbelfen" >
+			<gp name="Generierungspunkte" value="4" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="rot" value="1-3" />
+					<color name="braun" value="4-6" />
+					<color name="dunkelblond" value="7-10" />
+					<color name="hellblond" value="11-15" />
+					<color name="weißblond" value="16-17" />
+					<color name="schwarz" value="18-19" />
+					<color name="blauschwarz" value="20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="schwarz" value="1-3" />
+					<color name="grau" value="4-6" />
+					<color name="blau" value="7-10" />
+					<color name="grün" value="11-14" />
+					<color name="dunkelbraun" value="15-16" />
+					<color name="hellbraun" value="17-18" />
+					<color name="bernsteinfarben" value="19" />
+					<color name="goldgesprenkelt" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.58" die="w20+4w6" />
+			<body-weight name="Gewicht" value="-120" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="9" type="LeP" />
+				<au name="AU-Mod" value="10" type="AuP" />
+				<ae name="AE-Mod" value="-6" type="AeP" />
+				<mr name="MR" value="-4" />
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Körperbeherrschung" value="2"/>
+						<talent name="Schleichen" value="1"/>
+						<talent name="Singen" value="1"/>
+						<talent name="Sinnenschärfe" value="2"/>
+						<talent name="Tanzen" value="1"/>
+						<talent name="Zechen" value="-1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Gut Aussehend" />
+					<pro name="Viertelzauberer" />
+				</automatic>
+				<recommended>
+					<pro name="Balance" />
+					<pro name="Begabung Musizieren" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Begabung Singen" /><!-- Check how it works. maybe chnange structure for logic  -->
+					<pro name="Beidhändig" />
+					<pro name="Dämmerungssicht"></pro>
+					<pro name="Feenfreund" />
+					<pro name="Flink" />
+					<pro name="Gefahreninstikt" />>
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Magiegespür" />
+					<pro name="Schlangenmensche" />
+					<pro name="Wohlklang" />
+					<pro name="Zweistimmiger Gesang" />
+				</recommended>
+				<improper>
+					<pro name="Kampfrausch" />
+					<pro name="Schwer zu verzaubern" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<improper>
+					
+					<contra name="Fettleibig" />
+					<contra name="Kleinwüchsig" />
+					<contra name="Krankheitsanfällig" />
+					<contra name="Unangenehme Stimmer" />
+				</improper>
+				<recommended>
+					<contra name="Nahrungsrestriktion" />
+					<contra name="Sensibler Geruchssinn" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Elfische Siedlung"/>
+					<culture name="Mittelländische Städte"/>
+					<culture name="Mittelländische Landbevölkerung"/>
+					<culture name="Andergast und Nostria"/>
+					<culture name="Almada"/>
+					<culture name="Svellttal"/>
+					<culture name="Nivesenstamm"/>
+					<culture name="Norbardensippe"/>
+				</common>
+				<possible>
+					<culture name="Auelfische Sippe"/>
+					<culture name="Waldelfische Sippe"/>
+					<culture name="Firnelfische Sippe"/>
+					<culture name="Aranien" />
+					<culture name="Thorwal"/>		
+					<culture name="Bornland" />
+					<culture name="Horasreich" />
+					<culture name="Fjarninger" />
+					<culture name="Gjalskerländer"/>
+				</possible>
+			</cultures>
+		</breed>
+	</group>
+	<group name="Zwerge" >
+		<breed name="Die Erz- und Hügelzwerge" >
+			<gp name="Generierungspunkte" value="12" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="blond" value="1-5" />
+					<color name="schwarz" value="6-9" />
+					<color name="dunkelgrau" value="10-11" />
+					<color name="hellgrau" value="12-13" />
+					<color name="salzweiß" value="14" />
+					<color name="silberweiß" value="15" />
+					<color name="feuerrot" value="16-17" />
+					<color name="kupferrot" value="18-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="dunkelbraun" value="1-2" />
+					<color name="braun" value="3-5" />
+					<color name="grün" value="6-9" />
+					<color name="blau" value="10" />
+					<color name="grau" value="11-14" />
+					<color name="schwarz" value="15-20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.28" die="2w6" />
+			<body-weight name="Gewicht" value="-80" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="11" type="LeP" />
+				<au name="AU-Mod" value="15" type="AuP" />
+				<mr name="MR" value="-4" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="FF" value="+1" />
+					<attribute name="GE" value="-1" />
+					<attribute name="KO" value="+2" />
+					<attribute name="KK" value="+1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Kampf" >
+						<talent name="Ringen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Körper" >
+						<talent name="Akrobatik" value="-3"/>
+						<talent name="Reiten" value="-1"/>
+						<talent name="Schwimmen" value="-3"/>
+						<talent name="Selbstbeherrschung" value="2"/>
+						<talent name="Zechen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+					<talentgroup name="wissen" >
+						<talent name="Gesteinskunde" value="1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Dämmerungssicht" />
+					<pro name="Resistenz gegen mineralische Gifte" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Schwer zu verzaubern" />
+				</automatic>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Eisern" />
+					<pro name="Gefahreninstinkt" />
+					<pro name="Gutes Gedächtnis" />
+					<pro name="Hitzeresistenz" />
+					<pro name="Hohe Magieresistenz" />
+					<pro name="Innerer Kompass" />
+					<pro name="Kampfrausch" />
+					<pro name="Hohe Lebenskraft" />
+					<pro name="Nachtsicht" />
+					<pro name="Resistenz/Immunität gegen Gifte(TODO alle einzeln aufzählen)" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+					<pro name="Zwergennase" />
+				</recommended>
+				<improper>
+					<pro name="Feenfreund" />
+					<pro name="Herausragende Balance" />
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Koboldfreund" />
+					<pro name="Magiegespür" />
+					<pro name="Schlangenmensch" />
+					<pro name="Vom Schicksal begünstigt" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Goldgier" value="5" />
+					<contra name="Unfähigkeit Schwimmen" />
+					<contra name="Zwergenwuchs" />
+				</automatic>
+				<improper>
+					<contra name="Dunkelangst" />
+					<contra name="Glasknochen" />
+					<contra name="Hitzeempfindlich" />
+					<contra name="Nachtblind" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Raumangst" />
+					<contra name="Sucht(Alkohol)" version="Alkohol" />
+					<contra name="Unstet" />
+				</improper>
+				<recommended>
+					<contra name="Blutrausch" />
+					<contra name="Jähzorn" />
+					<contra name="Lichtscheu" />
+					<contra name="Meeresangst" />
+					<contra name="Platzangst" />
+					<contra name="Unansehnlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Erzzwerg"/>
+					<culture name="Hügelzwerg"/>
+				</common>
+				<possible>
+					<culture name="Ambosszwerg"/>
+					<culture name="Brillantzwerg"/>
+					<culture name="Mittelländische Städte"/>
+					<culture name="Mittelländische Landbevölkerung" />
+					<culture name="Yaquirien"/>		
+					<culture name="Thorwal" />
+					<culture name="Anderast und Nostria" />
+					<culture name="Tulamidische Stadtstaaten" />
+					<culture name="Svellttal"/>
+				</possible>
+			</cultures>
+		</breed>
+		<breed name="Die Brillantzwerge" >
+			<gp name="Generierungspunkte" value="12" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="blond" value="1-5" />
+					<color name="schwarz" value="6-9" />
+					<color name="dunkelgrau" value="10-11" />
+					<color name="hellgrau" value="12-13" />
+					<color name="salzweiß" value="14" />
+					<color name="silberweiß" value="15" />
+					<color name="feuerrot" value="16-17" />
+					<color name="kupferrot" value="18-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="dunkelbraun" value="1-2" />
+					<color name="braun" value="3-5" />
+					<color name="grün" value="6-9" />
+					<color name="blau" value="10" />
+					<color name="grau" value="11-14" />
+					<color name="schwarz" value="15-20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.28" die="2w6" />
+			<body-weight name="Gewicht" value="-80" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="10" type="LeP" />
+				<au name="AU-Mod" value="18" type="AuP" />
+				<mr name="MR" value="-4" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="FF" value="+1" />
+					<attribute name="GE" value="-1" />
+					<attribute name="KO" value="+2" />
+					<attribute name="KK" value="+1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Kampf" >
+						<talent name="Ringen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Körper" >
+						<talent name="Akrobatik" value="-3"/>
+						<talent name="Reiten" value="-1"/>
+						<talent name="Schwimmen" value="-3"/>
+						<talent name="Selbstbeherrschung" value="2"/>
+						<talent name="Zechen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+					<talentgroup name="wissen" >
+						<talent name="Gesteinskunde" value="1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Dämmerungssicht" />
+					<pro name="Resistenz gegen mineralische Gifte" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Schwer zu verzaubern" />
+				</automatic>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Eisern" />
+					<pro name="Gefahreninstinkt" />
+					<pro name="Gutes Gedächtnis" />
+					<pro name="Hitzeresistenz" />
+					<pro name="Hohe Magieresistenz" />
+					<pro name="Innerer Kompass" />
+					<pro name="Kampfrausch" />
+					<pro name="Hohe Lebenskraft" />
+					<pro name="Nachtsicht" />
+					<pro name="Resistenz/Immunität gegen Gifte(TODO alle einzeln aufzählen)" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+					<pro name="Zwergennase" />
+				</recommended>
+				<improper>
+					<pro name="Feenfreund" />
+					<pro name="Herausragende Balance" />
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Koboldfreund" />
+					<pro name="Magiegespür" />
+					<pro name="Schlangenmensch" />
+					<pro name="Vom Schicksal begünstigt" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Goldgier" value="5" />
+					<contra name="Unfähigkeit Schwimmen" />
+					<contra name="Zwergenwuchs" />
+				</automatic>
+				<improper>
+					<contra name="Dunkelangst" />
+					<contra name="Glasknochen" />
+					<contra name="Hitzeempfindlich" />
+					<contra name="Nachtblind" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Raumangst" />
+					<contra name="Sucht(Alkohol)" version="Alkohol" />
+					<contra name="Unstet" />
+				</improper>
+				<recommended>
+					<contra name="Blutrausch" />
+					<contra name="Jähzorn" />
+					<contra name="Lichtscheu" />
+					<contra name="Meeresangst" />
+					<contra name="Platzangst" />
+					<contra name="Unansehnlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Brillantzwerge"/>
+				</common>
+				<possible>
+					<culture name="Ambosszwerg"/>
+					<culture name="Erzzwerg"/>
+					<culture name="Hügelzwerg"/>
+					<culture name="Mittelländische Städte" />
+					<culture name="Mittelländische Landbevölkerung" />
+					<culture name="Yaquirien"/>		
+					<culture name="Thorwal" />
+					<culture name="Anderast und Nostria" />
+					<culture name="Tulamidische Stadtstaaten" />
+					<culture name="Svellttal"/>
+				</possible>
+			</cultures>
+		</breed>
+		<breed name="Die Ambosszwerge" >
+			<gp name="Generierungspunkte" value="16" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="blond" value="1-5" />
+					<color name="schwarz" value="6-9" />
+					<color name="dunkelgrau" value="10-11" />
+					<color name="hellgrau" value="12-13" />
+					<color name="salzweiß" value="14" />
+					<color name="silberweiß" value="15" />
+					<color name="feuerrot" value="16-17" />
+					<color name="kupferrot" value="18-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="dunkelbraun" value="1-2" />
+					<color name="braun" value="3-5" />
+					<color name="grün" value="6-9" />
+					<color name="blau" value="10" />
+					<color name="grau" value="11-14" />
+					<color name="schwarz" value="15-20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.28" die="2w6" />
+			<body-weight name="Gewicht" value="-80" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="12" type="LeP" />
+				<au name="AU-Mod" value="18" type="AuP" />
+				<mr name="MR" value="-4" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="FF" value="+1" />
+					<attribute name="GE" value="-1" />
+					<attribute name="KO" value="+2" />
+					<attribute name="KK" value="+2" />
+				</attributes>
+				<talents>
+					<talentgroup name="Kampf" >
+						<talent name="Ringen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Körper" >
+						<talent name="Akrobatik" value="-3"/>
+						<talent name="Reiten" value="-1"/>
+						<talent name="Schwimmen" value="-3"/>
+						<talent name="Selbstbeherrschung" value="2"/>
+						<talent name="Zechen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+					<talentgroup name="wissen" >
+						<talent name="Gesteinskunde" value="1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Dämmerungssicht" />
+					<pro name="Resistenz gegen mineralische Gifte" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Schwer zu verzaubern" />
+				</automatic>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Eisern" />
+					<pro name="Gefahreninstinkt" />
+					<pro name="Gutes Gedächtnis" />
+					<pro name="Hitzeresistenz" />
+					<pro name="Hohe Magieresistenz" />
+					<pro name="Innerer Kompass" />
+					<pro name="Kampfrausch" />
+					<pro name="Hohe Lebenskraft" />
+					<pro name="Nachtsicht" />
+					<pro name="Resistenz/Immunität gegen Gifte(TODO alle einzeln aufzählen)" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+					<pro name="Zwergennase" />
+				</recommended>
+				<improper>
+					<pro name="Feenfreund" />
+					<pro name="Herausragende Balance" />
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Koboldfreund" />
+					<pro name="Magiegespür" />
+					<pro name="Schlangenmensch" />
+					<pro name="Vom Schicksal begünstigt" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Goldgier" value="5" />
+					<contra name="Unfähigkeit Schwimmen" />
+					<contra name="Zwergenwuchs" />
+				</automatic>
+				<improper>
+					<contra name="Dunkelangst" />
+					<contra name="Glasknochen" />
+					<contra name="Hitzeempfindlich" />
+					<contra name="Nachtblind" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Raumangst" />
+					<contra name="Sucht(Alkohol)" version="Alkohol" />
+					<contra name="Unstet" />
+				</improper>
+				<recommended>
+					<contra name="Blutrausch" />
+					<contra name="Jähzorn" />
+					<contra name="Lichtscheu" />
+					<contra name="Meeresangst" />
+					<contra name="Platzangst" />
+					<contra name="Unansehnlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Ambosszwerg"/>
+				</common>
+				<possible>
+					<culture name="Erzzwerg"/>
+					<culture name="Brillantzwerg"/>
+					<culture name="Hügelzwerg"/>
+					<culture name="Mittelländische Städte"/>
+					<culture name="Mittelländische Landbevölkerung" />
+					<culture name="Yaquirien"/>		
+					<culture name="Thorwal" />
+					<culture name="Anderast und Nostria" />
+					<culture name="Tulamidische Stadtstaaten" />
+					<culture name="Svellttal"/>
+				</possible>
+			</cultures>
+		</breed>
+		<breed name="Die Wilden-Zwerge" >
+			<gp name="Generierungspunkte" value="16" />
+			<colortypes>
+				<colors name="Haarfarbe" die="W20" >
+					<color name="blond" value="1-5" />
+					<color name="schwarz" value="6-9" />
+					<color name="dunkelgrau" value="10-11" />
+					<color name="hellgrau" value="12-13" />
+					<color name="salzweiß" value="14" />
+					<color name="silberweiß" value="15" />
+					<color name="feuerrot" value="16-17" />
+					<color name="kupferrot" value="18-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="dunkelbraun" value="1-2" />
+					<color name="braun" value="3-5" />
+					<color name="grün" value="6-9" />
+					<color name="blau" value="10" />
+					<color name="grau" value="11-14" />
+					<color name="schwarz" value="15-20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.28" die="2w6" />
+			<body-weight name="Gewicht" value="-80" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="12" type="LeP" />
+				<au name="AU-Mod" value="18" type="AuP" />
+				<mr name="MR" value="-4" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="GE" value="-1" />
+					<attribute name="KO" value="+2" />
+					<attribute name="KK" value="+2" />
+				</attributes>
+				<talents>
+					<talentgroup name="Kampf" >
+						<talent name="Ringen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Körper" >
+						<talent name="Akrobatik" value="-3"/>
+						<talent name="Reiten" value="-1"/>
+						<talent name="Schwimmen" value="-3"/>
+						<talent name="Selbstbeherrschung" value="2"/>
+						<talent name="Zechen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+					<talentgroup name="wissen" >
+						<talent name="Gesteinskunde" value="1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Dämmerungssicht" />
+					<pro name="Resistenz gegen mineralische Gifte" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Schwer zu verzaubern" />
+					<pro name="Linkshänder" />
+				</automatic>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Eisern" />
+					<pro name="Gefahreninstinkt" />
+					<pro name="Gutes Gedächtnis" />
+					<pro name="Hitzeresistenz" />
+					<pro name="Hohe Magieresistenz" />
+					<pro name="Innerer Kompass" />
+					<pro name="Kampfrausch" />
+					<pro name="Hohe Lebenskraft" />
+					<pro name="Nachtsicht" />
+					<pro name="Resistenz/Immunität gegen Gifte(TODO alle einzeln aufzählen)" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+					<pro name="Zwergennase" />
+				</recommended>
+				<improper>
+					<pro name="Feenfreund" />
+					<pro name="Herausragende Balance" />
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Koboldfreund" />
+					<pro name="Magiegespür" />
+					<pro name="Schlangenmensch" />
+					<pro name="Vom Schicksal begünstigt" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Goldgier" value="5" />
+					<contra name="Unfähigkeit Schwimmen" />
+					<contra name="Zwergenwuchs" />
+				</automatic>
+				<improper>
+					<contra name="Dunkelangst" />
+					<contra name="Glasknochen" />
+					<contra name="Hitzeempfindlich" />
+					<contra name="Nachtblind" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Raumangst" />
+					<contra name="Sucht(Alkohol)" version="Alkohol" />
+					<contra name="Unstet" />
+				</improper>
+				<recommended>
+					<contra name="Blutrausch" />
+					<contra name="Jähzorn" />
+					<contra name="Lichtscheu" />
+					<contra name="Meeresangst" />
+					<contra name="Platzangst" />
+					<contra name="Unansehnlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Brobim"/>
+				</common>
+			</cultures>
+		</breed>
+	</group>
+	<group name="Orks" >
+		<breed name="Die Orks" >
+			<gp name="Generierungspunkte" value="12" />
+			<colortypes>
+				<colors name="Haar- und Fellfarbe" die="W20" >
+					<color name="dunkelbraun" value="1-5" />
+					<color name="braun-schwarz" value="6-11" />
+					<color name="tiefschwarz" value="12-19" />
+					<color name="blauschwarz" value="20-28" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="gelb" value="1-4" />
+					<color name="rot" value="5-12" />
+					<color name="grau" value="13-16" />
+					<color name="schwarz" value="17-20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.50" die="3w6" />
+			<body-weight name="Gewicht" value="-95" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="12" type="LeP" />
+				<au name="AU-Mod" value="18" type="AuP" />
+				<mr name="MR" value="-7" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="MU" value="+2" />
+					<attribute name="KL" value="-2" />
+					<attribute name="CH" value="-2" />
+					<attribute name="FF" value="-1" />
+					<attribute name="KO" value="+2" />
+					<attribute name="KK" value="+2" />
+				</attributes>
+				<talents>
+					<talentgroup name="Kampf" >
+						<talent name="Raufen" value="1"/>
+						<talent name="Ringen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Körper" >
+						<talent name="Athletik" value="1"/>
+						<talent name="Körperbeherrschung" value="1"/>
+						<talent name="Schleichen" value="1"/>
+						<talent name="Selbstbeherrschung" value="1"/>
+						<talent name="Singen" value="-2"/>
+						<talent name="Sinnenschärfe" value="2"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="2"/>
+					</talentgroup>
+					<talentgroup name="wissen" >
+						<talent name="Rechnen" value="-1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Dämmerungssicht" />
+					<pro name="Kälteresistenz" />
+					<pro name="Natürliche Waffe: Biss (1w+1 TP)" >
+						<weapon type="Natürlich" name="Biss" tp="1w+1" />
+					</pro>
+					<pro name="Natürlicher Rüstungsschutz (1)" >
+						<armor type="Natürlich" name="Haut" rs="1" />
+					</pro>
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+				</automatic>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Eisern" />
+					<pro name="Entfernungssinn" />
+					<pro name="Immunität gegen Gift" />
+					<pro name="Innerer Kompass" />
+					<pro name="Kampfrausch" />
+					<pro name="Hohe Lebenskraft" />
+					<pro name="Resistenz gegen Gift" />
+				</recommended>
+				<improper>
+					<pro name="Feenfreund" />
+					<pro name="Hohe Magieresistenz" />
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Koboldfreund" />
+					<pro name="Schlangenmensch" />
+					<pro name="Schwer zu verzaubern" />
+					<pro name="Tierfreund" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Jähzorn" value="6" />
+					<contra name="Randgruppe" />
+					<contra name="Raubtiergeruch" />
+				</automatic>
+				<improper>
+					<contra name="Viele Ängste (ausser Arkanophobie)" />
+					<contra name="Glasknochen" />
+					<contra name="Krankhafte Reinlichkeit" />
+					<contra name="Nachtblind" />
+					<contra name="Schlechte Regeneration" />
+				</improper>
+				<recommended>
+					<contra name="Blutrausch" />
+					<contra name="Hitzeempflindlich" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Übler Geruch" />
+					<contra name="Unangenehme Stimme" />
+					<contra name="Unansehnlich" />
+					<contra name="Unfähigkeit Gesellschaftliche Talente" target="talentgroup[@name='Gesellschaft']"  />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Orkland"/>
+					<culture name="Yurach"/>
+					<culture name="Svellttal-Besatzer"/>
+				</common>
+				<possible>
+					<culture name="Andergast und Nostria"/>
+					<culture name="Mittelländische Städte (Nur Festum und Uhdenberg)" restriction="Festum.Uhdenberg" />
+					<culture name="Südaventurien"/>
+					<culture name="Svellttal"/>
+					<culture name="Nordlande"/>
+					<culture name="Thorwal"/>
+				</possible>
+			</cultures>
+			<specialabilities>
+				<ability name="Waffenlose Sonderfertigkeit Biss" />
+			</specialabilities>
+		</breed>
+		<breed name="Die Orks(Orkfrauen)" >
+			<gp name="Generierungspunkte" value="2" />
+			<colortypes>
+				<colors name="Haar- und Fellfarbe" die="W20" >
+					<color name="dunkelbraun" value="1-5" />
+					<color name="braun-schwarz" value="6-11" />
+					<color name="tiefschwarz" value="12-19" />
+					<color name="blauschwarz" value="20-28" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="gelb" value="1-4" />
+					<color name="rot" value="5-12" />
+					<color name="grau" value="13-16" />
+					<color name="schwarz" value="17-20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.45" die="3w6" />
+			<body-weight name="Gewicht" value="-90" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="10" type="LeP" />
+				<au name="AU-Mod" value="15" type="AuP" />
+				<mr name="MR" value="-7" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="KL" value="-2" />
+					<attribute name="CH" value="-2" />
+					<attribute name="FF" value="-1" />
+					<attribute name="KO" value="+1" />
+					<attribute name="KK" value="+1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Kampf" >
+						<talent name="Raufen" value="1"/>
+						<talent name="Ringen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Körper" >
+						<talent name="Athletik" value="1"/>
+						<talent name="Körperbeherrschung" value="1"/>
+						<talent name="Schleichen" value="1"/>
+						<talent name="Selbstbeherrschung" value="1"/>
+						<talent name="Singen" value="-2"/>
+						<talent name="Sinnenschärfe" value="2"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="2"/>
+					</talentgroup>
+					<talentgroup name="wissen" >
+						<talent name="Rechnen" value="-1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Dämmerungssicht" />
+					<pro name="Kälteresistenz" />
+					<pro name="Natürliche Waffe: Biss (1w+1 TP)" >
+						<weapon type="Natürlich" name="Biss" tp="1w+1" />
+					</pro>
+					<pro name="Natürlicher Rüstungsschutz (1)" >
+						<armor type="Natürlich" name="Haut" rs="1" />
+					</pro>
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+				</automatic>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Eisern" />
+					<pro name="Entfernungssinn" />
+					<pro name="Immunität gegen Gift" />
+					<pro name="Innerer Kompass" />
+					<pro name="Kampfrausch" />
+					<pro name="Hohe Lebenskraft" />
+					<pro name="Resistenz gegen Gift" />
+				</recommended>
+				<improper>
+					<pro name="Feenfreund" />
+					<pro name="Hohe Magieresistenz" />
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Koboldfreund" />
+					<pro name="Schlangenmensch" />
+					<pro name="Schwer zu verzaubern" />
+					<pro name="Tierfreund" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Jähzorn" value="6" />
+					<contra name="Randgruppe" />
+					<contra name="Raubtiergeruch" />
+					<contra name="Unfähigkeit Sprachen und Schriften" target="talentgroup[@name='Sprachen und Schriften']" />
+				</automatic>
+				<improper>
+					<contra name="Viele Ängste (ausser Arkanophobie)" />
+					<contra name="Glasknochen" />
+					<contra name="Krankhafte Reinlichkeit" />
+					<contra name="Nachtblind" />
+					<contra name="Schlechte Regeneration" />
+				</improper>
+				<recommended>
+					<contra name="Blutrausch" />
+					<contra name="Hitzeempflindlich" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Übler Geruch" />
+					<contra name="Unangenehme Stimme" />
+					<contra name="Unansehnlich" />
+					<contra name="Unfähigkeit Gesellschaftliche Talente" target="talentgroup[@name='Gesellschaft']"  />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Orkland"/>
+					<culture name="Yurach"/>
+					<culture name="Svellttal-Besatzer"/>
+				</common>
+				<possible>
+					<culture name="Andergast und Nostria"/>
+					<culture name="Mittelländische Städte (Nur Festum und Uhdenberg)" restriction="Festum.Uhdenberg" />
+					<culture name="Südaventurien"/>
+					<culture name="Svellttal"/>
+					<culture name="Nordlande"/>
+					<culture name="Thorwal"/>
+				</possible>
+			</cultures>
+			<specialabilities>
+				<ability name="Waffenlose Sonderfertigkeit Biss" />
+			</specialabilities>
+		</breed>>
+		<breed name="Die Halborks" >
+			<gp name="Generierungspunkte" value="1" />
+			<colortypes>
+				<colors name="Haar- und Fellfarbe" die="W20" >
+					<color name="blond" value="1-2" />
+					<color name="rot" value="3-6" />
+					<color name="braun" value="7-12" />
+					<color name="schwarz" value="13-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="rot" value="1-5" />
+					<color name="grün" value="6-8" />
+					<color name="braun" value="9-13" />
+					<color name="schwarz" value="14-20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.60" die="4w6" />
+			<body-weight name="Gewicht" value="-90" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="11" type="LeP" />
+				<au name="AU-Mod" value="15" type="AuP" />
+				<mr name="MR" value="-6" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="MU" value="-1" />
+					<attribute name="KL" value="-1" />
+					<attribute name="CH" value="-2" />
+					<attribute name="KO" value="+1" />
+					<attribute name="KK" value="+1" />
+				</attributes>
+				<talents>
+					<talentgroup name="Kampf" >
+						<talent name="Ringen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Körper" >
+						<talent name="Athletik" value="1"/>
+						<talent name="Schleichen" value="1"/>
+						<talent name="Selbstbeherrschung" value="1"/>
+						<talent name="Singen" value="-2"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Orientierung" value="2"/>
+					</talentgroup>
+					<talentgroup name="wissen" >
+						<talent name="Rechnen" value="-1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+				</automatic>
+				<recommended>
+					<pro name="Ausdauernd" />
+					<pro name="Eisern" />
+					<pro name="Entfernungssinn" />
+					<pro name="Gefahreninstinkt" />
+					<pro name="Innerer Kompass" />
+					<pro name="Kampfrausch" />
+					<pro name="Kälteresistenz" />
+					<pro name="Hohe Lebenskraft" />
+					<pro name="Kälteresistenz" />
+					<pro name="Resistenz gegen Gift" />
+				</recommended>
+				<improper>
+					<pro name="Feenfreund" />
+					<pro name="Gut Aussehend" />
+					<pro name="Hohe Magieresistenz" />
+					<pro name="Koboldfreund" />
+					<pro name="Schwer zu verzaubern" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Jähzorn" value="6" />
+					<contra name="Randgruppe" />
+				</automatic>
+				<improper>
+					<contra name="Glasknochen" />
+					<contra name="Nachtblind" />
+					<contra name="Schlechte Regeneration" />
+				</improper>
+				<recommended>
+					<contra name="Blutrausch" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Übler Geruch" />
+					<contra name="Unangenehme Stimme" />
+					<contra name="Unansehnlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Yurach"/>
+				</common>
+				<possible>
+					<culture name="Andergast und Nostria"/>
+					<culture name="Mittelländische Städte (Nur Uhdenberg)" restriction="Uhdenberg" />
+					<culture name="Svellttal-Okkupanten"/>
+					<culture name="Svellttal"/>
+					<culture name="Gjalskerland"/>
+				</possible>
+			</cultures>
+			<specialabilities>
+				<ability name="Waffenlose Sonderfertigkeit Biss" />
+			</specialabilities>
+		</breed>
+	</group>
+	<group name="Goblins" >
+		<breed name="Die Goblins" >
+			<gp name="Generierungspunkte" value="3" />
+			<colortypes>
+				<colors name="Haar- und Fellfarbe" die="W20" >
+					<color name="orangerot" value="1-2" />
+					<color name="feuerrot" value="3-7" />
+					<color name="rotbraun" value="8-13" />
+					<color name="dunkelrot" value="14-18" />
+					<color name="rot-grau" value="19-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="grün" value="1" />
+					<color name="gelb" value="2-5" />
+					<color name="hellrot" value="6-11" />
+					<color name="dunkelrot" value="12-17" />
+					<color name="rotbraun" value="18-19" />
+					<color name="rotviolett" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.35" die="4w6" />
+			<body-weight name="Gewicht" value="-100" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="4" type="LeP" />
+				<au name="AU-Mod" value="12" type="AuP" />
+				<mr name="MR" value="-5" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="MU" value="-1" />
+					<attribute name="KL" value="-2" />
+					<attribute name="FF" value="+2" />
+					<attribute name="GE" value="+2" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<ini-base name="Ini-Basiswert +2"  value="2" />
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Klettern" value="2"/>
+						<talent name="Körperbeherrschung" value="1"/>
+						<talent name="Selbstbeherrschung" value="-1"/>
+						<talent name="Schleichen" value="2"/>
+						<talent name="Selbstbeherrschung" value="-1"/>
+						<talent name="Sich Verstecken" value="1"/>
+						<talent name="Singen" value="-1"/>
+						<talent name="Sinnenschärfe" value="+4"/>
+						<talent name="Zechen" value="-1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Fährtensuchen" value="1"/>
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+					<talentgroup name="wissen" >
+						<talent name="Rechnen" value="-1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Dämmerungssicht" />
+					<pro name="Flink" />
+					<pro name="Gefahreninstinkt" />
+					<pro name="Herausragender Sinn" >
+						<option name="Gehör" />
+						<option name="Geruch" />
+					</pro>
+					<pro name="Kälteresistenz" />
+					<pro name="Natürliche Waffe: Biss (1w+1 TP)" >
+						<weapon type="Natürlich" name="Biss" tp="1w+1" />
+					</pro>
+					<pro name="Natürlicher Rüstungsschutz (1)" >
+						<armor type="Natürlich" name="Haut" rs="1" />
+					</pro>
+				</automatic>
+				<recommended>
+					<pro name="Balance" />
+					<pro name="Herausragende Balance" />
+					<pro name="Beidhändig" />
+					<pro name="Eisern" />
+					<pro name="Entfernungssinn" />
+					<pro name="Glück" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Magiegespür" />
+					<pro name="Kälteresistenz" />
+					<pro name="Resistenz gegen Gift" />
+					<pro name="Immunität gegen Gift" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+				</recommended>
+				<improper>
+					<pro name="Feenfreund" />
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Hohe Magieresistenz" />
+					<pro name="Linkshänder" />
+					<pro name="Schwer zu verzaubern" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Kleinwüchsig" />
+					<contra name="Randgruppe" />
+					<contra name="Unstet" />
+				</automatic>
+				<improper>
+					<contra name="Blutrausch" />
+					<contra name="Dunkelangst" />
+					<contra name="Glasknochen" />
+					<contra name="Höhenangst" />
+					<contra name="Krankhafte Reinlichkeit" />
+					<contra name="Krankheitsanfällig" />
+					<contra name="Nachtblind" />
+					<contra name="Nahrungsrestriktion" />
+					<contra name="Raumangst" />
+					<contra name="Schlechte Regeneration" />
+				</improper>
+				<recommended>
+					<contra name="Neugier" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Übler Geruch" />
+					<contra name="Unangenehme Stimme" />
+					<contra name="Unansehnlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Goblinstamm"/>
+					<culture name="Goblinbande"/>
+					<culture name="Festumer Ghetto"/>
+					<culture name="Mittelländische Städte(Uhdenberg)" restriction="Uhdenberg" />
+				</common>
+				<possible>
+					<culture name="Andergast und Nostria"/>
+					<culture name="Mittelländische Landbevölkerung" />
+					<culture name="Svellttal"/>
+					<culture name="Orkland"/>
+					<culture name="Yurach"/>
+				</possible>
+			</cultures>
+			<specialabilities>
+				<ability name="Waffenlose Sonderfertigkeit Biss" />
+			</specialabilities>
+		</breed>
+		<breed name="Die Goblins(Goblinfrau)" >
+			<gp name="Generierungspunkte" value="7" />
+			<colortypes>
+				<colors name="Haar- und Fellfarbe" die="W20" >
+					<color name="orangerot" value="1-2" />
+					<color name="feuerrot" value="3-7" />
+					<color name="rotbraun" value="8-13" />
+					<color name="dunkelrot" value="14-18" />
+					<color name="rot-grau" value="19-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="grün" value="1" />
+					<color name="gelb" value="2-5" />
+					<color name="hellrot" value="6-11" />
+					<color name="dunkelrot" value="12-17" />
+					<color name="rotbraun" value="18-19" />
+					<color name="rotviolett" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.35" die="4w6" />
+			<body-weight name="Gewicht" value="-100" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="4" type="LeP" />
+				<au name="AU-Mod" value="12" type="AuP" />
+				<mr name="MR" value="-5" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="MU" value="-1" />
+					<attribute name="IN" value="+1" />
+					<attribute name="KL" value="-2" />
+					<attribute name="FF" value="+2" />
+					<attribute name="GE" value="+2" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<ini-base name="Ini-Basiswert +2"  value="2" />
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Klettern" value="2"/>
+						<talent name="Körperbeherrschung" value="1"/>
+						<talent name="Selbstbeherrschung" value="-1"/>
+						<talent name="Schleichen" value="2"/>
+						<talent name="Selbstbeherrschung" value="-1"/>
+						<talent name="Sich Verstecken" value="1"/>
+						<talent name="Singen" value="-1"/>
+						<talent name="Sinnenschärfe" value="+4"/>
+						<talent name="Zechen" value="-3"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Fährtensuchen" value="1"/>
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+					<talentgroup name="wissen" >
+						<talent name="Rechnen" value="-1"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Nachtsicht" />
+					<pro name="Flink" />
+					<pro name="Gefahreninstinkt" />
+					<pro name="Herausragender Sinn" >
+						<option name="Gehör" />
+						<option name="Geruch" />
+					</pro>
+					<pro name="Kälteresistenz" />
+					<pro name="Natürliche Waffe: Biss (1w+1 TP)" >
+						<weapon type="Natürlich" name="Biss" tp="1w+1" />
+					</pro>
+					<pro name="Natürlicher Rüstungsschutz (1)" >
+						<armor type="Natürlich" name="Haut" rs="1" />
+					</pro>
+				</automatic>
+				<recommended>
+					<pro name="Balance" />
+					<pro name="Herausragende Balance" />
+					<pro name="Beidhändig" />
+					<pro name="Eisern" />
+					<pro name="Entfernungssinn" />
+					<pro name="Glück" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Magiegespür" />
+					<pro name="Kälteresistenz" />
+					<pro name="Resistenz gegen Gift" />
+					<pro name="Immunität gegen Gift" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+				</recommended>
+				<improper>
+					<pro name="Feenfreund" />
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Hohe Magieresistenz" />
+					<pro name="Linkshänder" />
+					<pro name="Schwer zu verzaubern" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Kleinwüchsig" />
+					<contra name="Randgruppe" />
+					<contra name="Unstet" />
+				</automatic>
+				<improper>
+					<contra name="Blutrausch" />
+					<contra name="Dunkelangst" />
+					<contra name="Glasknochen" />
+					<contra name="Höhenangst" />
+					<contra name="Krankhafte Reinlichkeit" />
+					<contra name="Krankheitsanfällig" />
+					<contra name="Nachtblind" />
+					<contra name="Nahrungsrestriktion" />
+					<contra name="Raumangst" />
+					<contra name="Schlechte Regeneration" />
+				</improper>
+				<recommended>
+					<contra name="Neugier" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Übler Geruch" />
+					<contra name="Unangenehme Stimme" />
+					<contra name="Unansehnlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Goblinstamm"/>
+					<culture name="Goblinbande"/>
+					<culture name="Festumer Ghetto"/>
+					<culture name="Mittelländische Städte(Uhdenberg)" restriction="Uhdenberg" />
+				</common>
+				<possible>
+					<culture name="Andergast und Nostria"/>
+					<culture name="Mittelländische Landbevölkerung" />
+					<culture name="Svellttal"/>
+					<culture name="Orkland"/>
+					<culture name="Yurach"/>
+				</possible>
+			</cultures>
+			<specialabilities>
+				<ability name="Waffenlose Sonderfertigkeit Biss" />
+			</specialabilities>
+		</breed>
+	</group>
+	<group name="Achaz" >
+		<breed name="Die Achaz(Echsensumpf und Regenwald)" >
+			<gp name="Generierungspunkte" value="14" />
+			<colortypes>
+				<colors name="Schuppenfarbe I" die="W20" cnt="2" >
+					<color name="hellgrün" value="1-5" />
+					<color name="olivgrün" value="6-10" />
+					<color name="dunkelgrün" value="11-15" />
+					<color name="braungrün" value="16-18" />
+					<color name="braun" value="19-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="golden" value="1-2" />
+					<color name="gelb" value="3-4" />
+					<color name="hellgrün" value="5-9" />
+					<color name="olivgrün" value="10-14" />
+					<color name="dunkelgrün" value="15-17" />
+					<color name="hellbraun" value="18-19" />
+					<color name="kupfern" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.67" die="3w6" />
+			<body-weight name="Gewicht" value="-120" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="8" type="LeP" />
+				<au name="AU-Mod" value="7" type="AuP" />
+				<mr name="MR" value="-2" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="MU" value="-1" />
+					<attribute name="IN" value="+2" />
+					<attribute name="FF" value="+1" />
+					<attribute name="GE" value="+1" />
+					<attribute name="KO" value="+1" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<ini-base name="Ini-Basiswert +2"  value="2" />
+				<talents>
+					<talentgroup name="Kampf" >
+						<talent name="Raufen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Körper" >
+						<talent name="Körperbeherrschung" value="1"/>
+						<talent name="Schwimmen" value="5"/>
+						<talent name="Singen" value="-3"/>
+						<talent name="Sinnenschärfe" value="5"/>
+						<talent name="Stimmen imitieren" value="-3"/>
+						<talent name="Zechen" value="-1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Fährtensuchen" value="2"/>
+						<talent name="Fischen/Angeln" value="1"/>
+						<talent name="Wettervorhersage" value="1"/>
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+					<talentgroup name="Handwerk" >
+						<talent name="Musizieren" value="-3"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Balance" />
+					<pro name="Begabung" value="Schwimmen" />
+					<pro name="Beidhändig" />
+					<pro name="Dämmerungssicht" />
+					<pro name="Herausragender Geruchssinn" />
+					<pro name="Natürliche Waffen" >
+						<weapon type="Natürlich" name="Biss" tp="1w6" />
+						<weapon type="Natürlich" name="Schwanz" tp="1w6" />
+					</pro>
+					<pro name="Natürlicher Rüstungsschutz (2)" >
+						<armor type="Natürlich" name="Schuppen" rs="2" />
+					</pro>
+					<pro name="Richtungssinn" />
+					<pro name="Zusätzliche Gliedmaße (Schwanz)" />
+				</automatic>
+				<recommended>
+					<pro name="Balance" />
+					<pro name="Herausragende Balance" />
+					<pro name="Beidhändig" />
+					<pro name="Eisern" />
+					<pro name="Entfernungssinn" />
+					<pro name="Glück" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Magiegespür" />
+					<pro name="Kälteresistenz" />
+					<pro name="Resistenz gegen Gift" />
+					<pro name="Immunität gegen Gift" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+				</recommended>
+				<improper>
+					<pro name="Ausdauernd" />
+					<pro name="Entfernungssinn" />
+					<pro name="Feenfreund" />
+					<pro name="Herausragender Sinn" >
+						<option name="Tast" />
+						<option name="Gehör" />
+					</pro>
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Hitzeresistenz" />
+					<pro name="Kälteresistenz" />
+					<pro name="Koboldfreund" />
+					<pro name="Begabung Sprachen" />
+					<pro name="Vom Schicksal begünstigt" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Dunkelangst" value="5" />
+					<contra name="Eingeschränkter Sinn" >
+						<option name="Gehör" />
+					</contra>
+					<contra name="Kältestarre" />
+					<contra name="Randgruppe" />
+					<contra name="Raubtiergeruch" />
+					<contra name="Unfähigkeiten" >
+						<talent name="Stimmen imitieren" />
+						<talent name="Singen" />
+						<talent name="Musizieren" />
+					</contra>
+				</automatic>
+				<improper>
+					<contra name="Fettleibig" />
+					<contra name="Kleinwüchsig" />
+					<contra name="Krankheitsanfällig" />
+					<contra name="Lichtempfindlich" />
+					<contra name="Lichtscheu" />
+				</improper>
+				<recommended>
+					<contra name="Neugier" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Übler Geruch" />
+					<contra name="Unangenehme Stimme" />
+					<contra name="Unansehnlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Stammes-Achaz"/>
+					<culture name="Archaische Achaz"/>
+					<culture name="Festumer Ghetto"/>
+					<culture name="Mittelländische Städte(Uhdenberg)" restriction="Uhdenberg" />
+				</common>
+				<possible>
+					<culture name="Südaventurien"/>
+					<culture name="Maraskan"/>
+				</possible>
+			</cultures>
+			<specialabilities>
+				<ability name="Waffenlose Sonderfertigkeit Schwanzschlag.Biss" />
+				<cheaper>
+					<ability name="Waffenlose Sonderfertigkeit Schwanzfeger" />
+				</cheaper>
+			</specialabilities>
+		</breed>
+		<breed name="Die Achaz(Orkland)" >
+			<gp name="Generierungspunkte" value="9" />
+			<colortypes>
+				<colors name="Schuppenfarbe I" die="W20" cnt="2" >
+					<color name="hellgrün" value="1-5" />
+					<color name="olivgrün" value="6-10" />
+					<color name="dunkelgrün" value="11-15" />
+					<color name="braungrün" value="16-18" />
+					<color name="braun" value="19-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="golden" value="1-2" />
+					<color name="gelb" value="3-4" />
+					<color name="hellgrün" value="5-9" />
+					<color name="olivgrün" value="10-14" />
+					<color name="dunkelgrün" value="15-17" />
+					<color name="hellbraun" value="18-19" />
+					<color name="kupfern" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.59" die="3w6" />
+			<body-weight name="Gewicht" value="-120" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="8" type="LeP" />
+				<au name="AU-Mod" value="7" type="AuP" />
+				<mr name="MR" value="-2" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="MU" value="-1" />
+					<attribute name="IN" value="+2" />
+					<attribute name="FF" value="+1" />
+					<attribute name="GE" value="+1" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<ini-base name="Ini-Basiswert +2"  value="2" />
+				<talents>
+					<talentgroup name="Kampf" >
+						<talent name="Raufen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Körper" >
+						<talent name="Körperbeherrschung" value="1"/>
+						<talent name="Schwimmen" value="5"/>
+						<talent name="Singen" value="-3"/>
+						<talent name="Sinnenschärfe" value="5"/>
+						<talent name="Stimmen imitieren" value="-3"/>
+						<talent name="Zechen" value="-1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Fährtensuchen" value="2"/>
+						<talent name="Fischen/Angeln" value="1"/>
+						<talent name="Wettervorhersage" value="1"/>
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+					<talentgroup name="Handwerk" >
+						<talent name="Musizieren" value="-3"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Balance" />
+					<pro name="Begabung" value="Schwimmen" />
+					<pro name="Beidhändig" />
+					<pro name="Dämmerungssicht" />
+					<pro name="Herausragender Geruchssinn" />
+					<pro name="Natürliche Waffen" >
+						<weapon type="Natürlich" name="Biss" tp="1w6" />
+						<weapon type="Natürlich" name="Schwanz" tp="1w6" />
+					</pro>
+					<pro name="Natürlicher Rüstungsschutz (2)" >
+						<armor type="Natürlich" name="Schuppen" rs="1" />
+					</pro>
+					<pro name="Richtungssinn" />
+					<pro name="Zusätzliche Gliedmaße (Schwanz)" />
+				</automatic>
+				<recommended>
+					<pro name="Balance" />
+					<pro name="Herausragende Balance" />
+					<pro name="Beidhändig" />
+					<pro name="Eisern" />
+					<pro name="Entfernungssinn" />
+					<pro name="Glück" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Magiegespür" />
+					<pro name="Kälteresistenz" />
+					<pro name="Resistenz gegen Gift" />
+					<pro name="Immunität gegen Gift" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+				</recommended>
+				<improper>
+					<pro name="Ausdauernd" />
+					<pro name="Entfernungssinn" />
+					<pro name="Feenfreund" />
+					<pro name="Herausragender Sinn" >
+						<option name="Tast" />
+						<option name="Gehör" />
+					</pro>
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Hitzeresistenz" />
+					<pro name="Kälteresistenz" />
+					<pro name="Koboldfreund" />
+					<pro name="Begabung Sprachen" />
+					<pro name="Vom Schicksal begünstigt" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Dunkelangst" value="5" />
+					<contra name="Eingeschränkter Sinn" >
+						<option name="Gehör" />
+					</contra>
+					<contra name="Randgruppe" />
+					<contra name="Raubtiergeruch" />
+					<contra name="Unfähigkeiten" >
+						<talent name="Stimmen imitieren" />
+						<talent name="Singen" />
+						<talent name="Musizieren" />
+					</contra>
+				</automatic>
+				<improper>
+					<contra name="Fettleibig" />
+					<contra name="Kleinwüchsig" />
+					<contra name="Krankheitsanfällig" />
+					<contra name="Lichtempfindlich" />
+					<contra name="Lichtscheu" />
+				</improper>
+				<recommended>
+					<contra name="Neugier" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Übler Geruch" />
+					<contra name="Unangenehme Stimme" />
+					<contra name="Unansehnlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Stammes-Achaz"/>
+				</common>
+			</cultures>
+			<specialabilities>
+				<ability name="Waffenlose Sonderfertigkeit Schwanzschlag.Biss" />
+				<cheaper>
+					<ability name="Waffenlose Sonderfertigkeit Schwanzfeger" />
+				</cheaper>
+			</specialabilities>
+		</breed>
+		<breed name="Die Achaz(Waldinsel)" >
+			<gp name="Generierungspunkte" value="5" />
+			<colortypes>
+				<colors name="Schuppenfarbe I" die="W20" cnt="2" >
+					<color name="hellgrün" value="1-5" />
+					<color name="olivgrün" value="6-10" />
+					<color name="dunkelgrün" value="11-15" />
+					<color name="braungrün" value="16-18" />
+					<color name="braun" value="19-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="golden" value="1-2" />
+					<color name="gelb" value="3-4" />
+					<color name="hellgrün" value="5-9" />
+					<color name="olivgrün" value="10-14" />
+					<color name="dunkelgrün" value="15-17" />
+					<color name="hellbraun" value="18-19" />
+					<color name="kupfern" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="2.07" die="3w6" />
+			<body-weight name="Gewicht" value="-130" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="15" type="LeP" />
+				<au name="AU-Mod" value="7" type="AuP" />
+				<mr name="MR" value="-2" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="MU" value="-1" />
+					<attribute name="IN" value="+2" />
+					<attribute name="FF" value="-2" />
+					<attribute name="GE" value="+1" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<ini-base name="Ini-Basiswert +2"  value="2" />
+				<talents>
+					<talentgroup name="Kampf" >
+						<talent name="Raufen" value="1"/>
+					</talentgroup>
+					<talentgroup name="Körper" >
+						<talent name="Körperbeherrschung" value="1"/>
+						<talent name="Schwimmen" value="5"/>
+						<talent name="Singen" value="-3"/>
+						<talent name="Sinnenschärfe" value="5"/>
+						<talent name="Stimmen imitieren" value="-3"/>
+						<talent name="Zechen" value="-1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Fährtensuchen" value="2"/>
+						<talent name="Fischen/Angeln" value="1"/>
+						<talent name="Wettervorhersage" value="1"/>
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+					<talentgroup name="Handwerk" >
+						<talent name="Musizieren" value="-3"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Balance" />
+					<pro name="Begabung" value="Schwimmen" />
+					<pro name="Beidhändig" />
+					<pro name="Dämmerungssicht" />
+					<pro name="Herausragender Geruchssinn" />
+					<pro name="Natürliche Waffen" >
+						<weapon type="Natürlich" name="Biss" tp="1w6" />
+						<weapon type="Natürlich" name="Schwanz" tp="1w6" />
+					</pro>
+					<pro name="Natürlicher Rüstungsschutz (2)" >
+						<armor type="Natürlich" name="Schuppen" rs="2" />
+					</pro>
+					<pro name="Richtungssinn" />
+					<pro name="Zusätzliche Gliedmaße (Schwanz)" />
+				</automatic>
+				<recommended>
+					<pro name="Balance" />
+					<pro name="Herausragende Balance" />
+					<pro name="Beidhändig" />
+					<pro name="Eisern" />
+					<pro name="Entfernungssinn" />
+					<pro name="Glück" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Magiegespür" />
+					<pro name="Kälteresistenz" />
+					<pro name="Resistenz gegen Gift" />
+					<pro name="Immunität gegen Gift" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+				</recommended>
+				<improper>
+					<pro name="Ausdauernd" />
+					<pro name="Entfernungssinn" />
+					<pro name="Feenfreund" />
+					<pro name="Herausragender Sinn" >
+						<option name="Tast" />
+						<option name="Gehör" />
+					</pro>
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Hitzeresistenz" />
+					<pro name="Kälteresistenz" />
+					<pro name="Koboldfreund" />
+					<pro name="Begabung Sprachen" />
+					<pro name="Vom Schicksal begünstigt" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Dunkelangst" value="5" />
+					<contra name="Eingeschränkter Sinn" >
+						<option name="Gehör" />
+					</contra>
+					<contra name="Kältestarre" />
+					<contra name="Randgruppe" />
+					<contra name="Raubtiergeruch" />
+					<contra name="Unfähigkeiten" >
+						<talent name="Stimmen imitieren" />
+						<talent name="Singen" />
+						<talent name="Musizieren" />
+					</contra>
+				</automatic>
+				<improper>
+					<contra name="Fettleibig" />
+					<contra name="Kleinwüchsig" />
+					<contra name="Krankheitsanfällig" />
+					<contra name="Lichtempfindlich" />
+					<contra name="Lichtscheu" />
+				</improper>
+				<recommended>
+					<contra name="Neugier" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Übler Geruch" />
+					<contra name="Unangenehme Stimme" />
+					<contra name="Unansehnlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Stammes-Achaz"/>
+					<culture name="Archaische Achaz"/>
+					<culture name="Festumer Ghetto"/>
+					<culture name="Mittelländische Städte(Uhdenberg)" restriction="Uhdenberg" />
+				</common>
+				<possible>
+					<culture name="Südaventurien"/>
+					<culture name="Maraskan"/>
+				</possible>
+			</cultures>
+			<specialabilities>
+				<ability name="Waffenlose Sonderfertigkeit Schwanzschlag.Biss" />
+				<cheaper>
+					<ability name="Waffenlose Sonderfertigkeit Schwanzfeger" />
+				</cheaper>
+			</specialabilities>
+		</breed>
+		<breed name="Die Achaz(Maraskan)" >
+			<gp name="Generierungspunkte" value="16" />
+			<colortypes>
+				<colors name="Schuppenfarbe I" die="W20" cnt="2" >
+					<color name="hellgrün" value="1-5" />
+					<color name="olivgrün" value="6-10" />
+					<color name="dunkelgrün" value="11-15" />
+					<color name="braungrün" value="16-18" />
+					<color name="braun" value="19-20" />
+				</colors>
+				<colors name="Augenfarbe" die="W20" >
+					<color name="golden" value="1-2" />
+					<color name="gelb" value="3-4" />
+					<color name="hellgrün" value="5-9" />
+					<color name="olivgrün" value="10-14" />
+					<color name="dunkelgrün" value="15-17" />
+					<color name="hellbraun" value="18-19" />
+					<color name="kupfern" value="20" />
+				</colors>
+			</colortypes>
+			<body-height name="Körpergröße" value="1.72" die="3w6" />
+			<body-weight name="Gewicht" value="-120" type="Stein" />
+			<mods>
+				<le name="LE-Mod" value="8" type="LeP" />
+				<au name="AU-Mod" value="7" type="AuP" />
+				<mr name="MR" value="-2" />
+				<attributes name="Eingenschafts-Modifikatoren" >
+					<attribute name="MU" value="-1" />
+					<attribute name="IN" value="+2" />
+					<attribute name="FF" value="+1" />
+					<attribute name="GE" value="+1" />
+					<attribute name="KK" value="-1" />
+				</attributes>
+				<ini-base name="Ini-Basiswert +2"  value="2" />
+				<talents>
+					<talentgroup name="Körper" >
+						<talent name="Körperbeherrschung" value="1"/>
+						<talent name="Schwimmen" value="3"/>
+						<talent name="Singen" value="-3"/>
+						<talent name="Sinnenschärfe" value="7"/>
+						<talent name="Stimmen imitieren" value="-3"/>
+						<talent name="Zechen" value="-1"/>
+					</talentgroup>
+					<talentgroup name="Natur" >
+						<talent name="Fährtensuchen" value="3"/>
+						<talent name="Fischen/Angeln" value="1"/>
+						<talent name="Orientierung" value="1"/>
+					</talentgroup>
+					<talentgroup name="Handwerk" >
+						<talent name="Musizieren" value="-3"/>
+					</talentgroup>
+				</talents>
+			</mods>
+			<pros name="Vorteile" >
+				<automatic>
+					<pro name="Balance" />
+					<pro name="Begabung" value="Schwimmen" />
+					<pro name="Beidhändig" />
+					<pro name="Dämmerungssicht" />
+					<pro name="Herausragender Geruchssinn" />
+					<pro name="Natürliche Waffen" >
+						<weapon type="Natürlich" name="Biss" tp="1w6" />
+						<weapon type="Natürlich" name="Schwanz" tp="1w6" />
+					</pro>
+					<pro name="Natürlicher Rüstungsschutz (2)" >
+						<armor type="Natürlich" name="Schuppen" rs="2" />
+					</pro>
+					<pro name="Richtungssinn" />
+					<pro name="Tieremphatie (Reptilien)" />
+					<pro name="Zusätzliche Gliedmaße (Schwanz)" />
+				</automatic>
+				<recommended>
+					<pro name="Balance" />
+					<pro name="Herausragende Balance" />
+					<pro name="Beidhändig" />
+					<pro name="Eisern" />
+					<pro name="Entfernungssinn" />
+					<pro name="Glück" />
+					<pro name="Herausragender Sinn" />
+					<pro name="Magiegespür" />
+					<pro name="Kälteresistenz" />
+					<pro name="Resistenz gegen Gift" />
+					<pro name="Immunität gegen Gift" />
+					<pro name="Resistenz gegen Krankheiten" />
+					<pro name="Richtungssinn" />
+					<pro name="Zäher Hund" />
+				</recommended>
+				<improper>
+					<pro name="Ausdauernd" />
+					<pro name="Entfernungssinn" />
+					<pro name="Feenfreund" />
+					<pro name="Herausragender Sinn" >
+						<option name="Tast" />
+						<option name="Gehör" />
+					</pro>
+					<pro name="Herausragendes Aussehen" />
+					<pro name="Hitzeresistenz" />
+					<pro name="Kälteresistenz" />
+					<pro name="Koboldfreund" />
+					<pro name="Begabung Sprachen" />
+					<pro name="Vom Schicksal begünstigt" />
+					<pro name="Wohlklang" />
+				</improper>
+			</pros>
+			<contras name="Nachteile" >
+				<automatic>
+					<contra name="Dunkelangst" value="5" />
+					<contra name="Eingeschränkter Sinn" >
+						<option name="Gehör" />
+					</contra>
+					<contra name="Kältestarre" />
+					<contra name="Randgruppe" />
+					<contra name="Raubtiergeruch" />
+					<contra name="Unfähigkeiten" >
+						<talent name="Stimmen imitieren" />
+						<talent name="Singen" />
+						<talent name="Musizieren" />
+					</contra>
+				</automatic>
+				<improper>
+					<contra name="Fettleibig" />
+					<contra name="Kleinwüchsig" />
+					<contra name="Krankheitsanfällig" />
+					<contra name="Lichtempfindlich" />
+					<contra name="Lichtscheu" />
+				</improper>
+				<recommended>
+					<contra name="Neugier" />
+					<contra name="Niedrige Magieresistenz" />
+					<contra name="Übler Geruch" />
+					<contra name="Unangenehme Stimme" />
+					<contra name="Unansehnlich" />
+				</recommended>
+			</contras>
+			<cultures name="Kulturen" >
+				<common>
+					<culture name="Stammes-Achaz"/>
+					<culture name="Archaische Achaz"/>
+					<culture name="Festumer Ghetto"/>
+					<culture name="Mittelländische Städte(Uhdenberg)" restriction="Uhdenberg" />
+				</common>
+				<possible>
+					<culture name="Südaventurien"/>
+					<culture name="Maraskan"/>
+				</possible>
+			</cultures>
+			<specialabilities>
+				<ability name="Waffenlose Sonderfertigkeit Schwanzschlag.Biss" />
+				<ability name="Talentspezialisierung Sinnenschärfe (Geruch)" />
+				<cheaper>
+					<ability name="Waffenlose Sonderfertigkeit Schwanzfeger" />
+				</cheaper>
+			</specialabilities>
+		</breed>
+	</group>
+</breeds>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<professions> 
+	<group name="Kampf" >
+		<profession image="/apps/dsa_tool/images/icon64.jpg" name="Amazone" >
+			<gp name="Generierungspunkte" value="10" />
+			<timeintensiv />
+			<mods>
+				<le name="LE-Mod" value="1" type="LeP" />
+				<au name="AU-Mod" value="3" type="AuP" />
+				<so min="5" max="10" />
+			</mods>
+		</profession>
+		<profession image="/apps/dsa_tool/images/icon64.jpg" name="Fähnrich der Fußkämpfer(Al Anfa)" >
+			<gp name="Generierungspunkte" value="18" />
+			<timeintensiv />
+			<mods>
+				<le name="LE-Mod" value="1" type="LeP" />
+				<au name="AU-Mod" value="3" type="AuP" />
+				<so min="7" max="11" />
+			</mods>
+		</profession>
+	</group>
+	<group name="Reisen und Wildnis" >
+		<profession image="/apps/dsa_tool/images/icon64.jpg" name="Botenreiter/in" >
+			<gp name="Generierungspunkte" value="0" />
+			<mods>
+				<au name="AU-Mod" value="2" type="AuP" />
+				<so min="5" max="10" />
+			</mods>
+		</profession>
+		<profession name="Botenreiter/in (Beilunker Reiter)" >
+			<gp name="Generierungspunkte" value="5" />
+			<timeintensiv />
+			<mods>
+				<au name="AU-Mod" value="2" type="AuP" />
+				<so min="5" max="10" />
+			</mods>
+		</profession>
+		<profession name="Botenreiter/in (Blaue Pfeile)" >
+			<gp name="Generierungspunkte" value="2" />
+			<mods>
+				<au name="AU-Mod" value="2" type="AuP" />
+				<so min="5" max="10" />
+			</mods>
+		</profession>
+	</group>
+	<group name="Gesellschaft" >
+		<profession name="Ausrufer/in" >
+			<gp name="Generierungspunkte" value="0" />
+			<mods>
+				<so min="3" max="8" />
+			</mods>
+		</profession>
+		<profession name="Barde/in" >
+			<gp name="Generierungspunkte" value="3" />
+			<mods>
+				<so min="5" max="10" />
+			</mods>
+		</profession>
+	</group>
+	<group name="Handwerk und Wissen" >
+		<profession name="Bader/in" >
+			<gp name="Generierungspunkte" value="0" />
+			<mods>
+				<so min="3" max="8" />
+			</mods>
+		</profession>
+		<profession name="Bauer Erntehelfer/in" >
+			<gp name="Generierungspunkte" value="1" />
+			<mods>
+				<so min="1" max="4" />
+			</mods>
+		</profession>
+	</group>
+	<group name="Magie" >
+		<profession name="Alchemist/in" >
+			<gp name="Generierungspunkte" value="5" />
+			<timeintensiv />
+			<mods>
+				<so min="6" max="10" />
+			</mods>
+		</profession>
+		<profession name="Magiebegabte Alchemist/in" >
+			<gp name="Generierungspunkte" value="11" />
+			<timeintensiv />
+			<mods>
+				<so min="6" max="10" />
+			</mods>
+		</profession>
+	</group>
+	<group name="Geweihter des Zwölfgötterglaube" >
+		<profession name="Praios" >
+			<gp name="Generierungspunkte" value="10" />
+			<timeintensiv />
+			<mods>
+				<ka name="KA-Mod" value="24" type="KaP" />
+				<mr name="MR" value="2" />
+				<so min="8" max="13" />
+			</mods>
+		</profession>
+		<profession name="Bannstrahler(ungeweiht)" >
+			<gp name="Generierungspunkte" value="9" />
+			<mods>
+				<le name="LE-Mod" value="2" type="LeP" />
+				<au name="AU-Mod" value="2" type="AuP" />
+				<so min="5" max="12" />
+			</mods>
+		</profession>
+	</group>
+	<group name="Geweihter der Halbgötter" >
+		<profession name="Aves" >
+			<gp name="Generierungspunkte" value="9" />
+			<mods>
+				<ka name="KA-Mod" value="12" type="KaP" />
+				<mr name="MR" value="1" />
+				<so min="5" max="12" />
+			</mods>
+		</profession>
+		<profession name="Kor" >
+			<gp name="Generierungspunkte" value="9" />
+			<mods>
+				<ka name="KA-Mod" value="12" type="KaP" />
+				<au name="AU-Mod" value="2" type="AuP" />
+				<mr name="MR" value="1" />
+				<so min="5" max="12" value="1" />
+			</mods>
+		</profession>
+	</group>
+	<group name="Schamanen und Priester der animistischen Religionen" >
+		<profession name="Medizinmann Dschungelstämme" >
+			<gp name="Generierungspunkte" value="11" />
+			<timeintensiv />
+			<mods>
+				<!-- ACHTUNG falsche Modifikationen -->
+				<ka name="KA-Mod" value="24" type="KaP" />
+				<mr name="MR" value="2" />
+				<so min="8" max="13" />
+			</mods>
+		</profession>
+		<profession name="Medizinmann Verlorene Stämme" >
+			<gp name="Generierungspunkte" value="7" />
+			<timeintensiv />
+			<mods>
+				<!-- ACHTUNG falsche Modifikationen -->
+				<ka name="KA-Mod" value="24" type="KaP" />
+				<mr name="MR" value="2" />
+				<so min="8" max="13" />
+			</mods>
+		</profession>
+	</group>
+</professions>

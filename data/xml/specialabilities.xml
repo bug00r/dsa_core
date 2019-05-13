@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<specialabilities>
+	<group name="Allgemeine">
+		<specialability name="Akklimatisierung">
+		</specialability>
+		<specialability name="Berufsgeheimnis">
+		</specialability>
+		<specialability name="Fälscher">
+		</specialability>
+		<specialability name="Geländekunde">
+		</specialability>
+		<specialability name="Kulturkunde">
+		</specialability>
+		<specialability name="Meister der Improvisation">
+		</specialability>
+		<specialability name="Nandusgefälliges Wissen">
+		</specialability>
+		<specialability name="Ortskenntnis">
+		</specialability>
+		<specialability name="Rosstäuscher">
+		</specialability>
+		<specialability name="Standfest">
+		</specialability>
+	</group>
+	<group name="Kampf">
+		<specialability name="Aufmerksamkeit">
+		</specialability>
+		<specialability name="Ausfall">
+		</specialability>
+		<specialability name="Ausweichen I">
+		</specialability>
+		<specialability name="Ausweichen II">
+		</specialability>
+		<specialability name="Ausweichen III">
+		</specialability>
+		<specialability name="Befreiungsschlag">
+		</specialability>
+		<specialability name="Beidhändiger Kampf I">
+		</specialability>
+		<specialability name="Beidhändiger Kampf II">
+		</specialability>
+		<specialability name="Berittener Schütze">
+		</specialability>
+		<specialability name="Betäubungsschlag">
+		</specialability>
+		<specialability name="Binden">
+		</specialability>
+		<specialability name="Blindkampf">
+		</specialability>
+		<specialability name="Defensiver Kampfstil">
+		</specialability>
+		<specialability name="Doppelangriff">
+		</specialability>
+		<specialability name="Eisenhagel">
+		</specialability>
+		<specialability name="Entwaffnen">
+		</specialability>
+		<specialability name="Festnageln">
+		</specialability>
+		<specialability name="Finte">
+		</specialability>
+		<specialability name="Formation">
+		</specialability>
+		<specialability name="Gegenhalten">
+		</specialability>
+		<specialability name="Geschützmeister">
+		</specialability>
+		<specialability name="Gezielter Stich">
+		</specialability>
+		<specialability name="Halbschwert">
+		</specialability>
+		<specialability name="Hammerschlag">
+		</specialability>
+		<specialability name="Improvisierte Waffe">
+		</specialability>
+		<specialability name="Kampf im Wasser">
+		</specialability>
+		<specialability name="Kampfgespür">
+		</specialability>
+		<specialability name="Kampfreflexe">
+		</specialability>
+		<specialability name="Klingensturm">
+		</specialability>
+		<specialability name="Klingentänzer">
+		</specialability>
+		<specialability name="Klingenwand">
+		</specialability>
+		<specialability name="Kriegsreiterer">
+		</specialability>
+		<specialability name="Linkhand">
+		</specialability>
+		<specialability name="Meisterliches Entwaffnen">
+		</specialability>
+		<specialability name="Meisterparade">
+		</specialability>
+		<specialability name="Meisterschütze">
+		</specialability>
+		<specialability name="Niederwerfen">
+		</specialability>
+		<specialability name="Parierwaffen I">
+		</specialability>
+		<specialability name="Parierwaffen II">
+		</specialability>
+		<specialability name="Reiterkampf">
+		</specialability>
+		<specialability name="Rüstungsgewöhnung I">
+		</specialability>
+		<specialability name="Rüstungsgewöhnung II">
+		</specialability>
+		<specialability name="Rüstungsgewöhnung III">
+		</specialability>
+		<specialability name="Scharfschütze">
+		</specialability>
+		<specialability name="Schildkampf I">
+		</specialability>
+		<specialability name="Schildkampf II">
+		</specialability>
+		<specialability name="Schnellladen">
+		</specialability>
+		<specialability name="Schnellziehen">
+		</specialability>
+		<specialability name="Spießgespann">
+		</specialability>
+		<specialability name="Sturmangriff">
+		</specialability>
+		<specialability name="Tod von Links">
+		</specialability>
+		<specialability name="Turnierreiterei">
+		</specialability>
+		<specialability name="Umreißen">
+		</specialability>
+		<specialability name="Unterwasserkampf">
+		</specialability>
+		<specialability name="Waffenmeister(Waffe)">
+		</specialability>
+		<specialability name="Waffenmeister(Schild)">
+		</specialability>
+		<specialability name="Waffenloses Manöver">
+		</specialability>
+		<specialability name="Waffenlose Kampftechnik">
+		</specialability>
+		<specialability name="Waffenspezialisierung">
+		</specialability>
+		<specialability name="Windmühle">
+		</specialability>
+		<specialability name="Wuchtschlag">
+		</specialability>
+	</group>
+	<group name="Magische">
+		<specialability name="Apport">
+				<mage type="OR" /> 
+		</specialability>
+		<specialability name="Astrale Meditation">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Aura verhüllen">
+				<mage type="ZHV" /> 
+		</specialability>
+		<specialability name="Aurapanzer">
+		</specialability>
+		<specialability name="Bann- und Schutzkreise">
+		</specialability>
+		<specialability name="Bannschwert">
+				<mage type="OR" /> 
+		</specialability>
+		<specialability name="Blutmagie">
+				<mage type="ZHVB" /> 
+		</specialability>
+		<specialability name="Chimärenmeister">
+				<mage type="Z" /> 
+		</specialability>
+		<specialability name="Dämonenbindung I/II">
+				<mage type="ZHB" /> 
+		</specialability>
+		<specialability name="Druidenrache">
+		</specialability>
+		<specialability name="Druidische Dolchrituale">
+				<mage type="OR" /> 
+		</specialability>
+		<specialability name="Druidische Herrschaftsrituale">
+		</specialability>
+		<specialability name="Eiserner Wille I/II">
+		</specialability>
+		<specialability name="Elementarharmonisierte Aura">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Elfenlieder">
+		</specialability>
+		<specialability name="Exorzist">
+				<mage type="ZHVG" /> 
+		</specialability>
+		<specialability name="Fernzauberei">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Form der Formlosigkeit">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Geber der Gestalt">
+				<mage type="Z" /> 
+		</specialability>
+		<specialability name="Gedankenschutz">
+		</specialability>
+		<specialability name="Gefäß der Sterne">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Geodenrituale"> 
+		</specialability>
+		<specialability name="Golembauer">
+				<mage type="Z" /> 
+		</specialability>
+		<specialability name="Große Meditation">
+				<mage type="Z" />
+				<ritus/>
+		</specialability>
+		<specialability name="Hexenflüche">
+		</specialability>
+		<specialability name="Höhere Dämonenbindung">
+				<mage type="Z" /> 
+		</specialability>
+		<specialability name="Hypervehemenz">
+				<mage type="Z" /> 
+		</specialability>
+		<specialability name="Invocatio Integra">
+				<mage type="ZHV" /> 
+		</specialability>
+		<specialability name="Keulenrituale">
+				<mage type="OR" /> 
+		</specialability>
+		<specialability name="Konzentrationsstärke">
+				<mage type="ZHV" /> 
+		</specialability>
+		<specialability name="Kraftlinienmagie I">
+		</specialability>
+		<specialability name="Kraftlinienmagie II">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Kraftspeicher">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Kristallomatische Rituale">
+				<mage type="OR" /> 
+		</specialability>
+		<specialability name="Kugelzauber">
+				<mage type="OR" /> 
+		</specialability>
+		<specialability name="Lockeres Zaubern">
+				<mage type="Z" /> 
+		</specialability>
+		<specialability name="Matrixgeber">
+		</specialability>
+		<specialability name="Matrixkontrolle">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Matrixregeneration I">
+				<mage type="ZHV" /> 
+		</specialability>
+		<specialability name="Matrixregeneration II">
+				<mage type="Z" /> 
+		</specialability>
+		<specialability name="Matrixverständnis">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Meisterliche Regeneration">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Meisterliche Zauberkontrolle I">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Meisterliche Zauberkontrolle II">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Merkmalkenntnis">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Nekromant">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Odûn-Gaben">
+				<mage type="V" /> 
+		</specialability>
+		<specialability name="Ottagaldr">
+		</specialability>
+		<specialability name="Regeneration I">
+				<mage type="ZHV" /> 
+		</specialability>
+		<specialability name="Regeneration II">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Repräsentation">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Ritualkenntnis">
+				<mage type="ZHV" /> 
+		</specialability>
+		<specialability name="Runenkunde">
+				<mage type="ZHV" /> 
+		</specialability>
+		<specialability name="Salasandra">
+		</specialability>
+		<specialability name="Schalenzauber">
+				<mage type="OR" /> 
+		</specialability>
+		<specialability name="Schamanische Rituale">
+				<mage type="H" /> 
+		</specialability>
+		<specialability name="Schlangenringzauber">
+				<mage type="OR" /> 
+		</specialability>
+		<specialability name="Schuppenbeutel">
+				<mage type="OR" /> 
+		</specialability>
+		<specialability name="Semipermanenz I">
+				<mage type="Z" /> 
+		</specialability>
+		<specialability name="Semipermanenz II">
+				<mage type="Z" /> 
+		</specialability>
+		<specialability name="Signaturkenntnis">
+				<mage type="Z" /> 
+		</specialability>
+		<specialability name="Simulatanzaubern">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Stabzauber">
+				<mage type="OR" /> 
+		</specialability>
+		<specialability name="Stapeleffekt">
+				<mage type="Z" /> 
+		</specialability>
+		<specialability name="Tanz der Mada">
+		</specialability>
+		<specialability name="Tierischer Begleiter">
+		</specialability>
+		<specialability name="Traumgänger">
+		</specialability>
+		<specialability name="Trommelzauber">
+		</specialability>
+		<specialability name="Verbotene Pforten">
+				<mage type="ZHV" /> 
+		</specialability>
+		<specialability name="Vertrautenbindung">
+		</specialability>
+		<specialability name="Vielfache Ladungen">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Zauber bereithalten">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Zauber unterbrechen">
+				<mage type="Z" /> 
+		</specialability>
+		<specialability name="Zauber bereithalten">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Zauberroutine">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Zauberspezialisierung">
+				<mage type="ZH" /> 
+		</specialability>
+		<specialability name="Zaubertänzer">
+		</specialability>
+		<specialability name="Zauberzeichen">
+				<mage type="ZHV" /> 
+		</specialability>
+		<specialability name="Zibilja Rituale">
+		</specialability>
+	</group>
+	<group name="Klerikale">
+		<specialability name="Akoluth">
+		</specialability>
+		<specialability name="Karmalqueste">
+				<present/>
+		</specialability>
+		<specialability name="Kontakt zum großen Geist">
+		</specialability>
+		<specialability name="Liturgiekenntnis">
+		</specialability>
+		<specialability name="Liturgien">
+		</specialability>
+		<specialability name="Ritualkenntnis">
+		</specialability>
+		<specialability name="Spätweihe">
+		</specialability>
+	</group>
+</specialabilities> 

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hero description="Held" gender="male" age="20" so="0">
+	<look></look>
+	<status></status>
+	<title></title>
+	<story></story>
+	<manual>
+		<pros name="Vorteile"></pros>
+		<contras name="Nachteile"/>
+		<talents>
+			<group name="Kampf"></group>
+			<group name="Körper"></group>
+			<group name="Gesellschaft"></group>
+			<group name="Wissen"></group>
+			<group name="Natur"></group>
+			<group name="Handerk"></group>
+			<group name="Sprachen und Schriften"></group>
+		</talents>
+		<specials name="Sonderfertigkeiten">
+			<group name="Allgemeine"></group>
+			<group name="Kampf (bewaffnet)"></group>
+			<group name="Kampf (waffenlos)"></group>
+			<group name="Klerikale"></group>
+			<group name="Magische"></group>
+		</specials>
+	</manual>
+	<config>
+		<base-gp value="110"/>
+	</config>
+	<baseinformations name="Basisinformationen" >
+		<attributes>
+			<attribute name="Mut" shortname="MU" basevalue="8" />
+			<attribute name="Klugheit" shortname="KL" basevalue="8" />
+			<attribute name="Körperkraft" shortname="KK" basevalue="8" />
+			<attribute name="Gewandheit" shortname="GE" basevalue="8" />
+			<attribute name="Fingerfertigkeit" shortname="FF" basevalue="8" />
+			<attribute name="Intuition" shortname="IN" basevalue="8" />
+			<attribute name="Konstitution" shortname="IN" basevalue="8" />
+			<attribute name="Charisma" shortname="CH" basevalue="8" />
+			<attribute name="Sozialstatus" shortname="SO" basevalue="0" />
+		</attributes>
+	</baseinformations>
+	<breedcontainer name="Rasse" />
+	<culturecontainer name="Kultur" />
+	<professioncontainer name="Profession" />
+	<pros name="Vorteile" />
+	<contras name="Nachteile" />
+	<specials name="Sonderfertigkeiten" />
+	<talents name="Talente">
+		<group name="Kampf" >
+			<talent type="base" name="Dolche" at="0" pa="0" taw="0" />
+			<talent type="base" name="Hiebwaffen" at="0" pa="0" taw="0" />
+			<talent type="base" name="Raufen" at="0" pa="0" taw="0" />
+			<talent type="base" name="Ringen" at="0" pa="0" taw="0" />
+			<talent type="base" name="Säbel" at="0" pa="0" taw="0" />
+			<talent type="base" name="Wurfmesser" at="0" pa="0" taw="0" />
+		</group>
+		<group name="Körper" >
+			<talent type="base" name="Athletik" test="GE/KO/KK" taw="0" />
+			<talent type="base" name="Klettern" test="MU/GE/KK" taw="0" />
+			<talent type="base" name="Selbstbeherrschung" test="MU/KO/KK" taw="0" />
+			<talent type="base" name="Körperbeherrschung" test="MU/IN/GE" taw="0" />
+			<talent type="base" name="Schleichen" test="MU/IN/GE" taw="0" />
+			<talent type="base" name="Schwimmen" test="GE/KO/KK" taw="0" />
+			<talent type="base" name="Sich Verstecken" test="MU/IN/GE" taw="0" />
+			<talent type="base" name="Singen" test="IN/CH/CH(KO)" value="0" />
+			<talent type="base" name="Sinnenschärfen" test="KL/IN/IN(FF)" taw="0" />
+			<talent type="base" name="Tanzen" test="CH/GE/GE" taw="0" />
+			<talent type="base" name="Zechen" test="IN/KO/KK" taw="0" />
+		</group>
+		<group name="Natur" >
+			<talent type="base" name="Fährtensuchen" test="KL/IN/IN(KO)" taw="0" />
+			<talent type="base" name="Orientierung" test="KL/IN/IN" taw="0" />
+			<talent type="base" name="Wildnisleben" test="IN/GE/KO" taw="0" />
+		</group>
+		<group name="Wissen" >
+			<talent type="base" name="Rechnen" test="KL/KL/IN" taw="0" />
+			<talent type="base" name="Götter/Kulte" test="KL/KL/IN" taw="0" />
+			<talent type="base" name="Sagen/Legenden" test="KL/IN/CH" taw="0" />
+		</group>
+		<group name="Gesellschaft" >
+			<talent type="base" name="Menschenkenntnis" test="KL/IN/CH" taw="0" />
+			<talent type="base" name="Überreden" test="MU/IN/CH" taw="0" />
+		</group>
+		<group name="Handwerk" >
+			<talent type="base" name="Heilkunde Wunden" test="KL/CH/FF" taw="0" />
+			<talent type="base" name="Holzbearbeitung" test="KL/FF/KK" taw="0" />
+			<talent type="base" name="Kochen" test="KL/IN/FF" taw="0" />
+			<talent type="base" name="Lederbearbeitung" test="KL/FF/FF" taw="0" />
+			<talent type="base" name="Malen/Zeichnen" test="KL/IN/FF" taw="0" />
+			<talent type="base" name="Schneidern" test="KL/FF/FF" taw="0" />
+		</group>
+	</talents>
+	<talents name="Zauber"></talents>
+	<talents name="Liturgie"></talents>
+</hero>

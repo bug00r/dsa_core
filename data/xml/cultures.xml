@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cultures>
+	<group name="Mittelländische Städte">
+		<culture name="Mittelländische Städte" image="/apps/dsa_tool/images/icon64.jpg" >
+					<shortdescription>small test description</shortdescription> 
+			<gp name="Generierungspunkte" value="0" />
+			<pros>
+				<recommended>
+					<pro name="Ausrüstungsvorteil" />
+					<pro name="Besonderer Besitz" />
+					<pro name="Soziale Anpassungsfähigkeit" />
+					<pro name="Verbindungen" />
+				</recommended>
+				<improper>
+					<pro name="Feenfreund" />
+				</improper>
+			</pros>
+			<contras>
+				<recommended>
+					<contra name="Schulden" />
+					<contra name="Verpflichtungen" />
+					<contra name="Vorurteile" />
+				</recommended>
+				<improper>
+					<contra name="Angst vor Menschenmassen" />
+					<contra name="Raumangst" />
+				</improper>
+			</contras>
+			<professions>
+				<talentgroup name="Krieger" >
+					<all>
+						<restriction value="Stammeskrieger" />
+					</all>
+				</talentgroup>
+				<talentgroup name="Reisende" >
+					<all>
+						<restriction value="Straßenräuber" />
+					</all>
+				</talentgroup>
+				<talentgroup name="Gesellschaftliche" >
+					<all/>
+				</talentgroup>
+				<talentgroup name="Handwerkliche" >
+					<all/>
+				</talentgroup>
+				<talentgroup name="Magische" >
+					<profession name="Alchimist" />
+					<profession name="Druide" types="Mehrer" />
+					<profession name="Hexe" types="Katze,Schlange,Rabe" />
+					<profession name="Magier" />
+					<profession name="Scharlatan" />
+					<profession name="Schelm" />
+				</talentgroup>
+				<talentgroup name="Priesterliche" >
+					<all/>
+				</talentgroup>
+			</professions>
+			<talents>
+				<talentgroup name="Kampf" >
+					<option value="1">
+						<talent name="Armbrust"/>
+						<talent name="Bogen"/>
+						<talent name="Wurfmesser"/>
+					</option>
+					<talent name="Dolche" value="1"/>
+					<talent name="Infanteriewaffen" value="1"/>
+					<talent name="Raufen" value="1"/>
+				</talentgroup>
+				<talentgroup name="Körper" >
+					<talent name="Zechen" value="1"/>
+				</talentgroup>
+				<talentgroup name="Gesellschaft" >
+					<talent name="Etikette" value="1"/>
+					<talent name="Gassenwissen" value="1"/>
+					<talent name="Menschenkenntnis" value="1"/>
+					<talent name="Überreden" value="1"/>
+				</talentgroup>
+				<talentgroup name="Wissen" >
+					<talent name="Götter/Kulte" value="2"/>
+					<talent name="Heraldik" value="1"/>
+					<talent name="Rechnen" value="1"/>
+					<talent name="Rechtskunde" value="1"/>
+					<talent name="Sagen/Legenden" value="2"/>
+				</talentgroup>
+				<talentgroup name="Sprachen/Schriften" >
+					<talent name="Muttersprache Garethi" value="path" path="//attribute[@name='KL']" mod="-2" />
+					<option value="3">
+						<talent name="Tulamidya"/>
+						<talent name="Rogolan" />
+						<talent name="Thorwalsch"/>
+					</option>
+				</talentgroup>
+				<talentgroup name="Handwerk" >
+					<option value="1">
+						<talent name="Ackerbau"/>
+						<talent name="Hauswirtschaft" />
+					</option>
+				</talentgroup>
+			</talents>
+			<specialabilities>
+				<ability name="Kulturkunde" value="(TODO) gewählter Ort" />
+				<ability name="Ortskenntnis" value="(TODO) Ort in der Stadt...Eingabe machen lassen" />
+			</specialabilities>
+		</culture>
+		<culture image="/apps/dsa_tool/images/icon64.jpg" name="Mittelländische Städte(Hafenstädte und Städte an großen Flüssen)"></culture>
+		<culture image="/apps/dsa_tool/images/icon64.jpg" name="Mittelländische Städte(Tempel/Pilgerstätte)"></culture>
+		<culture image="/apps/dsa_tool/images/icon64.jpg" name="Mittelländische Städte(Siedlerstädte des Nordens)"></culture>
+		<culture image="/apps/dsa_tool/images/icon64.jpg" name="Mittelländische Städte(Städtischer Adel)"></culture>
+		<culture image="/apps/dsa_tool/images/icon64.jpg" name="Mittelländische Städte(Kannemünde/Mhanerhaven)"></culture>
+		<culture image="/apps/dsa_tool/images/icon64.jpg" name="Mittelländische Städte(Flüchtling)"></culture>
+	</group>
+	<group name="Mittelländische Landbevölkerung">
+		<culture name="Mittelländische Landbevölkerung"></culture>
+		<culture name="Mittelländische Landbevölkerung (Küstengebiete / große Flüsse)"></culture>
+		<culture name="Mittelländische Landbevölkerung (Handelsroute / Reichsstraße)"></culture>
+		<culture name="Mittelländische Landbevölkerung (Weiden / Greifenfurt)"></culture>
+		<culture name="Mittelländische Landbevölkerung (Fern der Zivilisation)"></culture>
+		<culture name="Mittelländische Landbevölkerung (Landadel)"></culture>
+		<culture name="Mittelländische Landbevölkerung (Jilaskan)"></culture>
+		<culture name="Mittelländische Landbevölkerung (Besetzte Gebiete)"></culture>
+	</group>
+	<group name="Andergast und Nostria">
+		<culture name="Andergast und Nostria"></culture>
+		<culture name="Andergast und Nostria (Stadt)"></culture>
+		<culture name="Andergast und Nostria (Landadel)"></culture>
+		<culture name="Andergast und Nostria (Gebirge)"></culture>
+		<culture name="Andergast und Nostria (Küstengebiete)"></culture>
+		<culture name="Andergast und Nostria (Teshkalien)"></culture>
+	</group>
+	<group name="Bornland">
+		<culture name="Bornland"></culture>
+		<culture name="Bornland (Landstädte)"></culture>
+		<culture name="Bornland (Küstengebiete)"></culture>
+		<culture name="Bornland (Landadel)"></culture>
+	</group>
+	<group name="Svellttal und Nordlande">
+		<culture name="Svellttal und Nordlande"></culture>
+		<culture name="Svellttal und Nordlande (Stadt)"></culture>
+		<culture name="Svellttal und Nordlande (Kleinstädte)"></culture>
+		<culture name="Svellttal und Nordlande (Küstengebiete / große Flüsse)"></culture>
+		<culture name="Svellttal und Nordlande (Fern der Zivilisation)"></culture>
+		<culture name="Svellttal und Nordlande (Flüchtling aus Glorania)"></culture>
+	</group>
+	<group name="Almada">
+		<culture name="Almada"></culture>
+		<culture name="Almada (Städte am Yaquir)"></culture>
+		<culture name="Almada (Tempel / Pilgerstätte)"></culture>
+		<culture name="Almada (Städtischer Adel)"></culture>
+		<culture name="Almada (Handelsrouten)"></culture>
+		<culture name="Almada (Gebirge)"></culture>
+		<culture name="Almada (Landadel)"></culture>
+	</group>
+	<group name="Horasreich">
+		<culture name="Horasreich"></culture>
+		<culture name="Horasreich (Hafenstädte / große Flüsse)"></culture>
+		<culture name="Horasreich (Tempel / Pilgerstätte)"></culture>
+		<culture name="Horasreich (Städtischer Adel)"></culture>
+		<culture name="Horasreich (Dörfer an Küste / Flüsse)"></culture>
+		<culture name="Horasreich (Handelsroute)"></culture>
+		<culture name="Horasreich (Gebirge)"></culture>
+		<culture name="Horasreich (Fernab der Zivilisation)"></culture>
+		<culture name="Horasreich (Landadel)"></culture>
+	</group>
+	<group name="Zyklopeninseln">
+		<culture name="Zyklopeninseln"></culture>
+		<culture name="Zyklopeninseln(Landadel)"></culture>
+	</group>
+	<group name="Amazonen">
+		<culture name="Amazonenburg"></culture>
+	</group>
+	<group name="Aranien">
+		<culture name="Aranien"></culture>
+		<culture name="Aranien(Stadt/Barun-Ulah)"></culture>
+		<culture name="Aranien(Adel)"></culture>
+	</group>
+	<group name="Mhanadistan">
+		<culture name="Mhanadistan"></culture>
+		<culture name="Mhanadistan(Handelsroute)"></culture>
+		<culture name="Mhanadistan(Fern der zivilisation)"></culture>
+		<culture name="Mhanadistan(Küstengebiete/Flüsse)"></culture>
+		<culture name="Mhanadistan(Tulamidische Nomadenstämme)"></culture>
+		<culture name="Mhanadistan(Kasimiten)"></culture>
+	</group>
+	<group name="Tulamidische Stadtstaaten">
+		<culture name="Tulamidische Stadtstaaten"></culture>
+		<culture name="Tulamidische Stadtstaaten(See- oder Mhanadihafen)"></culture>
+		<culture name="Tulamidische Stadtstaaten(Maraskanische Exilanten)"></culture>
+		<culture name="Tulamidische Stadtstaaten(Kasimiten)"></culture>
+	</group>
+	<group name="Novadi">
+		<culture name="Novadi(Männer oder Achmad-Sunni)"></culture>
+		<culture name="Novadi(Frauen)"></culture>
+		<culture name="Novadi(Männer oder Achmad-Sunni in Wüstenoase)"></culture>
+		<culture name="Novadi(Frauen in Wüstenoase)"></culture>
+		<culture name="Ferkina"></culture>
+		<culture name="Zahori"></culture>
+	</group>
+	<group name="Thorwal">
+		<culture name="Thorwal"></culture>
+		<culture name="Thorwal(Binnenland)"></culture>
+		<culture name="Gjalskerland"></culture>
+		<culture name="Fjarninger"></culture>
+	</group>
+	<group name="Dschungelstämme">
+		<culture name="Dschungelstämme"></culture>
+		<culture name="Dschungelstämme(Tschopukikuha)"></culture>
+		<culture name="Dschungelstämme(Bergstämme)"></culture>
+		<culture name="Dschungelstämme(Haipu)"></culture>
+		<culture name="Dschungelstämme(Die Darna)"></culture>
+		<culture name="Verlorene Stämme"></culture>
+		<culture name="Verlorene Stämme(Shokubunga)"></culture>
+		<culture name="Verlorene Stämme(Chirakah)"></culture>
+		<culture name="Waldinsel-Utulus"></culture>
+		<culture name="Miniwatu"></culture>
+		<culture name="Tocamuyac"></culture>
+	</group>
+	<group name="Maraskan">
+		<culture name="Maraskan"></culture>
+		<culture name="Maraskan(Dschungel)"></culture>
+		<culture name="Maraskan(Küstengebiete)"></culture>
+		<culture name="Maraskan(Städte)"></culture>
+	</group>
+	<group name="Südaventurien">
+		<culture name="Südaventurien"></culture>
+		<culture name="Südaventurien(Stadtstaaten)"></culture>
+		<culture name="Südaventurien(Kolonialhäfen)"></culture>
+		<culture name="Südaventurien(Dschungeldorf/Plantage)"></culture>
+		<culture name="Südaventurien(Selem)"></culture>
+		<culture name="Südaventurien(Maraskanische Exilanten)"></culture>
+		<culture name="Bukanier"></culture>
+	</group>
+	<group name="Nivesen">
+		<culture name="Nivesenstämme"></culture>
+		<culture name="Nivesenstämme(Halbsesshafte Küstenstämme)"></culture>
+		<culture name="Nuanaa-Lie"></culture>
+		<culture name="Nuanaa-Lie(Nauoke)"></culture>
+	</group>
+	<group name="Norbardensippe">
+		<culture name="Norbardensippe"></culture>
+	</group>
+	<group name="Trollzacken">
+		<culture name="Trollzacken"></culture>
+	</group>
+	<group name="Elfen">
+		<culture name="Auelfische Sippe"></culture>
+		<culture name="Auelfische Sippe(Hoher Norden)"></culture>
+		<culture name="Elfische Siedlung"></culture>
+		<culture name="Elfische Siedlung(Südliche Mittellande)"></culture>
+		<culture name="Elfische Siedlung(Großstadt)"></culture>
+		<culture name="Elfische Siedlung(Firnelfische beeinflußte Siedlung)"></culture>
+		<culture name="Elfische Siedlung(Waldelfisch beeinflußte Siedlung)"></culture>
+		<culture name="Steppenelfische Siedlung"></culture>
+		<culture name="Waldelfische Sippe"></culture>
+		<culture name="Firnelfische Sippe"></culture>
+		<culture name="Firnelfische Sippe(Küste und Inseln)"></culture>
+	</group>
+	<group name="Zwerge">
+		<culture name="Ambosszwerge"></culture>
+		<culture name="Erzzwerge"></culture>
+		<culture name="Hügelzwerge"></culture>
+		<culture name="Brillantzwerge"></culture>
+		<culture name="Brobim"></culture>
+	</group>
+	<group name="Orks">
+		<culture name="Orkland(TODO Variantenkombination)"></culture>
+		<culture name="Yurach"></culture>
+		<culture name="Svellttal-Besatzer(TODO Variantenkombination)"></culture>
+	</group>
+	<group name="Goblin">
+		<culture name="Goblinstamm(TODO Varianten)"></culture>
+		<culture name="Goblinbande"></culture>
+		<culture name="Festumer Ghetto"></culture>
+	</group>
+	<group name="Achaz">
+		<culture name="Archaische Achaz"></culture>
+		<culture name="Stammes-Achaz"></culture>
+		<culture name="Stammes-Achaz(Maraskan)"></culture>
+		<culture name="Stammes-Achaz(Orkland)"></culture>
+		<culture name="Stammes-Achaz(Echsensümpfe)"></culture>
+		<culture name="Stammes-Achaz(Loch Harodrol)"></culture>
+		<culture name="Stammes-Achaz(Waldinseln/Südaventurien)"></culture>
+	</group>
+</cultures>

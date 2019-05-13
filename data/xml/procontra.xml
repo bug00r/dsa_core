@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<procontra>
+	<group name="Normal" >
+		<pro name="Adlige Abstammung" >
+			<gp name="Generierungspunkte" value="7" />
+		</pro>
+		<pro name="Adliges Erbe" >
+			<gp name="Generierungspunkte" value="6" />
+		</pro>
+		<pro name="Amtsadel" >
+			<gp name="Generierungspunkte" value="5" />
+		</pro>
+		<pro name="Affinität zu Geistern,Elementaren oder Dämonen" >
+			<gp name="Generierungspunkte" value="-" />
+		</pro>
+		<pro name="Akademische Ausbildung(Gelehrter)" >
+			<gp name="Generierungspunkte" value="7" />
+		</pro>
+		<pro name="Akademische Ausbildung(Magier)">
+			<mage type="Z" />
+			<gp name="Generierungspunkte" value="25" />
+		</pro>
+		<pro name="Akademische Ausbildung(Krieger)" >
+			<gp name="Generierungspunkte" value="20" />
+		</pro>
+		<pro name="Altersresistenz" >
+			<gp name="Generierungspunkte" value="3" />
+		</pro>
+	</group>
+	<!-- TODO Astrale Regeneration mit logik versehen und einen Vorteil daraus machen -->
+	<group name="Magisch" >
+		<pro name="Astrale Regeneration I" >
+			<mage type="ZH" />
+			<gp name="Generierungspunkte" value="4" />
+		</pro>
+		<pro name="Astrale Regeneration II" >
+			<mage type="ZH" />
+			<gp name="Generierungspunkte" value="8" />
+		</pro>
+		<pro name="Astrale Regeneration III" >
+			<mage type="ZH" />
+			<gp name="Generierungspunkte" value="12" />
+		</pro>
+		<pro name="Astralmacht" >
+			<mage type="ZHV" />
+			<gp name="Generierungspunkte" value="1" />
+			<range min="1" max="6" />
+		</pro>
+	</group>
+	<group name="Anders" >
+		<pro name="Ausdauernd" >
+			<gp name="Generierungspunkte" value="1" />
+			<range min="2" step="2" max="6" />
+		</pro>
+		<pro name="Ausdauernder Zauberer" >
+			<mage type="ZH" />
+			<gp name="Generierungspunkte" value="3" />
+			<range min="1" max="6" />
+		</pro>
+		<pro name="Ausrüstungsvorteil" >
+			<gp name="Generierungspunkte" value="1" />
+		</pro>
+	</group>
+	<group name="Normal" >
+		<contra name="Aberglaube" >
+			<property />
+			<gp name="Generierungspunkte" value="-1" />
+		</contra>
+		<contra name="Albino" >
+			<gp name="Generierungspunkte" value="-7" />
+		</contra>
+		<contra name="Angst vor Insekten, Spinnen,..., Feuer, Wasser" >
+			<property />
+			<gp name="Generierungspunkte" value="-1" />
+		</contra>
+	<group name="Magie" >
+		<contra name="Animalische Magie" >
+			<mage type="ZH" />
+			<gp name="Generierungspunkte" value="-1" />
+		</contra>
+	</group>
+		<contra name="Arkanophobie" >
+			<property />
+			<gp name="Generierungspunkte" value="-1" />
+			<range min="1" max="6" />
+		</contra>
+		<contra name="Arroganz" >
+			<property />
+			<gp name="Generierungspunkte" value="-1" />
+		</contra>
+		<contra name="Artefaktgebunden" >
+			<mage type="ZHV" />
+			<gp name="Generierungspunkte" value="-7" />
+		</contra>
+	</group>
+</procontra>

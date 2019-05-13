@@ -1,0 +1,736 @@
+<equipments>
+	<group name="Waffen- und Rüstungszubehör" id="weapon_armory_utils">
+		<eq name="Schwertgürtel" weight="40" price="15" price_unit="S" />
+		<eq name="Schwertgürtel verstärkt" weight="80" price="40" price_unit="S" />
+		<eq name="Schultergurt" weight="20" price="10" price_unit="S" />
+		<eq name="Schwertscheide" weight="60" price="15+" price_unit="S" />
+		<eq name="Dolchscheide" weight="10" price="8+" price_unit="S" />
+		<eq name="Köcher(Holz) für 20 Pfeile" weight="60" price="6" price_unit="S" />
+		<eq name="Köcher(Leder) für 20 Pfeile" weight="30" price="15" price_unit="S" />
+		<eq name="Köcher(Leder, Hüfte) für 20 Pfeile" weight="35" price="18" price_unit="S" />
+		<eq name="Stofftasche für 10 Bolzen" weight="20" price="2" price_unit="S" />
+		<eq name="Holzköcher für 10 Bolzen" weight="45" price="15" price_unit="S" />
+		<eq name="Waffenpflegeset" weight="25" price="8" price_unit="S" />
+		<eq name="Unterkleidung für Metallrüstungen" weight="100" price="15" price_unit="S" />
+	</group>	
+	<group name="Koch- und Essgeschirr" id="dishes">
+		<eq name="Holzbecher" weight="2" price="3" price_unit="H" />
+		<eq name="Tonbecher" weight="5" price="5" price_unit="H" />
+		<eq name="Zinnbecher" weight="5" price="2" price_unit="S" />
+		<eq name="Trinkglas" weight="4" price="6+" price_unit="S" />
+		<eq name="Kristallpokal" weight="4" price="4+" price_unit="D" />
+		<eq name="Silberpokal" weight="10" price="1+" price_unit="D" />
+		<eq name="Goldpokal" weight="20" price="25+" price_unit="D" />
+		<eq name="Trinkhorn" weight="20" price="1" price_unit="D" />
+		<eq name="Tonkrug" weight="30" price="2" price_unit="S" />
+		<eq name="Glaskaraffe" weight="20" price="2+" price_unit="D" />
+		<eq name="Holzteller" weight="4" price="4" price_unit="H" />
+		<eq name="Irdener Teller" weight="6" price="5" price_unit="H" />
+		<eq name="Zinnteller" weight="8" price="3" price_unit="S" />
+		<eq name="Porzellanteller" weight="7" price="15+" price_unit="S" />
+		<eq name="Silberteller" weight="10" price="12+" price_unit="S" />
+		<eq name="Eisenpfanne(1 Spann)" weight="40" price="4" price_unit="S" />
+		<eq name="Eisenpfanne(1.5 Spann)" weight="80" price="8" price_unit="S" />
+		<eq name="Stieltopf(6 Maß)" weight="80" price="8" price_unit="S" />
+		<eq name="Eisentopf(12 Maß)" weight="120" price="1" price_unit="D" />
+		<eq name="Blechtopf, emailliert(6 Maß)" weight="60" price="12" price_unit="S" />
+		<eq name="Kessel, emailliert(6 Maß)" weight="70" price="15" price_unit="S" />
+		<eq name="Kupferkessel(25 Maß)" weight="160" price="2" price_unit="D" />
+		<eq name="Holzlöffel" weight="3" price="1" price_unit="H" />
+		<eq name="Essbesteck aus Zinn" weight="10" price="5" price_unit="S" />
+		<eq name="Essbesteck aus Silber" weight="15" price="2+" price_unit="D" />
+		<eq name="Essbesteck aus Gold" weight="20" price="25+" price_unit="D" />
+		<eq name="Emaille Kochgeschirr, Sortiment" weight="200" price="12" price_unit="D" />
+		<eq name="Sieb" weight="15" price="5" price_unit="S" />
+		<eq name="Bratspieß" weight="20" price="2" price_unit="S" />
+		<eq name="Schöpfkelle aus Zinn" weight="10" price="3" price_unit="S" />
+		<eq name="Samowar" weight="80" price="15+" price_unit="D" />
+		<eq name="Wasserschlauch(5 Schank)" weight="5" price="1" price_unit="S" />
+		<eq name="Feldflasche(5 Schank)" weight="12" price="3" price_unit="S" />
+		<eq name="Brotbeutel" weight="8" price="5" price_unit="H" />
+	</group>
+	<group name="Werkzeug" id="tools">
+		<eq name="Messer" weight="10" price="5" price_unit="S" />
+		<eq name="Hammer" weight="20" price="6" price_unit="S" />
+		<eq name="Vorschlaghammer" weight="250" price="9" price_unit="S" />
+		<eq name="50 Nägel, sortiert" weight="30" price="10" price_unit="S" />
+		<eq name="Fuchsschwanz" weight="30" price="15" price_unit="S" />
+		<eq name="Bügelsäge" weight="60" price="20" price_unit="S" />
+		<eq name="Zange" weight="20" price="12" price_unit="S" />
+		<eq name="Schmiedezange" weight="90" price="14" price_unit="S" />
+		<eq name="Brecheisen" weight="90" price="10" price_unit="S" />
+		<eq name="Schüreisen" weight="40" price="8" price_unit="S" />
+		<eq name="Spaten" weight="80" price="15" price_unit="S" />
+		<eq name="Schaufel" weight="80" price="10" price_unit="S" />
+		<eq name="Spitzhacke" weight="200" price="20" price_unit="S" />
+		<eq name="Eispickel" weight="120" price="15" price_unit="S" />
+		<eq name="Beil" weight="40" price="15" price_unit="S" />
+		<eq name="Holzfälleraxt" weight="100" price="20" price_unit="S" />
+		<eq name="Meißel, 5 Stück sortiert" weight="40" price="12" price_unit="S" />
+		<eq name="Keile" weight="80" price="4" price_unit="S" />
+		<eq name="Feile für Holz" weight="15" price="8" price_unit="S" />
+		<eq name="Feile für Metall" weight="15" price="25" price_unit="S" />
+		<eq name="Hobel" weight="50" price="12" price_unit="S" />
+		<eq name="Schere" weight="15" price="30" price_unit="S" />
+		<eq name="Ahle" weight="1" price="10" price_unit="S" />
+		<eq name="Nadel und Garn, Sortiment" weight="2" price="8" price_unit="S" />
+		<eq name="Kleiner Webrahmen" weight="200" price="2" price_unit="D" />
+		<eq name="Spinnrad" weight="400" price="5" price_unit="D" />
+		<eq name="Mistgabel" weight="60" price="5" price_unit="S" />
+		<eq name="Reisigbesen" weight="50" price="4" price_unit="H" />
+		<eq name="Besen" weight="40" price="1" price_unit="S" />
+		<eq name="Staubwedel" weight="20" price="1" price_unit="S" />
+		<eq name="Dietriche, Sortiment" weight="15" price="12+" price_unit="D" />
+		<eq name="Kletterhaken, 10 Stück" weight="50" price="5" price_unit="S" />
+		<eq name="Wurfhaken mit 10 Schritt Seil" weight="50" price="10" price_unit="S" />
+		<eq name="Angelhaken mit Schnur" weight="1" price="2" price_unit="H" />
+		<eq name="Leim" weight="40" price="8" price_unit="S" />
+		<eq name="Flaschenzug für 1 Quader" weight="240" price="120+" price_unit="D" />
+		<eq name="Senkblei" weight="8" price="1" price_unit="S" />
+	</group>
+	<group name="Beleuchtung" id="lighting">
+		<eq name="Kerze(1 Spann Länge)" weight="2" price="1" price_unit="H" />
+		<eq name="Kerze(2 Spann Länge)" weight="4" price="2" price_unit="H" />
+		<eq name="Duftkerze(1 Spann Länge)" weight="2" price="3" price_unit="H" />
+		<eq name="Pechfackel" weight="20" price="5" price_unit="H" />
+		<eq name="Öllampe" weight="15" price="3" price_unit="S" />
+		<eq name="Kerzenlaterne" weight="20" price="5" price_unit="S" />
+		<eq name="Sturmlaterne, Öl" weight="30" price="12" price_unit="S" />
+		<eq name="Lampenöl" weight="10" price="5" price_unit="H" />
+		<eq name="Duftöl" weight="10" price="1" price_unit="S" />
+		<eq name="Feuerstein und Stahl" weight="5" price="6" price_unit="H" />
+		<eq name="Zunderdose, gefüllt" weight="8" price="2+" price_unit="S" />
+		<eq name="Zunderdose, wasserdicht gefüllt" weight="10" price="7" price_unit="S" />
+		<eq name="Phosphorpilz" weight="10" price="1+" price_unit="D" />
+		<eq name="Brennglas" weight="4" price="5+" price_unit="D" />
+	</group>
+	<group name="Behälter" id="container">
+		<eq name="Tuchbeutel(5 Stein)" weight="15" price="4" price_unit="H" />
+		<eq name="Lederranzen(8 Stein)" weight="30" price="2" price_unit="S" />
+		<eq name="Lederrucksack(15 Stein)" weight="40" price="4" price_unit="S" />
+		<eq name="Gürteltasche" weight="5" price="5" price_unit="H" />
+		<eq name="Gürteltasche, verstärkt" weight="15" price="4" price_unit="S" />
+		<eq name="Geldbeutelchen" weight="1" price="1" price_unit="H" />
+		<eq name="Pergamenthülle" weight="2" price="2" price_unit="H" />
+		<eq name="Sack(10 Stein)" weight="15" price="8" price_unit="H" />
+		<eq name="Sack(50 Stein)" weight="40" price="25" price_unit="H" />
+		<eq name="Korb(20 Stein)" weight="80" price="4" price_unit="S" />
+		<eq name="Kiepe(20 Stein)" weight="120" price="7" price_unit="S" />
+		<eq name="Transportkiste" weight="80" price="2" price_unit="S" />
+		<eq name="Truhe für ein Packtier" weight="100" price="5" price_unit="S" />
+		<eq name="Packsattel" weight="200" price="3" price_unit="D" />
+		<eq name="Holzeimer" weight="60" price="3" price_unit="S" />
+		<eq name="Ledereimer" weight="40" price="2" price_unit="S" />
+		<eq name="Glasphiole(3 Flux)" weight="4" price="5+" price_unit="S" />
+		<eq name="Glasflasche(1 Schank)" weight="10" price="12+" price_unit="S" />
+		<eq name="Irdene Flasche(1 Schank)" weight="20" price="2" price_unit="S" />
+		<eq name="Bronzeflasche(1 Schank)" weight="50" price="8+" price_unit="S" />
+		<eq name="Wasserschlauch(5 Schank)" weight="5" price="1" price_unit="S" />
+		<eq name="Feldflasche(5 Schank)" weight="12" price="3" price_unit="S" />
+		<eq name="Wasserfaß(20 Maß)" weight="120" price="18" price_unit="S" />
+	</group>
+	<group name="Seile, Netze, Ketten" id="ropes_net_chains">
+		<eq name="Schnur, pro Schritt" weight="0.5" price="5" price_unit="K" />
+		<eq name="Hanfseil, pro Schritt" weight="4.5" price="4" price_unit="H" />
+		<eq name="Hanfseil, verstärkt pro Schritt" weight="5.5" price="7" price_unit="H" />
+		<eq name="Kletterseil" weight="3.5" price="1" price_unit="S" />
+		<eq name="Seidenseil" weight="2.5" price="12" price_unit="S" />
+		<eq name="Fesselseil" weight="10" price="1" price_unit="S" />
+		<eq name="Lederseil" weight="12" price="3" price_unit="S" />
+		<eq name="Tau, pro Schritt" weight="20" price="5" price_unit="S" />
+		<eq name="Lederlasso" weight="45" price="12" price_unit="S" />
+		<eq name="Fischernetz, klein" weight="35" price="1" price_unit="D" />
+		<eq name="Fischernetz, gross" weight="80" price="8" price_unit="D" />
+		<eq name="Wurfnetz" weight="60" price="2" price_unit="D" />
+		<eq name="Strickleiter, pro Schritt" weight="14" price="24" price_unit="H" />
+		<eq name="Kette, dünn, pro Schritt" weight="20" price="4" price_unit="S" />
+		<eq name="Kette, schwer, pro Schritt" weight="80" price="1" price_unit="D" />
+	</group>
+	<group name="Reisebedarf" id="travel_utilities">
+		<eq name="Zelt, 2 Pers." weight="600" price="2+" price_unit="D" />
+		<eq name="Zelt, 4 Pers." weight="900" price="3+" price_unit="D" />
+		<eq name="Zeltboden" weight="80" price="8" price_unit="S" />
+		<eq name="Zeltstangen(2 Stück)" weight="80" price="3" price_unit="S" />
+		<eq name="Wolldecke" weight="60" price="2" price_unit="S" />
+		<eq name="Schlafsack" weight="80" price="1" price_unit="D" />
+		<eq name="Wanderstab" weight="50" price="5" price_unit="H" />
+		<eq name="Wimpel" weight="8" price="4" price_unit="S" />
+		<eq name="Banner" weight="60" price="15+" price_unit="S" />
+		<eq name="Schneeschuhe" weight="60" price="12" price_unit="S" />
+		<eq name="Skier" weight="60" price="18" price_unit="S" />
+		<eq name="Hängematte" weight="80" price="13" price_unit="S" />
+	</group>
+	<group name="Schreibwaren, Feinmechanik, Optik" id="writingutils_mechanic_optical">
+		<eq name="10 Gänsekiele, Griffel" weight="1" price="4" price_unit="S" />
+		<eq name="Federmesser" weight="5" price="4" price_unit="S" />
+		<eq name="Pinsel(3 Stück. sortiert)" weight="6" price="8" price_unit="S" />
+		<eq name="Kohlestifte(5 Stück)" weight="2" price="5" price_unit="K" />
+		<eq name="Tinte" weight="4" price="2" price_unit="S" />
+		<eq name="Tusche" weight="4" price="3" price_unit="S" />
+		<eq name="Tusche, farbig" weight="4" price="8" price_unit="S" />
+		<eq name="Pergament(10 Blatt)" weight="1" price="12" price_unit="S" />
+		<eq name="Papier(10 Bögen)" weight="3" price="3" price_unit="S" />
+		<eq name="Schriftrolle(2 Schritt)" weight="30" price="40" price_unit="S" />
+		<eq name="Tagebuch, Papier" weight="20" price="35" price_unit="S" />
+		<eq name="Schreibkreide" weight="1" price="4" price_unit="H" />
+		<eq name="Schiefertafel" weight="1" price="2" price_unit="S" />
+		<eq name="Holzlineal" weight="20" price="8" price_unit="H" />
+		<eq name="Messinglineal" weight="8" price="3" price_unit="S" />
+		<eq name="Fadenzirkel" weight="2" price="2" price_unit="S" />
+		<eq name="Zirkel" weight="4" price="15" price_unit="S" />
+		<eq name="Gravurwerkzeug" weight="15" price="2" price_unit="D" />
+		<eq name="Stundenglas" weight="10" price="3" price_unit="D" />
+		<eq name="Stundenkerze" weight="5" price="8" price_unit="S" />
+		<eq name="Prisma" weight="2" price="10" price_unit="D" />
+		<eq name="Brennglas" weight="4" price="5" price_unit="D" />
+		<eq name="Lupe" weight="5" price="8" price_unit="S" />
+		<eq name="Fernrohr" weight="50" price="80+" price_unit="D" />
+		<eq name="Himmelsfernrohr" weight="160" price="300+" price_unit="D" />
+		<eq name="Handspiegel, poliertes Messing" weight="20" price="12" price_unit="S" />
+		<eq name="Handspiegel, Glas" weight="15" price="8" price_unit="D" />
+		<eq name="Brille" weight="3" price="40+" price_unit="D" />
+		<eq name="Kristallbrille, dunkel" weight="3" price="60+" price_unit="D" />
+		<eq name="Bernsteinbrille" weight="3" price="70+" price_unit="D" />
+		<eq name="Schiffskompass" weight="200" price="18+" price_unit="D" />
+		<eq name="Südweiser" weight="40" price="8+" price_unit="D" />
+		<eq name="Sonnenuhr" weight="40" price="1" price_unit="D" />
+		<eq name="Sonnenuhr mit Kompass" weight="80" price="12+" price_unit="D" />
+		<eq name="Quadrant" weight="30" price="7+" price_unit="D" />
+		<eq name="Hylailer Dreikreuz" weight="30" price="2" price_unit="D" />
+		<eq name="Astrolabium" weight="120" price="25+" price_unit="D" />
+		<eq name="Orbitarium" weight="400" price="500+" price_unit="D" />
+		<eq name="Abakus" weight="20" price="1" price_unit="D" />
+		<eq name="Addiermaschine" weight="120" price="200+" price_unit="D" />
+		<eq name="Zinsspindel" weight="160" price="600+" price_unit="D" />
+	</group>
+	<group name="Spielzeug, Dekoration, Luxusartikel" id="tools_decoration_luxurious">
+		<eq name="Stoffpuppe" weight="10" price="5+" price_unit="H" />
+		<eq name="Wachspuppe" weight="40" price="5+" price_unit="S" />
+		<eq name="Holzfiguren" weight="1" price="3" price_unit="H" />
+		<eq name="Zinnsoldat" weight="1" price="1" price_unit="S" />
+		<eq name="Steckenpferd" weight="40" price="2" price_unit="S" />
+		<eq name="Würfel, Bein(3 Stück)" weight="1" price="2" price_unit="S" />
+		<eq name="Kaleidoskop" weight="20" price="8+" price_unit="S" />
+		<eq name="Jonglierbälle(3 Stück)" weight="20" price="15" price_unit="H" />
+		<eq name="Jonglierkeulen(3 Stück)" weight="45" price="4" price_unit="S" />
+		<eq name="Spieluhr" weight="8" price="8+" price_unit="D" />
+		<eq name="Portrait, Öl aud Leinwand" weight="60" price="7+" price_unit="D" />
+		<eq name="Gemälde, Öl auf Holz" weight="120" price="10+" price_unit="D" />
+		<eq name="Statuette, 1 Spann aus Zinn" weight="10" price="1+" price_unit="S" />
+		<eq name="Statuette, 1 Spann aus Silber" weight="15" price="3+" price_unit="D" />
+		<eq name="Statuette, 1 Spann aus Gold" weight="10" price="15+" price_unit="D" />
+		<eq name="Statuette, 1 Spann aus Jade" weight="10" price="5+" price_unit="D" />
+		<eq name="Statuette, 1 Spann aus Obsidian" weight="10" price="12+" price_unit="S" />
+		<eq name="Tonpfeife" weight="5" price="1+" price_unit="S" />
+		<eq name="Holzpfeife" weight="5" price="5+" price_unit="S" />
+		<eq name="Meerschaumpfeife" weight="4" price="1+" price_unit="D" />
+		<eq name="Tabakdose, Silber" weight="2" price="3+" price_unit="S" />
+		<eq name="Wasserpfeife" weight="40" price="2" price_unit="D" />
+	</group>
+	<group name="Schmuck" id="jewelery">
+		<eq name="Ring, Silber" weight="0.5" price="3" price_unit="S" />
+		<eq name="Ohrring, Silber" weight="0.2" price="3" price_unit="S" />
+		<eq name="Armreif, Silber" weight="10" price="6" price_unit="D" />
+		<eq name="Stirnreif, Silber" weight="8" price="2" price_unit="D" />
+		<eq name="Spange- oder Fibel, Silber" weight="1" price="6" price_unit="S" />
+		<eq name="Halskette, Silber" weight="0.5" price="5" price_unit="S" />
+		<eq name="Amulett, Silber" weight="2" price="4" price_unit="S" />
+		<eq name="Ring, Gold" weight="1" price="9" price_unit="S" />
+		<eq name="Ohrring, Gold" weight="0.6" price="9" price_unit="S" />
+		<eq name="Armreif, Gold" weight="30" price="18" price_unit="D" />
+		<eq name="Stirnreif, Gold" weight="24" price="6" price_unit="D" />
+		<eq name="Spange- oder Fibel, Gold" weight="3" price="18" price_unit="S" />
+		<eq name="Halskette, Gold" weight="1.5" price="15" price_unit="S" />
+		<eq name="Amulett, Gold" weight="6" price="12" price_unit="S" />
+		<eq name="Ring, Bronze/Messing" weight="1.5" price="1" price_unit="S" />
+		<eq name="Ohrring, Bronze/Messing" weight="0.6" price="3" price_unit="S" />
+		<eq name="Armreif, Bronze/Messing" weight="30" price="2" price_unit="D" />
+		<eq name="Stirnreif, Bronze/Messing" weight="24" price="7" price_unit="S" />
+		<eq name="Spange- oder Fibel, Bronze/Messing" weight="9" price="2" price_unit="S" />
+		<eq name="Halskette, Bronze/Messing" weight="1.5" price="2" price_unit="S" />
+		<eq name="Amulett, Bronze/Messing" weight="6" price="1.5" price_unit="S" />
+		<eq name="Tätovierung" weight="0" price="1+" price_unit="D" />
+	</group>
+	<group name="Musikinstrument" id="musical_instrument">
+		<eq name="Flöte, Holz" weight="8" price="2+" price_unit="S" />
+		<eq name="Flöte, Bein" weight="10" price="2+" price_unit="D" />
+		<eq name="Flöte, Silber" weight="30" price="15+" price_unit="D" />
+		<eq name="Pfeifenbalg" weight="80" price="10+" price_unit="D" />
+		<eq name="Fanfare" weight="40" price="6" price_unit="D" />
+		<eq name="Jagdhorn" weight="30" price="7" price_unit="D" />
+		<eq name="Zwergenposaune" weight="60" price="15+" price_unit="D" />
+		<eq name="Reitertrompete" weight="40" price="10" price_unit="D" />
+		<eq name="Trommel, Dabla" weight="20" price="1+" price_unit="D" />
+		<eq name="Trommel, Söldner" weight="80" price="2" price_unit="D" />
+		<eq name="Pauke" weight="100" price="4+" price_unit="D" />
+		<eq name="Handharfe, Leier" weight="40" price="10" price_unit="D" />
+		<eq name="Drehleier" weight="80" price="15+" price_unit="D" />
+		<eq name="Standharfe" weight="3000" price="120+" price_unit="D" />
+		<eq name="Laute, Bandurria" weight="80" price="15+" price_unit="D" />
+		<eq name="Glockenspiel" weight="120" price="10+" price_unit="D" />
+		<eq name="Spinett" weight="4000" price="300+" price_unit="D" />
+	</group>
+	<group name="Körperpflege" id="body_health">
+		<eq name="Seife"				weight="20"	price="2"  price_unit="H"/>
+		<eq name="Badeöl"				weight="20"	price="2"  price_unit="S"/>
+		<eq name="Parfum"				weight="1"	price="3"  price_unit="D"/>
+		<eq name="Massageöl"			weight="10"	price="4"  price_unit="S"/>
+		<eq name="Kräuterbranntwein"	weight="10" price="6"  price_unit="S"/>
+		<eq name="Kamm, Holz"			weight="5"	price="1"  price_unit="H"/>
+		<eq name="Bürste"				weight="10"	price="5"  price_unit="H"/>
+		<eq name="Nagelfeile"			weight="2"	price="3"  price_unit="S"/>
+		<eq name="Schnupftuch"			weight="2"	price="1"  price_unit="H"/>
+		<eq name="Schwamm"				weight="10"	price="12" price_unit="H"/>
+		<eq name="Augenschminke"		weight="1"	price="1"  price_unit="S"/>
+		<eq name="Lippenrot"			weight="1"	price="2"  price_unit="S"/>
+		<eq name="Puder"				weight="3"	price="1"  price_unit="D"/>
+		<eq name="Tätowierung"			weight="0"	price="1"  price_unit="D"/>
+		<eq name="Rasur"				weight="0"	price="5"  price_unit="H"/>
+		<eq name="Bartschnitt"			weight="0"	price="6"  price_unit="H"/>
+		<eq name="Frisur"				weight="0"	price="1"  price_unit="S"/>
+		<eq name="Ballfrisur"			weight="0"	price="5"  price_unit="S"/>
+		<eq name="Vollbad im Badehaus"	weight="0"	price="8"  price_unit="H"/>
+		<eq name="Maniküre"			weight="0"	price="4"  price_unit="H"/>
+		<eq name="Entlausen"			weight="0"	price="8"  price_unit="H"/>
+		<eq name="Rasiermesser"		weight="10"	price="12" price_unit="S"/>
+	</group>
+	<group name="Kleidung" id="clothes">
+		<eq name="Strümpfe, Wolle"			weight="4"	price="3" 	price_unit="H"	s_price="3"  s_price_unit="S" />
+		<eq name="Strümpfe, Seide"			weight="2"	price="12" 	price_unit="S" 	s_price="6"  s_price_unit="D" />
+		<eq name="Nachthemd, Leinen"		weight="15"	price="1" 	price_unit="S"	s_price="8"  s_price_unit="S" />
+		<eq name="Nachthemd, Seide"		weight="5"	price="12" 	price_unit="S" 	s_price="8"  s_price_unit="D" />
+		<eq name="Lendentuch"				weight="8"	price="1" 	price_unit="H"	s_price="0"  s_price_unit="-" />	
+		<eq name="Unterwäsche"				weight="40"	price="4" 	price_unit="S"	s_price="10" s_price_unit="D" />
+		<eq name="Mieder"					weight="25"	price="2" 	price_unit="S"	s_price="2"  s_price_unit="D" />
+		<eq name="Unterrock"				weight="20"	price="1" 	price_unit="S"	s_price="2"  s_price_unit="S" />
+		<eq name="Nachtmütze"				weight="4"	price="2" 	price_unit="H"	s_price="2"  s_price_unit="S" />
+		<eq name="Hausmantel"				weight="30"	price="5" 	price_unit="S"	s_price="10" s_price_unit="D" />
+		<eq name="Hemd, Bluse, Leinen"			weight="10"	price="8" 	price_unit="H"	s_price="8"  s_price_unit="S" />
+		<eq name="Hemd, Wolle2"				weight="15"	price="8" 	price_unit="H"	s_price="8"  s_price_unit="S" />
+		<eq name="Hemd, Bausch2"			weight="8"	price="2" 	price_unit="S"	s_price="2"  s_price_unit="D" />
+		<eq name="Hemd, Seide"				weight="5"	price="12" 	price_unit="S" 	s_price="8"  s_price_unit="D" />
+		<eq name="Jacke, Wams, Leinen"		weight="30"	price="2" 	price_unit="S"	s_price="1"  s_price_unit="D" />
+		<eq name="Jacke, Wams, Wolle"		weight="40"	price="2" 	price_unit="S"	s_price="1"  s_price_unit="D" />
+		<eq name="Jacke, Wams, Leder"		weight="60"	price="4" 	price_unit="S"	s_price="3"  s_price_unit="D" />
+		<eq name="Jacke, Wams, Brokat"		weight="120"	price="4" 	price_unit="D"	s_price="18" s_price_unit="D" />
+		<eq name="Weste, Wolle"			weight="25"	price="3" 	price_unit="S"	s_price="1"  s_price_unit="D" />
+		<eq name="Weste, Leder"			weight="40"	price="5" 	price_unit="S"	s_price="3"  s_price_unit="D" />
+		<eq name="Weste, Pelz"				weight="50"	price="5" 	price_unit="S"	s_price="2"  s_price_unit="D" />
+		<eq name="Weste, Seide"			weight="10"	price="9" 	price_unit="S"	s_price="10" s_price_unit="D" />
+		<eq name="Weste, Brokat"			weight="30"	price="3" 	price_unit="D"	s_price="15" s_price_unit="D" />
+		<eq name="Beinkleider, Leinen"		weight="25"	price="1" 	price_unit="S"	s_price="1"  s_price_unit="D" />
+		<eq name="Beinkleider, Wolle"		weight="30"	price="1" 	price_unit="S"	s_price="1"  s_price_unit="D" />
+		<eq name="Beinkleider, Bausch"		weight="15"	price="3" 	price_unit="S"	s_price="3"  s_price_unit="D" />
+		<eq name="Beinkleider, Leder"		weight="50"	price="3" 	price_unit="S"	s_price="4"  s_price_unit="D" />
+		<eq name="Beinkleider, Seide"		weight="10"	price="6" 	price_unit="S"	s_price="12" s_price_unit="D" />
+		<eq name="Pluderhose, Leinen"		weight="35"	price="2" 	price_unit="S"	s_price="2"  s_price_unit="D" />
+		<eq name="Pluderhose, Bausch"		weight="25"	price="6" 	price_unit="S"	s_price="6"  s_price_unit="D" />
+		<eq name="Pluderhose, Seide"	weight="20"	price="10"  price_unit="S" 	s_price="15" s_price_unit="D" />
+		<eq name="Rock, Leinen"			weight="35"	price="1" 	price_unit="S"	s_price="4" s_price_unit="D" />
+		<eq name="Rock, Wolle"				weight="45"	price="1" 	price_unit="S"	s_price="4" s_price_unit="D" />
+		<eq name="Rock, Bausch"			weight="25"	price="4" 	price_unit="S"	s_price="5" s_price_unit="D" />
+		<eq name="Rock, Leder"				weight="50"	price="5" 	price_unit="S"	s_price="6" s_price_unit="D" />
+		<eq name="Rock, Seide"				weight="15"	price="1" 	price_unit="D"	s_price="7" s_price_unit="D" />
+		<eq name="Kleid, Leinen"			weight="40"	price="1" 	price_unit="S"	s_price="6" s_price_unit="D" />
+		<eq name="Kleid, Wolle"			weight="50"	price="1" 	price_unit="S"	s_price="6" s_price_unit="D" />
+		<eq name="Kleid, Bausch"			weight="30"	price="4" 	price_unit="S"	s_price="8" s_price_unit="D" />
+		<eq name="Kleid, Seide"			weight="20"	price="3" 	price_unit="D"	s_price="12" s_price_unit="D" />
+		<eq name="Kleid, Leder"			weight="70"	price="5" 	price_unit="S"	s_price="8"  s_price_unit="D" />
+		<eq name="Ballkleid"				weight="40"	price="5" 	price_unit="D"	s_price="25" s_price_unit="D" />
+		<eq name="Wollmantel"				weight="60"	price="3" 	price_unit="S"	s_price="3"  s_price_unit="D" />
+		<eq name="Pelzmantel"				weight="120"	price="3" 	price_unit="D"	s_price="12" s_price_unit="D" />
+		<eq name="Reitmantel, Leder"		weight="80"	price="8" 	price_unit="S"	s_price="8" s_price_unit="D" />
+		<eq name="Kapuzenumhang"			weight="60"	price="4" 	price_unit="S"	s_price="4" s_price_unit="D" />
+		<eq name="Kutte, grobe Wolle"		weight="80"	price="2" 	price_unit="S"	s_price="8" s_price_unit="S" />
+		<eq name="Geweihtenornat"			weight="var"	price="4" 	price_unit="D"	s_price="0" s_price_unit="-" />
+		<eq name="Cape"					weight="50"	price="2" 	price_unit="S"	s_price="8" s_price_unit="S" />
+		<eq name="Robe, Brokat"			weight="200"	price="8" 	price_unit="D"	s_price="30" s_price_unit="D" />
+		<eq name="Teerjacke"				weight="60"	price="5" 	price_unit="S"	s_price="0" s_price_unit="-" />
+		<eq name="Fellanorak"				weight="80"	price="8" 	price_unit="S"	s_price="12" s_price_unit="D" />
+		<eq name="Wollmütze"				weight="3"	price="2" 	price_unit="H"	s_price="0" s_price_unit="-" />	
+		<eq name="Haube, Leinen"			weight="3"	price="5" 	price_unit="H"	s_price="5" s_price_unit="S" />
+		<eq name="Schleier, Wolltuch"		weight="4"	price="2" 	price_unit="H"	s_price="2" s_price_unit="S" />
+		<eq name="Schleider, Seide"		weight="1" 	price="8" 	price_unit="S"	s_price="5" s_price_unit="D" />
+		<eq name="Filzhut"					weight="4"	price="1" 	price_unit="S"	s_price="8" s_price_unit="S" />
+		<eq name="Filzhut, mit Federn"		weight="10"	price="3" 	price_unit="S"	s_price="2" s_price_unit="D" />
+		<eq name="Fellmütze"			weight="30"	price="5" 	price_unit="S"	s_price="5" s_price_unit="D" />
+		<eq name="Stirnband"				weight="2"	price="5" 	price_unit="H"	s_price="5" s_price_unit="S" />
+		<eq name="Halstuch, Seide"			weight="2"	price="2" 	price_unit="S"	s_price="1" s_price_unit="D" />
+		<eq name="Maske, Tuch"				weight="5"	price="5" 	price_unit="S"	s_price="3" s_price_unit="D" />
+		<eq name="Maske, Leder"			weight="10"	price="1" 	price_unit="D"	s_price="5" s_price_unit="D" />
+		<eq name="Larve"					weight="2"	price="1" 	price_unit="S"	s_price="8" s_price_unit="S" />
+		<eq name="Schärpe, Seide"			weight="4"	price="5" 	price_unit="S"	s_price="6" s_price_unit="D" />
+		<eq name="Ledergürtel"				weight="6"	price="1" 	price_unit="S"	s_price="6" s_price_unit="S" />
+		<eq name="Schultergurt, Bandelier"	weight="20" 	price="6" 	price_unit="S"	s_price="1" s_price_unit="D" />
+		<eq name="Lederhandschuhe"			weight="6"	price="3" 	price_unit="S"	s_price="2" s_price_unit="D" />
+		<eq name="Stulpenhandschuhe"		weight="30"	price="6" 	price_unit="S"	s_price="3" s_price_unit="D" />
+		<eq name="Wollfäustlinge"			weight="4"	price="3" 	price_unit="H"	s_price="0" s_price_unit="-" />
+		<eq name="Pelzfäustlinge"			weight="10"	price="4" 	price_unit="S"	s_price="1" s_price_unit="D" />
+		<eq name="Muff"					weight="30"	price="4" 	price_unit="S" 	s_price="2" s_price_unit="D" />
+		<eq name="Strohschuhe"				weight="25"	price="3" 	price_unit="H"	s_price="0" s_price_unit="-" />	
+		<eq name="Holzschuhe"				weight="40"	price="4" 	price_unit="H"	s_price="2" s_price_unit="S" />
+		<eq name="Sandalen"				weight="30"	price="6" 	price_unit="H"	s_price="2" s_price_unit="S" />
+		<eq name="Gamaschen, Leder"		weight="40"	price="1" 	price_unit="S"	s_price="1" s_price_unit="D" />
+		<eq name="Lederschuhe"				weight="40"	price="2" 	price_unit="S"	s_price="1" s_price_unit="D" />
+		<eq name="Spangenschuhe"			weight="40"	price="4" 	price_unit="S"	s_price="2" s_price_unit="D" />
+		<eq name="Leichte Stiefel"			weight="75"	price="9" 	price_unit="S"	s_price="3" s_price_unit="D" />
+		<eq name="Schwere Reiterstiefel"	weight="100"	price="2" 	price_unit="D"	s_price="5" s_price_unit="D" />
+		<eq name="Stulpenstiefel"			weight="100"	price="3" 	price_unit="D"	s_price="6" s_price_unit="D" />
+		<eq name="Tunika, Bausch"			weight="20"	price="2" 	price_unit="S"	s_price="1" s_price_unit="D" />
+		<eq name="Tunika, Leinen"			weight="30"	price="1" 	price_unit="S"	s_price="6" s_price_unit="S" />
+		<eq name="Tunika, Seide"			weight="10"	price="8" 	price_unit="S"	s_price="7" s_price_unit="D" />
+		<eq name="Burnus"					weight="50"	price="2" 	price_unit="S"	s_price="2" s_price_unit="D" />
+	</group>
+	
+	<group name="Nahrungs- und Genußmittel" id="food">
+		<eq name="Proviant, pro Person und Tag"	weight="40"	price="3" price_unit="S" /> 
+		<eq name="Brot"					weight="40"	price="15" price_unit="K" /> 
+		<eq name="Schwarzbrot"				weight="20"	price="1"  price_unit="H" />
+		<eq name="Weißbrot"				weight="40"	price="3"  price_unit="H" />
+		<eq name="Sauerteigbrot"			weight="40"	price="15" price_unit="K" />
+		<eq name="Fladenbrot"				weight="20"	price="3" price_unit="K" />
+		<eq name="Zwieback"				weight="20"	price="2" price_unit="H" />
+		<eq name="Hefebackwerk"			weight="20"	price="2" price_unit="H" />
+		<eq name="Kuchen"					weight="20"	price="2" price_unit="H" />
+		<eq name="Napfkuchen"				weight="20"	price="2" price_unit="H" />
+		<eq name="Honigkuchen"				weight="20"	price="2" price_unit="H" />
+		<eq name="Marzipantorte"			weight="20"	price="6" price_unit="H" />
+		<eq name="Fleisch"					weight="20"	price="3" price_unit="H" />
+		<eq name="Rinderbraten"			weight="20"	price="6" price_unit="H" />
+		<eq name="Schweinebraten"			weight="20"	price="4" price_unit="H" />
+		<eq name="Hammelfleisch"			weight="20"	price="4" price_unit="H" />
+		<eq name="Esels-/Pferdefleisch"	weight="20"	price="2" price_unit="H" />
+		<eq name="Dörrfleisch"				weight="20"	price="7" price_unit="H" />
+		<eq name="Wurst"					weight="20"	price="2" price_unit="H" />
+		<eq name="Hartwurst"				weight="20"	price="3" price_unit="H" />
+		<eq name="Saure Wurst"			weight="20"	price="4" price_unit="H" />
+		<eq name="Speckseite"				weight="20" 	price="2" price_unit="H" />
+		<eq name="Schinken"				weight="20"	price="8" price_unit="H" />
+		<eq name="Pemmikan"				weight="20"	price="8" price_unit="H" />
+		<eq name="Huhn"					weight="40"	price="6" price_unit="H" />
+		<eq name="Gans"					weight="200"	price="4" price_unit="S" />
+		<eq name="Wachtel"					weight="8"	price="1" price_unit="S" />
+		<eq name="Purpurmeise"				weight="1"	price="1" price_unit="S" />
+		<eq name="Koschammernzunge"		weight="4"	price="2" price_unit="D" />
+		<eq name="Fisch" 					weight="20"	price="6" price_unit="K" />
+		<eq name="Hering"					weight="20"	price="6" price_unit="K" />
+		<eq name="Hering, geräuchert"	weight="20"	price="7" price_unit="K" />
+		<eq name="Prembutt"				weight="20"	price="8" price_unit="K" />
+		<eq name="Prembutt, geräuchert"	weight="20"	price="1" price_unit="H" />
+		<eq name="Salzarele"				weight="20"	price="1" price_unit="H" />
+		<eq name="Salzarele, geräuchert"	weight="20" 	price="15" price_unit="K" />
+		<eq name="Tintenfisch"				weight="20"	price="4"  price_unit="K" />
+		<eq name="Efferdsfrüchte"			weight="40"	price="5"  price_unit="K" />
+		<eq name="Bodirsalm"				weight="20"	price="5"  price_unit="H" />
+		<eq name="Feuerkopf"				weight="120"	price="1"  price_unit="D" />
+		<eq name="Käse"					weight="20"	price="15" price_unit="K" />
+		<eq name="Schafskäse"				weight="20"	price="15" price_unit="K" />
+		<eq name="Hartkäse"				weight="20"	price="2" price_unit="H" />
+		<eq name="Edelkäse"				weight="20"	price="2" price_unit="S" />
+		<eq name="Kuhmilch"				weight="20"	price="3" price_unit="K" />
+		<eq name="Eier, 6 Stück"			weight="20"	price="9" price_unit="K" />
+		<eq name="Butter"					weight="20"	price="1" price_unit="H" />
+		<eq name="Hülsenfrüchte"			weight="20"	price="4" price_unit="K" />
+		<eq name="Kohl"					weight="20"	price="3" price_unit="K" />
+		<eq name="Paprika"					weight="20" 	price="5" price_unit="H" />
+		<eq name="Porree"					weight="20"	price="8" price_unit="K" />
+		<eq name="Tomaten"					weight="20"	price="4" price_unit="S" />
+		<eq name="Kartoffeln"				weight="20"	price="5" price_unit="S" />
+		<eq name="Kürbis, Gurke"			weight="20"	price="4" price_unit="K" />
+		<eq name="Zwiebeln"				weight="20"	price="5" price_unit="K" />
+		<eq name="Gemüse"					weight="20"	price="1" price_unit="H" />
+		<eq name="Mohrrüben"				weight="20"	price="4" price_unit="K" />
+		<eq name="Bohnen"					weight="20" 	price="4" price_unit="K" />
+		<eq name="Bohnen, getrocknet"	weight="20"	price="8" price_unit="K" />
+		<eq name="Erbsen"					weight="20"	price="7" price_unit="K" />
+		<eq name="Erbsen, getrocknet"	weight="20"	price="1" price_unit="H" />
+		<eq name="Linsen"					weight="20"	price="7" price_unit="K" />
+		<eq name="Salz"					weight="20"	price="1" price_unit="S" />
+		<eq name="Küchenkräuter"			weight="10"	price="1" price_unit="S" />
+		<eq name="Gewürze" 				weight="10"	price="1" price_unit="D" />
+		<eq name="Öl"						weight="20"	price="2" price_unit="S" />
+		<eq name="Praiosblumenöl"			weight="20"	price="3" price_unit="S" />
+		<eq name="Rapsöl"					weight="20"	price="2" price_unit="S" />
+		<eq name="Zucker"					weight="20"	price="3" price_unit="S" />
+		<eq name="Kandis" 					weight="20"	price="2" price_unit="S" />
+		<eq name="Rosinen"					weight="20"	price="7" price_unit="H" />
+		<eq name="Mehl"				weight="20"	price="4" price_unit="K" />
+		<eq name="Honig" 					weight="20"	price="8" price_unit="H" />
+		<eq name="Nüsse / Mandeln"			weight="10"  price="2" price_unit="H" />
+		<eq name="Obst"					weight="20"	price="5" price_unit="K" />
+		<eq name="Äpfel"					weight="20"  price="5" price_unit="K" />
+		<eq name="Birnen"					weight="20"	price="5" price_unit="K" />
+		<eq name="Erdbeeren"				weight="20" 	price="4" price_unit="H" />
+		<eq name="Kirschen"				weight="20"	price="2" price_unit="H" />
+		<eq name="Trauben"					weight="20"	price="5" price_unit="H" />
+		<eq name="Brombeeren"				weight="20"	price="4" price_unit="H" />
+		<eq name="Datteln"					weight="20"	price="2" price_unit="H" />
+		<eq name="Feigen"					weight="20"	price="3" price_unit="H" />
+		<eq name="Melonen"					weight="20"	price="8" price_unit="H" />
+		<eq name="Geröstete Kastanien"		weight="5"	price="3" price_unit="K" />
+		<eq name="Kandierte Früchte"		weight="10"	price="1" price_unit="S" />
+		<eq name="Zuckerstange"			weight="1"	price="3" price_unit="H" />
+		<eq name="Süßholz"					weight="10"	price="2" price_unit="K" />
+		<eq name="Lakritz"					weight="10"	price="3" price_unit="H" />
+		<eq name="Karamel"					weight="10" 	price="8" price_unit="H" />
+		<eq name="Korn"					weight="20"	price="3" price_unit="K" />
+		<eq name="Naschwerk"				weight="10"	price="1" price_unit="S" />
+		<eq name="Tee"						weight="20"	price="5" price_unit="H" />
+		<eq name="Kräutertee"				weight="20"	price="2" price_unit="H" />
+		<eq name="Kakao"					weight="20" 	price="8" price_unit="S" />
+		<eq name="Bier"					weight="40"	price="1" price_unit="H" />
+		<eq name="Einfacher Landwein"		weight="40"	price="3" price_unit="H" />
+		<eq name="Guter Rotwein"		weight="40"	price="8" price_unit="S" />
+		<eq name="Einfacher Schnaps"		weight="40"	price="8" price_unit="H" />
+		<eq name="Branntwein"				weight="40"	price="8" price_unit="H" />
+		<eq name="Guter Branntwein"		weight="40"	price="1" price_unit="D" />
+		<eq name="Likör"					weight="20"	price="1" price_unit="S" />
+		<eq name="Fruchtsirup"				weight="40"	price="2" price_unit="H" />
+		<eq name="Pfeifenkraut, Knaster"	weight="2"	price="1" price_unit="H" />
+		<eq name="Zigarren, 10 Stück"		weight="8"	price="1" price_unit="D" />
+	</group>
+	
+	<group name="Fahrzeuge" id="vehicle">
+		<eq name="Einfacher Einspänner"		weight="6000"	price="400"  price_unit="D" />
+		<eq name="Zweispännige Kutsche"		weight="9000"	price="600"  price_unit="D" />
+		<eq name="Vierspänner"					weight="20000"	price="900"  price_unit="D" />
+		<eq name="6er Ferrara"					weight="18000"	price="1500" price_unit="D" />
+		<eq name="Rennkutsche"					weight="12000"	price="1200" price_unit="D" />
+		<eq name="Streitwagen"					weight="10000"	price="1000" price_unit="D" />
+		<eq name="Hundeschlitten"				weight="1500"	price="80" 	 price_unit="D" />
+		<eq name="Reiseschlitten"				weight="12000"	price="650"  price_unit="D" />
+		<eq name="Kaleschka"					weight="22000"	price="1000" price_unit="D" />
+		<eq name="Ochsenkarren"				weight="20000"	price="120"  price_unit="D" />
+		<eq name="Planwagen"					weight="22000"	price="400"  price_unit="D" />
+		<eq name="Kastenwagen"					weight="25000"	price="600"  price_unit="D" />
+		<eq name="Kanu"						weight="2000"	price="60" 	 price_unit="D" />
+		<eq name="Kleines Ruderboot"			weight="2000"	price="120"  price_unit="D" />
+		<eq name="Segelboot, 6m lang"			weight="16000"	price="650"  price_unit="D" />
+		<eq name="Segeltuch"					weight="300" 	price="12" 	 price_unit="D" />
+	</group>
+	
+	<group name="Möbel" id="furniture">
+		<eq name="Hocker"					weight="120"	  price="5" 	price_unit="S" />
+		<eq name="Stuhl" 					weight="160"	  price="2" 	price_unit="D" />
+		<eq name="Holzbank"				weight="400"	  price="3" 	price_unit="D" />
+		<eq name="Sessel"					weight="200"	  price="6" 	price_unit="D" />
+		<eq name="Polstersessel"			weight="800"	  price="10" 	price_unit="D" />
+		<eq name="Tisch"					weight="600"	  price="10" 	price_unit="S" />
+		<eq name="Schreibtisch"			weight="800"	  price="18" 	price_unit="D" />
+		<eq name="Bett"					weight="1000"  price="10" 	price_unit="D" />
+		<eq name="Himmelbett"				weight="5000"  price="40" 	price_unit="D" />
+		<eq name="Matratze"				weight="400"	  price="2" 	price_unit="D" />
+		<eq name="Wandspiegel 1x1m"		weight="350"	  price="10" 	price_unit="D" />
+		<eq name="Kerzenständer, Zinn"		weight="30"	  price="4"     price_unit="S" />
+		<eq name="Kerzenständer, Gold"		weight="50"	  price="60"    price_unit="D" />
+		<eq name="Kandelaber, Gold"		weight="400"	  price="500"   price_unit="D" />
+		<eq name="Fackelhalter"			weight="60"	  price="8" 	price_unit="S" />
+		<eq name="Kohlebecken"				weight="400"	  price="4" 	price_unit="D" />
+		<eq name="Ofen"					weight="4000"  price="25"    price_unit="D" />
+		<eq name="Herd"					weight="6000"  price="40"    price_unit="D" />
+		<eq name="Holzkohle"				weight="2000"  price="8" 	price_unit="S" />
+		<eq name="Zwergenkohle"			weight="2000"  price="9" 	price_unit="D" />
+		<eq name="Kommode" 				weight="1200"  price="10" 	price_unit="D" />
+		<eq name="Schrank"					weight="4000"  price="15" 	price_unit="D" />
+		<eq name="Sekretär"				weight="2000"  price="25" 	price_unit="D" />
+		<eq name="Regal"					weight="1200"  price="4" 	price_unit="D" />
+		<eq name="Truhe, klein"			weight="200"	  price="8" 	price_unit="S" />
+		<eq name="Truhe, groß"				weight="600"	  price="3" 	price_unit="D" />
+		<eq name="Panzerschrank"			weight="40000" price="1000"  price_unit="D" />
+		<eq name="Teppich, einfach, m²"	weight="160"	  price="2" 	price_unit="D" />
+		<eq name="Teppich, Khomware m²"	weight="180"   price="6" 	price_unit="D" />
+		<eq name="Badezuber"				weight="600"	  price="2" 	price_unit="D" />
+	</group>
+	
+	<group name="Metalle, ungeprägt" id="raw_metal">
+		<eq name="Blei"				   weight="35.27" price="12" price_unit="S" />
+		<eq name="Zinn"				   weight="35.27" price="22" price_unit="S" />
+		<eq name="Kupfer"				   weight="35.27" price="28" price_unit="S" />
+		<eq name="Bronze"				   weight="35.27" price="30" price_unit="S" />
+		<eq name="Messing"				   weight="35.27" price="40" price_unit="S" />
+		<eq name="Silber"				   weight="35.27" price="18" price_unit="D" />
+		<eq name="Gold"				   weight="35.27" price="35" price_unit="D" />
+		<eq name="Zwergengold"			   weight="35.27" price="50" price_unit="D" />
+		<eq name="Platin oder Mondsilber" weight="35.27" price="50" price_unit="D" />
+		<eq name="Quecksilber"			   weight="35.27" price="60" price_unit="D" />
+	</group>
+	
+	<group name="Edelsteine" id="gems">
+		<eq name="Diamant, Karat"			weight="-" price="60" price_unit="S" />
+		<eq name="Saphir, Karat"			weight="-" price="50" price_unit="S" />
+		<eq name="Opal, Karat"			weight="-" price="25" price_unit="S" />
+		<eq name="Rohdiamant, Karat"		weight="-" price="15" price_unit="S" />
+		<eq name="Topas, Karat"			weight="-" price="8"  price_unit="S" />
+		<eq name="Lapislazuli, Karat"		weight="-" price="7"  price_unit="S" />
+		<eq name="Jade, Karat"			weight="-" price="4"  price_unit="S" />
+		<eq name="Aquamarin, Karat"		weight="-" price="8"  price_unit="S" />
+		<eq name="Granat, Karat"			weight="-" price="3"  price_unit="S" />
+		<eq name="Onyx, Karat"			weight="-" price="5"  price_unit="S" />
+		<eq name="Perle, Karat"			weight="-" price="7"  price_unit="S" />
+		<eq name="Turmalin, Karat"		weight="-" price="10" price_unit="S" />
+		<eq name="Bernstein, Karat"		weight="-" price="18" price_unit="S" />
+		<eq name="Zirkon, Karat"			weight="-" price="35" price_unit="S" />
+		<eq name="Smaragd, Karat"			weight="-" price="45" price_unit="S" />
+		<eq name="Rubin, Karat"			weight="-" price="55" price_unit="S" />
+		<eq name="Amethyst"    weight="1" price="20" price_unit="S" />
+		<eq name="Rosenquarz"  weight="1" price="20" price_unit="S" />
+		<eq name="Mondstein"   weight="1" price="20" price_unit="S" />
+		<eq name="Türkis"      weight="1" price="20" price_unit="S" />
+		<eq name="Malachit"    weight="1" price="20" price_unit="S" />
+		<eq name="Korallen"    weight="1" price="20" price_unit="S" />
+		<eq name="Meerschaum"  weight="1" price="20" price_unit="S" />
+		<eq name="Achat"       weight="1" price="20" price_unit="S" />
+	</group>
+	
+	<group name="Tuche" id="cloth">
+		<eq name="Karenwolle, m²"				weight="4"  price_unit="S" />
+		<eq name="Einfacher Wollstoff, m²"		weight="5"  price_unit="S" />
+		<eq name="Schwerer Wollstoff, m²"		weight="6"  price_unit="S" />
+		<eq name="Leinen, m²"					weight="7"  price_unit="S" />
+		<eq name="Phraischafwolle, m²"			weight="9"  price_unit="S" />
+		<eq name="Bausch, m²"					weight="10" price_unit="S" />
+		<eq name="Elfenbausch, m²"				weight="12" price_unit="S" />
+		<eq name="Kusliker Leinen, m²"			weight="15" price_unit="S" />
+		<eq name="Segeltuch, m²"				weight="18" price_unit="S" />
+		<eq name="Zwergenfilz, m²"				weight="20" price_unit="S" />
+		<eq name="Samt, m²"					weight="5"  price_unit="D" />
+		<eq name="Atlas, m²"					weight="8"  price_unit="D" />
+		<eq name="Seide, m²"					weight="8"  price_unit="D" />
+		<eq name="Taft, m²"					weight="9"  price_unit="D" />
+		<eq name="Spitzen (pro Schritt)"	weight="1"  price_unit="D" />
+		<eq name="Brokat, m²"					weight="15" price_unit="D" />
+		<eq name="Ziegenleder, m²"				weight="6"  price_unit="S" />
+		<eq name="Schweinsleder, m²"			weight="10" price_unit="S" />
+		<eq name="Rindleder, m²"				weight="15" price_unit="S" />
+		<eq name="Schwerleder, m²"				weight="35" price_unit="S" />
+		<eq name="Wildleder, m²"				weight="4"  price_unit="D" />
+		<eq name="Schlangenhaut, m²"			weight="7"  price_unit="D" />
+		<eq name="Iryanleder, m²"				weight="10" price_unit="D" />
+		<eq name="Pelze, m²"					weight="10" price_unit="D" />
+		<eq name="Drachenhaut, m²"				weight="30" price_unit="D" />
+	</group>
+	
+	<group name="Kräuter" id="herbs">
+		<eq name="Alraune (=Mandragora)"			weight="-" price="1"  price_unit="S" />		
+		<eq name="Arganwurzel"						weight="-" price="7"  price_unit="S" />	
+		<eq name="Atanax"							weight="-" price="12" price_unit="S" />		
+		<eq name="Atmon"							weight="-" price="2"  price_unit="D" />		
+		<eq name="Belmart"							weight="-" price="9"  price_unit="S" />		
+		<eq name="Carlog"							weight="-" price="5"  price_unit="S" />		
+		<eq name="Chonchinis"						weight="-" price="4"  price_unit="S" />		
+		<eq name="Donf"							weight="-" price="3"  price_unit="S" />		
+		<eq name="Egelschreck"			        	weight="-" price="8"  price_unit="H" />		
+		<eq name="Finage"				        	weight="-" price="6"  price_unit="S" />		
+		<eq name="Gulmond"				        	weight="-" price="8"  price_unit="S" />	
+		<eq name="Guraanstrauch (=Hesindigo)"		weight="-" price="1"  price_unit="H" />
+		<eq name="Hiradwurz"						weight="-" price="8"  price_unit="S" />		
+		<eq name="Horusche"						weight="-" price="1"  price_unit="S" />		
+		<eq name="Ilmenblatt"						weight="-" price="2"  price_unit="S" />		
+		<eq name="Joruga"							weight="-" price="8"  price_unit="S" />	
+		<eq name="Kairan"							weight="-" price="15" price_unit="S" />		
+		<eq name="Kajubo"							weight="-" price="2"  price_unit="S" />		
+		<eq name="Khomknolle (= Mhanadiknolle) in Not unbezahlbar, sonst wertlos" weight="-" price="-" price_unit="-" />
+		<eq name="Klippenzahn"						weight="-" price="5" price_unit="H" />
+		<eq name="Lotos, Färberlotos (= Gelber, Blauer, Rosa L.)" weight="-" price="3-15" price_unit="S" />
+		<eq name="Lotos, Weissgelber Lotos"		weight="-" price="5-10" price_unit="D" />
+		<eq name="Lulanie"							weight="-" price="12"   price_unit="S" />		
+		<eq name="Menchal"							weight="-" price="2"    price_unit="D" />		
+		<eq name="Mibelrohr"						weight="-" price="2"    price_unit="S" />		
+		<eq name="Mirbelstein"						weight="-" price="1"    price_unit="S" />		
+		<eq name="Nothilf"							weight="-" price="12"   price_unit="D" />		
+		<eq name="Olginwurz"						weight="-" price="2"    price_unit="D" />		
+		<eq name="Orazal"							weight="-" price="12"   price_unit="S" />		
+		<eq name="Pestsporenpilz"					weight="-" price="2"    price_unit="S" />		
+		<eq name="Quinja"							weight="-" price="12"   price_unit="S" />		
+		<eq name="Rauschgurke"						weight="-" price="5"    price_unit="H" />		
+		<eq name="Rote Pfeilblüte"					weight="-" price="1"    price_unit="S" />		
+		<eq name="Sansaro"							weight="-" price="1"    price_unit="S" />	
+		<eq name="Talaschin"						weight="-" price="12"   price_unit="H" />		
+		<eq name="Tarnele"							weight="-" price="4"    price_unit="H" />		
+		<eq name="Thonnys"							weight="-" price="12"   price_unit="S" />		
+		<eq name="Traschbart"						weight="-" price="1"    price_unit="H" />		
+		<eq name="Ulmenwürger"						weight="-" price="6"    price_unit="S" />		
+		<eq name="Vierblättrige Einbeere"			weight="-" price="3"    price_unit="H" />		
+		<eq name="Wirselkraut"						weight="-" price="1"    price_unit="D" />		
+		<eq name="Xordai"							weight="-" price="40"   price_unit="D" />		
+		<eq name="Yagannuß"						weight="-" price="1"    price_unit="S" />		
+		<eq name="Zwölfblatt"						weight="-" price="9"    price_unit="S" />
+	</group>
+	
+	<group name="Kräuterprodukte" id="herb_products">
+		<eq name="Eingelegte Alraune"							weight="?" price="8"  price_unit="S" />
+		<eq name="Arganwurzel-Absud"							weight="?" price="17" price_unit="D" />
+		<eq name="Atanax-Sud mit Wasser und Salz"				weight="?" price="10" price_unit="D" />
+		<eq name="Atmon-Brei"									weight="?" price="18" price_unit="D" />
+		<eq name="Getrocknete Belmart-Blätter"					weight="?" price="8"  price_unit="D" />
+		<eq name="Carlog-Blütenstempel in Alkohol"				weight="?" price="4"  price_unit="D" />
+		<eq name="Chonchinismilch-Salbe mit Wirselkraut"		weight="?" price="7"  price_unit="D" />
+		<eq name="Chonchinismilch mit Wasser und Öl"			weight="?" price="5"  price_unit="D" />
+		<eq name="Donfstengel in Alkohol"						weight="?" price="12" price_unit="D" />
+		<eq name="Egelschreck-Paste"							weight="?" price="2"  price_unit="D" />
+		<eq name="Finage-Bast"									weight="?" price="8"  price_unit="D" />
+		<eq name="Gulmond-Tee (Frisch)"						weight="?" price="6"  price_unit="D" />
+		<eq name="Gulmond-Tee (Getrocknet)"					weight="?" price="4"  price_unit="D" />
+		<eq name="Doppelter Gulmond"							weight="?" price="8"  price_unit="D" />
+		<eq name="Blütensaft aus Guraanstrauch"				weight="?" price="5"  price_unit="S" />
+		<eq name="Destillat aus vergorenem Hiradwurz"			weight="?" price="12" price_unit="D" />
+		<eq name="Getrocknete Teile; ausgepr. Harz"			weight="?" price="6"  price_unit="D" />
+		<eq name="Wäßriger Sud aus Joruga"						weight="?" price="12" price_unit="D" />
+		<eq name="Alkoholischer Sud aus Joruga"				weight="?" price="18" price_unit="D" />
+		<eq name="Eingelegter Kairan mit Mibelrohr"			weight="?" price="30" price_unit="D" />
+		<eq name="Kajubo-Knospen in Dattel- oder Nußöl"		weight="?" price="10" price_unit="D" />
+		<eq name="Klippenzahn-Saft (naturbelassen)"			weight="?" price="1"  price_unit="D" />
+		<eq name="Klippenzahn-Saft (alchimistisch verändert)"	weight="?" price="4"  price_unit="D" />
+		<eq name="Weissgelber Lotos-Absud mit Alraune"			weight="?" price="25" price_unit="D" />
+		<eq name="Alkoholische Lulanie-Lösung"					weight="?" price="9"  price_unit="D" />
+		<eq name="Wäßrige Lulanie-Lösung"						weight="?" price="9"  price_unit="D" />
+		<eq name="Lulanie-Kuchen (nur bei Hexen)"				weight="?" price="nach Ermessen der Hexe" price_unit="" />
+	</group>
+	
+	<group name="Gifte" id="poisons">
+		<eq name="Arachnae"					weight="-" price="5" 	price_unit="D" />
+		<eq name="Mandragora"					weight="-" price="3" 	price_unit="D" />
+		<eq name="Morfugift"					weight="-" price="12" 	price_unit="D" />
+		<eq name="Wurara"						weight="-" price="15" 	price_unit="D" />
+		<eq name="Angstgift"					weight="-" price="25" 	price_unit="D" />
+		<eq name="Eitriger Krötenschemel"		weight="-" price="15" 	price_unit="D" />
+		<eq name="Samthauch, verboten"			weight="-" price="20" 	price_unit="D" /> 
+		<eq name="Schlafgift"					weight="-" price="35" 	price_unit="D" />
+		<eq name="Feuerzunge"					weight="-" price="25" 	price_unit="D" />
+		<eq name="Goldleim"					weight="-" price="30" 	price_unit="D" />	
+		<eq name="Kelmon"						weight="-" price="12" 	price_unit="D" />
+		<eq name="Arax"						weight="-" price="35" 	price_unit="D" />
+		<eq name="Shurinknolle, verboten"		weight="-" price="70" 	price_unit="D" /> 
+		<eq name="Drachenspeichel"				weight="-" price="40" 	price_unit="D" />
+		<eq name="Tinzal, verboten"			weight="-" price="40" 	price_unit="D" /> 
+		<eq name="Schleimiger Sumpfknöterich, verboten"	weight="-" price="50" 	price_unit="D" /> 
+		<eq name="Halbgift"					weight="-" price="60"  price_unit="D" />
+		<eq name="Gonede, verboten"			weight="-" price="70"  price_unit="D" /> 
+		<eq name="Sunsura, verboten"			weight="-" price="90"  price_unit="D" /> 
+		<eq name="Schwarzer Lotos, verboten"	weight="-" price="100" price_unit="D" />  
+		<eq name="Omrais, verboten"			weight="-" price="80"  price_unit="D" /> 
+		<eq name="Kukris, verboten"			weight="-" price="90"  price_unit="D" /> 
+		<eq name="Bannstaub"					weight="-" price="250" price_unit="D" />
+		<eq name="Tulmadron, verboten"			weight="-" price="200" price_unit="D" /> 
+		<eq name="Boabungaha, verboten"		weight="-" price="250" price_unit="D" /> 
+		<eq name="Purpurblitz, verboten"		weight="-" price="300" price_unit="D" /> 
+		<eq name="Expurgicum"					weight="-" price="18"  price_unit="D" />
+		<eq name="Vomicum"						weight="-" price="9" 	 price_unit="D" />
+		<eq name="Miasthmaticum"				weight="-" price="11"  price_unit="D" />
+	</group>
+	
+	<group name="Rauschgifte" id="grugs">
+		<eq name="Mohacca"			  weight="1"	          price="25" 	price_unit="Dirham" />
+		<eq name="Zithabar" 		  weight="1"	          price="3" 	price_unit="Große Oreal" />
+		<eq name="Cheriacha" 		  weight="1"	          price="3" 	price_unit="Große Oreal" />
+		<eq name="Boronwein"		  weight="1"	          price="2" 	price_unit="Dublonen" />
+		<eq name="Kamaluqs Tatze"	  weight="2 Skrupel"   price="2" 	price_unit="Dublonen" />
+		<eq name="Ilmenblatt (Alphana)" weight="1"		  price="3" 	price_unit="Dublonen" />
+		<eq name="Marbos Odem"		  weight="1 Skrupel"   price="5" 	price_unit="Dublonen " />
+		<eq name="Regenbogenstaub"	  weight="1 Skrupel"   price="5-100" price_unit="Dublonen" />
+	</group>
+	
+	<group name="Körperpflege" id="body_health">
+	</group>
+	<eq name="" weight="" price="" price_unit="S" />
+</equipments>
