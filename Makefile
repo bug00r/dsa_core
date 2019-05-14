@@ -37,10 +37,10 @@ ZIP=7z
 ZIP_ARGS=a -t7z
 ZIP_CMD=$(ZIP) $(ZIP_ARGS)
 
-all: mkbuilddir $(LIB_TARGET)
+all: mkbuilddir mkzip addzip $(LIB_TARGET)
 
 $(LIB_TARGET): $(_SRC_FILES)
-	$(AR) $(ARFLAGS) $(LIB_TARGET) $(OBJS)
+	$(AR) $(ARFLAGS) $(LIB_TARGET) $(OBJS) $(RES_O_PATH)
 
 $(_SRC_FILES):
 	$(CC) $(CFLAGS) -c src/$@.c -o $(BUILDPATH)$@.o $(INCLUDEDIR) 
@@ -48,7 +48,7 @@ $(_SRC_FILES):
 #$(USED_LIBSDIR) $(USED_LIBS)
 
 test_resource: mkbuilddir mkzip addzip 
-	$(CC) $(CFLAGS) ./test/test_resource.c ./src/resource.c -o $(BUILDPATH)test_resource.exe -I./src/ $(INCLUDEDIR) $(RES_O_PATH) $(USED_LIBSDIR) -static $(USED_LIBS) $(debug)
+	$(CC) $(CFLAGS) ./test/test_resource.c ./src/resource.c -o $(BUILDPATH)test_resource.exe -I./src/ $(INCLUDEDIR) $(USED_LIBSDIR) -static $(USED_LIBS) $(debug)
 	$(BUILDPATH)test_resource.exe
 
 test_taw:
