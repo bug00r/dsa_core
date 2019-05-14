@@ -81,7 +81,8 @@ static void __delete_sr_item(sr_item_t **item) {
 	}
 }
 
-static resource_search_result_t * __resource_load_resource(archive_resource_t * archive_resource, const char *pattern) {
+static resource_search_result_t * __resource_load_resource(archive_resource_t * archive_resource, const char *pattern, 
+														   bool (*match_func)(const char *, const char *)) {
 	struct archive *a = archive_read_new();
 	
 	sr_item_t *first_file = __new_sr_item();
@@ -101,7 +102,7 @@ static resource_search_result_t * __resource_load_resource(archive_resource_t * 
 		struct archive_entry *entry;
 		while (archive_read_next_header(a, &entry) == ARCHIVE_OK) {
 		  const char *pathname = archive_entry_pathname(entry);
-		  if ( regex_match(pattern, pathname) ) {
+		  if ( match_func(pattern, pathname) ) {
 
 			resource_file_t *new_file = __resource_read_entry(a, entry);
 			if ( new_file != NULL ) {
@@ -204,7 +205,11 @@ void archive_resource_set_config_free_default(archive_resource_t *archive_resour
 }
 
 resource_search_result_t * archive_resource_search(archive_resource_t *archive_resource, const char *pattern) {
-	return __resource_load_resource(archive_resource, pattern);
+	return __resource_load_resource(archive_resource, pattern, regex_match);
+}
+
+resource_search_result_t *archive_resource_search_by_name(archive_resource_t *archive_resource, const char *name) {
+	return __resource_load_resource(archive_resource, name, name_match);
 }
 
 resource_file_t * resource_file_new_empty() {

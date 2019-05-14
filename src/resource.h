@@ -94,6 +94,7 @@ void archive_resource_set_config_free_default(archive_resource_t *archive_resour
 	
 */
 resource_search_result_t *archive_resource_search(archive_resource_t *archive_resource, const char *pattern);
+resource_search_result_t *archive_resource_search_by_name(archive_resource_t *archive_resource, const char *name);
 
 /*
 	The function "resource_file_new_empty" creates a new empty file.
@@ -119,8 +120,8 @@ resource_file_t * resource_file_new_empty();
 resource_file_t * resource_file_new(const char *full_file_path, unsigned char 	*data, size_t	data_size);
 
 /*
-	The function "resource_file_free" frees the complete memory a resource file, including the
-	needed memory for data inside.
+	The function "resource_file_copy_deep" makes a deep copy of given
+	file.
 	
 	Parameter			Decription
 	---------			-----------------------------------------
@@ -145,7 +146,7 @@ void resource_file_free(resource_file_t **file);
 /*
 	The function "resource_search_result_free" frees the complete memory for the container of resource files.
 	This does no include the file entries at itself. Ich you want delete the whole search result with files too
-	you have to use the function ""
+	you have to use the function "resource_file_free".
 	
 	Parameter			Decription
 	---------			-----------------------------------------
