@@ -1,6 +1,6 @@
 include ../make_config
 
-_SRC_FILES+=string_utils regex_utils resource taw xpath_utils file_path_utils
+_SRC_FILES+=string_utils regex_utils resource taw xpath_utils file_path_utils xml_source xml_utils
 
 LIBNAME:=dsa_core
 LIBEXT:=a
@@ -46,6 +46,10 @@ $(_SRC_FILES):
 	$(CC) $(CFLAGS) -c src/$@.c -o $(BUILDPATH)$@.o $(INCLUDEDIR) 
 	
 #$(USED_LIBSDIR) $(USED_LIBS)
+
+test_xml_source: mkbuilddir mkzip addzip 
+	$(CC) $(CFLAGS) ./test/test_xml_source.c ./src/xml_source.c -o $(BUILDPATH)test_xml_source.exe -I./src/ $(INCLUDEDIR) $(USED_LIBSDIR) -static $(USED_LIBS) $(debug)
+	$(BUILDPATH)test_xml_source.exe
 
 test_resource: mkbuilddir mkzip addzip 
 	$(CC) $(CFLAGS) ./test/test_resource.c ./src/resource.c -o $(BUILDPATH)test_resource.exe -I./src/ $(INCLUDEDIR) $(USED_LIBSDIR) -static $(USED_LIBS) $(debug)

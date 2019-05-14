@@ -124,6 +124,41 @@ static void test_resource_read_archive_items_xml() {
 	DEBUG_LOG("<<<\n");
 }
 
+static void test_resource_search_name_xml() {
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+
+	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
+	
+	resource_search_result_t* result = archive_resource_search_by_name(ar, "xml/talents.xml");
+	
+	assert(result->cnt == 1);
+	DEBUG_LOG_ARGS("found results (%i)\n", result->cnt);
+
+	resource_search_result_full_free(&result);
+
+	result = archive_resource_search_by_name(ar, "xml/nothinfound.xml");
+	
+	assert(result->cnt == 0);
+	DEBUG_LOG_ARGS("found results (%i)\n", result->cnt);
+
+	resource_search_result_full_free(&result);
+
+	result = archive_resource_search_by_name(ar, ".*talents.*.xml");
+	
+	assert(result->cnt == 0);
+	DEBUG_LOG_ARGS("found results (%i)\n", result->cnt);
+
+	resource_search_result_full_free(&result);
+
+	result = archive_resource_search_by_name(ar, "xml/breeds.xml");
+	
+	assert(result->cnt == 1);
+	DEBUG_LOG_ARGS("found results (%i)\n", result->cnt);
+
+	resource_search_result_full_free(&result);
+
+	DEBUG_LOG("<<<\n");
+}
 
 int 
 main() 
@@ -134,6 +169,8 @@ main()
 	test_resource_read_archive_items();
 	
 	test_resource_read_archive_items_xml();
+
+	test_resource_search_name_xml();
 	
 	DEBUG_LOG("<< end resource tests:\n");
 	return 0;
