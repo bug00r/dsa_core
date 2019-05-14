@@ -19,3 +19,7 @@ char * format_string_new(const char * msg, ...) {
 	va_end( vl);
 	return buffer;
 }
+
+bool name_match(const char *search, const char *pathname) {
+	return strcmp(search, pathname) == 0;
+}
