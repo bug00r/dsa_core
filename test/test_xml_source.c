@@ -35,6 +35,12 @@ static void test_xml_source() {
 	assert(result != NULL);
 	assert(result->data.resfile != NULL);
 
+	DEBUG_LOG_ARGS("src size (%i == %i)\n", *result->src_size, result->data.resfile->file_size);
+	assert(*result->src_size == result->data.resfile->file_size);
+
+	DEBUG_LOG_ARGS("src data pointer (%p == %p)\n", result->src_data, result->data.resfile->data);
+	assert(result->src_data == result->data.resfile->data);
+
 	assert( strcmp(result->data.resfile->complete, "xml/talents.xml" ) == 0 );
 	
 	DEBUG_LOG_ARGS("found file (%s)\n", result->data.resfile->complete);
@@ -52,42 +58,6 @@ static void test_xml_source() {
 	DEBUG_LOG("<<<\n");
 }
 
-
-/*static void test_resource_search_name_xml() {
-	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
-
-	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
-	
-	resource_search_result_t* result = archive_resource_search_by_name(ar, "xml/talents.xml");
-	
-	assert(result->cnt == 1);
-	DEBUG_LOG_ARGS("found results (%i)\n", result->cnt);
-
-	resource_search_result_full_free(&result);
-
-	result = archive_resource_search_by_name(ar, "xml/nothinfound.xml");
-	
-	assert(result->cnt == 0);
-	DEBUG_LOG_ARGS("found results (%i)\n", result->cnt);
-
-	resource_search_result_full_free(&result);
-
-	result = archive_resource_search_by_name(ar, ".*talents.*.xml");
-	
-	assert(result->cnt == 0);
-	DEBUG_LOG_ARGS("found results (%i)\n", result->cnt);
-
-	resource_search_result_full_free(&result);
-
-	result = archive_resource_search_by_name(ar, "xml/breeds.xml");
-	
-	assert(result->cnt == 1);
-	DEBUG_LOG_ARGS("found results (%i)\n", result->cnt);
-
-	resource_search_result_full_free(&result);
-
-	DEBUG_LOG("<<<\n");
-}*/
 
 int 
 main() 

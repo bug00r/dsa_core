@@ -20,6 +20,14 @@ char * format_string_new(const char * msg, ...) {
 	return buffer;
 }
 
+char * format_string_va_new(const char * msg, va_list argptr)  {
+	int buffsize = vsnprintf(NULL, 0, msg, argptr);
+	buffsize += 1;
+	char * buffer = malloc(buffsize);
+	vsnprintf(buffer, buffsize, msg, argptr);
+	return buffer;
+}
+
 bool name_match(const char *search, const char *pathname) {
 	return strcmp(search, pathname) == 0;
 }

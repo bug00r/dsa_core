@@ -2,7 +2,7 @@
 
 static xml_source_t* xml_source_new(xml_source_type_t type, resource_file_t *res_file) {
     
-    xml_source_t _tmp_newxml_source = { type, res_file };
+    xml_source_t _tmp_newxml_source = { type, &res_file->file_size, res_file->data, res_file };
 
     xml_source_t* newxml_source = malloc(sizeof(xml_source_t));
     
@@ -11,8 +11,6 @@ static xml_source_t* xml_source_new(xml_source_type_t type, resource_file_t *res
     return newxml_source;
 }
 
-//resource_search_result_t* result = archive_resource_search(ar, ".*talents.*.xml");
-//resource_search_result_t* result = archive_resource_search_by_name(ar, "xml/talents.xml");
 xml_source_t* xml_source_from_resname(archive_resource_t* ar, const char *name) {
     
     xml_source_t *result = NULL;

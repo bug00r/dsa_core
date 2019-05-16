@@ -12,10 +12,6 @@
 #include "string_utils.h"
 #include "file_path_utils.h"
 
-#include <libxml/parser.h>
-#include <libxml/tree.h>
-
-
 
 typedef struct {
 	char 			*complete;	/* my/path/to/file.type */

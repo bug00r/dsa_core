@@ -14,7 +14,9 @@ typedef enum {
 } xml_source_type_t;
 
 typedef struct {
-    const xml_source_type_t const type;
+    const xml_source_type_t     const type;
+    const size_t			  * const src_size; /* size of xml source in byte */
+	const unsigned char 	  * const src_data; /* data of xml source as byte array */
     union {
         const resource_file_t * const resfile;
     } data;
