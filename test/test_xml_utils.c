@@ -33,6 +33,10 @@ static void test_xml_ctx_extra_src() {
 
 	xml_source_t* result = xml_source_from_resname(ar, "talents");
 
+	assert(result != NULL);
+	
+	DEBUG_LOG_ARGS(">>> file type => %s\n", result->data.resfile->type);
+
 	xml_ctx_t *nCtx = xml_ctx_new(result);
 	
 	assert(nCtx->doc != NULL);

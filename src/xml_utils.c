@@ -70,52 +70,6 @@ void free_xml_ctx_src(xml_ctx_t **ctx) {
     }
 }
 
-/*
-xmlXPathContextPtr xpathCtx = xmlXPathNewContext(doc);
-			xmlXPathRegisterAllFunctions(xpathCtx);
-			xmlXPathRegisterFunc(xpathCtx,(const xmlChar *) "regexmatch", regexmatch_xpath_func);
-			
-			#if 0
-			//xmlXPathRegisterNs(xpathCtx, (xmlChar *)"re", (xmlChar *)"http://exslt.org/regular-expressions");
-			#endif
-
-			if ( xpathCtx != NULL ) {
-				
-				
-				char *gen_xpath = NULL;
-				if ( IupGetInt(groups, "VALUE") == 1 ) {
-
-					#if 0
-					//regex is not working in current version, have to add own regex function
-					//gen_xpath = format_string_new("//group/*[contains(@name,'%s')]", search_string);
-					#endif
-
-					gen_xpath = format_string_new("//group/*[regexmatch(@name,'%s')]", search_string);
-					
-				} else {
-
-					#if 0
-					//regex is not working in current version, have to add own regex function
-					//gen_xpath = format_string_new("//group[@name = '%s']/*[contains(@name,'%s')]", selected_group, search_string);
-					#endif
-
-					gen_xpath = format_string_new("//group[@name = '%s']/*[regexmatch(@name,'%s')]", selected_group, search_string);
-					
-				}
-				
-				#if debug > 0
-					printf("used search xpath: %s\n", gen_xpath);
-				#endif
-				
-				xmlXPathObjectPtr xpathObj = xmlXPathEvalExpression((const xmlChar*)gen_xpath, xpathCtx);
-				free(gen_xpath);
-				
-				lsrs->xpath_result[cur_file] = xpathObj;
-					
-			}
-			
-			xmlXPathFreeContext(xpathCtx);
-*/
 xmlXPathObjectPtr xml_ctx_xpath( const xml_ctx_t *ctx, const char *xpath) {
 
     xmlXPathObjectPtr result = NULL;

@@ -55,6 +55,29 @@ static void test_xml_source() {
 
 	xml_source_free(&result);
 
+	DEBUG_LOG("## create by resource file object\n");
+
+	resource_search_result_t* res_result = archive_resource_search(ar, ".*talents.xml");
+
+	result = xml_source_from_resfile(res_result->files[0]);
+
+	assert(result != NULL);
+	assert(result->data.resfile != NULL);
+
+	DEBUG_LOG_ARGS("src size (%i == %i)\n", *result->src_size, result->data.resfile->file_size);
+	assert(*result->src_size == result->data.resfile->file_size);
+
+	DEBUG_LOG_ARGS("src data pointer (%p == %p)\n", result->src_data, result->data.resfile->data);
+	assert(result->src_data == result->data.resfile->data);
+
+	assert( strcmp(result->data.resfile->complete, "xml/talents.xml" ) == 0 );
+	
+	DEBUG_LOG_ARGS("found file (%s)\n", result->data.resfile->complete);
+
+	resource_search_result_free(&res_result);
+
+	xml_source_free(&result);
+
 	DEBUG_LOG("<<<\n");
 }
 

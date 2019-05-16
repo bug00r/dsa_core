@@ -2,11 +2,17 @@
 
 static xml_source_t* xml_source_new(xml_source_type_t type, resource_file_t *res_file) {
     
-    xml_source_t _tmp_newxml_source = { type, &res_file->file_size, res_file->data, res_file };
+    xml_source_t* newxml_source = NULL;
 
-    xml_source_t* newxml_source = malloc(sizeof(xml_source_t));
+    if ( strcmp(res_file->type, "xml") == 0 ) {
+
+        xml_source_t _tmp_newxml_source = { type, &res_file->file_size, res_file->data, res_file };
+
+        newxml_source = malloc(sizeof(xml_source_t));
+        
+        memcpy(newxml_source, &_tmp_newxml_source, sizeof(xml_source_t));
     
-    memcpy(newxml_source, &_tmp_newxml_source, sizeof(xml_source_t));
+    }
     
     return newxml_source;
 }
@@ -29,6 +35,18 @@ xml_source_t* xml_source_from_resname(archive_resource_t* ar, const char *name) 
     }
 
     return result;
+}
+
+xml_source_t* xml_source_from_resfile(resource_file_t *resfile) {
+
+    xml_source_t *result = NULL;
+
+    if (resfile) {
+        result = xml_source_new(RESOURCE_FILE, resfile);
+    }
+
+    return result;
+
 }
 
 void xml_source_free(xml_source_t **source) {

@@ -43,7 +43,7 @@ $(LIB_TARGET): $(_SRC_FILES)
 	$(AR) $(ARFLAGS) $(LIB_TARGET) $(OBJS) $(RES_O_PATH)
 
 $(_SRC_FILES):
-	$(CC) $(CFLAGS) -c src/$@.c -o $(BUILDPATH)$@.o $(INCLUDEDIR) 
+	$(CC) $(CFLAGS) -c src/$@.c -o $(BUILDPATH)$@.o $(INCLUDEDIR) $(debug)
 	
 #$(USED_LIBSDIR) $(USED_LIBS)
 

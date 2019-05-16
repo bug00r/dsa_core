@@ -47,6 +47,18 @@ typedef struct {
 xml_source_t* xml_source_from_resname(archive_resource_t* ar, const char *name);
 
 /*
+	This function reads an xml source from resource_file object.
+
+	Parameter			Decription
+	---------			-----------------------------------------
+	resfile		        resource file object
+	
+	returns: new xml source object or NULL if no resource was found by name
+	
+*/
+xml_source_t* xml_source_from_resfile(resource_file_t *resfile);
+
+/*
 	The function "xml_source_free" frees the memory of xml source complete.
 	
 	Parameter			Decription
