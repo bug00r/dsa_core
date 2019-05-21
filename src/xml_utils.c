@@ -1,5 +1,7 @@
 #include "xml_utils.h"
 
+
+
 static xml_ctx_t* __xml_ctx_create(const xml_source_t *xml_src, xmlDocPtr doc) {
     xml_ctx_t temp = {xml_src, doc};
     xml_ctx_t * new_ctx = malloc(sizeof(xml_ctx_t));
@@ -16,6 +18,59 @@ static void __xml_ctx_set_state_ptr(xml_ctx_t * ctx,  xml_ctx_state_no_t *state_
     __xml_ctx_set_state(ctx, *state_no, *reason);
 }
 
+static bool __xml_ctx_valid( xml_ctx_t *ctx ) {
+    bool isvalid = true;
+
+    if ( ctx == NULL || ctx->doc == NULL) {
+    
+        __xml_ctx_set_state(ctx, XML_CTX_ERROR, XML_CTX_SRC_INVALID);
+        isvalid = false;
+    
+    } else {
+    
+        __xml_ctx_set_state(ctx, XML_CTX_SUCCESS, XML_CTX_NO_REASON);
+    
+    }
+    return isvalid;
+}
+
+static bool __xml_ctx_xpath_valid( xml_ctx_t *ctx, const char *xpath) {
+    bool isvalid = true;
+
+    if ( xpath == NULL || (strlen(xpath) == 0) ) {
+        __xml_ctx_set_state(ctx, XML_CTX_ERROR, XML_CTX_XPATH_INVALID);
+        isvalid = false;
+    
+    } else {
+    
+        __xml_ctx_set_state(ctx, XML_CTX_SUCCESS, XML_CTX_NO_REASON);
+    
+    }
+    return isvalid;
+}
+
+
+xml_ctx_t* xml_ctx_new_empty() {
+
+    xmlDocPtr doc = xmlNewDoc("1.0");
+    xmlNewDocProp(doc, "encoding", "UTF-8");
+
+    xml_ctx_t *new_ctx = __xml_ctx_create(NULL, doc);
+    __xml_ctx_set_state(new_ctx, XML_CTX_SUCCESS, XML_CTX_READ_AND_PARSE);
+
+    return new_ctx;
+}
+
+xml_ctx_t* xml_ctx_new_empty_root_name(const char* rootname) {
+    xml_ctx_t* new_ctx = xml_ctx_new_empty();
+
+    if(rootname && strlen(rootname) > 0) {
+        xmlNodePtr newroot = xmlNewNode(NULL, rootname);
+        xmlDocSetRootElement(new_ctx->doc, newroot);
+    }
+
+    return new_ctx;
+}
 
 
 xml_ctx_t* xml_ctx_new(const xml_source_t *xml_src) {
@@ -109,4 +164,61 @@ xmlXPathObjectPtr xml_ctx_xpath_format( const xml_ctx_t *ctx, const char *xpath_
     free(gen_xpath);
     
     return result;
+}
+
+void xml_ctx_nodes_add_xpath(xml_ctx_t *src, const char *src_xpath, xml_ctx_t *dst, const char *dst_xpath) {
+    
+    if ( !__xml_ctx_valid(src) || !__xml_ctx_valid(dst) ) return;
+    
+    if ( !__xml_ctx_xpath_valid(src, src_xpath) || !__xml_ctx_xpath_valid(dst, dst_xpath) ) return;
+
+    xmlXPathObjectPtr srcxpres = xml_ctx_xpath(src, src_xpath);
+
+    if ( srcxpres != NULL && srcxpres->nodesetval != NULL && srcxpres->nodesetval->nodeNr > 0 ) {
+
+        const int numsrcs = srcxpres->nodesetval->nodeNr;
+        xmlNodePtr * sources = srcxpres->nodesetval->nodeTab;
+
+        xmlXPathObjectPtr dstxpres = xml_ctx_xpath(dst, dst_xpath);
+
+        if ( dstxpres != NULL && dstxpres->nodesetval != NULL && dstxpres->nodesetval->nodeNr > 0 ) {
+
+            for(int cursrcnum = 0; cursrcnum < numsrcs; ++cursrcnum) {
+
+                xmlNodePtr cursrc = sources[cursrcnum];
+
+                const int numtargets = dstxpres->nodesetval->nodeNr;
+                xmlNodePtr * targets = dstxpres->nodesetval->nodeTab;
+
+                for(int curtargetnum = 0; curtargetnum < numtargets; ++curtargetnum) {
+                    
+                    xmlNodePtr curtarget = targets[curtargetnum];
+
+                    xmlNodePtr result = NULL;
+                    xmlNodePtr copy = NULL;
+
+                    if ( numsrcs == 1 ) {
+                        //xmlNodePtr	xmlCopyNode		(xmlNodePtr node, int extended)
+                        copy = xmlCopyNode(cursrc, 1);
+                        result = xmlAddChild(curtarget, copy);
+                    } else {
+                        //xmlNodePtr	xmlCopyNodeList		(xmlNodePtr node)
+                        //xmlNodePtr	xmlDocCopyNodeList	(xmlDocPtr doc, xmlNodePtr node)
+                        copy = xmlDocCopyNodeList(src->doc, cursrc);
+                        result = xmlAddChildList(curtarget, copy);
+                    }
+                    
+                    if(result == NULL) {
+                        __xml_ctx_set_state(dst, XML_CTX_ERROR, XML_CTX_ADD);
+                    } else {
+                        __xml_ctx_set_state(dst, XML_CTX_SUCCESS, XML_CTX_ADD);
+                    }
+
+                }
+            }
+        }
+
+        xmlXPathFreeObject(dstxpres);
+    }
+    xmlXPathFreeObject(srcxpres);
 }

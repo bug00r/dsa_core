@@ -26,6 +26,41 @@ EXTERN_BLOB(zip_resource, 7z);
 	#endif
 #endif
 
+static void test_xml_ctx_empty() {
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+
+	xml_ctx_t *nCtx = xml_ctx_new_empty();
+
+	assert(nCtx->src == NULL);
+	assert(nCtx->doc != NULL);
+	
+	#if debug > 0
+		int writtenbytes = xmlSaveFileEnc("-", nCtx->doc,"UTF-8");
+		assert(writtenbytes == 39);
+	#endif
+
+	free_xml_ctx_src(&nCtx);
+
+	assert(nCtx == NULL);
+
+	nCtx = xml_ctx_new_empty_root_name("heros");
+
+	assert(nCtx->src == NULL);
+	assert(nCtx->doc != NULL);
+	
+	#if debug > 0
+		writtenbytes = xmlSaveFileEnc("-", nCtx->doc,"UTF-8");
+		DEBUG_LOG_ARGS(">>> BYTES %i\n", writtenbytes);
+		assert(writtenbytes == 48);
+	#endif
+
+	free_xml_ctx_src(&nCtx);
+
+	assert(nCtx == NULL);
+
+	DEBUG_LOG("<<<\n");
+}
+
 static void test_xml_ctx_extra_src() {
 	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
 	
@@ -66,6 +101,8 @@ static void test_xml_ctx_extra_src() {
 	free_xml_ctx(&nCtx);
 	xml_source_free(&result);
 
+	archive_resource_free(&ar);
+
 	DEBUG_LOG("<<<\n");
 }
 
@@ -98,6 +135,8 @@ static void test_xml_ctx_incl_src() {
 	assert(nCtx->state.reason == XML_CTX_READ_AND_PARSE);
 
 	free_xml_ctx_src(&nCtx);
+
+	archive_resource_free(&ar);
 
 	DEBUG_LOG("<<<\n");
 }
@@ -146,6 +185,7 @@ static void test_xml_ctx_xpath() {
 
 	xmlXPathFreeObject(xpathObj);
 	free_xml_ctx_src(&nCtx);
+	archive_resource_free(&ar);
 
 	DEBUG_LOG("<<<\n");
 }
@@ -164,8 +204,47 @@ static void test_xml_ctx_xpath_format() {
 	xmlXPathFreeObject(xpathObj);
 	free_xml_ctx_src(&nCtx);
 
+	archive_resource_free(&ar);
+
 	DEBUG_LOG("<<<\n");
 }
+
+static void test_xml_ctx_add_node_xpath() {
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+
+	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
+	xml_source_t* result = xml_source_from_resname(ar, "basehero");
+	xml_ctx_t *nCtx = xml_ctx_new(result);
+
+	xml_ctx_t *hCtx = xml_ctx_new_empty_root_name("heros");
+
+	xml_ctx_nodes_add_xpath(nCtx, "/hero", hCtx, "/heros");
+
+	#if debug > 0
+		int writtenbytes = xmlSaveFileEnc("-", hCtx->doc,"UTF-8");
+		DEBUG_LOG_ARGS(">>> BYTES %i\n", writtenbytes);
+	#endif
+
+	free_xml_ctx_src(&nCtx);
+
+	result = xml_source_from_resname(ar, "breeds");
+	nCtx = xml_ctx_new(result);
+
+	xml_ctx_nodes_add_xpath(nCtx, "/breeds//breed[@name = 'Die Tulamiden']", hCtx, "/heros/hero/breedcontainer");
+
+	#if debug > 0
+		writtenbytes = xmlSaveFileEnc("-", hCtx->doc,"UTF-8");
+		DEBUG_LOG_ARGS(">>> BYTES %i\n", writtenbytes);
+	#endif
+
+	free_xml_ctx_src(&nCtx);
+	free_xml_ctx_src(&hCtx);
+
+	archive_resource_free(&ar);
+
+	DEBUG_LOG("<<<\n");
+}
+
 
 int 
 main() 
@@ -173,6 +252,8 @@ main()
 
 	DEBUG_LOG(">> Start xml source tests:\n");
 	
+	test_xml_ctx_empty();
+
 	test_xml_ctx_extra_src();
 
 	test_xml_ctx_incl_src();
@@ -180,6 +261,8 @@ main()
 	test_xml_ctx_xpath();
 
 	test_xml_ctx_xpath_format();
+
+	test_xml_ctx_add_node_xpath();
 	
 	DEBUG_LOG("<< end xml source tests:\n");
 	return 0;

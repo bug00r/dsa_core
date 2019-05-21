@@ -36,8 +36,11 @@ typedef enum {
 } xml_ctx_state_no_t;
 
 typedef enum {
-    XML_CTX_NO_REASON,      /* reason for no reason oO */
-    XML_CTX_READ_AND_PARSE  /* reason for missing or invalid source: null pointer oder src size = 0 */
+    XML_CTX_NO_REASON,          /* reason for no reason oO */
+    XML_CTX_READ_AND_PARSE,     /* reason for missing or invalid source: null pointer oder src size = 0 */
+    XML_CTX_SRC_INVALID,        /* for src context is invalid, like missing src or doc pointer */
+    XML_CTX_XPATH_INVALID,      /* for src xpath is invalid(NULL) */
+    XML_CTX_ADD
 } xml_ctx_state_reason_t;
 
 typedef struct {
@@ -68,6 +71,30 @@ typedef struct {
 */
 xml_ctx_t* xml_ctx_new(const xml_source_t *xml_src);
 
+/*
+
+    This Function creates a new xml context without xml source.
+    XML Source will be set NULL and a new Document will created.
+
+    returns new xml context in every case with given state
+
+*/
+xml_ctx_t* xml_ctx_new_empty();
+/*
+
+    This Function creates a new xml context without xml source.
+    XML Source will be set NULL and a new Document will created.
+
+    Parameter:
+
+    name            description
+    ------------------------------------------------------------
+    rootname        name of the root element
+
+    returns new xml context in every case with given state
+
+*/
+xml_ctx_t* xml_ctx_new_empty_root_name(const char* rootname);
 /*
 
     This Function frees the memory from xml_ctx_t and all its given attributes, BUT
@@ -105,5 +132,28 @@ void free_xml_ctx_src(xml_ctx_t **ctx);
 
 xmlXPathObjectPtr xml_ctx_xpath( const xml_ctx_t *ctx, const char *xpath);
 xmlXPathObjectPtr xml_ctx_xpath_format( const xml_ctx_t *ctx, const char *xpath_format, ...);
+
+/*
+
+    This Function is searching nodes from src by using src_xpath and add them
+    to dst context to node which was found by dst_xpath.
+
+    This function will set given states and reasons into src or dst context,
+    this is based on the error side like:
+
+    Source xpatch does not match any node this will saved in src context. The 
+    same will be with the destination ctx.
+
+    Parameter:
+
+    name            description
+    ------------------------------------------------------------
+    src             source context
+    src_xpath       source context used xpath expression
+    dst             destination context
+    dst_xpath       destination context used xpath expression
+
+*/
+void xml_ctx_nodes_add_xpath(xml_ctx_t *src, const char *src_xpath, xml_ctx_t *dst, const char *dst_xpath);
 
 #endif
