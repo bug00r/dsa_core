@@ -237,6 +237,13 @@ static void test_xml_ctx_add_node_xpath() {
 		DEBUG_LOG_ARGS(">>> BYTES %i\n", writtenbytes);
 	#endif
 
+	xml_ctx_nodes_add_xpath(nCtx, "/breeds//breed[@name = 'Die Tulamiden']//culture", hCtx, "/heros/*//group");
+
+	#if debug > 0
+		writtenbytes = xmlSaveFileEnc("-", hCtx->doc,"UTF-8");
+		DEBUG_LOG_ARGS(">>> BYTES %i\n", writtenbytes);
+	#endif
+
 	free_xml_ctx_src(&nCtx);
 	free_xml_ctx_src(&hCtx);
 

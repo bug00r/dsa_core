@@ -184,6 +184,10 @@ void xml_ctx_nodes_add_xpath(xml_ctx_t *src, const char *src_xpath, xml_ctx_t *d
         if ( dstxpres != NULL && dstxpres->nodesetval != NULL && dstxpres->nodesetval->nodeNr > 0 ) {
 
             for(int cursrcnum = 0; cursrcnum < numsrcs; ++cursrcnum) {
+                
+                #if debug > 0
+                    printf("source: %i of %i\n",cursrcnum , numsrcs);
+                #endif
 
                 xmlNodePtr cursrc = sources[cursrcnum];
 
@@ -197,14 +201,28 @@ void xml_ctx_nodes_add_xpath(xml_ctx_t *src, const char *src_xpath, xml_ctx_t *d
                     xmlNodePtr result = NULL;
                     xmlNodePtr copy = NULL;
 
-                    if ( numsrcs == 1 ) {
+                    #if debug > 0
+                            printf("target: %i of %i\n",curtargetnum , numtargets);
+                    #endif
+
+                    if ( numtargets == 1 ) {
+                        
+                        #if debug > 0
+                            printf("target is node!!! \n");
+                        #endif
+
                         //xmlNodePtr	xmlCopyNode		(xmlNodePtr node, int extended)
                         copy = xmlCopyNode(cursrc, 1);
                         result = xmlAddChild(curtarget, copy);
                     } else {
                         //xmlNodePtr	xmlCopyNodeList		(xmlNodePtr node)
                         //xmlNodePtr	xmlDocCopyNodeList	(xmlDocPtr doc, xmlNodePtr node)
-                        copy = xmlDocCopyNodeList(src->doc, cursrc);
+                        //copy = xmlDocCopyNodeList(src->doc, cursrc);
+                        #if debug > 0
+                            printf("target is list!!! \n");
+                        #endif
+
+                        copy = xmlCopyNodeList(cursrc);
                         result = xmlAddChildList(curtarget, copy);
                     }
                     
