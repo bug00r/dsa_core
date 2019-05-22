@@ -1,8 +1,6 @@
 #ifndef XML_UTILS_H
 #define XML_UTILS_H
 
-extern int blubb;
-
 #if 0
     Concept global, just for remembering target: 
         - Utils have to work with xml sources. So we need xml_source_t with different loading interfaces. At first from memory or memory Wrapper Pattern
@@ -80,6 +78,7 @@ xml_ctx_t* xml_ctx_new(const xml_source_t *xml_src);
 
 */
 xml_ctx_t* xml_ctx_new_empty();
+
 /*
 
     This Function creates a new xml context without xml source.
@@ -95,6 +94,24 @@ xml_ctx_t* xml_ctx_new_empty();
 
 */
 xml_ctx_t* xml_ctx_new_empty_root_name(const char* rootname);
+
+/*
+
+    This Function creates a new xml context without xml source.
+    XML Source will be set NULL and a new Document will created.
+    Documents root node will be a copy root node.
+
+    Parameter:
+
+    name            description
+    ------------------------------------------------------------
+    rootnode        root node of new Document
+
+    returns new xml context in every case with given state
+
+*/
+xml_ctx_t* xml_ctx_new_node(const xmlNodePtr rootnode);
+
 /*
 
     This Function frees the memory from xml_ctx_t and all its given attributes, BUT
@@ -130,7 +147,35 @@ void free_xml_ctx(xml_ctx_t **ctx);
 */
 void free_xml_ctx_src(xml_ctx_t **ctx);
 
+/*
+
+    This Function executes an xpath against xml context document.
+
+    Parameter:
+
+    name            description
+    ------------------------------------------------------------
+    ctx             pointer to xml context pointer
+    xpath           xpath for execution
+
+    returns a xmlXPathObjectPtr with xpath result
+*/
 xmlXPathObjectPtr xml_ctx_xpath( const xml_ctx_t *ctx, const char *xpath);
+
+/*
+
+    This Function executes an xpath against xml context document.
+
+    Parameter:
+
+    name            description
+    ------------------------------------------------------------
+    ctx             pointer to xml context pointer
+    xpath           xpath format string
+    ...             xpath format parameter
+
+    returns a xmlXPathObjectPtr with xpath result
+*/
 xmlXPathObjectPtr xml_ctx_xpath_format( const xml_ctx_t *ctx, const char *xpath_format, ...);
 
 /*
@@ -155,5 +200,6 @@ xmlXPathObjectPtr xml_ctx_xpath_format( const xml_ctx_t *ctx, const char *xpath_
 
 */
 void xml_ctx_nodes_add_xpath(xml_ctx_t *src, const char *src_xpath, xml_ctx_t *dst, const char *dst_xpath);
+
 
 #endif

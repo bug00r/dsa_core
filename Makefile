@@ -47,6 +47,10 @@ $(_SRC_FILES):
 	
 #$(USED_LIBSDIR) $(USED_LIBS)
 
+test_hero: mkbuilddir mkzip addzip 
+	$(CC) $(CFLAGS) ./test/test_hero.c ./src/hero.c -o $(BUILDPATH)test_hero.exe -I./src/ $(INCLUDEDIR) $(USED_LIBSDIR) -static $(USED_LIBS) $(debug)
+	$(BUILDPATH)test_hero.exe
+
 test_xml_utils: mkbuilddir mkzip addzip 
 	$(CC) $(CFLAGS) ./test/test_xml_utils.c ./src/xml_utils.c -o $(BUILDPATH)test_xml_utils.exe -I./src/ $(INCLUDEDIR) $(USED_LIBSDIR) -static $(USED_LIBS) $(debug)
 	$(BUILDPATH)test_xml_utils.exe

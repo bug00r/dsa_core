@@ -179,9 +179,16 @@ static void test_xml_ctx_xpath() {
 	xml_source_t* result = xml_source_from_resname(ar, "talents");
 	xml_ctx_t *nCtx = xml_ctx_new(result);
 
-	xmlXPathObjectPtr xpathObj = xml_ctx_xpath(nCtx, "//group[@name = 'Kampf']/*[regexmatch(@name,'Dolche')]");
+	const char *xpath = "//group[@name = 'Kampf']/*[regexmatch(@name,'Dolche')]";
+
+	xmlXPathObjectPtr xpathObj = xml_ctx_xpath(nCtx, xpath);
 
 	__debug_xpath_obj_ptr(xpathObj);
+
+	xmlXPathObjectPtr xpathObj2 = xml_ctx_xpath(nCtx, xpath);
+
+	assert(xpathObj->nodesetval->nodeTab[0] == xpathObj2->nodesetval->nodeTab[0]);
+	DEBUG_LOG_ARGS(">>> %p => %p\n", xpathObj->nodesetval->nodeTab[0] , xpathObj2->nodesetval->nodeTab[0]);
 
 	xmlXPathFreeObject(xpathObj);
 	free_xml_ctx_src(&nCtx);
@@ -220,7 +227,7 @@ static void test_xml_ctx_add_node_xpath() {
 
 	xml_ctx_nodes_add_xpath(nCtx, "/hero", hCtx, "/heros");
 
-	#if debug > 0
+	#if debug > 1
 		int writtenbytes = xmlSaveFileEnc("-", hCtx->doc,"UTF-8");
 		DEBUG_LOG_ARGS(">>> BYTES %i\n", writtenbytes);
 	#endif
@@ -232,14 +239,14 @@ static void test_xml_ctx_add_node_xpath() {
 
 	xml_ctx_nodes_add_xpath(nCtx, "/breeds//breed[@name = 'Die Tulamiden']", hCtx, "/heros/hero/breedcontainer");
 
-	#if debug > 0
+	#if debug > 1
 		writtenbytes = xmlSaveFileEnc("-", hCtx->doc,"UTF-8");
 		DEBUG_LOG_ARGS(">>> BYTES %i\n", writtenbytes);
 	#endif
 
 	xml_ctx_nodes_add_xpath(nCtx, "/breeds//breed[@name = 'Die Tulamiden']//culture", hCtx, "/heros/*//group");
 
-	#if debug > 0
+	#if debug > 1
 		writtenbytes = xmlSaveFileEnc("-", hCtx->doc,"UTF-8");
 		DEBUG_LOG_ARGS(">>> BYTES %i\n", writtenbytes);
 	#endif
@@ -272,6 +279,7 @@ main()
 	test_xml_ctx_add_node_xpath();
 	
 	DEBUG_LOG("<< end xml source tests:\n");
+
 	return 0;
 }
 

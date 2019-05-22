@@ -95,6 +95,12 @@ xml_ctx_t* xml_ctx_new(const xml_source_t *xml_src) {
     return new_ctx;
 }
 
+xml_ctx_t* xml_ctx_new_node(const xmlNodePtr rootnode) {
+    xml_ctx_t *new_ctx = xml_ctx_new_empty();
+    xmlNodePtr copyroot = xmlCopyNode(rootnode, 1);
+    xmlDocSetRootElement(new_ctx->doc ,copyroot);
+    return new_ctx;
+}
 
 void free_xml_ctx(xml_ctx_t **ctx) {
     
