@@ -54,9 +54,66 @@ static void test_xml_ctx_empty() {
 		assert(writtenbytes == 48);
 	#endif
 
+	
+
+	xmlNodePtr nroot = xmlDocGetRootElement(nCtx->doc);
+
+	xml_ctx_t * nodectx = xml_ctx_new_node(nroot);
+
+	xmlNodePtr noderoot = xmlDocGetRootElement(nodectx->doc);
+
+	assert(nroot != noderoot);
+	assert(strcmp(noderoot->name, nroot->name) == 0);
+
+	#if debug > 0
+		writtenbytes = xmlSaveFileEnc("-", nCtx->doc,"UTF-8");
+		DEBUG_LOG_ARGS(">>> from node copy BYTES %i\n", writtenbytes);
+		assert(writtenbytes == 48);
+	#endif
+
+	free_xml_ctx_src(&nCtx);
+
+	free_xml_ctx_src(&nodectx);
+
+	assert(nCtx == NULL);
+
+	DEBUG_LOG("<<<\n");
+}
+
+static void test_xml_ctx_file() {
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+
+	xml_ctx_t *nCtx = xml_ctx_new_file("data\\xml\\basehero.xml");
+
+	assert(nCtx->src == NULL);
+	assert(nCtx->doc != NULL);
+
+	#if debug > 1
+		int writtenbytes = xmlSaveFileEnc("-", nCtx->doc,"UTF-8");
+		DEBUG_LOG_ARGS(">>> BYTES %i\n", writtenbytes);
+	#endif
+
+	const char *file = "build\\gcc\\dumpbasehero.xml";
+
+	xml_ctx_save_file(nCtx, file);
+
 	free_xml_ctx_src(&nCtx);
 
 	assert(nCtx == NULL);
+
+
+	nCtx = xml_ctx_new_file(file);
+
+	assert(nCtx->src == NULL);
+	assert(nCtx->doc != NULL);
+
+	#if debug > 1
+		DEBUG_LOG("WRITTEN FILE:\n");
+		writtenbytes = xmlSaveFileEnc("-", nCtx->doc,"UTF-8");
+		DEBUG_LOG_ARGS(">>> BYTES %i\n", writtenbytes);
+	#endif
+
+	free_xml_ctx_src(&nCtx);
 
 	DEBUG_LOG("<<<\n");
 }
@@ -191,6 +248,7 @@ static void test_xml_ctx_xpath() {
 	DEBUG_LOG_ARGS(">>> %p => %p\n", xpathObj->nodesetval->nodeTab[0] , xpathObj2->nodesetval->nodeTab[0]);
 
 	xmlXPathFreeObject(xpathObj);
+	xmlXPathFreeObject(xpathObj2);
 	free_xml_ctx_src(&nCtx);
 	archive_resource_free(&ar);
 
@@ -264,9 +322,11 @@ int
 main() 
 {
 
-	DEBUG_LOG(">> Start xml source tests:\n");
+	DEBUG_LOG(">> Start xml utils tests:\n");
 	
 	test_xml_ctx_empty();
+
+	test_xml_ctx_file();
 
 	test_xml_ctx_extra_src();
 
@@ -278,7 +338,7 @@ main()
 
 	test_xml_ctx_add_node_xpath();
 	
-	DEBUG_LOG("<< end xml source tests:\n");
+	DEBUG_LOG("<< end xml utils tests:\n");
 
 	return 0;
 }

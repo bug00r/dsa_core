@@ -157,6 +157,8 @@ static void test_resource_search_name_xml() {
 
 	resource_search_result_full_free(&result);
 
+	archive_resource_free(&ar);
+
 	DEBUG_LOG("<<<\n");
 }
 

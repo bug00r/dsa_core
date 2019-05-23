@@ -49,9 +49,9 @@ static resource_file_t* __resource_read_entry(struct archive *a, struct archive_
 		size_t readed_bytes;
 		unsigned char *data = __resource_read_entry_data_string(a, entry, &data_read_status, &readed_bytes);
 		
-		char * copy_path = copy_string(entry_pathname);
+		//char * copy_path = copy_string(entry_pathname);
 
-		result = resource_file_new(copy_path, data, readed_bytes);
+		result = resource_file_new(entry_pathname, data, readed_bytes);
 	
 	}
 	
@@ -267,6 +267,7 @@ void resource_file_free(resource_file_t **file) {
 		free(to_deletefile->name);
 		free(to_deletefile->type);
 		free(to_deletefile->data);
+
 		free(to_deletefile);
 	
 		to_deletefile = NULL;

@@ -20,7 +20,7 @@ bool regex_match(const char *_pattern, const char *_text) {
 	} else {
 		int rc;
 		PCRE2_SPTR value = (PCRE2_SPTR)_text;
-		pcre2_match_data *match_data = pcre2_match_data_create(20, NULL);
+		pcre2_match_data *match_data = pcre2_match_data_create_from_pattern(re, NULL);
 		rc = pcre2_match(re, value, -1, 0, 0, match_data, NULL);
 		pcre2_match_data_free(match_data);
 		found = rc > 0;

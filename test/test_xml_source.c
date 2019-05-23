@@ -78,6 +78,8 @@ static void test_xml_source() {
 
 	xml_source_free(&result);
 
+	archive_resource_free(&ar);
+
 	DEBUG_LOG("<<<\n");
 }
 

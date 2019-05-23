@@ -114,6 +114,39 @@ xml_ctx_t* xml_ctx_new_node(const xmlNodePtr rootnode);
 
 /*
 
+    This Function creates a new xml context without xml source.
+    XML Source will be set NULL and a new Document will created.
+    The Document will be read from file name in utf-8.
+
+    Parameter:
+
+    name            description
+    ------------------------------------------------------------
+    filename        name of xml File
+
+    returns new xml context in every case with given state
+
+*/
+xml_ctx_t* xml_ctx_new_file(const char *filename);
+
+/*
+
+    This Function will save current context doc to file as utf-8.
+
+    Parameter:
+
+    name            description
+    ------------------------------------------------------------
+    ctx             give xml context to write
+    filename        name of xml File target
+
+    returns new xml context in every case with given state
+
+*/
+void xml_ctx_save_file(const xml_ctx_t *ctx, const char *filename);
+
+/*
+
     This Function frees the memory from xml_ctx_t and all its given attributes, BUT
     not the used xml_xource. You have toe free it extra. This function is useful
     if you want to create a new xml context based on the same source.

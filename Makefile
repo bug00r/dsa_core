@@ -47,6 +47,8 @@ $(_SRC_FILES):
 	
 #$(USED_LIBSDIR) $(USED_LIBS)
 
+##CFLAGS+=-fsanitize=address -fno-omit-frame-pointer
+
 test_hero: mkbuilddir mkzip addzip 
 	$(CC) $(CFLAGS) ./test/test_hero.c ./src/hero.c -o $(BUILDPATH)test_hero.exe -I./src/ $(INCLUDEDIR) $(USED_LIBSDIR) -static $(USED_LIBS) $(debug)
 	$(BUILDPATH)test_hero.exe

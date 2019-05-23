@@ -53,7 +53,6 @@ static bool __xml_ctx_xpath_valid( xml_ctx_t *ctx, const char *xpath) {
 xml_ctx_t* xml_ctx_new_empty() {
 
     xmlDocPtr doc = xmlNewDoc("1.0");
-    xmlNewDocProp(doc, "encoding", "UTF-8");
 
     xml_ctx_t *new_ctx = __xml_ctx_create(NULL, doc);
     __xml_ctx_set_state(new_ctx, XML_CTX_SUCCESS, XML_CTX_READ_AND_PARSE);
@@ -86,7 +85,6 @@ xml_ctx_t* xml_ctx_new(const xml_source_t *xml_src) {
         
     } else {
         state_no = XML_CTX_ERROR; 
-        reason = XML_CTX_READ_AND_PARSE;
     }
     
     xml_ctx_t *new_ctx = __xml_ctx_create(xml_src, doc);
@@ -100,6 +98,45 @@ xml_ctx_t* xml_ctx_new_node(const xmlNodePtr rootnode) {
     xmlNodePtr copyroot = xmlCopyNode(rootnode, 1);
     xmlDocSetRootElement(new_ctx->doc ,copyroot);
     return new_ctx;
+}
+
+xml_ctx_t* xml_ctx_new_file(const char *filename) {
+    xml_ctx_t *new_ctx = xml_ctx_new_empty();
+    
+    new_ctx->doc = xmlReadFile(filename, "UTF-8", 0);
+
+    xml_ctx_state_no_t state_no = XML_CTX_SUCCESS; 
+    xml_ctx_state_reason_t reason = XML_CTX_READ_AND_PARSE;
+
+    xmlErrorPtr error = xmlGetLastError(); 
+
+    if (xmlGetLastError() != NULL) {
+        state_no = XML_CTX_ERROR;
+    }
+
+    __xml_ctx_set_state_ptr(new_ctx, &state_no, &reason);
+
+    return new_ctx;
+}
+
+void xml_ctx_save_file(const xml_ctx_t *ctx, const char *filename) {
+    
+    if (ctx != NULL && ctx->doc != NULL && filename != NULL && ( strlen(filename) > 0 )) {
+
+        if ( xmlSaveFileEnc(filename, ctx->doc, "UTF-8") == -1 ) {
+            
+            xml_ctx_state_no_t state_no = XML_CTX_SUCCESS; 
+            xml_ctx_state_reason_t reason = XML_CTX_READ_AND_PARSE; 
+
+            if (xmlGetLastError() != NULL) {
+                state_no = XML_CTX_ERROR;
+            }
+
+            __xml_ctx_set_state_ptr((xml_ctx_t *)ctx, &state_no, &reason);
+        }
+
+    }
+
 }
 
 void free_xml_ctx(xml_ctx_t **ctx) {
@@ -191,7 +228,7 @@ void xml_ctx_nodes_add_xpath(xml_ctx_t *src, const char *src_xpath, xml_ctx_t *d
 
             for(int cursrcnum = 0; cursrcnum < numsrcs; ++cursrcnum) {
                 
-                #if debug > 0
+                #if debug > 1
                     printf("source: %i of %i\n",cursrcnum , numsrcs);
                 #endif
 
@@ -207,24 +244,21 @@ void xml_ctx_nodes_add_xpath(xml_ctx_t *src, const char *src_xpath, xml_ctx_t *d
                     xmlNodePtr result = NULL;
                     xmlNodePtr copy = NULL;
 
-                    #if debug > 0
+                    #if debug > 1
                             printf("target: %i of %i\n",curtargetnum , numtargets);
                     #endif
 
                     if ( numtargets == 1 ) {
                         
-                        #if debug > 0
+                        #if debug > 1
                             printf("target is node!!! \n");
                         #endif
 
-                        //xmlNodePtr	xmlCopyNode		(xmlNodePtr node, int extended)
                         copy = xmlCopyNode(cursrc, 1);
                         result = xmlAddChild(curtarget, copy);
                     } else {
-                        //xmlNodePtr	xmlCopyNodeList		(xmlNodePtr node)
-                        //xmlNodePtr	xmlDocCopyNodeList	(xmlDocPtr doc, xmlNodePtr node)
-                        //copy = xmlDocCopyNodeList(src->doc, cursrc);
-                        #if debug > 0
+
+                        #if debug > 1
                             printf("target is list!!! \n");
                         #endif
 
