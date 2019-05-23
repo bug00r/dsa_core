@@ -79,10 +79,9 @@ dsa_hero_t* dsa_hero_new(dsa_heros_t *heros, const char* hero_name) {
         
         xmlSetProp(newheroroot, "name", hero_name);
         
-        struct timeval tval_before;
-        gettimeofday(&tval_before, NULL);
+        time_t result = time(NULL);
 
-        char * id = format_string_new("%ld%ld", (long int)tval_before.tv_sec, (long int)tval_before.tv_usec);
+        char * id = format_string_new("%lu", (unsigned long)result); //maybe we can add from utils a random salt if needed
         xmlSetProp(newheroroot, "id", id);
 
         #if debug > 0

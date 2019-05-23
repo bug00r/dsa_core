@@ -1,7 +1,7 @@
 #ifndef DSA_HERO_H
 #define DSA_HERO_H
 
-#include <sys/time.h>
+#include <time.h>
 
 #include "xml_utils.h"
 
