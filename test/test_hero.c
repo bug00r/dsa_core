@@ -83,14 +83,26 @@ static void test_heros_add_hero() {
 
 	int cnt = 0;
 	cur = list;
+
 	while( cur && cur->name != NULL && cur->id != -1 ) {
-		#if debug > 1
+		#if debug > 0
 			DEBUG_LOG_ARGS("all includes %s with id %ld\n", cur->name, cur->id);
 		#endif
 		cnt++;
 		cur++;
 	}
 	assert(cnt == 4);
+
+	dsa_hero_t **herosl = malloc(cnt*sizeof(dsa_hero_t *));
+
+	cur = list;
+	for(int i = 0; i < cnt; ++i, ++cur) {
+		herosl[i] = dsa_hero_get(heros, cur->id);
+		assert(herosl[i] != NULL);
+		dsa_hero_free(&herosl[i]);
+	}
+
+	free(herosl);
 
 	dsa_hero_list_free(&list);
 

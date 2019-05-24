@@ -188,17 +188,7 @@ dsa_hero_entry_t* dsa_hero_get_all(dsa_heros_t *heros) {
 }
 
 void dsa_hero_list_free(dsa_hero_entry_t **hero_list) {
-    /*if ( hero_list != NULL && *hero_list != NULL ) {
 
-        
-
-        for(int curxml = 0; curxml > todelete_hero_list->cnt; ++curxml) {
-            xmlFree(todelete_hero_list[curxml].name);
-        }
-
-        free(todelete_hero_list);
-        *hero_list = NULL;
-    }*/
     dsa_hero_entry_t *todelete_hero_list = *hero_list;
     dsa_hero_entry_t *cur;
 
