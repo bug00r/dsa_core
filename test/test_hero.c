@@ -83,6 +83,8 @@ int main(int argc, char **argv) {
 
 	DEBUG_LOG(">> Start taw tests:\n");
 
+	srand(time(NULL));
+
 	test_heros_alloc_free();
 
 	test_heros_add_hero();

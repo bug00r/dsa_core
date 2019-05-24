@@ -1,6 +1,8 @@
 include ../make_config
 
-_SRC_FILES+=string_utils regex_utils resource taw xpath_utils file_path_utils xml_source xml_utils
+CFLAGS+=-std=c11
+
+_SRC_FILES+=string_utils regex_utils resource taw xpath_utils file_path_utils xml_source xml_utils number_utils
 
 LIBNAME:=dsa_core
 LIBEXT:=a
@@ -24,7 +26,7 @@ OS_LIBS=kernel32 user32 gdi32 winspool comdlg32 advapi32 shell32 uuid ole32 olea
 
 USED_LIBS=$(patsubst %,-l%, dsa_core $(REGEX_LIBS) $(THIRD_PARTY_LIBS) $(OS_LIBS) )
 
-USED_LIBSDIR=-L./$(BUILDPATH) -LC:/dev/opt/msys64/mingw64/lib
+USED_LIBSDIR=-L./../math/utils/$(BUILDPATH) -L./$(BUILDPATH) -LC:/dev/opt/msys64/mingw64/lib
 USED_LIBSDIR+=$(patsubst %,-L$(THIRD_PARTY_LIB_DIR)%,pcre2_bin/lib libarchive_bin/lib libxml_bin/lib libxslt_bin/lib)
 
 #wc -c < filename => if needed for after compression size of bytes

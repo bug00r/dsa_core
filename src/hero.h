@@ -2,8 +2,10 @@
 #define DSA_HERO_H
 
 #include <time.h>
+#include <stdlib.h>
 
 #include "xml_utils.h"
+#include "number_utils.h"
 
 typedef struct {
     const xml_ctx_t * const basehero;           /* resource of new hero template */
