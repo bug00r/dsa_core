@@ -78,6 +78,42 @@ static void test_heros_add_hero() {
 
 	assert(baradon == NULL);
 
+	dsa_hero_entry_t *list = dsa_hero_get_all(heros);
+	dsa_hero_entry_t *cur;
+
+	int cnt = 0;
+	cur = list;
+	while( cur && cur->name != NULL && cur->id != -1 ) {
+		#if debug > 1
+			DEBUG_LOG_ARGS("all includes %s with id %ld\n", cur->name, cur->id);
+		#endif
+		cnt++;
+		cur++;
+	}
+	assert(cnt == 4);
+
+	dsa_hero_list_free(&list);
+
+	assert(list == NULL);
+
+	dsa_hero_t* found = dsa_hero_get(heros, 0);
+
+	assert(found != NULL);
+
+	dsa_hero_free(&found);
+
+	found = dsa_hero_get(heros, 2);
+
+	assert(found != NULL);
+
+	dsa_hero_free(&found);
+
+	found = dsa_hero_get(heros, 12);
+
+	assert(found == NULL);
+
+	dsa_hero_free(&found);
+
 	dsa_heros_free(&heros);
 
 	assert(heros == NULL);

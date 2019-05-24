@@ -163,6 +163,7 @@ void xml_ctx_save_file(const xml_ctx_t *ctx, const char *filename);
 
 */
 void free_xml_ctx(xml_ctx_t **ctx);
+void free_xml_ctx_ptr(xml_ctx_t *ctx);
 
 /*
 

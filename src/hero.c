@@ -127,3 +127,93 @@ dsa_hero_t* dsa_hero_free(dsa_hero_t **hero) {
         *hero = NULL;
     }
 }
+
+//returns a copy of found hero by id. Id is needed because names are redudant.
+dsa_hero_t* dsa_hero_get(dsa_heros_t *heros, const int id) {
+    
+    xmlXPathObjectPtr result = xml_ctx_xpath_format(heros->heros, "/heros/hero[@id='%i']", id);
+
+    dsa_hero_t *found_hero = NULL;
+
+    if (result && result->nodesetval && result->nodesetval->nodeNr > 0) {
+        xmlNodePtr found = result->nodesetval->nodeTab[0];
+
+        found_hero = malloc(sizeof(dsa_hero_t));
+        found_hero->xml = xml_ctx_new_node(found);
+    }
+
+    xmlXPathFreeObject(result);
+
+    return found_hero;
+}
+
+//returns the pointer of first hero or NULL if no hero was found
+//the last pointer element is set to NULL for easier iteration.
+dsa_hero_entry_t* dsa_hero_get_all(dsa_heros_t *heros) {
+    
+    xmlXPathObjectPtr result = xml_ctx_xpath(heros->heros, "/heros/hero");
+
+    dsa_hero_entry_t *herolist = NULL;
+
+    if (result && result->nodesetval && result->nodesetval->nodeNr > 0) {
+        
+
+        xmlNodeSetPtr nodes = result->nodesetval;
+        herolist = malloc((result->nodesetval->nodeNr+1) * sizeof(dsa_hero_entry_t));
+
+        #if debug > 0
+            printf("found entries: %i\n", result->nodesetval->nodeNr);
+        #endif
+
+        for(int curnode = 0; curnode < nodes->nodeNr; ++curnode) {
+
+            xmlNodePtr found = nodes->nodeTab[curnode];
+
+            dsa_hero_entry_t *hero_entry = &herolist[curnode];
+            hero_entry->name = xmlGetProp(found, "name");
+            char *id = xmlGetProp(found, "id");
+            hero_entry->id = atoll(id);
+            free(id);
+
+        }
+
+        herolist[nodes->nodeNr].name = NULL;
+        herolist[nodes->nodeNr].id = -1;
+
+    }
+
+    xmlXPathFreeObject(result);
+
+    return herolist;
+}
+
+void dsa_hero_list_free(dsa_hero_entry_t **hero_list) {
+    /*if ( hero_list != NULL && *hero_list != NULL ) {
+
+        
+
+        for(int curxml = 0; curxml > todelete_hero_list->cnt; ++curxml) {
+            xmlFree(todelete_hero_list[curxml].name);
+        }
+
+        free(todelete_hero_list);
+        *hero_list = NULL;
+    }*/
+    dsa_hero_entry_t *todelete_hero_list = *hero_list;
+    dsa_hero_entry_t *cur;
+
+	int cnt = 0;
+	cur = todelete_hero_list;
+	while( cur->name != NULL && cur->id != -1 ) {
+        xmlFree(cur->name);
+		cnt++;
+		cur++;
+	}
+    free(todelete_hero_list);
+    *hero_list = NULL;
+}
+
+//saves as replacement the hero inside of heros(not to file) by searching the ID
+void dsa_heros_save_hero(dsa_heros_t *heros, const dsa_hero_t *hero) {
+
+}

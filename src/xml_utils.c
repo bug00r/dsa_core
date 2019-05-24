@@ -145,6 +145,7 @@ void free_xml_ctx(xml_ctx_t **ctx) {
         xml_ctx_t *todelete_ctx = *ctx;
         
         if (todelete_ctx->doc) {
+            xmlDocGetRootElement(todelete_ctx->doc);
             xmlFreeDoc(todelete_ctx->doc);
         }
 
@@ -152,7 +153,18 @@ void free_xml_ctx(xml_ctx_t **ctx) {
         *ctx = NULL;
     }
 }
+void free_xml_ctx_ptr(xml_ctx_t *ctx) {
+    if ( ctx != NULL ) {
+        xml_ctx_t *todelete_ctx = ctx;
+        
+        if (todelete_ctx->doc) {
+            xmlDocGetRootElement(todelete_ctx->doc);
+            xmlFreeDoc(todelete_ctx->doc);
+        }
 
+        free(todelete_ctx);
+    }
+}
 
 void free_xml_ctx_src(xml_ctx_t **ctx) {
     if ( ctx != NULL && *ctx != NULL ) {

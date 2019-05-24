@@ -23,6 +23,11 @@ typedef struct {
     xml_ctx_t * xml;
 } dsa_hero_t;
 
+typedef struct {
+    char *name;
+    long long id;
+} dsa_hero_entry_t;
+
 void dsa_heros_free(dsa_heros_t **heros);
 
 dsa_heros_t* dsa_heros_new_archiv(archive_resource_t *archive);
@@ -44,7 +49,8 @@ dsa_hero_t* dsa_hero_get(dsa_heros_t *heros, const int id);
 
 //returns the pointer of first hero or NULL if no hero was found
 //the last pointer element is set to NULL for easier iteration.
-dsa_hero_t* dsa_hero_get_all(dsa_heros_t *heros);
+dsa_hero_entry_t* dsa_hero_get_all(dsa_heros_t *heros);
+void dsa_hero_list_free(dsa_hero_entry_t **hero_list);
 
 //saves as replacement the hero inside of heros(not to file) by searching the ID
 void dsa_heros_save_hero(dsa_heros_t *heros, const dsa_hero_t *hero);
