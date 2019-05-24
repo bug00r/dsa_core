@@ -116,6 +116,16 @@ static void test_heros_add_hero() {
 
 	found = dsa_hero_get(heros, 2);
 
+	xmlSetProp(xmlDocGetRootElement(found->xml->doc), "name", "Also Baradon :D");
+
+	dsa_heros_save_hero(heros, found);
+
+	
+
+	xmlSaveFileEnc("-", heros->heros->doc,"UTF-8");
+
+
+
 	assert(found != NULL);
 
 	dsa_hero_free(&found);

@@ -205,5 +205,24 @@ void dsa_hero_list_free(dsa_hero_entry_t **hero_list) {
 
 //saves as replacement the hero inside of heros(not to file) by searching the ID
 void dsa_heros_save_hero(dsa_heros_t *heros, const dsa_hero_t *hero) {
+    if (heros != NULL && hero != NULL) {
 
+        xmlNodePtr root = xmlDocGetRootElement(hero->xml->doc);
+        xmlChar * id = xmlGetProp(root, "id");
+
+        xml_ctx_t *heros_ctx = heros->heros;
+
+        xmlXPathObjectPtr o_result = xml_ctx_xpath_format(heros_ctx, "/heros/hero[@id='%s']", id); 
+
+        if ( o_result && o_result->nodesetval && o_result->nodesetval->nodeNr == 1) {
+            xmlNodePtr cn = o_result->nodesetval->nodeTab[0];
+            xmlUnlinkNode(cn);
+            xmlFreeNode(cn);
+        }
+        
+        xmlAddChild(xmlDocGetRootElement(heros_ctx->doc), xmlCopyNode(root ,1));
+        
+        xmlXPathFreeObject(o_result);
+        xmlFree(id);
+    }
 }
