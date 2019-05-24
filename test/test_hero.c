@@ -60,13 +60,21 @@ static void test_heros_add_hero() {
 	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
 
 	dsa_hero_t *baradon = dsa_hero_new(heros, "Baradon");
+	dsa_hero_free(&baradon);
 
-	#if debug > 0
+	baradon = dsa_hero_new(heros, "Baradon");
+	dsa_hero_free(&baradon);
+
+	baradon = dsa_hero_new(heros, "Ellidon");
+	dsa_hero_free(&baradon);
+
+	baradon = dsa_hero_new(heros, "Faleon");
+	dsa_hero_free(&baradon);
+
+	#if debug > 1
 		int writtenbytes = xmlSaveFileEnc("-", heros->heros->doc,"UTF-8");
 		DEBUG_LOG_ARGS(">>> BYTES %i\n", writtenbytes);
 	#endif
-
-	dsa_hero_free(&baradon);
 
 	assert(baradon == NULL);
 

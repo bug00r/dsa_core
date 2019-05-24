@@ -19,3 +19,36 @@ void regexmatch_xpath_func(xmlXPathParserContextPtr ctxt, int nargs) {
 	xmlFree(regex);
 	xmlFree(text);
 }
+
+void max_xpath_func(xmlXPathParserContextPtr ctxt, int nargs) {
+
+	xmlNodeSetPtr nodes = xmlXPathPopNodeSet(ctxt);
+	
+	if (xmlXPathCheckError(ctxt)) {
+		xmlXPathFreeNodeSet(nodes);
+        return;
+    }
+	
+	long long max_val = 0;
+
+	for (int curnode = 0; curnode < nodes->nodeNr; ++curnode) { 
+		xmlNodePtr curNode = nodes->nodeTab[curnode];
+		if (curNode->type == XML_ATTRIBUTE_NODE) {
+
+			xmlChar *sattr = xmlGetProp(curNode->parent, curNode->name);
+			
+			long long value = atoll(sattr);
+
+			max_val = (value > max_val ? value : max_val);
+
+			if (sattr != NULL) {
+				xmlFree(sattr);
+			}
+		}
+		
+	}
+
+	xmlXPathFreeNodeSet(nodes);
+
+	xmlXPathReturnNumber(ctxt, max_val);
+}

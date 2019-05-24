@@ -16,6 +16,23 @@ static xml_ctx_t* __dsa_heros_ctx_from_src( archive_resource_t *archive, const c
     return result;
 } 
 
+static char * __dsa_heros_get_next_id(dsa_heros_t *heros) {
+    char *maxid = NULL;
+
+    xmlXPathObjectPtr result = xml_ctx_xpath(heros->heros, "/heros/hero[@id = max(/heros/hero/@id)]");
+
+    if (result && result->nodesetval && result->nodesetval->nodeNr == 1) {
+       maxid = xmlGetProp(result->nodesetval->nodeTab[0] ,"id");
+       long long maxval = atoll(maxid);
+       xmlFree(maxid);
+       maxid = format_string_new("%llu", ++maxval);
+    } 
+
+    xmlXPathFreeObject(result);
+
+    return maxid;
+}
+
 void dsa_heros_free(dsa_heros_t **heros) {
 
     if(heros != NULL && *heros != NULL) {
@@ -79,12 +96,12 @@ dsa_hero_t* dsa_hero_new(dsa_heros_t *heros, const char* hero_name) {
         
         xmlSetProp(newheroroot, "name", hero_name);
         
-        time_t result = time(NULL);
-        char * id = format_string_new("%lu%lu", (uintmax_t)result, (uintmax_t)nu_random_zero_max((float)result));
-        xmlSetProp(newheroroot, "id", id);
+        char * id = __dsa_heros_get_next_id(heros);
+
+        xmlSetProp(newheroroot, "id", (id == NULL ? "0" : id ));
 
         #if debug > 0
-            printf("create new hero: name \"%s\" with id \"%s\"\n", hero_name, id);
+            printf("create new hero: name \"%s\" with id \"%s\"\n", hero_name, (id == NULL ? "0" : id ));
         #endif
 
         free(id);

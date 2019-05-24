@@ -12,5 +12,6 @@
 #include "regex_utils.h"
 
 void regexmatch_xpath_func(xmlXPathParserContextPtr ctxt, int nargs);
+void max_xpath_func(xmlXPathParserContextPtr ctxt, int nargs);
 
 #endif
