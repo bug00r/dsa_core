@@ -89,8 +89,8 @@ void archive_resource_set_config_free_default(archive_resource_t *archive_resour
 			 pointer.
 	
 */
-resource_search_result_t *archive_resource_search(archive_resource_t *archive_resource, const char *pattern);
-resource_search_result_t *archive_resource_search_by_name(archive_resource_t *archive_resource, const char *name);
+resource_search_result_t *archive_resource_search(archive_resource_t *archive_resource, const unsigned char *pattern);
+resource_search_result_t *archive_resource_search_by_name(archive_resource_t *archive_resource, const unsigned char *name);
 
 /*
 	The function "resource_file_new_empty" creates a new empty file.

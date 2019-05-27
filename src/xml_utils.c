@@ -52,7 +52,7 @@ static bool __xml_ctx_xpath_valid( xml_ctx_t *ctx, const char *xpath) {
 
 xml_ctx_t* xml_ctx_new_empty() {
 
-    xmlDocPtr doc = xmlNewDoc("1.0");
+    xmlDocPtr doc = xmlNewDoc((xmlChar *)"1.0");
 
     xml_ctx_t *new_ctx = __xml_ctx_create(NULL, doc);
     __xml_ctx_set_state(new_ctx, XML_CTX_SUCCESS, XML_CTX_READ_AND_PARSE);
@@ -64,7 +64,7 @@ xml_ctx_t* xml_ctx_new_empty_root_name(const char* rootname) {
     xml_ctx_t* new_ctx = xml_ctx_new_empty();
 
     if(rootname && strlen(rootname) > 0) {
-        xmlNodePtr newroot = xmlNewNode(NULL, rootname);
+        xmlNodePtr newroot = xmlNewNode(NULL, (xmlChar *) rootname);
         xmlDocSetRootElement(new_ctx->doc, newroot);
     }
 
@@ -79,9 +79,9 @@ xml_ctx_t* xml_ctx_new(const xml_source_t *xml_src) {
     xml_ctx_state_no_t state_no = XML_CTX_SUCCESS; 
     xml_ctx_state_reason_t reason = XML_CTX_READ_AND_PARSE;
 
-    if ( xml_src != NULL && xml_src->src_data != NULL && xml_src->src_size > 0 ) {
+    if ( xml_src != NULL && xml_src->src_data != NULL && *xml_src->src_size > 0 ) {
 
-        doc = xmlReadMemory(xml_src->src_data, *xml_src->src_size, "noname.xml", NULL, 0);
+        doc = xmlReadMemory((const char *)xml_src->src_data, *xml_src->src_size, "noname.xml", NULL, 0);
         
     } else {
         state_no = XML_CTX_ERROR; 
@@ -107,8 +107,6 @@ xml_ctx_t* xml_ctx_new_file(const char *filename) {
 
     xml_ctx_state_no_t state_no = XML_CTX_SUCCESS; 
     xml_ctx_state_reason_t reason = XML_CTX_READ_AND_PARSE;
-
-    xmlErrorPtr error = xmlGetLastError(); 
 
     if (xmlGetLastError() != NULL) {
         state_no = XML_CTX_ERROR;

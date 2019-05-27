@@ -6,7 +6,7 @@ static xml_source_t* xml_source_new(xml_source_type_t type, resource_file_t *res
 
     if ( strcmp(res_file->type, "xml") == 0 ) {
 
-        xml_source_t _tmp_newxml_source = { type, &res_file->file_size, res_file->data, res_file };
+        xml_source_t _tmp_newxml_source = { type, &res_file->file_size, res_file->data, { res_file } };
 
         newxml_source = malloc(sizeof(xml_source_t));
         
@@ -22,8 +22,8 @@ xml_source_t* xml_source_from_resname(archive_resource_t* ar, const char *name) 
     xml_source_t *result = NULL;
 
     if (ar != NULL && name != NULL) {
-        char *searchname = format_string_new("xml/%s.xml", name);
-        resource_search_result_t* searchresult = archive_resource_search_by_name(ar, searchname);
+        char * searchname = format_string_new("xml/%s.xml", name);
+        resource_search_result_t* searchresult = archive_resource_search_by_name(ar, (const unsigned char *)searchname);
         free(searchname);
 
         if ( searchresult->cnt == 1 ) {

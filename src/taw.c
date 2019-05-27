@@ -80,7 +80,7 @@ static taw_result_t* taw_result_new() {
 
 static void compute_result(taw_result_t *result, int *values, unsigned int *value_counter, int *start, int *end) {
 
-    if (value_counter > 0 ) {
+    if ( *value_counter > 0 ) {
 
         result->details = malloc(*value_counter * sizeof(taw_result_item_t));
 

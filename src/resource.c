@@ -7,12 +7,11 @@
 #endif 
 
 static void* __resource_reade_entry_data_byte(la_int64_t entry_size, struct archive *a, int *status) {
-	int r;
 	const void *buff;
 	size_t size;
 	la_int64_t offset;
 
-	void * buffer = malloc(entry_size);
+	char * buffer = malloc(entry_size);
 	
 	for (;;) {
 		*status = archive_read_data_block(a, &buff, &size, &offset);
@@ -67,6 +66,7 @@ static sr_item_t* __new_sr_item() {
 	sr_item_t *new_item = malloc(sizeof(sr_item_t));
 	new_item->file = NULL;
 	new_item->next = NULL;
+	return new_item;
 }
 
 static void __delete_sr_item(sr_item_t **item) {
@@ -81,8 +81,8 @@ static void __delete_sr_item(sr_item_t **item) {
 	}
 }
 
-static resource_search_result_t * __resource_load_resource(archive_resource_t * archive_resource, const char *pattern, 
-														   bool (*match_func)(const char *, const char *)) {
+static resource_search_result_t * __resource_load_resource(archive_resource_t * archive_resource, const unsigned char *pattern, 
+														   bool (*match_func)(const unsigned char *, const unsigned char *)) {
 	struct archive *a = archive_read_new();
 	
 	sr_item_t *first_file = __new_sr_item();
@@ -101,7 +101,7 @@ static resource_search_result_t * __resource_load_resource(archive_resource_t * 
 
 		struct archive_entry *entry;
 		while (archive_read_next_header(a, &entry) == ARCHIVE_OK) {
-		  const char *pathname = archive_entry_pathname(entry);
+		  const unsigned char *pathname = (const unsigned char *)archive_entry_pathname(entry);
 		  if ( match_func(pattern, pathname) ) {
 
 			resource_file_t *new_file = __resource_read_entry(a, entry);
@@ -204,11 +204,11 @@ void archive_resource_set_config_free_default(archive_resource_t *archive_resour
 
 }
 
-resource_search_result_t * archive_resource_search(archive_resource_t *archive_resource, const char *pattern) {
+resource_search_result_t * archive_resource_search(archive_resource_t *archive_resource, const unsigned char *pattern) {
 	return __resource_load_resource(archive_resource, pattern, regex_match);
 }
 
-resource_search_result_t *archive_resource_search_by_name(archive_resource_t *archive_resource, const char *name) {
+resource_search_result_t *archive_resource_search_by_name(archive_resource_t *archive_resource, const unsigned char *name) {
 	return __resource_load_resource(archive_resource, name, name_match);
 }
 

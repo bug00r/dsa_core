@@ -28,6 +28,6 @@ char * format_string_va_new(const char * msg, va_list argptr)  {
 	return buffer;
 }
 
-bool name_match(const char *search, const char *pathname) {
-	return strcmp(search, pathname) == 0;
+bool name_match(const unsigned char *search, const unsigned char *base) {
+	return strcmp((char *)search, (char *)base) == 0;
 }

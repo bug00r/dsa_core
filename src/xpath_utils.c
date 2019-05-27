@@ -13,11 +13,13 @@ void regexmatch_xpath_func(xmlXPathParserContextPtr ctxt, int nargs) {
 		xmlFree(regex);
         return;
     }
-		
-	xmlXPathReturnBoolean(ctxt, regex_match(regex, text));
+	
+	bool match = regex_match(regex, text);
 	
 	xmlFree(regex);
 	xmlFree(text);
+
+	xmlXPathReturnBoolean(ctxt, match);
 }
 
 void max_xpath_func(xmlXPathParserContextPtr ctxt, int nargs) {
@@ -37,7 +39,7 @@ void max_xpath_func(xmlXPathParserContextPtr ctxt, int nargs) {
 
 			xmlChar *sattr = xmlGetProp(curNode->parent, curNode->name);
 			
-			long long value = atoll(sattr);
+			long long value = atoll((const char *)sattr);
 
 			max_val = (value > max_val ? value : max_val);
 

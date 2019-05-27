@@ -1,6 +1,6 @@
 include ../make_config
 
-CFLAGS+=-std=c11
+CFLAGS+=-std=c11 -Wall -Wpedantic
 
 _SRC_FILES+=string_utils regex_utils resource taw xpath_utils file_path_utils xml_source xml_utils number_utils
 
@@ -49,7 +49,11 @@ $(_SRC_FILES):
 	
 #$(USED_LIBSDIR) $(USED_LIBS)
 
-##CFLAGS+=-fsanitize=address -fno-omit-frame-pointer
+#CFLAGS+=-fsanitize=address -fno-omit-frame-pointer
+
+test_regex_utils: mkbuilddir 
+	$(CC) $(CFLAGS) ./test/test_regex_utils.c ./src/regex_utils.c -o $(BUILDPATH)test_regex_utils.exe -I./src/ $(INCLUDEDIR) $(USED_LIBSDIR) -static $(USED_LIBS) $(debug)
+	$(BUILDPATH)test_regex_utils.exe
 
 test_hero: mkbuilddir mkzip addzip 
 	$(CC) $(CFLAGS) ./test/test_hero.c ./src/hero.c -o $(BUILDPATH)test_hero.exe -I./src/ $(INCLUDEDIR) $(USED_LIBSDIR) -static $(USED_LIBS) $(debug)
