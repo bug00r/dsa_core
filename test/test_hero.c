@@ -59,16 +59,16 @@ static void test_heros_add_hero() {
 
 	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
 
-	dsa_hero_t *baradon = dsa_hero_new(heros, "Baradon");
+	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
 	dsa_hero_free(&baradon);
 
-	baradon = dsa_hero_new(heros, "Baradon");
+	baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
 	dsa_hero_free(&baradon);
 
-	baradon = dsa_hero_new(heros, "Ellidon");
+	baradon = dsa_hero_new(heros, (const unsigned char*)"Ellidon");
 	dsa_hero_free(&baradon);
 
-	baradon = dsa_hero_new(heros, "Faleon");
+	baradon = dsa_hero_new(heros, (const unsigned char*)"Faleon");
 	dsa_hero_free(&baradon);
 
 	#if debug > 1
@@ -116,7 +116,7 @@ static void test_heros_add_hero() {
 
 	found = dsa_hero_get(heros, 2);
 
-	xmlSetProp(xmlDocGetRootElement(found->xml->doc), "name", "Also Baradon :D");
+	xmlSetProp(xmlDocGetRootElement(found->xml->doc), (xmlChar *)"name", (xmlChar *)"Also Baradon :D");
 
 	dsa_heros_save_hero(heros, found);
 
@@ -158,9 +158,9 @@ static void	test_heros_add_breed() {
 
 	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
 
-	dsa_hero_t *baradon = dsa_hero_new(heros, "Baradon");
+	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
 	
-	dsa_heros_add_breed(heros, baradon, "Die Tulamiden");
+	dsa_heros_add_breed(heros, baradon, (const unsigned char*)"Die Tulamiden");
 
 	#if debug > 0
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
@@ -184,9 +184,9 @@ static void	test_heros_add_culture(){
 
 	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
 
-	dsa_hero_t *baradon = dsa_hero_new(heros, "Baradon");
+	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
 	
-	dsa_heros_add_culture(heros, baradon, "Mittelländische Städte");
+	dsa_heros_add_culture(heros, baradon, (const unsigned char*)"Mittelländische Städte");
 
 	#if debug > 0
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
@@ -210,9 +210,9 @@ static void	test_heros_add_profession(){
 
 	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
 
-	dsa_hero_t *baradon = dsa_hero_new(heros, "Baradon");
+	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
 	
-	dsa_heros_add_profession(heros, baradon, "Bauer Erntehelfer/in");
+	dsa_heros_add_profession(heros, baradon, (const unsigned char*)"Bauer Erntehelfer/in");
 
 	#if debug > 0
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");

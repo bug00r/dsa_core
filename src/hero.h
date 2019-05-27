@@ -24,7 +24,7 @@ typedef struct {
 } dsa_hero_t;
 
 typedef struct {
-    char *name;
+    unsigned char *name;
     long long id;
 } dsa_hero_entry_t;
 
@@ -41,8 +41,8 @@ bool dsa_heros_save(dsa_heros_t *heros, const char *filename);
 //creates new hero as a xml_ctx with copy from heros. 
 //If need otherwise we load basehero and copy root node to heros and hero.
 //if hero_name is invalid (check against regex :)
-dsa_hero_t* dsa_hero_new(dsa_heros_t *heros, const char* hero_name);
-dsa_hero_t* dsa_hero_free(dsa_hero_t **hero);
+dsa_hero_t* dsa_hero_new(dsa_heros_t *heros, const unsigned char* hero_name);
+void dsa_hero_free(dsa_hero_t **hero);
 
 //returns a copy of found hero by id. Id is needed because names are redudant.
 dsa_hero_t* dsa_hero_get(dsa_heros_t *heros, const int id);
@@ -58,38 +58,38 @@ void dsa_heros_save_hero(dsa_heros_t *heros, const dsa_hero_t *hero);
 //deletes hero by id.
 void dsa_heros_delete_hero(dsa_heros_t *heros, const int id);
 
-void dsa_heros_add_breed(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
-void dsa_heros_add_culture(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
-void dsa_heros_add_profession(dsa_heros_t *heros,  dsa_hero_t *hero, const char *name);
+void dsa_heros_add_breed(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_add_culture(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_add_profession(dsa_heros_t *heros,  dsa_hero_t *hero, const unsigned char *name);
 
-void dsa_heros_add_pro(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
-void dsa_heros_remove_pro(dsa_hero_t *hero, const char *name);
+void dsa_heros_add_pro(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_remove_pro(dsa_hero_t *hero, const unsigned char *name);
 
-void dsa_heros_add_contra(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
-void dsa_heros_remove_contra(dsa_hero_t *hero, const char *name);
+void dsa_heros_add_contra(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_remove_contra(dsa_hero_t *hero, const unsigned char *name);
 
-void dsa_heros_add_specialability(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
-void dsa_heros_remove_specialability(dsa_hero_t *hero, const char *name);
+void dsa_heros_add_specialability(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_remove_specialability(dsa_hero_t *hero, const unsigned char *name);
 
-void dsa_heros_add_talent(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
-void dsa_heros_remove_talent(dsa_hero_t *hero, const char *name);
+void dsa_heros_add_talent(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_remove_talent(dsa_hero_t *hero, const unsigned char *name);
 
-void dsa_heros_add_spell(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
-void dsa_heros_remove_spell(dsa_hero_t *hero, const char *name);
+void dsa_heros_add_spell(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_remove_spell(dsa_hero_t *hero, const unsigned char *name);
 
-void dsa_heros_add_liturgie(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
-void dsa_heros_remove_liturgie(dsa_hero_t *hero, const char *name);
+void dsa_heros_add_liturgie(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_remove_liturgie(dsa_hero_t *hero, const unsigned char *name);
 
-void dsa_heros_talent_inc(dsa_hero_t *hero, const char *name);
-void dsa_heros_talent_dec(dsa_hero_t *hero, const char *name);
+void dsa_heros_talent_inc(dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_talent_dec(dsa_hero_t *hero, const unsigned char *name);
 
-void dsa_heros_spell_inc(dsa_hero_t *hero, const char *name);
-void dsa_heros_spell_dec(dsa_hero_t *hero, const char *name);
+void dsa_heros_spell_inc(dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_spell_dec(dsa_hero_t *hero, const unsigned char *name);
 
-void dsa_heros_liturgie_inc(dsa_hero_t *hero, const char *name);
-void dsa_heros_liturgie_dec(dsa_hero_t *hero, const char *name);
+void dsa_heros_liturgie_inc(dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_liturgie_dec(dsa_hero_t *hero, const unsigned char *name);
 
-void dsa_heros_specialability_inc(dsa_hero_t *hero, const char *name);
-void dsa_heros_specialability_dec(dsa_hero_t *hero, const char *name);
+void dsa_heros_specialability_inc(dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_specialability_dec(dsa_hero_t *hero, const unsigned char *name);
 
 #endif
