@@ -55,4 +55,41 @@ void dsa_hero_list_free(dsa_hero_entry_t **hero_list);
 //saves as replacement the hero inside of heros(not to file) by searching the ID
 void dsa_heros_save_hero(dsa_heros_t *heros, const dsa_hero_t *hero);
 
+//deletes hero by id.
+void dsa_heros_delete_hero(dsa_heros_t *heros, const int id);
+
+void dsa_heros_add_breed(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
+void dsa_heros_add_culture(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
+void dsa_heros_add_profession(dsa_heros_t *heros,  dsa_hero_t *hero, const char *name);
+
+void dsa_heros_add_pro(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
+void dsa_heros_remove_pro(dsa_hero_t *hero, const char *name);
+
+void dsa_heros_add_contra(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
+void dsa_heros_remove_contra(dsa_hero_t *hero, const char *name);
+
+void dsa_heros_add_specialability(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
+void dsa_heros_remove_specialability(dsa_hero_t *hero, const char *name);
+
+void dsa_heros_add_talent(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
+void dsa_heros_remove_talent(dsa_hero_t *hero, const char *name);
+
+void dsa_heros_add_spell(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
+void dsa_heros_remove_spell(dsa_hero_t *hero, const char *name);
+
+void dsa_heros_add_liturgie(dsa_heros_t *heros, dsa_hero_t *hero, const char *name);
+void dsa_heros_remove_liturgie(dsa_hero_t *hero, const char *name);
+
+void dsa_heros_talent_inc(dsa_hero_t *hero, const char *name);
+void dsa_heros_talent_dec(dsa_hero_t *hero, const char *name);
+
+void dsa_heros_spell_inc(dsa_hero_t *hero, const char *name);
+void dsa_heros_spell_dec(dsa_hero_t *hero, const char *name);
+
+void dsa_heros_liturgie_inc(dsa_hero_t *hero, const char *name);
+void dsa_heros_liturgie_dec(dsa_hero_t *hero, const char *name);
+
+void dsa_heros_specialability_inc(dsa_hero_t *hero, const char *name);
+void dsa_heros_specialability_dec(dsa_hero_t *hero, const char *name);
+
 #endif

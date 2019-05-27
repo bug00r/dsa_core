@@ -33,6 +33,20 @@ static char * __dsa_heros_get_next_id(dsa_heros_t *heros) {
     return maxid;
 }
 
+static void __dsa_delete_hero_by_id(xml_ctx_t *hctx, const int id) {
+    if (hctx != NULL) {
+        xmlXPathObjectPtr o_result = xml_ctx_xpath_format(hctx, "/heros/hero[@id='%i']", id); 
+
+        if ( o_result && o_result->nodesetval && o_result->nodesetval->nodeNr == 1) {
+            xmlNodePtr cn = o_result->nodesetval->nodeTab[0];
+            xmlUnlinkNode(cn);
+            xmlFreeNode(cn);
+        }
+
+        xmlXPathFreeObject(o_result);
+    }
+}
+
 void dsa_heros_free(dsa_heros_t **heros) {
 
     if(heros != NULL && *heros != NULL) {
@@ -89,7 +103,7 @@ dsa_hero_t* dsa_hero_new(dsa_heros_t *heros, const char* hero_name) {
 
     dsa_hero_t *new_hero = NULL;
 
-    if ( regex_match("[\\d\\D]+",hero_name) ) {
+    if ( regex_match("[\\d\\D]+", hero_name) ) {
 
         xml_ctx_t *nCtx = xml_ctx_new_empty();
     	xmlNodePtr newheroroot = xmlCopyNode(xmlDocGetRootElement(heros->basehero->doc), 1);
@@ -211,18 +225,116 @@ void dsa_heros_save_hero(dsa_heros_t *heros, const dsa_hero_t *hero) {
         xmlChar * id = xmlGetProp(root, "id");
 
         xml_ctx_t *heros_ctx = heros->heros;
-
-        xmlXPathObjectPtr o_result = xml_ctx_xpath_format(heros_ctx, "/heros/hero[@id='%s']", id); 
-
-        if ( o_result && o_result->nodesetval && o_result->nodesetval->nodeNr == 1) {
-            xmlNodePtr cn = o_result->nodesetval->nodeTab[0];
-            xmlUnlinkNode(cn);
-            xmlFreeNode(cn);
-        }
+        
+        __dsa_delete_hero_by_id(heros_ctx, atoi(id));
         
         xmlAddChild(xmlDocGetRootElement(heros_ctx->doc), xmlCopyNode(root ,1));
         
-        xmlXPathFreeObject(o_result);
         xmlFree(id);
     }
+}
+
+void dsa_heros_delete_hero(dsa_heros_t *heros, const int id) {
+    
+    if (heros != NULL) {
+
+        xml_ctx_t *heros_ctx = heros->heros;
+
+        __dsa_delete_hero_by_id(heros_ctx, id);
+    }
+
+}
+
+
+void dsa_heros_add_breed(dsa_heros_t *heros, dsa_hero_t *hero, const char *name) {
+    if (heros != NULL && hero != NULL) {
+        char *src_xpath = format_string_new("/breeds//breed[@name = '%s']", name);
+        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->breeds, src_xpath, hero->xml, "/hero/breedcontainer");
+        free(src_xpath);
+    }
+}
+
+void dsa_heros_add_culture(dsa_heros_t *heros, dsa_hero_t *hero, const char *name) {
+    if (heros != NULL && hero != NULL) {
+        char *src_xpath = format_string_new("/cultures//culture[@name = '%s']", name);
+        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->cultures, src_xpath,  hero->xml, "/hero/culturecontainer");
+        free(src_xpath);
+    }
+}
+void dsa_heros_add_profession(dsa_heros_t *heros, dsa_hero_t *hero, const char *name) {
+    if (heros != NULL && hero != NULL) {
+        char *src_xpath = format_string_new("/professions//profession[@name = '%s']", name);
+        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->professions, src_xpath,  hero->xml, "/hero/professioncontainer");
+        free(src_xpath);
+    }
+}
+
+void dsa_heros_add_pro(dsa_heros_t *heros, dsa_hero_t *hero, const char *name) {
+    
+}
+void dsa_heros_remove_pro(dsa_hero_t *hero, const char *name) {
+    
+}
+
+void dsa_heros_add_contra(dsa_heros_t *heros, dsa_hero_t *hero, const char *name) {
+    
+}
+void dsa_heros_remove_contra(dsa_hero_t *hero, const char *name) {
+    
+}
+
+void dsa_heros_add_specialability(dsa_heros_t *heros, dsa_hero_t *hero, const char *name) {
+    
+}
+void dsa_heros_remove_specialability(dsa_hero_t *hero, const char *name) {
+    
+}
+
+void dsa_heros_add_talent(dsa_heros_t *heros, dsa_hero_t *hero, const char *name) {
+    
+}
+void dsa_heros_remove_talent(dsa_hero_t *hero, const char *name) {
+    
+}
+
+void dsa_heros_add_spell(dsa_heros_t *heros, dsa_hero_t *hero, const char *name) {
+    
+}
+void dsa_heros_remove_spell(dsa_hero_t *hero, const char *name) {
+    
+}
+
+void dsa_heros_add_liturgie(dsa_heros_t *heros, dsa_hero_t *hero, const char *name) {
+    
+}
+void dsa_heros_remove_liturgie(dsa_hero_t *hero, const char *name) {
+    
+}
+
+void dsa_heros_talent_inc(dsa_hero_t *hero, const char *name) {
+    
+}
+void dsa_heros_talent_dec(dsa_hero_t *hero, const char *name) {
+    
+}
+
+void dsa_heros_spell_inc(dsa_hero_t *hero, const char *name) {
+    
+}
+void dsa_heros_spell_dec(dsa_hero_t *hero, const char *name) {
+    
+}
+
+void dsa_heros_liturgie_inc(dsa_hero_t *hero, const char *name) {
+    
+}
+void dsa_heros_liturgie_dec(dsa_hero_t *hero, const char *name) {
+    
+}
+
+void dsa_heros_specialability_inc(dsa_hero_t *hero, const char *name) {
+    
+}
+void dsa_heros_specialability_dec(dsa_hero_t *hero, const char *name) {
+
 }

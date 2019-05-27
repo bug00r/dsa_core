@@ -43,9 +43,9 @@
 	<breedcontainer name="Rasse" />
 	<culturecontainer name="Kultur" />
 	<professioncontainer name="Profession" />
-	<pros name="Vorteile" />
-	<contras name="Nachteile" />
-	<specials name="Sonderfertigkeiten" />
+	<procontainer name="Vorteile" />
+	<contracontainer name="Nachteile" />
+	<specialcontainer name="Sonderfertigkeiten" />
 	<talents name="Talente">
 		<group name="Kampf" >
 			<talent type="base" name="Dolche" at="0" pa="0" taw="0" />

@@ -53,7 +53,7 @@ static void test_heros_alloc_free() {
 }
 
 static void test_heros_add_hero() {
-	    DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
 
 	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
 
@@ -120,11 +120,9 @@ static void test_heros_add_hero() {
 
 	dsa_heros_save_hero(heros, found);
 
-	
-
-	xmlSaveFileEnc("-", heros->heros->doc,"UTF-8");
-
-
+	#if debug > 0
+		xmlSaveFileEnc("-", heros->heros->doc,"UTF-8");
+	#endif
 
 	assert(found != NULL);
 
@@ -136,6 +134,14 @@ static void test_heros_add_hero() {
 
 	dsa_hero_free(&found);
 
+	dsa_heros_delete_hero(heros, 0);
+	dsa_heros_delete_hero(heros, 2);
+	dsa_heros_delete_hero(heros, 3);
+
+	#if debug > 0
+		xmlSaveFileEnc("-", heros->heros->doc,"UTF-8");
+	#endif
+
 	dsa_heros_free(&heros);
 
 	assert(heros == NULL);
@@ -143,6 +149,84 @@ static void test_heros_add_hero() {
 	archive_resource_free(&ar);
 
     DEBUG_LOG("<<<\n");
+}
+
+static void	test_heros_add_breed() {
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+
+	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
+
+	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
+
+	dsa_hero_t *baradon = dsa_hero_new(heros, "Baradon");
+	
+	dsa_heros_add_breed(heros, baradon, "Die Tulamiden");
+
+	#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	#endif
+	
+	dsa_hero_free(&baradon);
+
+	dsa_heros_free(&heros);
+
+	assert(heros == NULL);
+
+	archive_resource_free(&ar);
+
+	DEBUG_LOG("<<<\n");
+}
+
+static void	test_heros_add_culture(){
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+
+	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
+
+	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
+
+	dsa_hero_t *baradon = dsa_hero_new(heros, "Baradon");
+	
+	dsa_heros_add_culture(heros, baradon, "Mittelländische Städte");
+
+	#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	#endif
+	
+	dsa_hero_free(&baradon);
+
+	dsa_heros_free(&heros);
+
+	assert(heros == NULL);
+
+	archive_resource_free(&ar);
+
+	DEBUG_LOG("<<<\n");
+}
+
+static void	test_heros_add_profession(){
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+
+	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
+
+	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
+
+	dsa_hero_t *baradon = dsa_hero_new(heros, "Baradon");
+	
+	dsa_heros_add_profession(heros, baradon, "Bauer Erntehelfer/in");
+
+	#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	#endif
+	
+	dsa_hero_free(&baradon);
+
+	dsa_heros_free(&heros);
+
+	assert(heros == NULL);
+
+	archive_resource_free(&ar);
+
+	DEBUG_LOG("<<<\n");
 }
 
 int main(int argc, char **argv) {
@@ -154,6 +238,12 @@ int main(int argc, char **argv) {
 	test_heros_alloc_free();
 
 	test_heros_add_hero();
+
+	test_heros_add_breed();
+
+	test_heros_add_culture();
+
+	test_heros_add_profession();
 
 	DEBUG_LOG("<< end taw tests:\n");
 
