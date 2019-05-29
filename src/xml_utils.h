@@ -211,6 +211,7 @@ xmlXPathObjectPtr xml_ctx_xpath( const xml_ctx_t *ctx, const char *xpath);
     returns a xmlXPathObjectPtr with xpath result
 */
 xmlXPathObjectPtr xml_ctx_xpath_format( const xml_ctx_t *ctx, const char *xpath_format, ...);
+xmlXPathObjectPtr xml_ctx_xpath_format_va( const xml_ctx_t *ctx, const char *xpath_format, va_list argptr);
 
 /*
 
@@ -235,5 +236,13 @@ xmlXPathObjectPtr xml_ctx_xpath_format( const xml_ctx_t *ctx, const char *xpath_
 */
 void xml_ctx_nodes_add_xpath(xml_ctx_t *src, const char *src_xpath, xml_ctx_t *dst, const char *dst_xpath);
 
+void xml_ctx_rem_nodes_xpres(xmlXPathObjectPtr xpres);
+void xml_ctx_remove(xml_ctx_t *ctx, const char *xpath);
+void xml_ctx_remove_format(xml_ctx_t *ctx, const char *xpath_format, ...);
+
+bool xml_ctx_exist(xml_ctx_t *ctx, const char *xpath);
+bool xml_ctx_exist_format(xml_ctx_t *ctx, const char *xpath_format, ...);
+
+bool xml_xpath_has_result(xmlXPathObjectPtr xpathobj);
 
 #endif

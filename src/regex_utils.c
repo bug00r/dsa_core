@@ -31,3 +31,7 @@ bool regex_match(const unsigned char *_pattern, const unsigned char *_text) {
 	
 	return found;
 }
+
+bool regex_not_blank(const unsigned char *_text) {
+	return regex_match((const unsigned char *)"[\\d\\w]+", _text);
+}

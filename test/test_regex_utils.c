@@ -26,7 +26,12 @@ int main(int argc, char **argv) {
 
 	DEBUG_LOG(">> Start taw tests:\n");
 
-    assert(regex_match((const unsigned char *)"[\\d\\D]+", (const unsigned char *) "test bla bla bla"));
+    assert(regex_match((const unsigned char *)"[\\d\\w]+", (const unsigned char *) "test bla bla bla"));
+
+	assert(regex_not_blank((const unsigned char *)" 23 bla bla blubb sd"));
+	assert(!regex_not_blank((const unsigned char *)"    "));
+	assert(!regex_not_blank((const unsigned char *)""));
+	assert(!regex_not_blank((const unsigned char *)"\t"));
 
 	DEBUG_LOG("<< end taw tests:\n");
 

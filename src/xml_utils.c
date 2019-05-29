@@ -205,10 +205,25 @@ xmlXPathObjectPtr xml_ctx_xpath( const xml_ctx_t *ctx, const char *xpath) {
 xmlXPathObjectPtr xml_ctx_xpath_format( const xml_ctx_t *ctx, const char *xpath_format, ...) {
     
     va_list args;
-    va_start(args,xpath_format);
+    va_start(args, xpath_format);
     char *gen_xpath = format_string_va_new(xpath_format, args);
     va_end(args);
 
+    #if debug > 0
+        printf("gen xpath: %s\n", gen_xpath);
+    #endif
+
+    xmlXPathObjectPtr result = xml_ctx_xpath(ctx, gen_xpath);
+
+    free(gen_xpath);
+    
+    return result;
+}
+
+xmlXPathObjectPtr xml_ctx_xpath_format_va( const xml_ctx_t *ctx, const char *xpath_format, va_list argptr) {
+    
+    char *gen_xpath = format_string_va_new(xpath_format, argptr);
+    
     #if debug > 0
         printf("gen xpath: %s\n", gen_xpath);
     #endif
@@ -228,14 +243,14 @@ void xml_ctx_nodes_add_xpath(xml_ctx_t *src, const char *src_xpath, xml_ctx_t *d
 
     xmlXPathObjectPtr srcxpres = xml_ctx_xpath(src, src_xpath);
 
-    if ( srcxpres != NULL && srcxpres->nodesetval != NULL && srcxpres->nodesetval->nodeNr > 0 ) {
+    if ( xml_xpath_has_result(srcxpres) ) {
 
         const int numsrcs = srcxpres->nodesetval->nodeNr;
         xmlNodePtr * sources = srcxpres->nodesetval->nodeTab;
 
         xmlXPathObjectPtr dstxpres = xml_ctx_xpath(dst, dst_xpath);
 
-        if ( dstxpres != NULL && dstxpres->nodesetval != NULL && dstxpres->nodesetval->nodeNr > 0 ) {
+        if ( xml_xpath_has_result(dstxpres) ) {
 
             for(int cursrcnum = 0; cursrcnum < numsrcs; ++cursrcnum) {
                 
@@ -290,4 +305,68 @@ void xml_ctx_nodes_add_xpath(xml_ctx_t *src, const char *src_xpath, xml_ctx_t *d
         xmlXPathFreeObject(dstxpres);
     }
     xmlXPathFreeObject(srcxpres);
+}
+
+void xml_ctx_rem_nodes_xpres(xmlXPathObjectPtr xpres) {
+    
+    if (xml_xpath_has_result(xpres)) {
+        const int cntNodes = xpres->nodesetval->nodeNr;
+        for(int curnode = 0; curnode < cntNodes; ++curnode) {
+            xmlNodePtr cn = xpres->nodesetval->nodeTab[curnode];
+            xmlUnlinkNode(cn);
+            xmlFreeNode(cn);
+        }
+    }
+
+}
+
+
+void xml_ctx_remove(xml_ctx_t *ctx, const char *xpath) {
+
+    xmlXPathObjectPtr found = xml_ctx_xpath_format(ctx, xpath);
+
+    xml_ctx_rem_nodes_xpres(found);
+
+    xmlXPathFreeObject(found);
+}
+
+void xml_ctx_remove_format(xml_ctx_t *ctx, const char *xpath_format, ...) {
+
+    va_list args;
+    va_start(args, xpath_format);
+    xmlXPathObjectPtr found = xml_ctx_xpath_format_va(ctx, xpath_format, args);
+    va_end(args);
+
+    xml_ctx_rem_nodes_xpres(found);
+
+    xmlXPathFreeObject(found);
+}
+
+bool xml_ctx_exist(xml_ctx_t *ctx, const char *xpath) {
+    xmlXPathObjectPtr found = xml_ctx_xpath(ctx, xpath);
+
+    bool exist = xml_xpath_has_result(found);
+
+    xmlXPathFreeObject(found);
+
+    return exist;
+}
+
+bool xml_ctx_exist_format(xml_ctx_t *ctx, const char *xpath_format, ...) {
+
+    va_list args;
+    va_start(args, xpath_format);
+    xmlXPathObjectPtr found = xml_ctx_xpath_format_va(ctx, xpath_format, args);
+    va_end(args);
+
+    bool exist = xml_xpath_has_result(found);
+
+    xmlXPathFreeObject(found);
+
+    return exist;
+    
+}
+
+bool xml_xpath_has_result(xmlXPathObjectPtr xpathobj) {
+    return ( xpathobj != NULL && xpathobj->nodesetval && (xpathobj->nodesetval->nodeNr > 0 ));
 }

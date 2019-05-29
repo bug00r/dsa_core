@@ -264,9 +264,18 @@ static void test_xml_ctx_xpath_format() {
 
 	xmlXPathObjectPtr xpathObj = xml_ctx_xpath_format(nCtx, "//group[@name = '%s']/*[regexmatch(@name,'%s')]", "Kampf", "Dolche");
 
+	assert(xml_xpath_has_result(xpathObj));
+
 	__debug_xpath_obj_ptr(xpathObj);
 
 	xmlXPathFreeObject(xpathObj);
+
+	assert(xml_ctx_exist(nCtx, "//group[@name = 'Kampf']/*[regexmatch(@name,'Dolche')]"));
+	assert(!xml_ctx_exist(nCtx, "//group[@name = 'Natur']/*[regexmatch(@name,'Dolche')]"));
+
+	assert(xml_ctx_exist_format(nCtx, "//group[@name = '%s']/*[regexmatch(@name,'%s')]", "Kampf", "Dolche"));
+	assert(!xml_ctx_exist_format(nCtx, "//group[@name = '%s']/*[regexmatch(@name,'%s')]", "Natur", "Dolche"));
+
 	free_xml_ctx_src(&nCtx);
 
 	archive_resource_free(&ar);

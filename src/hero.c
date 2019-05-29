@@ -37,11 +37,7 @@ static void __dsa_delete_hero_by_id(xml_ctx_t *hctx, const int id) {
     if (hctx != NULL) {
         xmlXPathObjectPtr o_result = xml_ctx_xpath_format(hctx, "/heros/hero[@id='%i']", id); 
 
-        if ( o_result && o_result->nodesetval && o_result->nodesetval->nodeNr == 1) {
-            xmlNodePtr cn = o_result->nodesetval->nodeTab[0];
-            xmlUnlinkNode(cn);
-            xmlFreeNode(cn);
-        }
+        xml_ctx_rem_nodes_xpres(o_result);
 
         xmlXPathFreeObject(o_result);
     }
@@ -103,7 +99,7 @@ dsa_hero_t* dsa_hero_new(dsa_heros_t *heros, const unsigned char* hero_name) {
 
     dsa_hero_t *new_hero = NULL;
 
-    if ( regex_match((const unsigned char *)"[\\d\\D]+", hero_name) ) {
+    if ( regex_not_blank(hero_name) ) {
 
         xml_ctx_t *nCtx = xml_ctx_new_empty();
     	xmlNodePtr newheroroot = xmlCopyNode(xmlDocGetRootElement(heros->basehero->doc), 1);
@@ -271,23 +267,49 @@ void dsa_heros_add_profession(dsa_heros_t *heros, dsa_hero_t *hero, const unsign
 
 void dsa_heros_add_pro(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
     
+    if (!xml_ctx_exist_format(hero->xml, "/hero/procontainer/pro[@name = '%s']", name)) {
+
+        char *src_xpath = format_string_new("/procontra//pro[@name = '%s']", name);
+        
+        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->pro_contra, src_xpath,  hero->xml, "/hero/procontainer");
+        
+        free(src_xpath);
+    }
+
 }
+
 void dsa_heros_remove_pro(dsa_hero_t *hero, const unsigned char *name) {
-    
+    xml_ctx_remove_format(hero->xml, "/hero/procontainer/pro[@name = '%s']", name);
 }
 
 void dsa_heros_add_contra(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
-    
+    if (!xml_ctx_exist_format(hero->xml, "/hero/contracontainer/contra[@name = '%s']", name)) {
+
+        char *src_xpath = format_string_new("/procontra//contra[@name = '%s']", name);
+        
+        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->pro_contra, src_xpath,  hero->xml, "/hero/contracontainer");
+        
+        free(src_xpath);
+    }    
 }
+
 void dsa_heros_remove_contra(dsa_hero_t *hero, const unsigned char *name) {
-    
+    xml_ctx_remove_format(hero->xml, "/hero/contracontainer/contra[@name = '%s']", name);
 }
 
 void dsa_heros_add_specialability(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
-    
+    if (!xml_ctx_exist_format(hero->xml, "/hero/specialcontainer/specialability[@name = '%s']", name)) {
+
+        char *src_xpath = format_string_new("/specialabilities//specialability[@name = '%s']", name);
+        
+        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->specialabilities, src_xpath,  hero->xml, "/hero/specialcontainer");
+        
+        free(src_xpath);
+    }  
 }
+
 void dsa_heros_remove_specialability(dsa_hero_t *hero, const unsigned char *name) {
-    
+    xml_ctx_remove_format(hero->xml, "/hero/specialcontainer/specialability[@name = '%s']", name);
 }
 
 void dsa_heros_add_talent(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {

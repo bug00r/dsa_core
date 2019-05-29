@@ -203,6 +203,111 @@ static void	test_heros_add_culture(){
 	DEBUG_LOG("<<<\n");
 }
 
+static void	test_heros_add_pro() {
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+
+	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
+
+	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
+
+	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
+	
+	dsa_heros_add_pro(heros, baradon, (const unsigned char*)"Amtsadel");
+	dsa_heros_add_pro(heros, baradon, (const unsigned char*)"Unknown");
+	dsa_heros_add_pro(heros, baradon, (const unsigned char*)"Adliges Erbe");
+	dsa_heros_add_pro(heros, baradon, (const unsigned char*)"Affinität zu Geistern,Elementaren oder Dämonen");
+
+	#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	#endif
+
+	dsa_heros_remove_pro(baradon, (const unsigned char*)"Affinität zu Geistern,Elementaren oder Dämonen");
+
+	#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	#endif
+
+	dsa_hero_free(&baradon);
+
+	dsa_heros_free(&heros);
+
+	assert(heros == NULL);
+
+	archive_resource_free(&ar);
+
+	DEBUG_LOG("<<<\n");
+}
+
+static void	test_heros_add_contra() {
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+
+	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
+
+	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
+
+	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
+	
+	dsa_heros_add_contra(heros, baradon, (const unsigned char*)"Aberglaube");
+	dsa_heros_add_contra(heros, baradon, (const unsigned char*)"Unknown");
+	dsa_heros_add_contra(heros, baradon, (const unsigned char*)"Albino");
+	dsa_heros_add_contra(heros, baradon, (const unsigned char*)"Animalische Magie");
+
+	#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	#endif
+
+	dsa_heros_remove_contra(baradon, (const unsigned char*)"Animalische Magie");
+
+	#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	#endif
+
+	dsa_hero_free(&baradon);
+
+	dsa_heros_free(&heros);
+
+	assert(heros == NULL);
+
+	archive_resource_free(&ar);
+
+	DEBUG_LOG("<<<\n");
+}
+
+static void	test_heros_add_specialability() {
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+
+	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
+
+	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
+
+	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
+	
+	dsa_heros_add_specialability(heros, baradon, (const unsigned char*)"Akklimatisierung");
+	dsa_heros_add_specialability(heros, baradon, (const unsigned char*)"Unknown");
+	dsa_heros_add_specialability(heros, baradon, (const unsigned char*)"Fälscher");
+	dsa_heros_add_specialability(heros, baradon, (const unsigned char*)"Nandusgefälliges Wissen");
+
+	//#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	//#endif
+
+	dsa_heros_remove_specialability(baradon, (const unsigned char*)"Nandusgefälliges Wissen");
+
+	//#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	//#endif
+
+	dsa_hero_free(&baradon);
+
+	dsa_heros_free(&heros);
+
+	assert(heros == NULL);
+
+	archive_resource_free(&ar);
+
+	DEBUG_LOG("<<<\n");
+}
+
 static void	test_heros_add_profession(){
 	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
 
@@ -244,6 +349,12 @@ int main(int argc, char **argv) {
 	test_heros_add_culture();
 
 	test_heros_add_profession();
+
+	test_heros_add_pro();
+	
+	test_heros_add_contra();
+
+	test_heros_add_specialability();
 
 	DEBUG_LOG("<< end taw tests:\n");
 

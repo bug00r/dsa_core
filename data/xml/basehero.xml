@@ -4,26 +4,6 @@
 	<status></status>
 	<title></title>
 	<story></story>
-	<manual>
-		<pros name="Vorteile"></pros>
-		<contras name="Nachteile"/>
-		<talents>
-			<group name="Kampf"></group>
-			<group name="Körper"></group>
-			<group name="Gesellschaft"></group>
-			<group name="Wissen"></group>
-			<group name="Natur"></group>
-			<group name="Handerk"></group>
-			<group name="Sprachen und Schriften"></group>
-		</talents>
-		<specials name="Sonderfertigkeiten">
-			<group name="Allgemeine"></group>
-			<group name="Kampf (bewaffnet)"></group>
-			<group name="Kampf (waffenlos)"></group>
-			<group name="Klerikale"></group>
-			<group name="Magische"></group>
-		</specials>
-	</manual>
 	<config>
 		<base-gp value="110"/>
 	</config>
@@ -93,4 +73,24 @@
 	</talents>
 	<talents name="Zauber"></talents>
 	<talents name="Liturgie"></talents>
+	<edit>
+		<pros name="Vorteile"></pros>
+		<contras name="Nachteile"/>
+		<talents>
+			<group name="Kampf"></group>
+			<group name="Körper"></group>
+			<group name="Gesellschaft"></group>
+			<group name="Wissen"></group>
+			<group name="Natur"></group>
+			<group name="Handerk"></group>
+			<group name="Sprachen und Schriften"></group>
+		</talents>
+		<specials name="Sonderfertigkeiten">
+			<group name="Allgemeine"></group>
+			<group name="Kampf (bewaffnet)"></group>
+			<group name="Kampf (waffenlos)"></group>
+			<group name="Klerikale"></group>
+			<group name="Magische"></group>
+		</specials>
+	</edit>
 </hero>
