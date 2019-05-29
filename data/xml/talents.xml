@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<talents description="Held" >
+<talents description="Talente" >
 	<group name="Kampf" >
 		<talent inc="D" type="base" name="Dolche" taw="0" />
 		<talent inc="D" type="base" name="Hiebwaffen" taw="0" />
@@ -96,12 +96,12 @@
 		<talent inc="B" type="special" name="Überzeugen" test="" taw="0" />
 	</group>
 	<group inc="B" name="Handwerk" >
-		<talent type="base" name="Heilkunde Wunden" test="KL/CH/FF" taw="0" />
-		<talent type="base" name="Holzbearbeitung" test="KL/FF/KK" taw="0" />
-		<talent type="base" name="Kochen" test="KL/IN/FF" taw="0" />
-		<talent type="base" name="Lederbearbeitung" test="KL/FF/FF" taw="0" />
-		<talent type="base" name="Malen/Zeichnen" test="KL/IN/FF" taw="0" />
-		<talent type="base" name="Schneidern" test="KL/FF/FF" taw="0" />
+		<talent inc="B" type="base" name="Heilkunde Wunden" test="KL/CH/FF" taw="0" />
+		<talent inc="B" type="base" name="Holzbearbeitung" test="KL/FF/KK" taw="0" />
+		<talent inc="B" type="base" name="Kochen" test="KL/IN/FF" taw="0" />
+		<talent inc="B" type="base" name="Lederbearbeitung" test="KL/FF/FF" taw="0" />
+		<talent inc="B" type="base" name="Malen/Zeichnen" test="KL/IN/FF" taw="0" />
+		<talent inc="B" type="base" name="Schneidern" test="KL/FF/FF" taw="0" />
 		<talent inc="B" type="special" name="Abrichten" test="MU/IN/CH" taw="0" />
 		<talent inc="B" type="special" name="Ackerbau" test="IN/FF/KO" taw="0" />
 		<talent inc="B" type="special" name="Alchimie" test="MU/KL/FF" taw="0" />

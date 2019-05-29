@@ -265,68 +265,87 @@ void dsa_heros_add_profession(dsa_heros_t *heros, dsa_hero_t *hero, const unsign
     }
 }
 
-void dsa_heros_add_pro(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
+void dsa_heros_add_pro(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name) {
     
     if (!xml_ctx_exist_format(hero->xml, "/hero/procontainer/pro[@name = '%s']", name)) {
 
         char *src_xpath = format_string_new("/procontra//pro[@name = '%s']", name);
+        char *dst_xpath = format_string_new("/hero/procontainer/group[@name = '%s']", group);
         
-        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->pro_contra, src_xpath,  hero->xml, "/hero/procontainer");
+        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->pro_contra, src_xpath,  hero->xml, dst_xpath);
         
         free(src_xpath);
+        free(dst_xpath);
     }
 
 }
 
 void dsa_heros_remove_pro(dsa_hero_t *hero, const unsigned char *name) {
-    xml_ctx_remove_format(hero->xml, "/hero/procontainer/pro[@name = '%s']", name);
+    xml_ctx_remove_format(hero->xml, "/hero/procontainer//pro[@name = '%s']", name);
 }
 
-void dsa_heros_add_contra(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
+void dsa_heros_add_contra(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name) {
     if (!xml_ctx_exist_format(hero->xml, "/hero/contracontainer/contra[@name = '%s']", name)) {
 
         char *src_xpath = format_string_new("/procontra//contra[@name = '%s']", name);
+        char *dst_xpath = format_string_new("/hero/contracontainer/group[@name = '%s']", group);
         
-        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->pro_contra, src_xpath,  hero->xml, "/hero/contracontainer");
+        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->pro_contra, src_xpath,  hero->xml, dst_xpath);
         
-        free(src_xpath);
+        free(src_xpath); 
+        free(dst_xpath);
     }    
 }
 
 void dsa_heros_remove_contra(dsa_hero_t *hero, const unsigned char *name) {
-    xml_ctx_remove_format(hero->xml, "/hero/contracontainer/contra[@name = '%s']", name);
+    xml_ctx_remove_format(hero->xml, "/hero/contracontainer//contra[@name = '%s']", name);
 }
 
-void dsa_heros_add_specialability(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
-    if (!xml_ctx_exist_format(hero->xml, "/hero/specialcontainer/specialability[@name = '%s']", name)) {
+void dsa_heros_add_specialability(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name) {
+    
+    if (!xml_ctx_exist_format(hero->xml, "/hero/specialcontainer/group[@name = '%s']/specialability[@name = '%s']", group, name)) {
 
         char *src_xpath = format_string_new("/specialabilities//specialability[@name = '%s']", name);
+        char *dst_xpath = format_string_new("/hero/specialcontainer/group[@name = '%s']", group);
         
-        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->specialabilities, src_xpath,  hero->xml, "/hero/specialcontainer");
+        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->specialabilities, src_xpath,  hero->xml, dst_xpath);
         
         free(src_xpath);
+        free(dst_xpath);
     }  
 }
 
 void dsa_heros_remove_specialability(dsa_hero_t *hero, const unsigned char *name) {
-    xml_ctx_remove_format(hero->xml, "/hero/specialcontainer/specialability[@name = '%s']", name);
+    xml_ctx_remove_format(hero->xml, "/hero/specialcontainer//specialability[@name = '%s']", name);
 }
 
-void dsa_heros_add_talent(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
+void dsa_heros_add_talent(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name) {
     
+    if (!xml_ctx_exist_format(hero->xml, "/hero/talents/group[@name = '%s']/talent[@name = '%s' and @type != 'base']", group, name)) {
+        
+        char *src_xpath = format_string_new("/talents//talent[@name = '%s' and @type != 'base']", name);
+        char *dst_xpath = format_string_new("/hero/talents/group[@name = '%s']", group);
+
+        xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->talents, src_xpath,  hero->xml, dst_xpath);
+        
+        free(src_xpath);
+        free(dst_xpath);
+
+    }
+
 }
 void dsa_heros_remove_talent(dsa_hero_t *hero, const unsigned char *name) {
-    
+    xml_ctx_remove_format(hero->xml, "/hero/talents//talent[@name = '%s' and @type != 'base' ]", name);
 }
 
-void dsa_heros_add_spell(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
+void dsa_heros_add_spell(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name) {
     
 }
 void dsa_heros_remove_spell(dsa_hero_t *hero, const unsigned char *name) {
     
 }
 
-void dsa_heros_add_liturgie(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
+void dsa_heros_add_liturgie(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name) {
     
 }
 void dsa_heros_remove_liturgie(dsa_hero_t *hero, const unsigned char *name) {

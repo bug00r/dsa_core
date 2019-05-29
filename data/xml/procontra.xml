@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <procontra>
 	<group name="Normal" >
+		<pro name="Ausdauernd" >
+			<gp name="Generierungspunkte" value="1" />
+			<range min="2" step="2" max="6" />
+		</pro>
+		<pro name="Ausrüstungsvorteil" >
+			<gp name="Generierungspunkte" value="1" />
+		</pro>
 		<pro name="Adlige Abstammung" >
 			<gp name="Generierungspunkte" value="7" />
 		</pro>
@@ -27,7 +34,6 @@
 			<gp name="Generierungspunkte" value="3" />
 		</pro>
 	</group>
-	<!-- TODO Astrale Regeneration mit logik versehen und einen Vorteil daraus machen -->
 	<group name="Magisch" >
 		<pro name="Astrale Regeneration I" >
 			<mage type="ZH" />
@@ -46,19 +52,10 @@
 			<gp name="Generierungspunkte" value="1" />
 			<range min="1" max="6" />
 		</pro>
-	</group>
-	<group name="Anders" >
-		<pro name="Ausdauernd" >
-			<gp name="Generierungspunkte" value="1" />
-			<range min="2" step="2" max="6" />
-		</pro>
 		<pro name="Ausdauernder Zauberer" >
 			<mage type="ZH" />
 			<gp name="Generierungspunkte" value="3" />
 			<range min="1" max="6" />
-		</pro>
-		<pro name="Ausrüstungsvorteil" >
-			<gp name="Generierungspunkte" value="1" />
 		</pro>
 	</group>
 	<group name="Normal" >
@@ -73,12 +70,12 @@
 			<property />
 			<gp name="Generierungspunkte" value="-1" />
 		</contra>
-	<group name="Magie" >
+	</group>
+	<group name="Magisch" >
 		<contra name="Animalische Magie" >
 			<mage type="ZH" />
 			<gp name="Generierungspunkte" value="-1" />
 		</contra>
-	</group>
 		<contra name="Arkanophobie" >
 			<property />
 			<gp name="Generierungspunkte" value="-1" />

@@ -23,35 +23,45 @@
 	<breedcontainer name="Rasse" />
 	<culturecontainer name="Kultur" />
 	<professioncontainer name="Profession" />
-	<procontainer name="Vorteile" />
-	<contracontainer name="Nachteile" />
-	<specialcontainer name="Sonderfertigkeiten" />
+	<procontainer name="Vorteile" >
+		<group name="Normal" />
+		<group name="Magisch"/>
+	</procontainer>
+	<contracontainer name="Nachteile" >
+		<group name="Normal" />
+		<group name="Magisch"/>
+	</contracontainer>
+	<specialcontainer name="Sonderfertigkeiten" >
+		<group name="Klerikale" />
+		<group name="Magische" />
+		<group name="Kampf" />
+		<group name="Allgemeine" />
+	</specialcontainer>
 	<talents name="Talente">
 		<group name="Kampf" >
-			<talent type="base" name="Dolche" at="0" pa="0" taw="0" />
-			<talent type="base" name="Hiebwaffen" at="0" pa="0" taw="0" />
-			<talent type="base" name="Raufen" at="0" pa="0" taw="0" />
-			<talent type="base" name="Ringen" at="0" pa="0" taw="0" />
-			<talent type="base" name="Säbel" at="0" pa="0" taw="0" />
-			<talent type="base" name="Wurfmesser" at="0" pa="0" taw="0" />
+			<talent inc="D" type="base" name="Dolche" taw="0" />
+			<talent inc="D" type="base" name="Hiebwaffen" taw="0" />
+			<talent inc="C" type="base" name="Raufen" taw="0" />
+			<talent inc="D" type="base" name="Ringen" taw="0" />
+			<talent inc="D" type="base" name="Säbel"  taw="0" />
 		</group>
-		<group name="Körper" >
-			<talent type="base" name="Athletik" test="GE/KO/KK" taw="0" />
-			<talent type="base" name="Klettern" test="MU/GE/KK" taw="0" />
-			<talent type="base" name="Selbstbeherrschung" test="MU/KO/KK" taw="0" />
-			<talent type="base" name="Körperbeherrschung" test="MU/IN/GE" taw="0" />
-			<talent type="base" name="Schleichen" test="MU/IN/GE" taw="0" />
-			<talent type="base" name="Schwimmen" test="GE/KO/KK" taw="0" />
-			<talent type="base" name="Sich Verstecken" test="MU/IN/GE" taw="0" />
-			<talent type="base" name="Singen" test="IN/CH/CH(KO)" value="0" />
-			<talent type="base" name="Sinnenschärfen" test="KL/IN/IN(FF)" taw="0" />
-			<talent type="base" name="Tanzen" test="CH/GE/GE" taw="0" />
-			<talent type="base" name="Zechen" test="IN/KO/KK" taw="0" />
+		<group inc="D" name="Körper" >
+			<talent inc="D" type="base" name="Athletik" test="GE/KO/KK" taw="0" />
+			<talent inc="D" type="base" name="Klettern" test="MU/GE/KK" taw="0" />
+			<talent inc="D" type="base" name="Selbstbeherrschung" test="MU/KO/KK" taw="0" />
+			<talent inc="D" type="base" name="Körperbeherrschung" test="MU/IN/GE" taw="0" />
+			<talent inc="D" type="base" name="Schleichen" test="MU/IN/GE" taw="0" />
+			<talent inc="D" type="base" name="Schwimmen" test="GE/KO/KK" taw="0" />
+			<talent inc="D" type="base" name="Sich Verstecken" test="MU/IN/GE" taw="0" />
+			<talent inc="D" type="base" name="Singen" test="IN/CH/CH(KO)" taw="0" />
+			<talent inc="D" type="base" name="Sinnenschärfen" test="KL/IN/IN(FF)" taw="0" />
+			<talent inc="D" type="base" name="Tanzen" test="CH/GE/GE" taw="0" />
+			<talent inc="D" type="base" name="Zechen" test="IN/KO/KK" taw="0" />
 		</group>
-		<group name="Natur" >
-			<talent type="base" name="Fährtensuchen" test="KL/IN/IN(KO)" taw="0" />
-			<talent type="base" name="Orientierung" test="KL/IN/IN" taw="0" />
-			<talent type="base" name="Wildnisleben" test="IN/GE/KO" taw="0" />
+		<group inc="B" name="Natur" >
+			<talent inc="B" type="base" name="Fährtensuchen" test="KL/IN/IN(KO)" taw="0" />
+			<talent inc="B" type="base" name="Orientierung" test="KL/IN/IN" taw="0" />
+			<talent inc="B" type="base" name="Wildnisleben" test="IN/GE/KO" taw="0" />
 		</group>
 		<group name="Wissen" >
 			<talent type="base" name="Rechnen" test="KL/KL/IN" taw="0" />

@@ -212,16 +212,16 @@ static void	test_heros_add_pro() {
 
 	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
 	
-	dsa_heros_add_pro(heros, baradon, (const unsigned char*)"Amtsadel");
-	dsa_heros_add_pro(heros, baradon, (const unsigned char*)"Unknown");
-	dsa_heros_add_pro(heros, baradon, (const unsigned char*)"Adliges Erbe");
-	dsa_heros_add_pro(heros, baradon, (const unsigned char*)"Affinität zu Geistern,Elementaren oder Dämonen");
+	dsa_heros_add_pro(heros, baradon, (const unsigned char*)"Normal", (const unsigned char*)"Amtsadel");
+	dsa_heros_add_pro(heros, baradon, (const unsigned char*)"Magisch", (const unsigned char*)"Unknown");
+	dsa_heros_add_pro(heros, baradon, (const unsigned char*)"Normal", (const unsigned char*)"Adliges Erbe");
+	dsa_heros_add_pro(heros, baradon, (const unsigned char*)"Magisch", (const unsigned char*)"Astrale Regeneration III");
 
 	#if debug > 0
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
 	#endif
 
-	dsa_heros_remove_pro(baradon, (const unsigned char*)"Affinität zu Geistern,Elementaren oder Dämonen");
+	dsa_heros_remove_pro(baradon, (const unsigned char*)"Astrale Regeneration III");
 
 	#if debug > 0
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
@@ -247,10 +247,10 @@ static void	test_heros_add_contra() {
 
 	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
 	
-	dsa_heros_add_contra(heros, baradon, (const unsigned char*)"Aberglaube");
-	dsa_heros_add_contra(heros, baradon, (const unsigned char*)"Unknown");
-	dsa_heros_add_contra(heros, baradon, (const unsigned char*)"Albino");
-	dsa_heros_add_contra(heros, baradon, (const unsigned char*)"Animalische Magie");
+	dsa_heros_add_contra(heros, baradon, (const unsigned char*)"Normal", (const unsigned char*)"Aberglaube");
+	dsa_heros_add_contra(heros, baradon, (const unsigned char*)"Magisch", (const unsigned char*)"Unknown");
+	dsa_heros_add_contra(heros, baradon, (const unsigned char*)"Normal", (const unsigned char*)"Albino");
+	dsa_heros_add_contra(heros, baradon, (const unsigned char*)"Magisch", (const unsigned char*)"Animalische Magie");
 
 	#if debug > 0
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
@@ -282,20 +282,57 @@ static void	test_heros_add_specialability() {
 
 	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
 	
-	dsa_heros_add_specialability(heros, baradon, (const unsigned char*)"Akklimatisierung");
-	dsa_heros_add_specialability(heros, baradon, (const unsigned char*)"Unknown");
-	dsa_heros_add_specialability(heros, baradon, (const unsigned char*)"Fälscher");
-	dsa_heros_add_specialability(heros, baradon, (const unsigned char*)"Nandusgefälliges Wissen");
+	dsa_heros_add_specialability(heros, baradon, (const unsigned char*)"Allgemeine", (const unsigned char*)"Akklimatisierung");
+	dsa_heros_add_specialability(heros, baradon, (const unsigned char*)"Allgemeine", (const unsigned char*)"Unknown");
+	dsa_heros_add_specialability(heros, baradon, (const unsigned char*)"Allgemeine", (const unsigned char*)"Fälscher");
+	dsa_heros_add_specialability(heros, baradon, (const unsigned char*)"Kampf", (const unsigned char*)"Ausfall");
 
-	//#if debug > 0
+	#if debug > 0
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
-	//#endif
+	#endif
 
-	dsa_heros_remove_specialability(baradon, (const unsigned char*)"Nandusgefälliges Wissen");
+	dsa_heros_remove_specialability(baradon, (const unsigned char*)"Ausfall");
 
-	//#if debug > 0
+	#if debug > 0
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
-	//#endif
+	#endif
+
+	dsa_hero_free(&baradon);
+
+	dsa_heros_free(&heros);
+
+	assert(heros == NULL);
+
+	archive_resource_free(&ar);
+
+	DEBUG_LOG("<<<\n");
+}
+
+static void	test_heros_add_talent() {
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+
+	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
+
+	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
+
+	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
+	
+	dsa_heros_add_talent(heros, baradon, (const unsigned char*)"Kampf", (const unsigned char*)"Anderthalbhänder");
+	dsa_heros_add_talent(heros, baradon, (const unsigned char*)"Natur", (const unsigned char*)"Unknown");
+	dsa_heros_add_talent(heros, baradon, (const unsigned char*)"Natur", (const unsigned char*)"Fallenstellen");
+	dsa_heros_add_talent(heros, baradon, (const unsigned char*)"Natur", (const unsigned char*)"Fährtensuchen");
+	dsa_heros_add_talent(heros, baradon, (const unsigned char*)"Wissen", (const unsigned char*)"Gesteinskunde");
+	dsa_heros_add_talent(heros, baradon, (const unsigned char*)"Handwerk", (const unsigned char*)"Alchimie");
+
+	#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	#endif
+
+	dsa_heros_remove_talent(baradon, (const unsigned char*)"Alchimie");
+
+	#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	#endif
 
 	dsa_hero_free(&baradon);
 
@@ -355,6 +392,8 @@ int main(int argc, char **argv) {
 	test_heros_add_contra();
 
 	test_heros_add_specialability();
+
+	test_heros_add_talent();
 
 	DEBUG_LOG("<< end taw tests:\n");
 
