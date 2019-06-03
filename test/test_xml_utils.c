@@ -54,8 +54,6 @@ static void test_xml_ctx_empty() {
 		assert(writtenbytes == 48);
 	#endif
 
-	
-
 	xmlNodePtr nroot = xmlDocGetRootElement(nCtx->doc);
 
 	xml_ctx_t * nodectx = xml_ctx_new_node(nroot);
@@ -63,7 +61,7 @@ static void test_xml_ctx_empty() {
 	xmlNodePtr noderoot = xmlDocGetRootElement(nodectx->doc);
 
 	assert(nroot != noderoot);
-	assert(strcmp(noderoot->name, nroot->name) == 0);
+	assert(strcmp((const char *)noderoot->name, (const char *)nroot->name) == 0);
 
 	#if debug > 0
 		writtenbytes = xmlSaveFileEnc("-", nCtx->doc,"UTF-8");
@@ -316,6 +314,21 @@ static void test_xml_ctx_add_node_xpath() {
 	#if debug > 1
 		writtenbytes = xmlSaveFileEnc("-", hCtx->doc,"UTF-8");
 		DEBUG_LOG_ARGS(">>> BYTES %i\n", writtenbytes);
+	#endif
+
+	xml_ctx_set_attr_str_xpath(hCtx, (unsigned char *)"New Name Baradon", "//hero/@description");
+	xml_ctx_set_attr_str_xpath(hCtx, (unsigned char *)"150", "//hero/config/base-gp/@value");
+
+	xml_ctx_set_attr_str_xpath_format(hCtx, (unsigned char *)"10", "//hero/baseinformations//attribute[regexmatch(@name,'%s')]/@basevalue", "[KkSs]*.*");
+
+	xml_ctx_set_content_xpath(hCtx, (unsigned char *)"Ups falscher Text", "//hero/story/text()");
+	xml_ctx_set_content_xpath(hCtx, (unsigned char *)"Das ist die wahre Story von Baradon", "//hero/story/text()");
+	xml_ctx_set_content_xpath(hCtx, (unsigned char *)"Ganz neuer Look wa!!!", "//hero/look/text()");
+
+	xml_ctx_set_content_xpath_format(hCtx, (unsigned char *)"ganz neuer Titel", "//hero/%s/text()", "title");
+
+	#if debug > 1
+		xmlSaveFileEnc("-", hCtx->doc,"UTF-8");
 	#endif
 
 	free_xml_ctx_src(&nCtx);

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hero description="Held" gender="male" age="20" so="0">
-	<look></look>
-	<status></status>
-	<title></title>
-	<story></story>
+	<look><![CDATA[]]></look>
+	<status><![CDATA[]]></status>
+	<title><![CDATA[]]></title>
+	<story><![CDATA[]]></story>
 	<config>
 		<base-gp value="110"/>
 	</config>

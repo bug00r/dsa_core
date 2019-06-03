@@ -346,10 +346,19 @@ static void	test_heros_add_talent() {
 	dsa_heros_talent_dec(baradon, (const unsigned char*)"Heilkunde Wunden");
 	dsa_heros_talent_dec(baradon, (const unsigned char*)"Heilkunde Wunden");
 	dsa_heros_talent_dec(baradon, (const unsigned char*)"Heilkunde Wunden");
+	
+	dsa_hero_set_name(baradon, (const unsigned char*)"Elfariona");
+	dsa_hero_set_gp(baradon, (const unsigned char*)"130");
+	dsa_hero_set_title(baradon, (const unsigned char*)"Ich bin ein hübscher Elf :P");
+	dsa_hero_set_status(baradon, (const unsigned char*)"Ich bin mit der NAtur verheiratet :P :D");
+	dsa_hero_set_look(baradon, (const unsigned char*)"Wie mein Titel schon sagt, ich bin hübscher als du!!");
+	dsa_hero_set_story(baradon, (const unsigned char*)"Meine Geschichte ist heroisch uind lang, Barden werden Äonen von ihr singen.");
 
-	#if debug > 0
+	dsa_hero_set_female(baradon);
+
+	//#if debug > 0
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
-	#endif
+	//#endif
 
 	dsa_heros_remove_talent(baradon, (const unsigned char*)"Alchimie");
 

@@ -245,4 +245,10 @@ bool xml_ctx_exist_format(xml_ctx_t *ctx, const char *xpath_format, ...);
 
 bool xml_xpath_has_result(xmlXPathObjectPtr xpathobj);
 
+void xml_ctx_set_attr_str_xpath(xml_ctx_t *ctx, const unsigned char *value, const char *xpath);
+void xml_ctx_set_attr_str_xpath_format(xml_ctx_t *ctx, const unsigned char *value, const char *xpath_format, ...);
+
+void xml_ctx_set_content_xpath(xml_ctx_t *ctx, const unsigned char *value, const char *xpath);
+void xml_ctx_set_content_xpath_format(xml_ctx_t *ctx, const unsigned char *value, const char *xpath_format, ...);
+
 #endif

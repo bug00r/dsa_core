@@ -49,6 +49,62 @@ static bool __xml_ctx_xpath_valid( xml_ctx_t *ctx, const char *xpath) {
     return isvalid;
 }
 
+static void __xml_ctx_attr_str_xpptr(xmlXPathObjectPtr node, const unsigned char *value) {
+
+    if ( xml_xpath_has_result(node) ) {
+
+        const int maxNodes = node->nodesetval->nodeNr;
+
+        xmlNodePtr *nodes = node->nodesetval->nodeTab;
+        
+        for (int curattr = 0;curattr < maxNodes ; ++curattr) {
+            
+            xmlNodePtr node = nodes[curattr];
+            
+            if (node->type == XML_ATTRIBUTE_NODE) {
+
+                xmlSetProp(node->parent, node->name, (xmlChar*)value);
+            
+            }
+        
+        }
+    }
+}
+
+static void __xml_ctx_content_xpptr(xmlXPathObjectPtr node, const unsigned char *value) {
+
+    if ( xml_xpath_has_result(node) ) {
+        
+        const int maxNodes = node->nodesetval->nodeNr;
+
+        xmlNodePtr *nodes = node->nodesetval->nodeTab;
+        
+        for (int curattr = 0;curattr < maxNodes ; ++curattr) {
+            
+            xmlNodePtr node = nodes[curattr];
+
+            xmlNodePtr parent = node->parent;
+
+            if (node->type == XML_CDATA_SECTION_NODE ) { 
+                
+                xmlUnlinkNode(node);
+                xmlFreeNode(node);
+
+                xmlNodePtr content_node = xmlNewCDataBlock(parent->doc, BAD_CAST value, strlen((const char *)value));
+                xmlAddChild(parent, content_node);
+            }
+        
+        }
+    }
+
+}
+
+#if 0
+//
+// EOF private section
+//
+#endif
+
 
 xml_ctx_t* xml_ctx_new_empty() {
 
@@ -369,4 +425,49 @@ bool xml_ctx_exist_format(xml_ctx_t *ctx, const char *xpath_format, ...) {
 
 bool xml_xpath_has_result(xmlXPathObjectPtr xpathobj) {
     return ( xpathobj != NULL && xpathobj->nodesetval && (xpathobj->nodesetval->nodeNr > 0 ));
+}
+
+void xml_ctx_set_attr_str_xpath(xml_ctx_t *ctx, const unsigned char *value, const char *xpath) {
+    
+    xmlXPathObjectPtr found = xml_ctx_xpath(ctx, xpath);
+
+    __xml_ctx_attr_str_xpptr(found, value);
+
+    xmlXPathFreeObject(found);
+
+}
+
+void xml_ctx_set_attr_str_xpath_format(xml_ctx_t *ctx, const unsigned char *value, const char *xpath_format, ...) {
+    
+    va_list args;
+    va_start(args, xpath_format);
+
+    xmlXPathObjectPtr found = xml_ctx_xpath_format_va(ctx, xpath_format, args);
+
+    __xml_ctx_attr_str_xpptr(found, value);
+
+    va_end(args);
+
+    xmlXPathFreeObject(found);
+}
+
+void xml_ctx_set_content_xpath(xml_ctx_t *ctx, const unsigned char *value, const char *xpath) {
+    xmlXPathObjectPtr found = xml_ctx_xpath(ctx, xpath);
+
+    __xml_ctx_content_xpptr(found, value);
+
+    xmlXPathFreeObject(found);
+}
+
+void xml_ctx_set_content_xpath_format(xml_ctx_t *ctx, const unsigned char *value, const char *xpath_format, ...) {
+    va_list args;
+    va_start(args, xpath_format);
+
+    xmlXPathObjectPtr found = xml_ctx_xpath_format_va(ctx, xpath_format, args);
+
+    __xml_ctx_content_xpptr(found, value);
+
+    va_end(args);
+
+    xmlXPathFreeObject(found);
 }

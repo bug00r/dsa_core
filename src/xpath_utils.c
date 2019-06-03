@@ -54,3 +54,4 @@ void max_xpath_func(xmlXPathParserContextPtr ctxt, int nargs) {
 
 	xmlXPathReturnNumber(ctxt, max_val);
 }
+

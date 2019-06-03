@@ -349,6 +349,7 @@ void dsa_heros_add_talent(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned c
     }
 
 }
+
 void dsa_heros_remove_talent(dsa_hero_t *hero, const unsigned char *name) {
     xml_ctx_remove_format(hero->xml, "/hero/talents//talent[@name = '%s' and @type != 'base' ]", name);
     xml_ctx_remove_format(hero->xml, "/hero/edit/talents//talent[@name = '%s' and @type != 'base' ]", name);
@@ -459,6 +460,7 @@ void dsa_heros_spell_dec(dsa_hero_t *hero, const unsigned char *name) {
 void dsa_heros_liturgie_inc(dsa_hero_t *hero, const unsigned char *name) {
     
 }
+
 void dsa_heros_liturgie_dec(dsa_hero_t *hero, const unsigned char *name) {
     
 }
@@ -466,6 +468,39 @@ void dsa_heros_liturgie_dec(dsa_hero_t *hero, const unsigned char *name) {
 void dsa_heros_specialability_inc(dsa_hero_t *hero, const unsigned char *name) {
     
 }
+
 void dsa_heros_specialability_dec(dsa_hero_t *hero, const unsigned char *name) {
 
+}
+
+void dsa_hero_set_name(dsa_hero_t *hero, const unsigned char *name) {
+    xml_ctx_set_attr_str_xpath(hero->xml, name, "/hero/@name");
+}
+
+void dsa_hero_set_gp(dsa_hero_t *hero, const unsigned char *gp) {
+    xml_ctx_set_attr_str_xpath(hero->xml, gp, "/hero/config/base-gp/@value");
+}
+
+void dsa_hero_set_title(dsa_hero_t *hero, const unsigned char *title) {
+    xml_ctx_set_content_xpath(hero->xml, title, "//hero/title/text()");
+}
+
+void dsa_hero_set_status(dsa_hero_t *hero, const unsigned char *status) {
+    xml_ctx_set_content_xpath(hero->xml, status, "//hero/status/text()");
+}
+
+void dsa_hero_set_look(dsa_hero_t *hero, const unsigned char *look) {
+    xml_ctx_set_content_xpath(hero->xml, look, "//hero/look/text()");
+}
+
+void dsa_hero_set_story(dsa_hero_t *hero, const unsigned char *story) {
+    xml_ctx_set_content_xpath(hero->xml, story, "//hero/story/text()");
+}
+
+void dsa_hero_set_male(dsa_hero_t *hero) {
+    xml_ctx_set_attr_str_xpath(hero->xml, (unsigned char *)"male", "/hero/@gender");
+}
+
+void dsa_hero_set_female(dsa_hero_t *hero) {
+    xml_ctx_set_attr_str_xpath(hero->xml, (unsigned char *)"female", "/hero/@gender");
 }
