@@ -39,68 +39,110 @@
 	</specialcontainer>
 	<talents name="Talente">
 		<group name="Kampf" >
-			<talent inc="D" type="base" name="Dolche" taw="0" />
-			<talent inc="D" type="base" name="Hiebwaffen" taw="0" />
-			<talent inc="C" type="base" name="Raufen" taw="0" />
-			<talent inc="D" type="base" name="Ringen" taw="0" />
-			<talent inc="D" type="base" name="Säbel"  taw="0" />
+			<talent inc="D" type="base" name="Dolche" value="0" />
+			<talent inc="D" type="base" name="Hiebwaffen" value="0" />
+			<talent inc="C" type="base" name="Raufen" value="0" />
+			<talent inc="D" type="base" name="Ringen" value="0" />
+			<talent inc="D" type="base" name="Säbel"  value="0" />
 		</group>
 		<group inc="D" name="Körper" >
-			<talent inc="D" type="base" name="Athletik" test="GE/KO/KK" taw="0" />
-			<talent inc="D" type="base" name="Klettern" test="MU/GE/KK" taw="0" />
-			<talent inc="D" type="base" name="Selbstbeherrschung" test="MU/KO/KK" taw="0" />
-			<talent inc="D" type="base" name="Körperbeherrschung" test="MU/IN/GE" taw="0" />
-			<talent inc="D" type="base" name="Schleichen" test="MU/IN/GE" taw="0" />
-			<talent inc="D" type="base" name="Schwimmen" test="GE/KO/KK" taw="0" />
-			<talent inc="D" type="base" name="Sich Verstecken" test="MU/IN/GE" taw="0" />
-			<talent inc="D" type="base" name="Singen" test="IN/CH/CH(KO)" taw="0" />
-			<talent inc="D" type="base" name="Sinnenschärfen" test="KL/IN/IN(FF)" taw="0" />
-			<talent inc="D" type="base" name="Tanzen" test="CH/GE/GE" taw="0" />
-			<talent inc="D" type="base" name="Zechen" test="IN/KO/KK" taw="0" />
+			<talent inc="D" type="base" name="Athletik" test="GE/KO/KK" value="0" />
+			<talent inc="D" type="base" name="Klettern" test="MU/GE/KK" value="0" />
+			<talent inc="D" type="base" name="Selbstbeherrschung" test="MU/KO/KK" value="0" />
+			<talent inc="D" type="base" name="Körperbeherrschung" test="MU/IN/GE" value="0" />
+			<talent inc="D" type="base" name="Schleichen" test="MU/IN/GE" value="0" />
+			<talent inc="D" type="base" name="Schwimmen" test="GE/KO/KK" value="0" />
+			<talent inc="D" type="base" name="Sich Verstecken" test="MU/IN/GE" value="0" />
+			<talent inc="D" type="base" name="Singen" test="IN/CH/CH(KO)" value="0" />
+			<talent inc="D" type="base" name="Sinnenschärfen" test="KL/IN/IN(FF)" value="0" />
+			<talent inc="D" type="base" name="Tanzen" test="CH/GE/GE" value="0" />
+			<talent inc="D" type="base" name="Zechen" test="IN/KO/KK" value="0" />
 		</group>
 		<group inc="B" name="Natur" >
-			<talent inc="B" type="base" name="Fährtensuchen" test="KL/IN/IN(KO)" taw="0" />
-			<talent inc="B" type="base" name="Orientierung" test="KL/IN/IN" taw="0" />
-			<talent inc="B" type="base" name="Wildnisleben" test="IN/GE/KO" taw="0" />
+			<talent inc="B" type="base" name="Fährtensuchen" test="KL/IN/IN(KO)" value="0" />
+			<talent inc="B" type="base" name="Orientierung" test="KL/IN/IN" value="0" />
+			<talent inc="B" type="base" name="Wildnisleben" test="IN/GE/KO" value="0" />
 		</group>
 		<group name="Wissen" >
-			<talent type="base" name="Rechnen" test="KL/KL/IN" taw="0" />
-			<talent type="base" name="Götter/Kulte" test="KL/KL/IN" taw="0" />
-			<talent type="base" name="Sagen/Legenden" test="KL/IN/CH" taw="0" />
+			<talent type="base" name="Rechnen" test="KL/KL/IN" value="0" />
+			<talent type="base" name="Götter/Kulte" test="KL/KL/IN" value="0" />
+			<talent type="base" name="Sagen/Legenden" test="KL/IN/CH" value="0" />
 		</group>
 		<group name="Gesellschaft" >
-			<talent type="base" name="Menschenkenntnis" test="KL/IN/CH" taw="0" />
-			<talent type="base" name="Überreden" test="MU/IN/CH" taw="0" />
+			<talent type="base" name="Menschenkenntnis" test="KL/IN/CH" value="0" />
+			<talent type="base" name="Überreden" test="MU/IN/CH" value="0" />
 		</group>
 		<group name="Handwerk" >
-			<talent type="base" name="Heilkunde Wunden" test="KL/CH/FF" taw="0" />
-			<talent type="base" name="Holzbearbeitung" test="KL/FF/KK" taw="0" />
-			<talent type="base" name="Kochen" test="KL/IN/FF" taw="0" />
-			<talent type="base" name="Lederbearbeitung" test="KL/FF/FF" taw="0" />
-			<talent type="base" name="Malen/Zeichnen" test="KL/IN/FF" taw="0" />
-			<talent type="base" name="Schneidern" test="KL/FF/FF" taw="0" />
+			<talent type="base" name="Heilkunde Wunden" test="KL/CH/FF" value="0" />
+			<talent type="base" name="Holzbearbeitung" test="KL/FF/KK" value="0" />
+			<talent type="base" name="Kochen" test="KL/IN/FF" value="0" />
+			<talent type="base" name="Lederbearbeitung" test="KL/FF/FF" value="0" />
+			<talent type="base" name="Malen/Zeichnen" test="KL/IN/FF" value="0" />
+			<talent type="base" name="Schneidern" test="KL/FF/FF" value="0" />
 		</group>
 	</talents>
-	<talents name="Zauber"></talents>
-	<talents name="Liturgie"></talents>
+	<spells name="Zauber">
+		<group name="Dämonologie" />
+		<group name="Veränderung" />
+		<group name="Illusion" />
+	</spells>
+	<liturgies name="Liturgie">
+		<group name="Praios" />
+		<group name="Phex" />
+		<group name="Boron" />
+	</liturgies>
 	<edit>
-		<pros name="Vorteile"></pros>
-		<contras name="Nachteile"/>
+		<breed />
+		<culture />
+		<profession />
+		<pros />
+		<contras />
 		<talents>
-			<group name="Kampf"></group>
-			<group name="Körper"></group>
-			<group name="Gesellschaft"></group>
-			<group name="Wissen"></group>
-			<group name="Natur"></group>
-			<group name="Handerk"></group>
-			<group name="Sprachen und Schriften"></group>
+			<group name="Kampf" >
+				<talent inc="D" type="base" name="Dolche" value="0" />
+				<talent inc="D" type="base" name="Hiebwaffen" value="0" />
+				<talent inc="C" type="base" name="Raufen" value="0" />
+				<talent inc="D" type="base" name="Ringen" value="0" />
+				<talent inc="D" type="base" name="Säbel"  value="0" />
+			</group>
+			<group inc="D" name="Körper" >
+				<talent inc="D" type="base" name="Athletik" test="GE/KO/KK" value="0" />
+				<talent inc="D" type="base" name="Klettern" test="MU/GE/KK" value="0" />
+				<talent inc="D" type="base" name="Selbstbeherrschung" test="MU/KO/KK" value="0" />
+				<talent inc="D" type="base" name="Körperbeherrschung" test="MU/IN/GE" value="0" />
+				<talent inc="D" type="base" name="Schleichen" test="MU/IN/GE" value="0" />
+				<talent inc="D" type="base" name="Schwimmen" test="GE/KO/KK" value="0" />
+				<talent inc="D" type="base" name="Sich Verstecken" test="MU/IN/GE" value="0" />
+				<talent inc="D" type="base" name="Singen" test="IN/CH/CH(KO)" value="0" />
+				<talent inc="D" type="base" name="Sinnenschärfen" test="KL/IN/IN(FF)" value="0" />
+				<talent inc="D" type="base" name="Tanzen" test="CH/GE/GE" value="0" />
+				<talent inc="D" type="base" name="Zechen" test="IN/KO/KK" value="0" />
+			</group>
+			<group inc="B" name="Natur" >
+				<talent inc="B" type="base" name="Fährtensuchen" test="KL/IN/IN(KO)" value="0" />
+				<talent inc="B" type="base" name="Orientierung" test="KL/IN/IN" value="0" />
+				<talent inc="B" type="base" name="Wildnisleben" test="IN/GE/KO" value="0" />
+			</group>
+			<group name="Wissen" >
+				<talent type="base" name="Rechnen" test="KL/KL/IN" value="0" />
+				<talent type="base" name="Götter/Kulte" test="KL/KL/IN" value="0" />
+				<talent type="base" name="Sagen/Legenden" test="KL/IN/CH" value="0" />
+			</group>
+			<group name="Gesellschaft" >
+				<talent type="base" name="Menschenkenntnis" test="KL/IN/CH" value="0" />
+				<talent type="base" name="Überreden" test="MU/IN/CH" value="0" />
+			</group>
+			<group name="Handwerk" >
+				<talent type="base" name="Heilkunde Wunden" test="KL/CH/FF" value="0" />
+				<talent type="base" name="Holzbearbeitung" test="KL/FF/KK" value="0" />
+				<talent type="base" name="Kochen" test="KL/IN/FF" value="0" />
+				<talent type="base" name="Lederbearbeitung" test="KL/FF/FF" value="0" />
+				<talent type="base" name="Malen/Zeichnen" test="KL/IN/FF" value="0" />
+				<talent type="base" name="Schneidern" test="KL/FF/FF" value="0" />
+			</group>
 		</talents>
-		<specials name="Sonderfertigkeiten">
-			<group name="Allgemeine"></group>
-			<group name="Kampf (bewaffnet)"></group>
-			<group name="Kampf (waffenlos)"></group>
-			<group name="Klerikale"></group>
-			<group name="Magische"></group>
-		</specials>
+		<specialabilities />
+		<spells />
+		<liturgies/>
 	</edit>
 </hero>

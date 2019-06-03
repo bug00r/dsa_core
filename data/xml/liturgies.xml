@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<liturgies>
+    <group name="Praios" >
+        <liturgy name="Dämonenweiche" value="0" />
+        <liturgy name="Sonnenglanz" value="0"  />
+    </group>
+    <group name="Phex" >
+        <liturgy name="Reichmacher" value="0" />
+        <liturgy name="Händlergeschick" value="0" />
+    </group>
+    <group name="Boron" >
+        <liturgy name="Totenglocke" value="0" />
+        <liturgy name="Friedvoller Schlaf" value="0" />
+    </group>
+</liturgies>

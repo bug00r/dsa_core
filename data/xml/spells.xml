@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<spells></spells>
+<spells>
+    <group name="Dämonologie" >
+        <spell name="Dämon beschwören" value="0" />
+        <spell name="Dämon bannen" value="0" />
+    </group>
+    <group name="Veränderung" >
+        <spell name="Dublicatus Doppelpein" value="0" />
+        <spell name="Amatrutz" value="0" />
+    </group>
+    <group name="Illusion" >
+        <spell name="Horriphobus" value="0" />
+        <spell name="Hexenknoten" value="0" />
+    </group>
+</spells>

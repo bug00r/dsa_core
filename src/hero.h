@@ -16,6 +16,7 @@ typedef struct {
     const xml_ctx_t * const specialabilities;   /* resource of special abilities */
     const xml_ctx_t * const spells;             /* resource of spells */
     const xml_ctx_t * const talents;            /* resource of talents */
+    const xml_ctx_t * const liturgies;          /* resource of talents */
     xml_ctx_t * heros;
 } dsa_heros_t;
 

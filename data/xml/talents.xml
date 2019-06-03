@@ -1,147 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talents description="Talente" >
 	<group name="Kampf" >
-		<talent inc="D" type="base" name="Dolche" taw="0" />
-		<talent inc="D" type="base" name="Hiebwaffen" taw="0" />
-		<talent inc="C" type="base" name="Raufen" taw="0" />
-		<talent inc="D" type="base" name="Ringen" taw="0" />
-		<talent inc="D" type="base" name="Säbel"  taw="0" />
-		<talent inc="C" type="base" usage="distance" name="Wurfmesser"  taw="0" />
-		<talent inc="E" type="special" name="Anderthalbhänder"  taw="0" />
-		<talent inc="C" type="special" usage="distance" name="Armbrust"  taw="0" />
-		<talent inc="D" type="special" name="Belagerungswaffen"  taw="0" />	
-		<talent inc="D" type="special" usage="distance" name="Blasrohr"  taw="0" />
-		<talent inc="E" type="special" usage="distance" name="Bogen"  taw="0" />
-		<talent inc="D" type="special" usage="distance" name="Diskus"  taw="0" />
-		<talent inc="E" type="special" name="Fechtwaffen"  taw="0" />
-		<talent inc="D" type="special" name="Infanteriewaffen"  taw="0" />
-		<talent inc="E" type="special" name="Kettenstäbe"  taw="0" />
-		<talent inc="D" type="special" name="Hettenwaffen"  taw="0" />
-		<talent inc="E" type="special" name="Lanzenreiten"  taw="0" />
-		<talent inc="E" type="special" name="Peitsche"  taw="0" />
-		<talent inc="E" type="special" name="Schleuder"  taw="0" />
-		<talent inc="E" type="special" name="Schwerter"  taw="0" />
-		<talent inc="D" type="special" name="Speere"  taw="0" />
-		<talent inc="D" type="special" name="Stäbe"  taw="0" />
-		<talent inc="D" type="special" usage="distance" name="Wurfbeil"  taw="0" />
-		<talent inc="C" type="special" usage="distance" name="Wurfspeere"  taw="0" />
-		<talent inc="D" type="special" name="Zweihandflegel"  taw="0" />
-		<talent inc="D" type="special" name="Zweihand-Hiebwaffen"  taw="0" />
-		<talent inc="E" type="special" name="Zweihandschwerter/-säbel"  taw="0" />
+		<talent inc="D" type="base" name="Dolche" value="0" />
+		<talent inc="D" type="base" name="Hiebwaffen" value="0" />
+		<talent inc="C" type="base" name="Raufen" value="0" />
+		<talent inc="D" type="base" name="Ringen" value="0" />
+		<talent inc="D" type="base" name="Säbel"  value="0" />
+		<talent inc="C" type="base" usage="distance" name="Wurfmesser"  value="0" />
+		<talent inc="E" type="special" name="Anderthalbhänder"  value="0" />
+		<talent inc="C" type="special" usage="distance" name="Armbrust"  value="0" />
+		<talent inc="D" type="special" name="Belagerungswaffen"  value="0" />	
+		<talent inc="D" type="special" usage="distance" name="Blasrohr"  value="0" />
+		<talent inc="E" type="special" usage="distance" name="Bogen"  value="0" />
+		<talent inc="D" type="special" usage="distance" name="Diskus"  value="0" />
+		<talent inc="E" type="special" name="Fechtwaffen"  value="0" />
+		<talent inc="D" type="special" name="Infanteriewaffen"  value="0" />
+		<talent inc="E" type="special" name="Kettenstäbe"  value="0" />
+		<talent inc="D" type="special" name="Hettenwaffen"  value="0" />
+		<talent inc="E" type="special" name="Lanzenreiten"  value="0" />
+		<talent inc="E" type="special" name="Peitsche"  value="0" />
+		<talent inc="E" type="special" name="Schleuder"  value="0" />
+		<talent inc="E" type="special" name="Schwerter"  value="0" />
+		<talent inc="D" type="special" name="Speere"  value="0" />
+		<talent inc="D" type="special" name="Stäbe"  value="0" />
+		<talent inc="D" type="special" usage="distance" name="Wurfbeil"  value="0" />
+		<talent inc="C" type="special" usage="distance" name="Wurfspeere"  value="0" />
+		<talent inc="D" type="special" name="Zweihandflegel"  value="0" />
+		<talent inc="D" type="special" name="Zweihand-Hiebwaffen"  value="0" />
+		<talent inc="E" type="special" name="Zweihandschwerter/-säbel"  value="0" />
 	</group>
 	<group inc="D" name="Körper" >
-		<talent inc="D" type="base" name="Athletik" test="GE/KO/KK" taw="0" />
-		<talent inc="D" type="base" name="Klettern" test="MU/GE/KK" taw="0" />
-		<talent inc="D" type="base" name="Selbstbeherrschung" test="MU/KO/KK" taw="0" />
-		<talent inc="D" type="base" name="Körperbeherrschung" test="MU/IN/GE" taw="0" />
-		<talent inc="D" type="base" name="Schleichen" test="MU/IN/GE" taw="0" />
-		<talent inc="D" type="base" name="Schwimmen" test="GE/KO/KK" taw="0" />
-		<talent inc="D" type="base" name="Sich Verstecken" test="MU/IN/GE" taw="0" />
-		<talent inc="D" type="base" name="Singen" test="IN/CH/CH(KO)" taw="0" />
-		<talent inc="D" type="base" name="Sinnenschärfen" test="KL/IN/IN(FF)" taw="0" />
-		<talent inc="D" type="base" name="Tanzen" test="CH/GE/GE" taw="0" />
-		<talent inc="D" type="base" name="Zechen" test="IN/KO/KK" taw="0" />
-		<talent inc="D" type="special" name="Akrobatik" test="MU/GE/KK" taw="0" />
-		<talent inc="D" type="special" name="Fliegen" test="MU/IN/GE" taw="0" />
-		<talent inc="D" type="special" name="Gaukeleien" test="MU/CH/FF" taw="0" />
-		<talent inc="D" type="special" name="Reiten" test="CH/GE/KK" taw="0" />
-		<talent inc="D" type="special" name="Skifahren" test="GE/GE/KO" taw="0" />
-		<talent inc="D" type="special" name="Stimmen immitieren" test="" taw="0" />
-		<talent inc="D" type="special" name="Taschendiebstahl" test="MU/IN/FF" taw="0" />
+		<talent inc="D" type="base" name="Athletik" test="GE/KO/KK" value="0" />
+		<talent inc="D" type="base" name="Klettern" test="MU/GE/KK" value="0" />
+		<talent inc="D" type="base" name="Selbstbeherrschung" test="MU/KO/KK" value="0" />
+		<talent inc="D" type="base" name="Körperbeherrschung" test="MU/IN/GE" value="0" />
+		<talent inc="D" type="base" name="Schleichen" test="MU/IN/GE" value="0" />
+		<talent inc="D" type="base" name="Schwimmen" test="GE/KO/KK" value="0" />
+		<talent inc="D" type="base" name="Sich Verstecken" test="MU/IN/GE" value="0" />
+		<talent inc="D" type="base" name="Singen" test="IN/CH/CH(KO)" value="0" />
+		<talent inc="D" type="base" name="Sinnenschärfen" test="KL/IN/IN(FF)" value="0" />
+		<talent inc="D" type="base" name="Tanzen" test="CH/GE/GE" value="0" />
+		<talent inc="D" type="base" name="Zechen" test="IN/KO/KK" value="0" />
+		<talent inc="D" type="special" name="Akrobatik" test="MU/GE/KK" value="0" />
+		<talent inc="D" type="special" name="Fliegen" test="MU/IN/GE" value="0" />
+		<talent inc="D" type="special" name="Gaukeleien" test="MU/CH/FF" value="0" />
+		<talent inc="D" type="special" name="Reiten" test="CH/GE/KK" value="0" />
+		<talent inc="D" type="special" name="Skifahren" test="GE/GE/KO" value="0" />
+		<talent inc="D" type="special" name="Stimmen immitieren" test="" value="0" />
+		<talent inc="D" type="special" name="Taschendiebstahl" test="MU/IN/FF" value="0" />
 	</group>
 	<group inc="B" name="Natur" >
-		<talent inc="B" type="base" name="Fährtensuchen" test="KL/IN/IN(KO)" taw="0" />
-		<talent inc="B" type="base" name="Orientierung" test="KL/IN/IN" taw="0" />
-		<talent inc="B" type="base" name="Wildnisleben" test="IN/GE/KO" taw="0" />
-		<talent inc="B" type="special" name="Fallenstellen" test="KL/FF/KK" taw="0" />
-		<talent inc="B" type="special" name="Fesseln/Entfesseln" test="FF/GE/KK" taw="0" />
-		<talent inc="B" type="special" name="Fischen/Angeln" test="IN/FF/KK" taw="0" />
-		<talent inc="B" type="special" name="Wettervorhersage" test="KL/IN/IN" taw="0" />
+		<talent inc="B" type="base" name="Fährtensuchen" test="KL/IN/IN(KO)" value="0" />
+		<talent inc="B" type="base" name="Orientierung" test="KL/IN/IN" value="0" />
+		<talent inc="B" type="base" name="Wildnisleben" test="IN/GE/KO" value="0" />
+		<talent inc="B" type="special" name="Fallenstellen" test="KL/FF/KK" value="0" />
+		<talent inc="B" type="special" name="Fesseln/Entfesseln" test="FF/GE/KK" value="0" />
+		<talent inc="B" type="special" name="Fischen/Angeln" test="IN/FF/KK" value="0" />
+		<talent inc="B" type="special" name="Wettervorhersage" test="KL/IN/IN" value="0" />
 	</group>
 	<group inc="B" name="Wissen" >
-		<talent inc="B" type="base" name="Rechnen" test="KL/KL/IN" taw="0" />
-		<talent inc="B" type="base" name="Götter/Kulte" test="KL/KL/IN" taw="0" />
-		<talent inc="B" type="base" name="Sagen/Legenden" test="" taw="0" />
-		<talent inc="B" type="special" name="Anatomie" test="MU/KL/FF" taw="0" />
-		<talent inc="B" type="special" name="Baukunst" test="KL/KL/FF" taw="0" />
-		<talent inc="B" type="special" name="Brett-/Kartenspiel" test="KL/KL/IN" taw="0" />
-		<talent inc="B" type="special" name="Geographie" test="KL/KL/IN" taw="0" />
-		<talent inc="B" type="special" name="Geschichtswissen" test="KL/KL/IN" taw="0" />
-		<talent inc="B" type="special" name="Gesteinskunde" test="KL/IN/FF" taw="0" />
-		<talent inc="B" type="special" name="Heraldik" test="KL/KL/FF" taw="0" />
-		<talent inc="B" type="special" name="Hüttenkunde" test="KL/IN/KO" taw="0" />
-		<talent inc="B" type="special" name="Kriegskunst" test="MU/KL/CH" taw="0" />
-		<talent inc="B" type="special" name="Kryptographie" test="KL/KL/IN" taw="0" />
-		<talent inc="B" type="special" name="Magiekunde" test="KL/KL/IN" taw="0" />
-		<talent inc="B" type="special" name="Mechanik" test="KL/KL/FF" taw="0" />
-		<talent inc="B" type="special" name="Pflanzenkunde" test="KL/IN/FF" taw="0" />
-		<talent inc="B" type="special" name="Philosophie" test="KL/KL/IN" taw="0" />
-		<talent inc="B" type="special" name="Rechtskunde" test="KL/KL/IN" taw="0" />
-		<talent inc="B" type="special" name="Schätzen" test="KL/IN/IN" taw="0" />
-		<talent inc="B" type="special" name="Sprachenkunde" test="KL/KL/IN" taw="0" />
-		<talent inc="B" type="special" name="Staatskunst" test="" taw="0" />
-		<talent inc="B" type="special" name="Sternenkunde" test="KL/KL/IN" taw="0" />
-		<talent inc="B" type="special" name="Tierkunde" test="MU/KL/IN" taw="0" />
+		<talent inc="B" type="base" name="Rechnen" test="KL/KL/IN" value="0" />
+		<talent inc="B" type="base" name="Götter/Kulte" test="KL/KL/IN" value="0" />
+		<talent inc="B" type="base" name="Sagen/Legenden" test="" value="0" />
+		<talent inc="B" type="special" name="Anatomie" test="MU/KL/FF" value="0" />
+		<talent inc="B" type="special" name="Baukunst" test="KL/KL/FF" value="0" />
+		<talent inc="B" type="special" name="Brett-/Kartenspiel" test="KL/KL/IN" value="0" />
+		<talent inc="B" type="special" name="Geographie" test="KL/KL/IN" value="0" />
+		<talent inc="B" type="special" name="Geschichtswissen" test="KL/KL/IN" value="0" />
+		<talent inc="B" type="special" name="Gesteinskunde" test="KL/IN/FF" value="0" />
+		<talent inc="B" type="special" name="Heraldik" test="KL/KL/FF" value="0" />
+		<talent inc="B" type="special" name="Hüttenkunde" test="KL/IN/KO" value="0" />
+		<talent inc="B" type="special" name="Kriegskunst" test="MU/KL/CH" value="0" />
+		<talent inc="B" type="special" name="Kryptographie" test="KL/KL/IN" value="0" />
+		<talent inc="B" type="special" name="Magiekunde" test="KL/KL/IN" value="0" />
+		<talent inc="B" type="special" name="Mechanik" test="KL/KL/FF" value="0" />
+		<talent inc="B" type="special" name="Pflanzenkunde" test="KL/IN/FF" value="0" />
+		<talent inc="B" type="special" name="Philosophie" test="KL/KL/IN" value="0" />
+		<talent inc="B" type="special" name="Rechtskunde" test="KL/KL/IN" value="0" />
+		<talent inc="B" type="special" name="Schätzen" test="KL/IN/IN" value="0" />
+		<talent inc="B" type="special" name="Sprachenkunde" test="KL/KL/IN" value="0" />
+		<talent inc="B" type="special" name="Staatskunst" test="" value="0" />
+		<talent inc="B" type="special" name="Sternenkunde" test="KL/KL/IN" value="0" />
+		<talent inc="B" type="special" name="Tierkunde" test="MU/KL/IN" value="0" />
 	</group>
 	<group inc="B" name="Gesellschaft" >
-		<talent inc="B" type="base" name="Menschenkenntnis" test="" taw="0" />
-		<talent inc="B" type="base" name="Überreden" test="MU/IN/CH" taw="0" />
-		<talent inc="B" type="special" name="Betören" test="IN/CH/CH" taw="0" />
-		<talent inc="B" type="special" name="Etikette" test="" taw="0" />
-		<talent inc="B" type="special" name="Gassenwissen" test="" taw="0" />
-		<talent inc="B" type="special" name="Lehren" test="" taw="0" />
-		<talent inc="B" type="special" name="Schauspielerei" test="MU/KL/CH" taw="0" />
-		<talent inc="B" type="special" name="Schriftlicher Ausdruck" test="KL/IN/IN" taw="0" />
-		<talent inc="B" type="special" name="Sich Verkleiden" test="MU/CH/GE" taw="0" />
-		<talent inc="B" type="special" name="Überzeugen" test="" taw="0" />
+		<talent inc="B" type="base" name="Menschenkenntnis" test="" value="0" />
+		<talent inc="B" type="base" name="Überreden" test="MU/IN/CH" value="0" />
+		<talent inc="B" type="special" name="Betören" test="IN/CH/CH" value="0" />
+		<talent inc="B" type="special" name="Etikette" test="" value="0" />
+		<talent inc="B" type="special" name="Gassenwissen" test="" value="0" />
+		<talent inc="B" type="special" name="Lehren" test="" value="0" />
+		<talent inc="B" type="special" name="Schauspielerei" test="MU/KL/CH" value="0" />
+		<talent inc="B" type="special" name="Schriftlicher Ausdruck" test="KL/IN/IN" value="0" />
+		<talent inc="B" type="special" name="Sich Verkleiden" test="MU/CH/GE" value="0" />
+		<talent inc="B" type="special" name="Überzeugen" test="" value="0" />
 	</group>
 	<group inc="B" name="Handwerk" >
-		<talent inc="B" type="base" name="Heilkunde Wunden" test="KL/CH/FF" taw="0" />
-		<talent inc="B" type="base" name="Holzbearbeitung" test="KL/FF/KK" taw="0" />
-		<talent inc="B" type="base" name="Kochen" test="KL/IN/FF" taw="0" />
-		<talent inc="B" type="base" name="Lederbearbeitung" test="KL/FF/FF" taw="0" />
-		<talent inc="B" type="base" name="Malen/Zeichnen" test="KL/IN/FF" taw="0" />
-		<talent inc="B" type="base" name="Schneidern" test="KL/FF/FF" taw="0" />
-		<talent inc="B" type="special" name="Abrichten" test="MU/IN/CH" taw="0" />
-		<talent inc="B" type="special" name="Ackerbau" test="IN/FF/KO" taw="0" />
-		<talent inc="B" type="special" name="Alchimie" test="MU/KL/FF" taw="0" />
-		<talent inc="B" type="special" name="Bergbau" test="IN/KO/KK" taw="0" />
-		<talent inc="B" type="special" name="Bogenbau" test="KL/IN/FF" taw="0" />
-		<talent inc="B" type="special" name="Boote Fahren" test="GE/KO/KK" taw="0" />
-		<talent inc="B" type="special" name="Brauer" test="KL/FF/KK" taw="0" />
-		<talent inc="B" type="special" name="Drucker" test="KL/FF/KK" taw="0" />
-		<talent inc="B" type="special" name="Fahrzeug Lenken" test="IN/CH/FF" taw="0" />
-		<talent inc="B" type="special" name="Falschspiel" test="MU/CH/FF" taw="0" />
-		<talent inc="B" type="special" name="Feinmechanik" test="KL/FF/FF" taw="0" />
-		<talent inc="B" type="special" name="Feuersteinbearbeitung" test="KL/FF/FF" taw="0" />
-		<talent inc="B" type="special" name="Fleischer" test="KL/FF/KK" taw="0" />
-		<talent inc="B" type="special" name="Gerber/Kürschner" test="KL/FF/KO" taw="0" />
-		<talent inc="B" type="special" name="Glaskunst" test="FF/FF/KO" taw="0" />
-		<talent inc="B" type="special" name="Grobschmied" test="FF/KO/KK" taw="0" />
-		<talent inc="B" type="special" name="Handel" test="KL/IN/CH" taw="0" />
-		<talent inc="B" type="special" name="Hauswirtschaft" test="IN/CH/FF" taw="0" />
-		<talent inc="B" type="special" name="Heilkunde Gift" test="MU/KL/IN" taw="0" />
-		<talent inc="B" type="special" name="Heilkunde Krankheiten" test="MU/KL/CH" taw="0" />
-		<talent inc="B" type="special" name="Heilkunde Seele" test="IN/CH/CH" taw="0" />
-		<talent inc="B" type="special" name="Instrumentenbauer" test="KL/IN/FF" taw="0" />
-		<talent inc="B" type="special" name="Kartographie" test="KL/KL/FF" taw="0" />
-		<talent inc="B" type="special" name="Kristallzucht" test="KL/IN/FF" taw="0" />
-		<talent inc="B" type="special" name="Maurer" test="FF/GE/KK" taw="0" />
-		<talent inc="B" type="special" name="Metallguss" test="KL/FF/KK" taw="0" />
-		<talent inc="B" type="special" name="Musizieren" test="IN/CH/FF" taw="0" />
-		<talent inc="B" type="special" name="Schlösser Knacken" test="IN/FF/FF" taw="0" />
-		<talent inc="B" type="special" name="Schnaps Brennen" test="KL/IN/FF" taw="0" />
-		<talent inc="B" type="special" name="Seefahrt" test="FF/GE/KK" taw="0" />
-		<talent inc="B" type="special" name="Seiler" test="FF/FF/KK" taw="0" />
-		<talent inc="B" type="special" name="Steinmetz" test="FF/FF/KK" taw="0" />
-		<talent inc="B" type="special" name="Steinschneider/Juwelier" test="IN/FF/FF" taw="0" />
-		<talent inc="B" type="special" name="Stellmacher" test="KL/FF/KK" taw="0" />
-		<talent inc="B" type="special" name="Stoffe Färben" test="KL/FF/KK" taw="0" />
-		<talent inc="B" type="special" name="Tätowieren" test="IN/FF/FF" taw="0" />
-		<talent inc="B" type="special" name="Töpfern" test="KL/FF/FF" taw="0" />
-		<talent inc="B" type="special" name="Viehzucht" test="KL/IN/KK" taw="0" />
-		<talent inc="B" type="special" name="Webkunst" test="FF/FF/KK" taw="0" />
-		<talent inc="B" type="special" name="Winzer" test="KL/FF/KK" taw="0" />
-		<talent inc="B" type="special" name="Zimmermann" test="KL/FF/KK" taw="0" />
+		<talent inc="B" type="base" name="Heilkunde Wunden" test="KL/CH/FF" value="0" />
+		<talent inc="B" type="base" name="Holzbearbeitung" test="KL/FF/KK" value="0" />
+		<talent inc="B" type="base" name="Kochen" test="KL/IN/FF" value="0" />
+		<talent inc="B" type="base" name="Lederbearbeitung" test="KL/FF/FF" value="0" />
+		<talent inc="B" type="base" name="Malen/Zeichnen" test="KL/IN/FF" value="0" />
+		<talent inc="B" type="base" name="Schneidern" test="KL/FF/FF" value="0" />
+		<talent inc="B" type="special" name="Abrichten" test="MU/IN/CH" value="0" />
+		<talent inc="B" type="special" name="Ackerbau" test="IN/FF/KO" value="0" />
+		<talent inc="B" type="special" name="Alchimie" test="MU/KL/FF" value="0" />
+		<talent inc="B" type="special" name="Bergbau" test="IN/KO/KK" value="0" />
+		<talent inc="B" type="special" name="Bogenbau" test="KL/IN/FF" value="0" />
+		<talent inc="B" type="special" name="Boote Fahren" test="GE/KO/KK" value="0" />
+		<talent inc="B" type="special" name="Brauer" test="KL/FF/KK" value="0" />
+		<talent inc="B" type="special" name="Drucker" test="KL/FF/KK" value="0" />
+		<talent inc="B" type="special" name="Fahrzeug Lenken" test="IN/CH/FF" value="0" />
+		<talent inc="B" type="special" name="Falschspiel" test="MU/CH/FF" value="0" />
+		<talent inc="B" type="special" name="Feinmechanik" test="KL/FF/FF" value="0" />
+		<talent inc="B" type="special" name="Feuersteinbearbeitung" test="KL/FF/FF" value="0" />
+		<talent inc="B" type="special" name="Fleischer" test="KL/FF/KK" value="0" />
+		<talent inc="B" type="special" name="Gerber/Kürschner" test="KL/FF/KO" value="0" />
+		<talent inc="B" type="special" name="Glaskunst" test="FF/FF/KO" value="0" />
+		<talent inc="B" type="special" name="Grobschmied" test="FF/KO/KK" value="0" />
+		<talent inc="B" type="special" name="Handel" test="KL/IN/CH" value="0" />
+		<talent inc="B" type="special" name="Hauswirtschaft" test="IN/CH/FF" value="0" />
+		<talent inc="B" type="special" name="Heilkunde Gift" test="MU/KL/IN" value="0" />
+		<talent inc="B" type="special" name="Heilkunde Krankheiten" test="MU/KL/CH" value="0" />
+		<talent inc="B" type="special" name="Heilkunde Seele" test="IN/CH/CH" value="0" />
+		<talent inc="B" type="special" name="Instrumentenbauer" test="KL/IN/FF" value="0" />
+		<talent inc="B" type="special" name="Kartographie" test="KL/KL/FF" value="0" />
+		<talent inc="B" type="special" name="Kristallzucht" test="KL/IN/FF" value="0" />
+		<talent inc="B" type="special" name="Maurer" test="FF/GE/KK" value="0" />
+		<talent inc="B" type="special" name="Metallguss" test="KL/FF/KK" value="0" />
+		<talent inc="B" type="special" name="Musizieren" test="IN/CH/FF" value="0" />
+		<talent inc="B" type="special" name="Schlösser Knacken" test="IN/FF/FF" value="0" />
+		<talent inc="B" type="special" name="Schnaps Brennen" test="KL/IN/FF" value="0" />
+		<talent inc="B" type="special" name="Seefahrt" test="FF/GE/KK" value="0" />
+		<talent inc="B" type="special" name="Seiler" test="FF/FF/KK" value="0" />
+		<talent inc="B" type="special" name="Steinmetz" test="FF/FF/KK" value="0" />
+		<talent inc="B" type="special" name="Steinschneider/Juwelier" test="IN/FF/FF" value="0" />
+		<talent inc="B" type="special" name="Stellmacher" test="KL/FF/KK" value="0" />
+		<talent inc="B" type="special" name="Stoffe Färben" test="KL/FF/KK" value="0" />
+		<talent inc="B" type="special" name="Tätowieren" test="IN/FF/FF" value="0" />
+		<talent inc="B" type="special" name="Töpfern" test="KL/FF/FF" value="0" />
+		<talent inc="B" type="special" name="Viehzucht" test="KL/IN/KK" value="0" />
+		<talent inc="B" type="special" name="Webkunst" test="FF/FF/KK" value="0" />
+		<talent inc="B" type="special" name="Winzer" test="KL/FF/KK" value="0" />
+		<talent inc="B" type="special" name="Zimmermann" test="KL/FF/KK" value="0" />
 	</group>
 </talents>
