@@ -2,7 +2,7 @@ include ../make_config
 
 CFLAGS+=-std=c11 -Wall -Wpedantic
 
-_SRC_FILES+=string_utils regex_utils resource taw xpath_utils file_path_utils xml_source xml_utils number_utils
+_SRC_FILES+=string_utils regex_utils resource taw xpath_utils file_path_utils xml_source xml_utils number_utils dice
 
 LIBNAME:=dsa_core
 LIBEXT:=a
@@ -70,6 +70,10 @@ test_xml_source: mkbuilddir mkzip addzip
 test_resource: mkbuilddir mkzip addzip 
 	$(CC) $(CFLAGS) ./test/test_resource.c ./src/resource.c -o $(BUILDPATH)test_resource.exe -I./src/ $(INCLUDEDIR) $(USED_LIBSDIR) -static $(USED_LIBS) $(debug)
 	$(BUILDPATH)test_resource.exe
+
+test_dice:
+	$(CC) $(CFLAGS) ./test/test_dice.c ./src/dice.c -o $(BUILDPATH)test_dice.exe -I./src/ $(INCLUDEDIR) $(USED_LIBSDIR) -static $(USED_LIBS) $(debug)
+	$(BUILDPATH)test_dice.exe
 
 test_taw:
 	$(CC) $(CFLAGS) ./test/test_taw.c ./src/taw.c -o $(BUILDPATH)test_taw.exe -I./src/ $(INCLUDEDIR) $(USED_LIBSDIR) -static $(USED_LIBS) $(debug)

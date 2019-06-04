@@ -6,6 +6,7 @@
 
 #include "xml_utils.h"
 #include "number_utils.h"
+#include "dice.h"
 
 typedef struct {
     const xml_ctx_t * const basehero;           /* resource of new hero template */
@@ -93,13 +94,17 @@ void dsa_heros_liturgie_dec(dsa_hero_t *hero, const unsigned char *name);
 void dsa_heros_specialability_inc(dsa_hero_t *hero, const unsigned char *name);
 void dsa_heros_specialability_dec(dsa_hero_t *hero, const unsigned char *name);
 
-void dsa_hero_set_name(dsa_hero_t *hero, const unsigned char *name);
-void dsa_hero_set_gp(dsa_hero_t *hero, const unsigned char *gp);
-void dsa_hero_set_title(dsa_hero_t *hero, const unsigned char *title);
-void dsa_hero_set_status(dsa_hero_t *hero, const unsigned char *status);
-void dsa_hero_set_look(dsa_hero_t *hero, const unsigned char *look);
-void dsa_hero_set_story(dsa_hero_t *hero, const unsigned char *story);
-void dsa_hero_set_male(dsa_hero_t *hero);
-void dsa_hero_set_female(dsa_hero_t *hero);
+void dsa_heros_set_name(dsa_hero_t *hero, const unsigned char *name);
+void dsa_heros_set_gp(dsa_hero_t *hero, const unsigned char *gp);
+void dsa_heros_set_title(dsa_hero_t *hero, const unsigned char *title);
+void dsa_heros_set_status(dsa_hero_t *hero, const unsigned char *status);
+void dsa_heros_set_look(dsa_hero_t *hero, const unsigned char *look);
+void dsa_heros_set_story(dsa_hero_t *hero, const unsigned char *story);
+void dsa_heros_set_male(dsa_hero_t *hero);
+void dsa_heros_set_female(dsa_hero_t *hero);
+void dsa_heros_set_col_hair_by_name(dsa_hero_t *hero, const unsigned char *color_name);
+void dsa_heros_set_col_hair_by_dice(dsa_hero_t *hero);
+void dsa_heros_set_col_eye_by_name(dsa_hero_t *hero, const unsigned char *color_name);
+void dsa_heros_set_col_eye_by_dice(dsa_hero_t *hero);
 
 #endif

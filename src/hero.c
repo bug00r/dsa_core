@@ -43,10 +43,44 @@ static void __dsa_delete_hero_by_id(xml_ctx_t *hctx, const int id) {
     }
 }
 
+static void __dsa_heros_inc_value_by(xmlNodePtr toeditnode, int add_value) {
+    if (toeditnode != NULL) {
+        xmlChar *value_str = xmlGetProp(toeditnode, (xmlChar*)"value");
+        if(value_str != NULL) {
+            int value = atoi((char *)value_str);
+            xmlFree(value_str);
+
+            char * new_val = format_string_new("%i", value + add_value);
+            xmlSetProp(toeditnode, (xmlChar*)"value", (xmlChar*) new_val);
+            free(new_val);
+        }
+    }
+}
+
+static void __dsa_heros_inc_dec_value_raw(xml_ctx_t *hero_xml, const char * hero_talent_xpath, const char * hero_edit_talent_xpath, int add_value) {
+
+    xmlXPathObjectPtr foundhero = xml_ctx_xpath(hero_xml, hero_talent_xpath);
+
+    if(xml_xpath_has_result(foundhero)) {
+
+        xmlXPathObjectPtr foundedit = xml_ctx_xpath(hero_xml, hero_edit_talent_xpath);
+
+        if(xml_xpath_has_result(foundedit)) {
+            __dsa_heros_inc_value_by(foundedit->nodesetval->nodeTab[0], add_value);
+        }
+
+        xmlXPathFreeObject(foundedit);
+
+    }
+
+    xmlXPathFreeObject(foundhero);
+
+}
+
 #if 0
-// 
+// ################################################################################################
 // EOF private Section
-//
+// ################################################################################################
 #endif
 
 
@@ -394,40 +428,6 @@ void dsa_heros_remove_liturgie(dsa_hero_t *hero, const unsigned char *name) {
     xml_ctx_remove_format(hero->xml, "/hero/liturgies//liturgy[@name = '%s']", name);
 }
 
-static void __dsa_heros_inc_value_by(xmlNodePtr toeditnode, int add_value) {
-    if (toeditnode != NULL) {
-        xmlChar *value_str = xmlGetProp(toeditnode, (xmlChar*)"value");
-        if(value_str != NULL) {
-            int value = atoi((char *)value_str);
-            xmlFree(value_str);
-
-            char * new_val = format_string_new("%i", value + add_value);
-            xmlSetProp(toeditnode, (xmlChar*)"value", (xmlChar*) new_val);
-            free(new_val);
-        }
-    }
-}
-
-static void __dsa_heros_inc_dec_value_raw(xml_ctx_t *hero_xml, const char * hero_talent_xpath, const char * hero_edit_talent_xpath, int add_value) {
-
-    xmlXPathObjectPtr foundhero = xml_ctx_xpath(hero_xml, hero_talent_xpath);
-
-    if(xml_xpath_has_result(foundhero)) {
-
-        xmlXPathObjectPtr foundedit = xml_ctx_xpath(hero_xml, hero_edit_talent_xpath);
-
-        if(xml_xpath_has_result(foundedit)) {
-            __dsa_heros_inc_value_by(foundedit->nodesetval->nodeTab[0], add_value);
-        }
-
-        xmlXPathFreeObject(foundedit);
-
-    }
-
-    xmlXPathFreeObject(foundhero);
-
-}
-
 void dsa_heros_talent_inc(dsa_hero_t *hero, const unsigned char *name) {
     char * hero_talent_xpath = format_string_new("/hero/talents//talent[@name = '%s']", name);
     char * hero_edit_talent_xpath = format_string_new("/hero/edit/talents//talent[@name = '%s']", name);
@@ -473,34 +473,50 @@ void dsa_heros_specialability_dec(dsa_hero_t *hero, const unsigned char *name) {
 
 }
 
-void dsa_hero_set_name(dsa_hero_t *hero, const unsigned char *name) {
+void dsa_heros_set_name(dsa_hero_t *hero, const unsigned char *name) {
     xml_ctx_set_attr_str_xpath(hero->xml, name, "/hero/@name");
 }
 
-void dsa_hero_set_gp(dsa_hero_t *hero, const unsigned char *gp) {
+void dsa_heros_set_gp(dsa_hero_t *hero, const unsigned char *gp) {
     xml_ctx_set_attr_str_xpath(hero->xml, gp, "/hero/config/base-gp/@value");
 }
 
-void dsa_hero_set_title(dsa_hero_t *hero, const unsigned char *title) {
+void dsa_heros_set_title(dsa_hero_t *hero, const unsigned char *title) {
     xml_ctx_set_content_xpath(hero->xml, title, "//hero/title/text()");
 }
 
-void dsa_hero_set_status(dsa_hero_t *hero, const unsigned char *status) {
+void dsa_heros_set_status(dsa_hero_t *hero, const unsigned char *status) {
     xml_ctx_set_content_xpath(hero->xml, status, "//hero/status/text()");
 }
 
-void dsa_hero_set_look(dsa_hero_t *hero, const unsigned char *look) {
+void dsa_heros_set_look(dsa_hero_t *hero, const unsigned char *look) {
     xml_ctx_set_content_xpath(hero->xml, look, "//hero/look/text()");
 }
 
-void dsa_hero_set_story(dsa_hero_t *hero, const unsigned char *story) {
+void dsa_heros_set_story(dsa_hero_t *hero, const unsigned char *story) {
     xml_ctx_set_content_xpath(hero->xml, story, "//hero/story/text()");
 }
 
-void dsa_hero_set_male(dsa_hero_t *hero) {
+void dsa_heros_set_male(dsa_hero_t *hero) {
     xml_ctx_set_attr_str_xpath(hero->xml, (unsigned char *)"male", "/hero/@gender");
 }
 
-void dsa_hero_set_female(dsa_hero_t *hero) {
+void dsa_heros_set_female(dsa_hero_t *hero) {
     xml_ctx_set_attr_str_xpath(hero->xml, (unsigned char *)"female", "/hero/@gender");
+}
+
+void dsa_heros_set_col_hair_by_name(dsa_hero_t *hero, const unsigned char *color_name) {
+
+}
+
+void dsa_heros_set_col_hair_by_dice(dsa_hero_t *hero) {
+
+}
+
+void dsa_heros_set_col_eye_by_name(dsa_hero_t *hero, const unsigned char *color_name) {
+
+}
+
+void dsa_heros_set_col_eye_by_dice(dsa_hero_t *hero) {
+
 }
