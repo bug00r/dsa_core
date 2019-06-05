@@ -1,12 +1,8 @@
 #include "dice.h"
 
 typedef enum {
-    DSA_DICE_PARSER_NEW, 
-    DSA_DICE_PARSER_END,
-    DSA_DICE_PARSER_CHUNK_NEW, 
-    DSA_DICE_PARSER_CHUNK_END,
-    DSA_DICE_PARSER_CHUNK_PROC,
-    DSA_DICE_PARSER_CHUNK_ERROR
+    DSA_DICE_PARSER_NEW, DSA_DICE_PARSER_END, DSA_DICE_PARSER_CHUNK_NEW, 
+    DSA_DICE_PARSER_CHUNK_END, DSA_DICE_PARSER_CHUNK_PROC, DSA_DICE_PARSER_CHUNK_ERROR
 } dice_parser_state_no_t;
 
 typedef struct {
@@ -123,9 +119,11 @@ static void __dsa_dice_parser_factor(dice_parser_state_t *state, dice_t *dice) {
 
     if ( state->state == DSA_DICE_PARSER_NEW ) {
         state->chunk.data.factor = ( *c_char->chr == '-' ? -1 : 1 );
+
         #if debug > 1
             printf(" after new parsing start => %i\n", state->chunk.data.factor);
         #endif
+
         __dsa_dice_parser_set_state(state, DSA_DICE_PARSER_CHUNK_PROC);
         
     } else {
@@ -155,8 +153,6 @@ static void __dsa_dice_parser_digit(dice_parser_state_t *state, dice_t *dice) {
             state->chunk.data.factor = 1;
         }
 
-        __dsa_dice_parser_set_state(state, DSA_DICE_PARSER_CHUNK_PROC);
-
         #if debug > 1
             printf(" after parsing start new\n");
         #endif
@@ -169,8 +165,6 @@ static void __dsa_dice_parser_digit(dice_parser_state_t *state, dice_t *dice) {
             state->chunk.data.factor = 1;
         }
 
-        __dsa_dice_parser_set_state(state, DSA_DICE_PARSER_CHUNK_PROC);
-
         #if debug > 1
             printf(" after new chunk\n");
         #endif
@@ -178,14 +172,13 @@ static void __dsa_dice_parser_digit(dice_parser_state_t *state, dice_t *dice) {
     } else if ( l_char->isDigit ) { 
         //continue examine digit
         state->chunk.end = c_char->chr;
-        __dsa_dice_parser_set_state(state, DSA_DICE_PARSER_CHUNK_PROC);
 
         #if debug > 1
             printf(" continue fetch digit\n");
         #endif
 
     } else if ( l_char->isFactor ) {
-        __dsa_dice_parser_set_state(state, DSA_DICE_PARSER_CHUNK_PROC);
+
         state->chunk.data.factor = ( *l_char->chr == '-' ? -1 : 1 );
         state->chunk.start = c_char->chr;
         state->chunk.end = c_char->chr;
@@ -197,11 +190,14 @@ static void __dsa_dice_parser_digit(dice_parser_state_t *state, dice_t *dice) {
     } else if (l_char->isDice) {
         state->chunk.start = c_char->chr;
         state->chunk.end = c_char->chr;
-
+        
         #if debug > 1
             printf(" max value from dice\n");
         #endif
     }
+
+    __dsa_dice_parser_set_state(state, DSA_DICE_PARSER_CHUNK_PROC);
+
 }
 
 static void __dsa_dice_parser_dice(dice_parser_state_t *state, dice_t *dice) {

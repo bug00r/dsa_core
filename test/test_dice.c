@@ -274,7 +274,7 @@ static void test_dice_alloc_free() {
 		}		
 	#endif
 
-	assert((result >= 3) && (result <= 64));
+	assert((result >= -18) && (result <= 64));
 
 	dsa_dice_free(&dice);
 
