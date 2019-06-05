@@ -35,6 +35,7 @@ typedef struct _dice_item_ {
 typedef struct {
     char *raw;          /* raw string representation if exist */
     dice_item_t *first; /* first dice item, holds NULL if an Error occurs */
+    dice_item_t *last; /* first dice item, holds NULL if an Error occurs */
 } dice_t;
 
 dice_t* dsa_dice_new(const char *dice_pattern);

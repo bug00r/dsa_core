@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <string.h>
+#include <time.h>
 
 #include "dice.h"
 
@@ -34,6 +35,137 @@ static void test_dice_alloc_free() {
 
 	assert(dice == NULL);
 
+	const char * valid_dice = "3";
+
+	dice = dsa_dice_new(valid_dice);
+
+	assert(strcmp(dice->raw,valid_dice) == 0);
+	assert(dice->first != NULL);
+	assert(dice->first->data.factor == 1);
+	assert(dice->first->data.max == 3);
+	assert(dsa_dice_roll(dice) == 3);
+
+	dsa_dice_free(&dice);
+
+	dice = dsa_dice_new("2w6");
+
+	assert(dice->first != NULL);
+	assert(dice->first->data.factor == 1);
+	assert(dice->first->data.cnt == 2);
+	assert(dice->first->data.max == 6);
+	assert(dice->first->next == NULL);
+	unsigned int result = dsa_dice_roll(dice);
+
+	#if debug > 0
+		for (int i = 0; i < 10 ; ++i) {
+			printf("2w6 roll = %i\n",dsa_dice_roll(dice));
+		}		
+	#endif
+
+	assert((result >= 2) && (result <= 12));
+
+	dsa_dice_free(&dice);
+
+	dice = dsa_dice_new("6+6");
+
+	
+	assert(dice->first != NULL);
+	assert(dice->first->data.factor == 1);
+	assert(dice->first->data.cnt == 0);
+	assert(dice->first->data.max == 6);
+	assert(dice->first->next != NULL);
+	assert(dice->first->next->data.factor == 1);
+	assert(dice->first->next->data.cnt == 0);
+	assert(dice->first->next->data.max == 6);
+	assert(dice->first->next->next == NULL);
+	result = dsa_dice_roll(dice);
+
+	#if debug > 0
+		for (int i = 0; i < 10 ; ++i) {
+			printf("2w6 roll = %i\n",dsa_dice_roll(dice));
+		}		
+	#endif
+
+	assert(result == 12);
+
+	dsa_dice_free(&dice);
+	
+	dice = dsa_dice_new("2w6+2w6");
+
+	assert(dice->first != NULL);
+	assert(dice->first->data.factor == 1);
+	assert(dice->first->data.cnt == 2);
+	assert(dice->first->data.max == 6);
+	assert(dice->first->next != NULL);
+	assert(dice->first->next->data.factor == 1);
+	assert(dice->first->next->data.cnt == 2);
+	assert(dice->first->next->data.max == 6);
+	assert(dice->first->next->next == NULL);
+	result = dsa_dice_roll(dice);
+
+	#if debug > 0
+		for (int i = 0; i < 10 ; ++i) {
+			printf("2w6 roll = %i\n",dsa_dice_roll(dice));
+		}		
+	#endif
+
+	assert((result >= 4) && (result <= 24));
+
+	dsa_dice_free(&dice);
+
+
+	dice = dsa_dice_new("5w6+5");
+
+	assert(dice->first != NULL);
+	assert(dice->first->data.factor == 1);
+	assert(dice->first->data.cnt == 5);
+	assert(dice->first->data.max == 6);
+	assert(dice->first->next != NULL);
+	assert(dice->first->next->data.factor == 1);
+	assert(dice->first->next->data.cnt == 0);
+	assert(dice->first->next->data.max == 5);
+	assert(dice->first->next->next == NULL);
+	result = dsa_dice_roll(dice);
+
+	#if debug > 0
+		for (int i = 0; i < 10 ; ++i) {
+			printf("2w6 roll = %i\n",dsa_dice_roll(dice));
+		}		
+	#endif
+
+	assert((result >= 10) && (result <= 35));
+
+	dsa_dice_free(&dice);
+
+	dice = dsa_dice_new("5w6+3w10+4");
+
+	assert(dice->first != NULL);
+	assert(dice->first->data.factor == 1);
+	assert(dice->first->data.cnt == 5);
+	assert(dice->first->data.max == 6);
+	assert(dice->first->next != NULL);
+	assert(dice->first->next->data.factor == 1);
+	assert(dice->first->next->data.cnt == 3);
+	assert(dice->first->next->data.max == 10);
+	assert(dice->first->next->next != NULL);
+	assert(dice->first->next->next->data.factor == 1);
+	assert(dice->first->next->next->data.cnt == 0);
+	assert(dice->first->next->next->data.max == 4);
+	assert(dice->first->next->next->next == NULL);
+	result = dsa_dice_roll(dice);
+
+	#if debug > 0
+		printf("new part:\n");
+		for (int i = 0; i < 10 ; ++i) {
+			printf("2w6 roll = %i\n",dsa_dice_roll(dice));
+		}		
+	#endif
+
+	assert((result >= 12) && (result <= 64));
+
+	dsa_dice_free(&dice);
+
+
     DEBUG_LOG("<<<\n");
 }
 
@@ -41,6 +173,8 @@ static void test_dice_alloc_free() {
 int main(int argc, char **argv) {
 
 	DEBUG_LOG(">> Start dice tests:\n");
+
+	srand(time(NULL));
 
 	test_dice_alloc_free();
 
