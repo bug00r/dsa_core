@@ -42,7 +42,7 @@ dice_t* dsa_dice_new(const char *dice_pattern);
 
 void dsa_dice_free(dice_t **dice);
 
-unsigned int dsa_dice_roll(dice_t *dice);
+int dsa_dice_roll(dice_t *dice);
 
 #endif
 

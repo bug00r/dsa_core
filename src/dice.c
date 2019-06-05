@@ -116,7 +116,6 @@ static void __dsa_dice_parser_begin(dice_parser_state_t *state, char *cur) {
 
 static void __dsa_dice_parser_factor(dice_parser_state_t *state, dice_t *dice) {
     dsa_parser_char_state_t *c_char = &state->c_char;
-    dsa_parser_char_state_t *l_char = &state->l_char;
 
     #if debug > 1
         printf("factor: ");
@@ -125,8 +124,10 @@ static void __dsa_dice_parser_factor(dice_parser_state_t *state, dice_t *dice) {
     if ( state->state == DSA_DICE_PARSER_NEW ) {
         state->chunk.data.factor = ( *c_char->chr == '-' ? -1 : 1 );
         #if debug > 1
-            printf(" after new parsing start\n");
+            printf(" after new parsing start => %i\n", state->chunk.data.factor);
         #endif
+        __dsa_dice_parser_set_state(state, DSA_DICE_PARSER_CHUNK_PROC);
+        
     } else {
         __dsa_dice_parser_set_state(state, DSA_DICE_PARSER_CHUNK_END);
         state->chunk.end = c_char->chr;
@@ -169,6 +170,11 @@ static void __dsa_dice_parser_digit(dice_parser_state_t *state, dice_t *dice) {
         }
 
         __dsa_dice_parser_set_state(state, DSA_DICE_PARSER_CHUNK_PROC);
+
+        #if debug > 1
+            printf(" after new chunk\n");
+        #endif
+
     } else if ( l_char->isDigit ) { 
         //continue examine digit
         state->chunk.end = c_char->chr;
@@ -274,7 +280,6 @@ static void __dsa_dice_parser_chunk_update(dice_parser_state_t *state, dice_t *d
     __dsa_parser_update_char_state(&state->c_char, cur);
 
     dsa_parser_char_state_t *c_char = &state->c_char;
-    dsa_parser_char_state_t *l_char = &state->l_char;
 
     if ( c_char->is_valid_sign ) {
         if (c_char->isFactor) { __dsa_dice_parser_factor(state, dice); }
@@ -396,14 +401,14 @@ void dsa_dice_free(dice_t **dice) {
     }
 }
 
-unsigned int dsa_dice_roll(dice_t *dice) {
-    unsigned int result = 0;
+int dsa_dice_roll(dice_t *dice) {
+    int result = 0;
     
     dice_item_t *cur_item = dice->first;
     dice_item_t *next_item = NULL;
     while(cur_item != NULL) {
         next_item = cur_item->next;
-        unsigned int current =  cur_item->get_value(&cur_item->data);
+        int current =  cur_item->get_value(&cur_item->data);
 
         #if debug > 1
             printf("single Dice: %i\n", current);
