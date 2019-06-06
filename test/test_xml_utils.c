@@ -319,7 +319,7 @@ static void test_xml_ctx_add_node_xpath() {
 	xml_ctx_set_attr_str_xpath(hCtx, (unsigned char *)"New Name Baradon", "//hero/@description");
 	xml_ctx_set_attr_str_xpath(hCtx, (unsigned char *)"150", "//hero/config/base-gp/@value");
 
-	xml_ctx_set_attr_str_xpath_format(hCtx, (unsigned char *)"10", "//hero/baseinformations//attribute[regexmatch(@name,'%s')]/@basevalue", "[KkSs]*.*");
+	xml_ctx_set_attr_str_xpath_format(hCtx, (unsigned char *)"10", "//hero/attributes//attribute[regexmatch(@name,'%s')]/@value", "[KkSs]*.*");
 
 	xml_ctx_set_content_xpath(hCtx, (unsigned char *)"Ups falscher Text", "//hero/story/text()");
 	xml_ctx_set_content_xpath(hCtx, (unsigned char *)"Das ist die wahre Story von Baradon", "//hero/story/text()");

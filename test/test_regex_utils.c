@@ -33,6 +33,45 @@ int main(int argc, char **argv) {
 	assert(!regex_not_blank((const unsigned char *)""));
 	assert(!regex_not_blank((const unsigned char *)"\t"));
 
+	/*
+	negative lookahead
+	q(?!u) 		=> 
+	(?!(regex)) =< NOT HERE :(
+
+	positive lookahead
+	q(?=u)		=> matches q followed by u
+	(?=(regex)) => ist possible too
+
+	pos look behind
+	(?<=a)b		=> matches b preceded by a
+
+	neg look behind
+	(?<!a)b		=> matches b not preceded by an a
+
+	*/
+	const unsigned char * regex = (const unsigned char *)"^(\\d+)$|^(\\d+-\\d+)$";
+
+	assert(regex_match(regex, (const unsigned char *)"12"));
+	assert(regex_match(regex, (const unsigned char *)"1"));
+	assert(regex_match(regex, (const unsigned char *)"1-2"));
+	assert(regex_match(regex, (const unsigned char *)"12-12"));
+	assert(regex_match(regex, (const unsigned char *)"1-12"));
+	assert(regex_match(regex, (const unsigned char *)"12-1"));
+	assert(!regex_match(regex,(const unsigned char *)"-12"));
+	assert(!regex_match(regex,(const unsigned char *)"1-"));
+
+	assert(regex_range_match((const unsigned char *)"12", (const unsigned char *)"12"));
+	assert(regex_range_match((const unsigned char *)"1", (const unsigned char *)"1"));
+	assert(regex_range_match((const unsigned char *)"1-2", (const unsigned char *)"1"));
+	assert(regex_range_match((const unsigned char *)"1-2", (const unsigned char *)"2"));
+	assert(regex_range_match((const unsigned char *)"1-12", (const unsigned char *)"4"));
+	assert(regex_range_match((const unsigned char *)"1-12", (const unsigned char *)"3"));
+	assert(!regex_range_match((const unsigned char *)"1-12", (const unsigned char *)"13"));
+	assert(!regex_range_match((const unsigned char *)"12-1", (const unsigned char *)"1"));
+	assert(!regex_range_match((const unsigned char *)"12", (const unsigned char *)"1"));
+	assert(!regex_range_match((const unsigned char *)"-1", (const unsigned char *)"-1"));
+	assert(!regex_range_match((const unsigned char *)"1-", (const unsigned char *)"1"));
+
 	DEBUG_LOG("<< end taw tests:\n");
 
 	return 0;

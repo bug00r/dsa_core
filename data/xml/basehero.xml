@@ -7,19 +7,17 @@
 	<config>
 		<base-gp value="110"/>
 	</config>
-	<baseinformations name="Basisinformationen" >
-		<attributes>
-			<attribute name="Mut" shortname="MU" basevalue="8" />
-			<attribute name="Klugheit" shortname="KL" basevalue="8" />
-			<attribute name="Körperkraft" shortname="KK" basevalue="8" />
-			<attribute name="Gewandheit" shortname="GE" basevalue="8" />
-			<attribute name="Fingerfertigkeit" shortname="FF" basevalue="8" />
-			<attribute name="Intuition" shortname="IN" basevalue="8" />
-			<attribute name="Konstitution" shortname="IN" basevalue="8" />
-			<attribute name="Charisma" shortname="CH" basevalue="8" />
-			<attribute name="Sozialstatus" shortname="SO" basevalue="0" />
-		</attributes>
-	</baseinformations>
+	<attributes>
+		<attribute name="Mut" shortname="MU" value="8" />
+		<attribute name="Klugheit" shortname="KL" value="8" />
+		<attribute name="Körperkraft" shortname="KK" value="8" />
+		<attribute name="Gewandheit" shortname="GE" value="8" />
+		<attribute name="Fingerfertigkeit" shortname="FF" value="8" />
+		<attribute name="Intuition" shortname="IN" value="8" />
+		<attribute name="Konstitution" shortname="IN" value="8" />
+		<attribute name="Charisma" shortname="CH" value="8" />
+		<attribute name="Sozialstatus" shortname="SO" value="0" />
+	</attributes>
 	<breedcontainer name="Rasse" />
 	<culturecontainer name="Kultur" />
 	<professioncontainer name="Profession" />
@@ -92,6 +90,17 @@
 		<group name="Boron" />
 	</liturgies>
 	<edit>
+		<attributes>
+			<attribute name="Mut" shortname="MU" value="0" />
+			<attribute name="Klugheit" shortname="KL" value="0" />
+			<attribute name="Körperkraft" shortname="KK" value="0" />
+			<attribute name="Gewandheit" shortname="GE" value="0" />
+			<attribute name="Fingerfertigkeit" shortname="FF" value="0" />
+			<attribute name="Intuition" shortname="IN" value="0" />
+			<attribute name="Konstitution" shortname="IN" value="0" />
+			<attribute name="Charisma" shortname="CH" value="0" />
+			<attribute name="Sozialstatus" shortname="SO" value="0" />
+		</attributes>
 		<breed />
 		<culture />
 		<profession />

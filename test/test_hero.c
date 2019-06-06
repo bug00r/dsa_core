@@ -477,6 +477,44 @@ static void	test_heros_add_profession(){
 	DEBUG_LOG("<<<\n");
 }
 
+static void test_heros_inc_dec_attributes() {
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+
+	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
+
+	dsa_heros_t * heros = dsa_heros_new_archiv(ar);
+
+	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
+	
+	dsa_heros_attr_inc(baradon, (const unsigned char*)"MU");
+	dsa_heros_attr_inc(baradon, (const unsigned char*)"MU");
+	dsa_heros_attr_inc(baradon, (const unsigned char*)"MU");
+	dsa_heros_attr_inc(baradon, (const unsigned char*)"MU");
+
+	dsa_heros_attr_inc(baradon, (const unsigned char*)"KL");
+	dsa_heros_attr_inc(baradon, (const unsigned char*)"KL");
+	dsa_heros_attr_inc(baradon, (const unsigned char*)"KL");
+
+	for (int i = 0; i < 7; ++i) { dsa_heros_attr_inc(baradon, (const unsigned char*)"SO"); }
+
+	dsa_heros_attr_dec(baradon, (const unsigned char*)"SO");
+	dsa_heros_attr_dec(baradon, (const unsigned char*)"SO");
+
+	//#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	//#endif
+	
+	dsa_hero_free(&baradon);
+
+	dsa_heros_free(&heros);
+
+	assert(heros == NULL);
+
+	archive_resource_free(&ar);
+
+	DEBUG_LOG("<<<\n");
+}
+
 int main(int argc, char **argv) {
 
 	DEBUG_LOG(">> Start taw tests:\n");
@@ -504,6 +542,8 @@ int main(int argc, char **argv) {
 	test_heros_add_spell();
 	
 	test_heros_add_liturgy();
+
+	test_heros_inc_dec_attributes();
 
 	DEBUG_LOG("<< end taw tests:\n");
 

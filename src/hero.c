@@ -473,6 +473,26 @@ void dsa_heros_specialability_dec(dsa_hero_t *hero, const unsigned char *name) {
 
 }
 
+void dsa_heros_attr_inc(dsa_hero_t *hero, const unsigned char *short_name) {
+    char * hero_attr_xpath = format_string_new("/hero/attributes/attribute[@shortname = '%s']", short_name);
+    char * hero_edit_attr_xpath = format_string_new("/hero/edit/attributes/attribute[@shortname = '%s']", short_name);
+
+    __dsa_heros_inc_dec_value_raw(hero->xml, hero_attr_xpath, hero_edit_attr_xpath, 1);
+
+    free(hero_attr_xpath);
+    free(hero_edit_attr_xpath);
+}
+
+void dsa_heros_attr_dec(dsa_hero_t *hero, const unsigned char *short_name) {
+    char * hero_attr_xpath = format_string_new("/hero/attributes/attribute[@shortname = '%s']", short_name);
+    char * hero_edit_attr_xpath = format_string_new("/hero/edit/attributes/attribute[@shortname = '%s']", short_name);
+
+    __dsa_heros_inc_dec_value_raw(hero->xml, hero_attr_xpath, hero_edit_attr_xpath, -1);
+
+    free(hero_attr_xpath);
+    free(hero_edit_attr_xpath);
+}
+
 void dsa_heros_set_name(dsa_hero_t *hero, const unsigned char *name) {
     xml_ctx_set_attr_str_xpath(hero->xml, name, "/hero/@name");
 }

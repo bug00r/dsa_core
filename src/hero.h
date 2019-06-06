@@ -94,6 +94,9 @@ void dsa_heros_liturgie_dec(dsa_hero_t *hero, const unsigned char *name);
 void dsa_heros_specialability_inc(dsa_hero_t *hero, const unsigned char *name);
 void dsa_heros_specialability_dec(dsa_hero_t *hero, const unsigned char *name);
 
+void dsa_heros_attr_inc(dsa_hero_t *hero, const unsigned char *short_name);
+void dsa_heros_attr_dec(dsa_hero_t *hero, const unsigned char *short_name);
+
 void dsa_heros_set_name(dsa_hero_t *hero, const unsigned char *name);
 void dsa_heros_set_gp(dsa_hero_t *hero, const unsigned char *gp);
 void dsa_heros_set_title(dsa_hero_t *hero, const unsigned char *title);
