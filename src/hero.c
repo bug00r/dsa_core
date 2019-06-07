@@ -124,6 +124,43 @@ static void __dsa_heros_set_col_dice_raw(dsa_hero_t *hero, const unsigned char *
 
 }
 
+static void __dsa_heros_set_hw_raw(dsa_hero_t *hero, float heightadd, xmlXPathObjectPtr _height_res) {
+    xml_ctx_t *heroxml = hero->xml;
+
+    xmlXPathObjectPtr height_res = _height_res;
+    if ( height_res == NULL ) {
+        height_res = xml_ctx_xpath(heroxml, "/hero/breedcontainer/breed/body-height");
+    }
+
+    xmlXPathObjectPtr weight_res = xml_ctx_xpath(heroxml, "/hero/breedcontainer/breed/body-weight");
+
+    if (xml_xpath_has_result(height_res) && xml_xpath_has_result(weight_res) ) {
+        xmlChar *wvalue = xmlGetProp(weight_res->nodesetval->nodeTab[0],(xmlChar*)"value");
+        xmlChar *hvalue = xmlGetProp(height_res->nodesetval->nodeTab[0],(xmlChar*)"value");
+
+        float height = atof((const char*)hvalue);
+        float weight = atof((const char*)wvalue);
+
+        height += (heightadd/100.f);
+        weight += (height*100.f);
+
+        unsigned char *strweight = (unsigned char *)format_string_new("%i",(int)weight); 
+        unsigned char *strheight = (unsigned char *)format_string_new("%.2f",height); 
+
+        xml_ctx_set_attr_str_xpath(hero->xml, (const unsigned char *)strheight, "/hero/edit/breed/height/@value");
+        xml_ctx_set_attr_str_xpath(hero->xml, (const unsigned char *)strweight, "/hero/edit/breed/weight/@value");
+
+        free(strweight);
+        free(strheight);
+        xmlFree(wvalue);
+        xmlFree(hvalue);
+    }
+    if ( _height_res == NULL ) {
+        xmlXPathFreeObject(height_res);
+    }
+    xmlXPathFreeObject(weight_res);
+}
+
 #if 0
 // ################################################################################################
 // EOF private Section
@@ -640,43 +677,6 @@ static void __dsa_heros_set_col_dice_raw(dsa_hero_t *hero, const unsigned char *
 			<body-weight name="Gewicht" value="-100" type="Stein" />
 
 */
-
-static void __dsa_heros_set_hw_raw(dsa_hero_t *hero, float heightadd, xmlXPathObjectPtr _height_res) {
-    xml_ctx_t *heroxml = hero->xml;
-
-    xmlXPathObjectPtr height_res = _height_res;
-    if ( height_res == NULL ) {
-        height_res = xml_ctx_xpath(heroxml, "/hero/breedcontainer/breed/body-height");
-    }
-
-    xmlXPathObjectPtr weight_res = xml_ctx_xpath(heroxml, "/hero/breedcontainer/breed/body-weight");
-
-    if (xml_xpath_has_result(height_res) && xml_xpath_has_result(weight_res) ) {
-        xmlChar *wvalue = xmlGetProp(weight_res->nodesetval->nodeTab[0],(xmlChar*)"value");
-        xmlChar *hvalue = xmlGetProp(height_res->nodesetval->nodeTab[0],(xmlChar*)"value");
-
-        float height = atof((const char*)hvalue);
-        float weight = atof((const char*)wvalue);
-
-        height += (heightadd/100.f);
-        weight += (height*100.f);
-
-        unsigned char *strweight = (unsigned char *)format_string_new("%i",(int)weight); 
-        unsigned char *strheight = (unsigned char *)format_string_new("%.2f",height); 
-
-        xml_ctx_set_attr_str_xpath(hero->xml, (const unsigned char *)strheight, "/hero/edit/breed/height/@value");
-        xml_ctx_set_attr_str_xpath(hero->xml, (const unsigned char *)strweight, "/hero/edit/breed/weight/@value");
-
-        free(strweight);
-        free(strheight);
-        xmlFree(wvalue);
-        xmlFree(hvalue);
-    }
-    if ( _height_res == NULL ) {
-        xmlXPathFreeObject(height_res);
-    }
-    xmlXPathFreeObject(weight_res);
-}
 
 void dsa_heros_set_height_weight_by_value(dsa_hero_t *hero, const unsigned char *value) {
     __dsa_heros_set_hw_raw(hero, atof((const char *)value), NULL);
