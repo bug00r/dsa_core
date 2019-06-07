@@ -363,6 +363,47 @@ void xml_ctx_nodes_add_xpath(xml_ctx_t *src, const char *src_xpath, xml_ctx_t *d
     xmlXPathFreeObject(srcxpres);
 }
 
+void xml_ctx_nodes_add_note_xpres(xmlNodePtr src_node, xmlXPathObjectPtr dst_result) {
+    
+    if ( xml_xpath_has_result(dst_result) ) {
+
+        const int maxNodes = dst_result->nodesetval->nodeNr;
+        xmlNodePtr *nodes = dst_result->nodesetval->nodeTab;
+
+        for(int curNode = 0; curNode < maxNodes; ++curNode) {
+
+            xmlNodePtr target_node = nodes[curNode];
+            
+            xmlNodePtr copy = xmlCopyNode(src_node, 1);
+            
+            xmlAddChild(target_node, copy);
+        }
+
+    }
+
+}
+
+void xml_ctx_nodes_add_node_xpath(xmlNodePtr src_node, xml_ctx_t *dst, const char *dst_xpath) {
+
+    xmlXPathObjectPtr target_node_result = xml_ctx_xpath(dst, dst_xpath);
+
+    xml_ctx_nodes_add_note_xpres(src_node, target_node_result);
+
+    xmlXPathFreeObject(target_node_result);
+}
+
+void xml_ctx_nodes_add_node_xpath_format(xmlNodePtr src_node, xml_ctx_t *dst, const char *dst_xpath, ...) {
+
+    va_list args;
+    va_start(args, dst_xpath);
+    xmlXPathObjectPtr target_node_result = xml_ctx_xpath_format_va(dst, dst_xpath, args);
+    va_end(args);
+
+    xml_ctx_nodes_add_note_xpres(src_node, target_node_result);
+
+    xmlXPathFreeObject(target_node_result);
+}
+
 void xml_ctx_rem_nodes_xpres(xmlXPathObjectPtr xpres) {
     
     if (xml_xpath_has_result(xpres)) {

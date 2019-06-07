@@ -101,7 +101,12 @@
 			<attribute name="Charisma" shortname="CH" value="0" />
 			<attribute name="Sozialstatus" shortname="SO" value="0" />
 		</attributes>
-		<breed />
+		<breed>
+			<colors name="Haarfarbe">
+			</colors>
+			<colors name="Augenfarbe">
+			</colors>
+		</breed>
 		<culture />
 		<profession />
 		<pros />

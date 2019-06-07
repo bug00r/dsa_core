@@ -188,7 +188,7 @@ dsa_hero_t* dsa_hero_get(dsa_heros_t *heros, const int id) {
 
     dsa_hero_t *found_hero = NULL;
 
-    if (result && result->nodesetval && result->nodesetval->nodeNr > 0) {
+    if (xml_xpath_has_result(result)) {
         xmlNodePtr found = result->nodesetval->nodeTab[0];
 
         found_hero = malloc(sizeof(dsa_hero_t));
@@ -208,7 +208,7 @@ dsa_hero_entry_t* dsa_hero_get_all(dsa_heros_t *heros) {
 
     dsa_hero_entry_t *herolist = NULL;
 
-    if (result && result->nodesetval && result->nodesetval->nodeNr > 0) {
+    if (xml_xpath_has_result(result)) {
         
 
         xmlNodeSetPtr nodes = result->nodesetval;
@@ -288,6 +288,7 @@ void dsa_heros_delete_hero(dsa_heros_t *heros, const int id) {
 void dsa_heros_add_breed(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
     if (heros != NULL && hero != NULL) {
         char *src_xpath = format_string_new("/breeds//breed[@name = '%s']", name);
+        xml_ctx_remove(hero->xml, "/hero/breedcontainer/breed");
         xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->breeds, src_xpath, hero->xml, "/hero/breedcontainer");
         free(src_xpath);
     }
@@ -296,6 +297,7 @@ void dsa_heros_add_breed(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned ch
 void dsa_heros_add_culture(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
     if (heros != NULL && hero != NULL) {
         char *src_xpath = format_string_new("/cultures//culture[@name = '%s']", name);
+        xml_ctx_remove(hero->xml, "/hero/culturecontainer/culture");
         xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->cultures, src_xpath,  hero->xml, "/hero/culturecontainer");
         free(src_xpath);
     }
@@ -303,6 +305,7 @@ void dsa_heros_add_culture(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned 
 void dsa_heros_add_profession(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
     if (heros != NULL && hero != NULL) {
         char *src_xpath = format_string_new("/professions//profession[@name = '%s']", name);
+        xml_ctx_remove(hero->xml, "/hero/professioncontainer/profession");
         xml_ctx_nodes_add_xpath((xml_ctx_t*)heros->professions, src_xpath,  hero->xml, "/hero/professioncontainer");
         free(src_xpath);
     }
@@ -525,8 +528,24 @@ void dsa_heros_set_female(dsa_hero_t *hero) {
     xml_ctx_set_attr_str_xpath(hero->xml, (unsigned char *)"female", "/hero/@gender");
 }
 
-void dsa_heros_set_col_hair_by_name(dsa_hero_t *hero, const unsigned char *color_name) {
+static void __dsa_heros_set_col_raw(dsa_hero_t *hero, const unsigned char *color_type_name, const unsigned char *color_name) {
+    xml_ctx_t * heroxml = hero->xml;
+    
+    xmlXPathObjectPtr hair_color = xml_ctx_xpath_format(heroxml, "/hero/breedcontainer/breed/colortypes/colors[@name = '%s']/color[@name = '%s']", color_type_name, color_name);
 
+    if (xml_xpath_has_result(hair_color)) {
+
+        xml_ctx_remove_format(heroxml, "/hero/edit/breed/colors[@name = '%s']/color", color_type_name);
+
+        xml_ctx_nodes_add_node_xpath_format(hair_color->nodesetval->nodeTab[0], heroxml, "/hero/edit/breed/colors[@name = '%s']", color_type_name);
+
+    }
+
+    xmlXPathFreeObject(hair_color);
+}   
+
+void dsa_heros_set_col_hair_by_name(dsa_hero_t *hero, const unsigned char *color_name) {
+    __dsa_heros_set_col_raw(hero, (const unsigned char *)"Haarfarbe", color_name);
 }
 
 void dsa_heros_set_col_hair_by_dice(dsa_hero_t *hero) {
@@ -534,7 +553,7 @@ void dsa_heros_set_col_hair_by_dice(dsa_hero_t *hero) {
 }
 
 void dsa_heros_set_col_eye_by_name(dsa_hero_t *hero, const unsigned char *color_name) {
-
+    __dsa_heros_set_col_raw(hero, (const unsigned char *)"Augenfarbe", color_name);
 }
 
 void dsa_heros_set_col_eye_by_dice(dsa_hero_t *hero) {

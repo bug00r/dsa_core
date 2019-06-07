@@ -235,6 +235,9 @@ xmlXPathObjectPtr xml_ctx_xpath_format_va( const xml_ctx_t *ctx, const char *xpa
 
 */
 void xml_ctx_nodes_add_xpath(xml_ctx_t *src, const char *src_xpath, xml_ctx_t *dst, const char *dst_xpath);
+void xml_ctx_nodes_add_node_xpath(xmlNodePtr src_node, xml_ctx_t *dst, const char *dst_xpath);
+void xml_ctx_nodes_add_node_xpath_format(xmlNodePtr src_node, xml_ctx_t *dst, const char *dst_xpath, ...);
+void xml_ctx_nodes_add_note_xpres(xmlNodePtr src_node, xmlXPathObjectPtr dst_result);
 
 void xml_ctx_rem_nodes_xpres(xmlXPathObjectPtr xpres);
 void xml_ctx_remove(xml_ctx_t *ctx, const char *xpath);

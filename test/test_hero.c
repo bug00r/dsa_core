@@ -161,10 +161,17 @@ static void	test_heros_add_breed() {
 	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
 	
 	dsa_heros_add_breed(heros, baradon, (const unsigned char*)"Die Tulamiden");
+	dsa_heros_add_breed(heros, baradon, (const unsigned char*)"Die Mittelländer");
 
-	#if debug > 0
+	dsa_heros_set_col_hair_by_name(baradon, (const unsigned char*)"dunkelblond");
+	dsa_heros_set_col_hair_by_name(baradon, (const unsigned char*)"rot");
+
+	dsa_heros_set_col_eye_by_name(baradon, (const unsigned char*)"grün");
+	dsa_heros_set_col_eye_by_name(baradon, (const unsigned char*)"grau");
+
+	//#if debug > 0
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
-	#endif
+	//#endif
 	
 	dsa_hero_free(&baradon);
 
@@ -500,9 +507,9 @@ static void test_heros_inc_dec_attributes() {
 	dsa_heros_attr_dec(baradon, (const unsigned char*)"SO");
 	dsa_heros_attr_dec(baradon, (const unsigned char*)"SO");
 
-	//#if debug > 0
+	#if debug > 0
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
-	//#endif
+	#endif
 	
 	dsa_hero_free(&baradon);
 

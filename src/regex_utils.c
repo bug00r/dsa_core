@@ -74,8 +74,7 @@ bool regex_range_match(const unsigned char *range, const unsigned char *value) {
 
 	if (rc > 0) {
 		
-		PCRE2_SIZE *ovector;
-		ovector = pcre2_get_ovector_pointer(match_data);
+		PCRE2_SIZE *ovector = pcre2_get_ovector_pointer(match_data);
 
 		#if debug > 1
 			printf("\"^(\\d+)$|^((\\d+)-(\\d+))$\" matches \"%s\" with %i results\n", range,rc);
