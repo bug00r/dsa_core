@@ -106,6 +106,8 @@
 			</colors>
 			<colors name="Augenfarbe">
 			</colors>
+			<weight value="0" />
+			<height value="0" />
 		</breed>
 		<culture />
 		<profession />

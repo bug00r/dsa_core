@@ -107,7 +107,11 @@ void dsa_heros_set_male(dsa_hero_t *hero);
 void dsa_heros_set_female(dsa_hero_t *hero);
 void dsa_heros_set_col_hair_by_name(dsa_hero_t *hero, const unsigned char *color_name);
 void dsa_heros_set_col_hair_by_dice(dsa_hero_t *hero);
+
 void dsa_heros_set_col_eye_by_name(dsa_hero_t *hero, const unsigned char *color_name);
 void dsa_heros_set_col_eye_by_dice(dsa_hero_t *hero);
+
+void dsa_heros_set_height_weight_by_value(dsa_hero_t *hero, const unsigned char *color_name);
+void dsa_heros_set_height_weight_by_dice(dsa_hero_t *hero);
 
 #endif

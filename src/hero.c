@@ -102,7 +102,7 @@ static void __dsa_heros_set_col_dice_raw(dsa_hero_t *hero, const unsigned char *
 
         xmlChar *dice_str = xmlGetProp(dice_pattern->nodesetval->nodeTab[0] , (xmlChar *)"dice");
 
-        int dice_result = dsa_dice_result(dice_str);
+        int dice_result = dsa_dice_result((const char *)dice_str);
 
         xmlFree(dice_str);
 
@@ -589,4 +589,114 @@ void dsa_heros_set_col_eye_by_name(dsa_hero_t *hero, const unsigned char *color_
 
 void dsa_heros_set_col_eye_by_dice(dsa_hero_t *hero) {
     __dsa_heros_set_col_dice_raw(hero, (const unsigned char *)"Augenfarbe");
+}
+
+/*
+
+
+
+
+static void __dsa_heros_set_col_raw(dsa_hero_t *hero, const unsigned char *color_type_name, const unsigned char *color_name) {
+    xml_ctx_t * heroxml = hero->xml;
+    
+    xmlXPathObjectPtr hair_color = xml_ctx_xpath_format(heroxml, "/hero/breedcontainer/breed/colortypes/colors[@name = '%s']/color[@name = '%s']", color_type_name, color_name);
+
+    if (xml_xpath_has_result(hair_color)) {
+
+        xml_ctx_remove_format(heroxml, "/hero/edit/breed/colors[@name = '%s']/color", color_type_name);
+
+        xml_ctx_nodes_add_node_xpath_format(hair_color->nodesetval->nodeTab[0], heroxml, "/hero/edit/breed/colors[@name = '%s']", color_type_name);
+
+    }
+
+    xmlXPathFreeObject(hair_color);
+}   
+
+static void __dsa_heros_set_col_dice_raw(dsa_hero_t *hero, const unsigned char *color_type_name) {
+    xml_ctx_t * heroxml = hero->xml;
+
+    xmlXPathObjectPtr dice_pattern = xml_ctx_xpath_format(heroxml, "/hero/breedcontainer/breed/colortypes/colors[@name = '%s']", color_type_name);
+
+    if (xml_xpath_has_result(dice_pattern)) {
+
+        xmlChar *dice_str = xmlGetProp(dice_pattern->nodesetval->nodeTab[0] , (xmlChar *)"dice");
+
+        int dice_result = dsa_dice_result((const char *)dice_str);
+
+        xmlFree(dice_str);
+
+        xmlXPathObjectPtr hair_color = xml_ctx_xpath_format(heroxml, "/hero/breedcontainer/breed/colortypes/colors[@name = '%s']/color[in_range(@value,'%i')]", color_type_name, dice_result);
+        if (xml_xpath_has_result(hair_color)) {
+            xml_ctx_remove_format(heroxml, "/hero/edit/breed/colors[@name = '%s']/color", color_type_name);
+            xml_ctx_nodes_add_node_xpath_format(hair_color->nodesetval->nodeTab[0], heroxml, "/hero/edit/breed/colors[@name = '%s']", color_type_name);
+        }
+        xmlXPathFreeObject(hair_color);
+    }
+    xmlXPathFreeObject(dice_pattern);
+
+}
+
+			<body-height name="Körpergröße" value="1.6" dice="2w20" />
+			<body-weight name="Gewicht" value="-100" type="Stein" />
+
+*/
+
+static void __dsa_heros_set_hw_raw(dsa_hero_t *hero, float heightadd, xmlXPathObjectPtr _height_res) {
+    xml_ctx_t *heroxml = hero->xml;
+
+    xmlXPathObjectPtr height_res = _height_res;
+    if ( height_res == NULL ) {
+        height_res = xml_ctx_xpath(heroxml, "/hero/breedcontainer/breed/body-height");
+    }
+
+    xmlXPathObjectPtr weight_res = xml_ctx_xpath(heroxml, "/hero/breedcontainer/breed/body-weight");
+
+    if (xml_xpath_has_result(height_res) && xml_xpath_has_result(weight_res) ) {
+        xmlChar *wvalue = xmlGetProp(weight_res->nodesetval->nodeTab[0],(xmlChar*)"value");
+        xmlChar *hvalue = xmlGetProp(height_res->nodesetval->nodeTab[0],(xmlChar*)"value");
+
+        float height = atof((const char*)hvalue);
+        float weight = atof((const char*)wvalue);
+
+        height += (heightadd/100.f);
+        weight += (height*100.f);
+
+        unsigned char *strweight = (unsigned char *)format_string_new("%i",(int)weight); 
+        unsigned char *strheight = (unsigned char *)format_string_new("%.2f",height); 
+
+        xml_ctx_set_attr_str_xpath(hero->xml, (const unsigned char *)strheight, "/hero/edit/breed/height/@value");
+        xml_ctx_set_attr_str_xpath(hero->xml, (const unsigned char *)strweight, "/hero/edit/breed/weight/@value");
+
+        free(strweight);
+        free(strheight);
+        xmlFree(wvalue);
+        xmlFree(hvalue);
+    }
+    if ( _height_res == NULL ) {
+        xmlXPathFreeObject(height_res);
+    }
+    xmlXPathFreeObject(weight_res);
+}
+
+void dsa_heros_set_height_weight_by_value(dsa_hero_t *hero, const unsigned char *value) {
+    __dsa_heros_set_hw_raw(hero, atof((const char *)value), NULL);
+}
+
+void dsa_heros_set_height_weight_by_dice(dsa_hero_t *hero) {
+    xml_ctx_t *heroxml = hero->xml;
+
+    xmlXPathObjectPtr height_res = xml_ctx_xpath(heroxml, "/hero/breedcontainer/breed/body-height");
+
+    if (xml_xpath_has_result(height_res)) {
+        
+        xmlChar *hdpattern = xmlGetProp(height_res->nodesetval->nodeTab[0],(xmlChar*)"dice");
+        
+        int dice_result = dsa_dice_result((const char *)hdpattern);
+        
+        xmlFree(hdpattern);
+ 
+        __dsa_heros_set_hw_raw(hero, (float)dice_result, height_res);
+    }
+
+    xmlXPathFreeObject(height_res);
 }

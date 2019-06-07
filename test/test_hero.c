@@ -180,6 +180,18 @@ static void	test_heros_add_breed() {
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
 	#endif
 
+	dsa_heros_set_height_weight_by_dice(baradon);
+
+	#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	#endif
+
+	dsa_heros_set_height_weight_by_value(baradon, (const unsigned char *)"60");
+
+	#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	#endif
+
 	dsa_hero_free(&baradon);
 
 	dsa_heros_free(&heros);
