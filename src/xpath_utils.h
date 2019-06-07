@@ -13,5 +13,6 @@
 
 void regexmatch_xpath_func(xmlXPathParserContextPtr ctxt, int nargs);
 void max_xpath_func(xmlXPathParserContextPtr ctxt, int nargs);
+void str_in_range_xpath_func(xmlXPathParserContextPtr ctxt, int nargs);
 
 #endif

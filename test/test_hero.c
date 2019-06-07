@@ -169,10 +169,17 @@ static void	test_heros_add_breed() {
 	dsa_heros_set_col_eye_by_name(baradon, (const unsigned char*)"grün");
 	dsa_heros_set_col_eye_by_name(baradon, (const unsigned char*)"grau");
 
-	//#if debug > 0
+	#if debug > 0
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
-	//#endif
+	#endif
 	
+	dsa_heros_set_col_eye_by_dice(baradon);
+	dsa_heros_set_col_hair_by_dice(baradon);
+
+	#if debug > 0
+		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
+	#endif
+
 	dsa_hero_free(&baradon);
 
 	dsa_heros_free(&heros);

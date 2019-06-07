@@ -243,7 +243,8 @@ xmlXPathObjectPtr xml_ctx_xpath( const xml_ctx_t *ctx, const char *xpath) {
         xmlXPathContextPtr xpathCtx = xmlXPathNewContext(ctx->doc);
         xmlXPathRegisterAllFunctions(xpathCtx);
         xmlXPathRegisterFunc(xpathCtx,(const xmlChar *) "regexmatch", regexmatch_xpath_func);
-        xmlXPathRegisterFunc(xpathCtx,(const xmlChar *) "max", max_xpath_func); 
+        xmlXPathRegisterFunc(xpathCtx,(const xmlChar *) "max", max_xpath_func);
+        xmlXPathRegisterFunc(xpathCtx,(const xmlChar *) "in_range", str_in_range_xpath_func); 
 
         if ( xpathCtx != NULL ) {
             

@@ -278,6 +278,22 @@ static void test_dice_alloc_free() {
 
 	dsa_dice_free(&dice);
 
+	dice = dsa_dice_new("W20");
+
+	assert(dice->first != NULL);
+	assert(dice->first->data.factor == 1);
+	assert(dice->first->data.cnt == 1);
+	assert(dice->first->data.max == 20);
+	assert(dice->first->next == NULL);
+	result = dsa_dice_roll(dice);
+
+	#if debug > 0
+		printf("W20 roll = %i\n",result);	
+	#endif
+
+	assert((result >= 1) && (result <= 20));
+
+	dsa_dice_free(&dice);
 
     DEBUG_LOG("<<<\n");
 }

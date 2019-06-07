@@ -208,8 +208,17 @@ static void __dsa_dice_parser_dice(dice_parser_state_t *state, dice_t *dice) {
     #if debug > 1
         printf("dice:");
     #endif
+    if (state->state == DSA_DICE_PARSER_NEW ) {
+        state->chunk.data.cnt = 1;
+        state->chunk.data.factor = 1;
 
-    if (l_char->isDigit) {
+        __dsa_dice_parser_set_state(state, DSA_DICE_PARSER_CHUNK_PROC);
+
+        #if debug > 1
+            printf(" at pattern start with cnt %i\n", state->chunk.data.cnt);
+        #endif
+
+    } else if (l_char->isDigit) {
         state->chunk.end = c_char->chr;
         state->chunk.data.cnt = __dsa_dice_str_to_num(state);
         
@@ -299,6 +308,10 @@ static void __dsa_dice_parser_chunk_end(dice_parser_state_t *state, dice_t *dice
     new_item->data.factor = state->chunk.data.factor;
     new_item->data.max = state->chunk.data.max;
     
+    #if debug > 1
+        printf("new item: factor %i cnt %i max %i \n",new_item->data.factor, new_item->data.cnt, new_item->data.max);
+    #endif
+    
     if ( state->chunk.isDice ) {
         new_item->get_value = __dsa_dice_random;
     } else {
@@ -312,6 +325,10 @@ static void __dsa_dice_parser_chunk_end(dice_parser_state_t *state, dice_t *dice
     }
 
     dice->last = new_item;
+
+    #if debug > 1
+        printf("new %p first %p last %p", new_item, dice->first, dice->last);
+    #endif
 
     //reset chunkstate
     __dsa_parser_reset_chunk(&state->chunk);
@@ -416,4 +433,14 @@ int dsa_dice_roll(dice_t *dice) {
     }
 
     return result;
+}
+
+int dsa_dice_result(const char *dice_pattern) {
+    dice_t* dice = dsa_dice_new(dice_pattern);
+
+    int dice_result = dsa_dice_roll(dice);
+
+    dsa_dice_free(&dice);
+
+    return dice_result;
 }

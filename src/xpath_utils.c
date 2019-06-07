@@ -55,3 +55,25 @@ void max_xpath_func(xmlXPathParserContextPtr ctxt, int nargs) {
 	xmlXPathReturnNumber(ctxt, max_val);
 }
 
+void str_in_range_xpath_func(xmlXPathParserContextPtr ctxt, int nargs) {
+	if ( nargs != 2 ) return;
+	
+	xmlChar *value = xmlXPathPopString(ctxt);
+    if (xmlXPathCheckError(ctxt) || (value == NULL)) {
+        return;
+    }
+	
+	xmlChar *range = xmlXPathPopString(ctxt);
+    if (xmlXPathCheckError(ctxt) || (range == NULL)) {
+		xmlFree(range);
+        return;
+    }
+	
+
+	bool match = regex_range_match((const unsigned char *)range, (const unsigned char *)value);
+
+	xmlFree(range);
+	xmlFree(value);
+
+	xmlXPathReturnBoolean(ctxt, match);
+}

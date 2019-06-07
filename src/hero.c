@@ -77,6 +77,53 @@ static void __dsa_heros_inc_dec_value_raw(xml_ctx_t *hero_xml, const char * hero
 
 }
 
+static void __dsa_heros_set_col_raw(dsa_hero_t *hero, const unsigned char *color_type_name, const unsigned char *color_name) {
+    xml_ctx_t * heroxml = hero->xml;
+    
+    xmlXPathObjectPtr hair_color = xml_ctx_xpath_format(heroxml, "/hero/breedcontainer/breed/colortypes/colors[@name = '%s']/color[@name = '%s']", color_type_name, color_name);
+
+    if (xml_xpath_has_result(hair_color)) {
+
+        xml_ctx_remove_format(heroxml, "/hero/edit/breed/colors[@name = '%s']/color", color_type_name);
+
+        xml_ctx_nodes_add_node_xpath_format(hair_color->nodesetval->nodeTab[0], heroxml, "/hero/edit/breed/colors[@name = '%s']", color_type_name);
+
+    }
+
+    xmlXPathFreeObject(hair_color);
+}   
+
+static void __dsa_heros_set_col_dice_raw(dsa_hero_t *hero, const unsigned char *color_type_name) {
+    xml_ctx_t * heroxml = hero->xml;
+
+    xmlXPathObjectPtr dice_pattern = xml_ctx_xpath_format(heroxml, "/hero/breedcontainer/breed/colortypes/colors[@name = '%s']", color_type_name);
+
+    if (xml_xpath_has_result(dice_pattern)) {
+
+        xmlChar *dice_str = xmlGetProp(dice_pattern->nodesetval->nodeTab[0] , (xmlChar *)"dice");
+
+        int dice_result = dsa_dice_result(dice_str);
+
+        xmlFree(dice_str);
+
+        xmlXPathObjectPtr hair_color = xml_ctx_xpath_format(heroxml, "/hero/breedcontainer/breed/colortypes/colors[@name = '%s']/color[in_range(@value,'%i')]", color_type_name, dice_result);
+
+        if (xml_xpath_has_result(hair_color)) {
+
+            xml_ctx_remove_format(heroxml, "/hero/edit/breed/colors[@name = '%s']/color", color_type_name);
+
+            xml_ctx_nodes_add_node_xpath_format(hair_color->nodesetval->nodeTab[0], heroxml, "/hero/edit/breed/colors[@name = '%s']", color_type_name);
+
+        }
+
+        xmlXPathFreeObject(hair_color);
+
+    }
+
+    xmlXPathFreeObject(dice_pattern);
+
+}
+
 #if 0
 // ################################################################################################
 // EOF private Section
@@ -528,28 +575,12 @@ void dsa_heros_set_female(dsa_hero_t *hero) {
     xml_ctx_set_attr_str_xpath(hero->xml, (unsigned char *)"female", "/hero/@gender");
 }
 
-static void __dsa_heros_set_col_raw(dsa_hero_t *hero, const unsigned char *color_type_name, const unsigned char *color_name) {
-    xml_ctx_t * heroxml = hero->xml;
-    
-    xmlXPathObjectPtr hair_color = xml_ctx_xpath_format(heroxml, "/hero/breedcontainer/breed/colortypes/colors[@name = '%s']/color[@name = '%s']", color_type_name, color_name);
-
-    if (xml_xpath_has_result(hair_color)) {
-
-        xml_ctx_remove_format(heroxml, "/hero/edit/breed/colors[@name = '%s']/color", color_type_name);
-
-        xml_ctx_nodes_add_node_xpath_format(hair_color->nodesetval->nodeTab[0], heroxml, "/hero/edit/breed/colors[@name = '%s']", color_type_name);
-
-    }
-
-    xmlXPathFreeObject(hair_color);
-}   
-
 void dsa_heros_set_col_hair_by_name(dsa_hero_t *hero, const unsigned char *color_name) {
     __dsa_heros_set_col_raw(hero, (const unsigned char *)"Haarfarbe", color_name);
 }
 
 void dsa_heros_set_col_hair_by_dice(dsa_hero_t *hero) {
-
+    __dsa_heros_set_col_dice_raw(hero, (const unsigned char *)"Haarfarbe");
 }
 
 void dsa_heros_set_col_eye_by_name(dsa_hero_t *hero, const unsigned char *color_name) {
@@ -557,5 +588,5 @@ void dsa_heros_set_col_eye_by_name(dsa_hero_t *hero, const unsigned char *color_
 }
 
 void dsa_heros_set_col_eye_by_dice(dsa_hero_t *hero) {
-
+    __dsa_heros_set_col_dice_raw(hero, (const unsigned char *)"Augenfarbe");
 }

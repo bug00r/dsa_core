@@ -339,6 +339,47 @@ static void test_xml_ctx_add_node_xpath() {
 	DEBUG_LOG("<<<\n");
 }
 
+static void __search_and_dum_range_assert(xml_ctx_t *ctx, unsigned char *xpath, bool assert_val) {
+	
+	xmlXPathObjectPtr colres = xml_ctx_xpath(ctx, xpath);
+
+	assert(xml_xpath_has_result(colres) == assert_val);
+
+	#if debug > 1
+		const int maxNodes = colres->nodesetval->nodeNr;
+		xmlNodePtr *nodes = colres->nodesetval->nodeTab;
+		printf("%s found: %i \n", xpath, maxNodes);
+		for(int curNode = 0; curNode < maxNodes; ++curNode) {
+			xmlChar * val = xmlGetProp(nodes[curNode],(xmlChar*)"value");
+			xmlChar * name = xmlGetProp(nodes[curNode],(xmlChar*)"name");
+			printf("- %s %s\n", name, val);
+			xmlFree(val);
+			xmlFree(name);
+		}
+	#endif
+
+	xmlXPathFreeObject(colres);
+}
+
+static void test_xml_ctx_xpath_in_range() {
+	DEBUG_LOG_ARGS(">>> %s => %s\n", __FILE__, __func__);
+	
+	archive_resource_t* ar = archive_resource_memory(&_binary_zip_resource_7z_start, (size_t)&_binary_zip_resource_7z_size);
+	xml_source_t* result = xml_source_from_resname(ar, "breeds");
+	xml_ctx_t *nCtx = xml_ctx_new(result);
+
+	__search_and_dum_range_assert(nCtx, "/breeds/*//color[in_range(@value,'12')]", true);
+
+	__search_and_dum_range_assert(nCtx, "/breeds/*//color[in_range(@value,'4')]", true);
+
+	__search_and_dum_range_assert(nCtx, "/breeds/*//color[in_range(@value,'22')]", false);
+
+	free_xml_ctx_src(&nCtx);
+	archive_resource_free(&ar);
+
+	DEBUG_LOG("<<<\n");
+}
+
 
 int 
 main() 
@@ -358,8 +399,8 @@ main()
 
 	test_xml_ctx_xpath_format();
 
-	test_xml_ctx_add_node_xpath();
-	
+	test_xml_ctx_xpath_in_range();
+
 	DEBUG_LOG("<< end xml utils tests:\n");
 
 	return 0;

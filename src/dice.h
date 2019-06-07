@@ -44,5 +44,7 @@ void dsa_dice_free(dice_t **dice);
 
 int dsa_dice_roll(dice_t *dice);
 
+int dsa_dice_result(const char *dice_pattern);
+
 #endif
 
