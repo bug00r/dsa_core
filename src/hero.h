@@ -111,7 +111,11 @@ void dsa_heros_set_col_hair_by_dice(dsa_hero_t *hero);
 void dsa_heros_set_col_eye_by_name(dsa_hero_t *hero, const unsigned char *color_name);
 void dsa_heros_set_col_eye_by_dice(dsa_hero_t *hero);
 
-void dsa_heros_set_height_weight_by_value(dsa_hero_t *hero, const unsigned char *color_name);
+void dsa_heros_set_height_weight_by_value(dsa_hero_t *hero, const unsigned char *value);
 void dsa_heros_set_height_weight_by_dice(dsa_hero_t *hero);
+
+xmlXPathObjectPtr dsa_heros_get_breeds(dsa_heros_t *heros);
+xmlXPathObjectPtr dsa_heros_get_cultures(dsa_heros_t *heros);
+xmlXPathObjectPtr dsa_heros_get_professions(dsa_heros_t *heros);
 
 #endif
