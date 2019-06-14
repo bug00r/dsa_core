@@ -255,7 +255,7 @@ resource_file_t * resource_file_copy_deep(resource_file_t *file) {
 	return copy_file;
 }
 
-void resource_file_free(resource_file_t **file) {
+void nresource_file_free(resource_file_t **file) {
 
 	if ( file != NULL && *file != NULL ) {
 	
