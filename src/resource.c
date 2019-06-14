@@ -270,7 +270,7 @@ void resource_file_free(resource_file_t **file) {
 
 		free(to_deletefile);
 	
-		to_deletefile = NULL;
+		*file = NULL;
 	
 	}
 }

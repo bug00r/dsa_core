@@ -580,6 +580,22 @@ void dsa_heros_attr_dec(dsa_hero_t *hero, const unsigned char *short_name) {
     free(hero_edit_attr_xpath);
 }
 
+xmlChar * dsa_heros_get_name(const dsa_hero_t *hero) {
+    xmlChar * name = NULL;
+    if ( hero != NULL && hero->xml != NULL ) {
+        name = xmlGetProp(xmlDocGetRootElement(hero->xml->doc), (const xmlChar*)"name");
+    }
+    return name;
+}
+
+xmlChar * dsa_heros_get_id(const dsa_hero_t *hero) {
+    xmlChar * id = NULL;
+    if ( hero != NULL && hero->xml != NULL ) {
+        id = xmlGetProp(xmlDocGetRootElement(hero->xml->doc), (const xmlChar*)"id");
+    }
+    return id;
+}
+
 void dsa_heros_set_name(dsa_hero_t *hero, const unsigned char *name) {
     xml_ctx_set_attr_str_xpath(hero->xml, name, "/hero/@name");
 }
