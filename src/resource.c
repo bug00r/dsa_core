@@ -13,7 +13,7 @@ static void* __resource_reade_entry_data_byte(la_int64_t entry_size, struct arch
 
 	char * buffer = malloc(entry_size);
 	
-	for (;;) {
+	while (true) {
 		*status = archive_read_data_block(a, &buff, &size, &offset);
 
 		memcpy(buffer + offset, buff, size);
@@ -47,8 +47,6 @@ static resource_file_t* __resource_read_entry(struct archive *a, struct archive_
 		int data_read_status;
 		size_t readed_bytes;
 		unsigned char *data = __resource_read_entry_data_string(a, entry, &data_read_status, &readed_bytes);
-		
-		//char * copy_path = copy_string(entry_pathname);
 
 		result = resource_file_new(entry_pathname, data, readed_bytes);
 	
@@ -255,7 +253,7 @@ resource_file_t * resource_file_copy_deep(resource_file_t *file) {
 	return copy_file;
 }
 
-void nresource_file_free(resource_file_t **file) {
+void resource_file_free(resource_file_t **file) {
 
 	if ( file != NULL && *file != NULL ) {
 	
