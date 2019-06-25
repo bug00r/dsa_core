@@ -99,6 +99,10 @@ void dsa_heros_attr_dec(dsa_hero_t *hero, const unsigned char *short_name);
 
 xmlChar * dsa_heros_get_name(const dsa_hero_t *hero);
 xmlChar * dsa_heros_get_id(const dsa_hero_t *hero);
+xmlChar * dsa_heros_get_height(const dsa_hero_t *hero);
+xmlChar * dsa_heros_get_weight(const dsa_hero_t *hero);
+xmlChar * dsa_heros_get_hair_col(const dsa_hero_t *hero);
+xmlChar * dsa_heros_get_eye_col(const dsa_hero_t *hero);
 
 void dsa_heros_set_name(dsa_hero_t *hero, const unsigned char *name);
 void dsa_heros_set_gp(dsa_hero_t *hero, const unsigned char *gp);
@@ -120,5 +124,6 @@ void dsa_heros_set_height_weight_by_dice(dsa_hero_t *hero);
 xmlXPathObjectPtr dsa_heros_get_breeds(dsa_heros_t *heros);
 xmlXPathObjectPtr dsa_heros_get_cultures(dsa_heros_t *heros);
 xmlXPathObjectPtr dsa_heros_get_professions(dsa_heros_t *heros);
-
+xmlXPathObjectPtr dsa_heros_get_hair_colors(dsa_hero_t *hero);
+xmlXPathObjectPtr dsa_heros_get_eye_colors(dsa_hero_t *hero);
 #endif

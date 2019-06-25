@@ -254,4 +254,7 @@ void xml_ctx_set_attr_str_xpath_format(xml_ctx_t *ctx, const unsigned char *valu
 void xml_ctx_set_content_xpath(xml_ctx_t *ctx, const unsigned char *value, const char *xpath);
 void xml_ctx_set_content_xpath_format(xml_ctx_t *ctx, const unsigned char *value, const char *xpath_format, ...);
 
+xmlChar * xml_ctx_get_attr(xml_ctx_t *ctx, const unsigned char *attr_name, const char *xpath);
+xmlChar * xml_ctx_get_attr_format(xml_ctx_t *ctx, const unsigned char *attr_name, const char *xpath_format, ...);
+
 #endif

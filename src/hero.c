@@ -596,6 +596,29 @@ xmlChar * dsa_heros_get_id(const dsa_hero_t *hero) {
     return id;
 }
 
+xmlChar * dsa_heros_get_height(const dsa_hero_t *hero) {
+
+    return (hero != NULL ? xml_ctx_get_attr(hero->xml, (const unsigned char*)"value", (const char*)"/hero/edit/breed/height") : NULL); 
+}
+
+xmlChar * dsa_heros_get_weight(const dsa_hero_t *hero) {
+    
+    return (hero != NULL ? xml_ctx_get_attr(hero->xml, (const unsigned char*)"value", (const char*)"/hero/edit/breed/weight") : NULL); 
+
+}
+
+xmlChar * dsa_heros_get_hair_col(const dsa_hero_t *hero) {
+
+    return (hero != NULL ? xml_ctx_get_attr(hero->xml, (const unsigned char*)"name", (const char*)"/hero/edit/breed/colors[@name = 'Haarfarbe']/color") : NULL);
+ 
+}
+
+xmlChar * dsa_heros_get_eye_col(const dsa_hero_t *hero) {
+
+    return (hero != NULL ? xml_ctx_get_attr(hero->xml, (const unsigned char*)"name", (const char*)"/hero/edit/breed/colors[@name = 'Augenfarbe']/color") : NULL);
+
+}
+
 void dsa_heros_set_name(dsa_hero_t *hero, const unsigned char *name) {
     xml_ctx_set_attr_str_xpath(hero->xml, name, "/hero/@name");
 }
@@ -678,3 +701,12 @@ xmlXPathObjectPtr dsa_heros_get_cultures(dsa_heros_t *heros) {
 xmlXPathObjectPtr dsa_heros_get_professions(dsa_heros_t *heros) {
     return xml_ctx_xpath(heros->professions, "/professions//profession");
 }
+
+xmlXPathObjectPtr dsa_heros_get_hair_colors(dsa_hero_t *hero) {
+    return xml_ctx_xpath(hero->xml, "/hero/breedcontainer/breed/colortypes/colors[@name = 'Haarfarbe']/color");
+}
+
+xmlXPathObjectPtr dsa_heros_get_eye_colors(dsa_hero_t *hero) {
+    return xml_ctx_xpath(hero->xml, "/hero/breedcontainer/breed/colortypes/colors[@name = 'Augenfarbe']/color");
+}
+

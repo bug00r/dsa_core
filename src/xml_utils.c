@@ -513,3 +513,43 @@ void xml_ctx_set_content_xpath_format(xml_ctx_t *ctx, const unsigned char *value
 
     xmlXPathFreeObject(found);
 }
+
+xmlChar * xml_ctx_get_attr(xml_ctx_t *ctx, const unsigned char *attr_name, const char *xpath) {
+    
+    xmlChar *value = NULL;
+    
+    if (ctx != NULL) {
+
+        xmlXPathObjectPtr found = xml_ctx_xpath(ctx, xpath);
+
+        if (xml_xpath_has_result(found)) {
+            value = xmlGetProp(found->nodesetval->nodeTab[0], (const xmlChar*)attr_name);
+        }
+
+    }
+
+    return value;
+
+}
+
+xmlChar * xml_ctx_get_attr_format(xml_ctx_t *ctx, const unsigned char *attr_name, const char *xpath_format, ...) {
+    
+    xmlChar *value = NULL;
+    
+    if (ctx != NULL) {
+
+        va_list args;
+        va_start(args, xpath_format);
+
+        xmlXPathObjectPtr found = xml_ctx_xpath_format_va(ctx, xpath_format, args);
+
+        va_end(args);
+
+        if (xml_xpath_has_result(found)) {
+            value = xmlGetProp(found->nodesetval->nodeTab[0], (const xmlChar*)attr_name);
+        }
+    
+    }
+
+    return value;
+}
