@@ -588,6 +588,12 @@ xmlChar * dsa_heros_get_name(const dsa_hero_t *hero) {
     return name;
 }
 
+xmlChar * dsa_heros_get_gp(const dsa_hero_t *hero) {
+
+    return (hero != NULL ? xml_ctx_get_attr(hero->xml, (const unsigned char*)"value", (const char*)"/hero/config/base-gp") : NULL); 
+
+}
+
 xmlChar * dsa_heros_get_id(const dsa_hero_t *hero) {
     xmlChar * id = NULL;
     if ( hero != NULL && hero->xml != NULL ) {
@@ -599,6 +605,26 @@ xmlChar * dsa_heros_get_id(const dsa_hero_t *hero) {
 xmlChar * dsa_heros_get_height(const dsa_hero_t *hero) {
 
     return (hero != NULL ? xml_ctx_get_attr(hero->xml, (const unsigned char*)"value", (const char*)"/hero/edit/breed/height") : NULL); 
+
+}
+
+int dsa_heros_get_height_min(const dsa_hero_t *hero) {
+    xmlChar *dice = xml_ctx_get_attr(hero->xml, (const unsigned char*)"dice", (const char*)"/hero/breedcontainer/breed/body-height");
+    int value = dsa_dice_min_result((const char*)dice);
+    xmlFree(dice);
+    return value;
+}
+
+int dsa_heros_get_height_max(const dsa_hero_t *hero) {
+    xmlChar *dice = xml_ctx_get_attr(hero->xml, (const unsigned char*)"dice", (const char*)"/hero/breedcontainer/breed/body-height");
+    int value = dsa_dice_max_result((const char*)dice);
+    xmlFree(dice);
+    return value;
+}
+
+xmlChar * dsa_heros_get_base_height(const dsa_hero_t *hero) {
+
+    return (hero != NULL ? xml_ctx_get_attr(hero->xml, (const unsigned char*)"value", (const char*)"/hero/breedcontainer/breed/body-height") : NULL);
 }
 
 xmlChar * dsa_heros_get_weight(const dsa_hero_t *hero) {

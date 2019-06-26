@@ -98,8 +98,12 @@ void dsa_heros_attr_inc(dsa_hero_t *hero, const unsigned char *short_name);
 void dsa_heros_attr_dec(dsa_hero_t *hero, const unsigned char *short_name);
 
 xmlChar * dsa_heros_get_name(const dsa_hero_t *hero);
+xmlChar * dsa_heros_get_gp(const dsa_hero_t *hero);
 xmlChar * dsa_heros_get_id(const dsa_hero_t *hero);
 xmlChar * dsa_heros_get_height(const dsa_hero_t *hero);
+int dsa_heros_get_height_min(const dsa_hero_t *hero);
+int dsa_heros_get_height_max(const dsa_hero_t *hero);
+xmlChar * dsa_heros_get_base_height(const dsa_hero_t *hero);
 xmlChar * dsa_heros_get_weight(const dsa_hero_t *hero);
 xmlChar * dsa_heros_get_hair_col(const dsa_hero_t *hero);
 xmlChar * dsa_heros_get_eye_col(const dsa_hero_t *hero);

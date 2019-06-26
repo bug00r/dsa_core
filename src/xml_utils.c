@@ -526,6 +526,8 @@ xmlChar * xml_ctx_get_attr(xml_ctx_t *ctx, const unsigned char *attr_name, const
             value = xmlGetProp(found->nodesetval->nodeTab[0], (const xmlChar*)attr_name);
         }
 
+        xmlXPathFreeObject(found);
+
     }
 
     return value;
@@ -548,6 +550,8 @@ xmlChar * xml_ctx_get_attr_format(xml_ctx_t *ctx, const unsigned char *attr_name
         if (xml_xpath_has_result(found)) {
             value = xmlGetProp(found->nodesetval->nodeTab[0], (const xmlChar*)attr_name);
         }
+
+        xmlXPathFreeObject(found);
     
     }
 

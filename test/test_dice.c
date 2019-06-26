@@ -45,6 +45,11 @@ static void test_dice_alloc_free() {
 	assert(dice->first->data.max == 3);
 	assert(dsa_dice_roll(dice) == 3);
 
+	DEBUG_LOG_ARGS("cnt from constant: %i\n", dice->first->data.cnt);
+
+	assert(dsa_dice_min(dice) == 3);
+	assert(dsa_dice_max(dice) == 3);
+
 	dsa_dice_free(&dice);
 
 	dice = dsa_dice_new("-3");
@@ -53,6 +58,9 @@ static void test_dice_alloc_free() {
 	assert(dice->first->data.factor == -1);
 	assert(dice->first->data.max == 3);
 	assert(dsa_dice_roll(dice) == -3);
+
+	assert(dsa_dice_min(dice) == -3);
+	assert(dsa_dice_max(dice) == -3);
 
 	dsa_dice_free(&dice);
 
@@ -65,6 +73,9 @@ static void test_dice_alloc_free() {
 	assert(dice->first->next == NULL);
 	int result = dsa_dice_roll(dice);
 
+	assert(dsa_dice_min(dice) == 2);
+	assert(dsa_dice_max(dice) == 12);
+
 	#if debug > 0
 		for (int i = 0; i < 10 ; ++i) {
 			printf("2w6 roll = %i\n",dsa_dice_roll(dice));
@@ -76,6 +87,9 @@ static void test_dice_alloc_free() {
 	dsa_dice_free(&dice);
 
 	dice = dsa_dice_new("-2w6");
+
+	assert(dsa_dice_min(dice) == -12);
+	assert(dsa_dice_max(dice) == -2);
 
 	assert(dice->first != NULL);
 	assert(dice->first->data.factor == -1);
@@ -108,6 +122,9 @@ static void test_dice_alloc_free() {
 	assert(dice->first->next->next == NULL);
 	result = dsa_dice_roll(dice);
 
+	assert(dsa_dice_min(dice) == 12);
+	assert(dsa_dice_max(dice) == 12);
+
 	#if debug > 0
 		for (int i = 0; i < 10 ; ++i) {
 			printf("6+6 roll = %i\n",dsa_dice_roll(dice));
@@ -132,6 +149,9 @@ static void test_dice_alloc_free() {
 	assert(dice->first->next->next == NULL);
 	result = dsa_dice_roll(dice);
 
+	assert(dsa_dice_min(dice) == -12);
+	assert(dsa_dice_max(dice) == -12);
+
 	#if debug > 0
 		for (int i = 0; i < 10 ; ++i) {
 			printf("-6-6 roll = %i\n",dsa_dice_roll(dice));
@@ -154,6 +174,9 @@ static void test_dice_alloc_free() {
 	assert(dice->first->next->data.max == 6);
 	assert(dice->first->next->next == NULL);
 	result = dsa_dice_roll(dice);
+
+	assert(dsa_dice_min(dice) == 4);
+	assert(dsa_dice_max(dice) == 24);
 
 	#if debug > 0
 		for (int i = 0; i < 10 ; ++i) {
@@ -178,6 +201,9 @@ static void test_dice_alloc_free() {
 	assert(dice->first->next->next == NULL);
 	result = dsa_dice_roll(dice);
 
+	assert(dsa_dice_min(dice) == -24);
+	assert(dsa_dice_max(dice) == -4);
+
 	#if debug > 0
 		for (int i = 0; i < 10 ; ++i) {
 			printf("-2w6-2w6 roll = %i\n",dsa_dice_roll(dice));
@@ -200,6 +226,9 @@ static void test_dice_alloc_free() {
 	assert(dice->first->next->data.max == 5);
 	assert(dice->first->next->next == NULL);
 	result = dsa_dice_roll(dice);
+
+	assert(dsa_dice_min(dice) == 10);
+	assert(dsa_dice_max(dice) == 35);
 
 	#if debug > 0
 		for (int i = 0; i < 10 ; ++i) {
@@ -227,6 +256,9 @@ static void test_dice_alloc_free() {
 	assert(dice->first->next->next->data.max == 4);
 	assert(dice->first->next->next->next == NULL);
 	result = dsa_dice_roll(dice);
+
+	assert(dsa_dice_min(dice) == 12);
+	assert(dsa_dice_max(dice) == 64);
 
 	#if debug > 0
 		printf("new part:\n");
@@ -265,6 +297,11 @@ static void test_dice_alloc_free() {
 	assert(dice->first->next->next->next->next->data.max == 5);
 	assert(dice->first->next->next->next->next->next == NULL);
 
+	assert(dsa_dice_min(dice) == -18);
+	assert(dsa_dice_max(dice) == 64);
+	
+	
+
 	result = dsa_dice_roll(dice);
 
 	#if debug > 0
@@ -286,6 +323,9 @@ static void test_dice_alloc_free() {
 	assert(dice->first->data.max == 20);
 	assert(dice->first->next == NULL);
 	result = dsa_dice_roll(dice);
+
+	assert(dsa_dice_min(dice) == 1);
+	assert(dsa_dice_max(dice) == 20);
 
 	#if debug > 0
 		printf("W20 roll = %i\n",result);	

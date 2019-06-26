@@ -386,11 +386,16 @@ static void __dsa_dice_parse(dice_t *dice) {
 
 
 dice_t* dsa_dice_new(const char *dice_pattern) {
-    dice_t* newdice = malloc(sizeof(dice_t));
-    newdice->raw = copy_string(dice_pattern);
-    newdice->first = NULL;
-    newdice->last = NULL;
-    __dsa_dice_parse(newdice);
+
+    dice_t* newdice = NULL;
+
+    if (dice_pattern != NULL) {
+        newdice = malloc(sizeof(dice_t));
+        newdice->raw = copy_string(dice_pattern);
+        newdice->first = NULL;
+        newdice->last = NULL;
+        __dsa_dice_parse(newdice);
+    }
 
     return newdice;
 }
@@ -418,9 +423,9 @@ int dsa_dice_roll(dice_t *dice) {
     int result = 0;
     
     dice_item_t *cur_item = dice->first;
-    dice_item_t *next_item = NULL;
+
     while(cur_item != NULL) {
-        next_item = cur_item->next;
+
         int current =  cur_item->get_value(&cur_item->data);
 
         #if debug > 1
@@ -429,7 +434,7 @@ int dsa_dice_roll(dice_t *dice) {
 
         result += current;
 
-        cur_item = next_item;
+        cur_item = cur_item->next;
     }
 
     return result;
@@ -443,4 +448,62 @@ int dsa_dice_result(const char *dice_pattern) {
     dsa_dice_free(&dice);
 
     return dice_result;
+}
+
+static int __dsa_dice_min(dice_item_data_t *data) {
+
+    return data->factor * 
+          ( data->cnt == 0 ? 1 : data->cnt) * 
+          ( data->cnt == 0 ? data->max : ( data->factor > 0 ? 1 : data->max) );
+}
+
+static int __dsa_dice_max(dice_item_data_t *data) {
+    return data->factor * 
+          ( data->cnt == 0 ? 1 : data->cnt) * 
+          ( data->cnt == 0 ? data->max : ( data->factor > 0 ? data->max : 1) );
+}
+
+static int __dsa_dice_minmax(dice_t *dice, int (*diceminmax)(dice_item_data_t *data) ) {
+    int result = 0;
+    
+    if (dice != NULL) {
+
+        dice_item_t *cur_item = dice->first;
+
+        while(cur_item != NULL) {
+
+            #if debug > 1
+                printf("single Dice: %i\n", current);
+            #endif
+
+            result += diceminmax(&cur_item->data);
+
+            cur_item = cur_item->next;
+        }
+
+    }
+
+    return result;
+}
+
+int dsa_dice_min(dice_t *dice) {
+    return __dsa_dice_minmax(dice, __dsa_dice_min);
+}
+
+int dsa_dice_min_result(const char *dice_pattern) {
+    dice_t* dice = dsa_dice_new(dice_pattern);
+    int min = dsa_dice_min(dice);
+    dsa_dice_free(&dice);
+    return min;
+}
+
+int dsa_dice_max(dice_t *dice) {
+    return __dsa_dice_minmax(dice, __dsa_dice_max);
+}
+
+int dsa_dice_max_result(const char *dice_pattern) {
+    dice_t* dice = dsa_dice_new(dice_pattern);
+    int max = dsa_dice_max(dice);
+    dsa_dice_free(&dice);
+    return max;
 }

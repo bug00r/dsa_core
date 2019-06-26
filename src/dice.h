@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+#include "dsa_core_defs.h"
+
 #include "string_utils.h"
 #include "number_utils.h"
 
@@ -45,6 +47,12 @@ void dsa_dice_free(dice_t **dice);
 int dsa_dice_roll(dice_t *dice);
 
 int dsa_dice_result(const char *dice_pattern);
+
+int dsa_dice_min(dice_t *dice);
+int dsa_dice_min_result(const char *dice_pattern);
+
+int dsa_dice_max(dice_t *dice);
+int dsa_dice_max_result(const char *dice_pattern);
 
 #endif
 
