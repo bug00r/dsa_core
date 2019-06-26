@@ -377,6 +377,41 @@ static void __dsa_dice_parse(dice_t *dice) {
     } while (ps.state != DSA_DICE_PARSER_CHUNK_ERROR && ps.state != DSA_DICE_PARSER_END);
 }
 
+static int __dsa_dice_min(dice_item_data_t *data) {
+
+    return data->factor * 
+          ( data->cnt == 0 ? 1 : data->cnt) * 
+          ( data->cnt == 0 ? data->max : ( data->factor > 0 ? 1 : data->max) );
+}
+
+static int __dsa_dice_max(dice_item_data_t *data) {
+    return data->factor * 
+          ( data->cnt == 0 ? 1 : data->cnt) * 
+          ( data->cnt == 0 ? data->max : ( data->factor > 0 ? data->max : 1) );
+}
+
+static int __dsa_dice_minmax(dice_t *dice, int (*diceminmax)(dice_item_data_t *data) ) {
+    int result = 0;
+    
+    if (dice != NULL) {
+
+        dice_item_t *cur_item = dice->first;
+
+        while(cur_item != NULL) {
+
+            #if debug > 1
+                printf("single Dice: %i\n", current);
+            #endif
+
+            result += diceminmax(&cur_item->data);
+
+            cur_item = cur_item->next;
+        }
+
+    }
+
+    return result;
+}
 
 #if 0
 //######################################################################################################
@@ -448,42 +483,6 @@ int dsa_dice_result(const char *dice_pattern) {
     dsa_dice_free(&dice);
 
     return dice_result;
-}
-
-static int __dsa_dice_min(dice_item_data_t *data) {
-
-    return data->factor * 
-          ( data->cnt == 0 ? 1 : data->cnt) * 
-          ( data->cnt == 0 ? data->max : ( data->factor > 0 ? 1 : data->max) );
-}
-
-static int __dsa_dice_max(dice_item_data_t *data) {
-    return data->factor * 
-          ( data->cnt == 0 ? 1 : data->cnt) * 
-          ( data->cnt == 0 ? data->max : ( data->factor > 0 ? data->max : 1) );
-}
-
-static int __dsa_dice_minmax(dice_t *dice, int (*diceminmax)(dice_item_data_t *data) ) {
-    int result = 0;
-    
-    if (dice != NULL) {
-
-        dice_item_t *cur_item = dice->first;
-
-        while(cur_item != NULL) {
-
-            #if debug > 1
-                printf("single Dice: %i\n", current);
-            #endif
-
-            result += diceminmax(&cur_item->data);
-
-            cur_item = cur_item->next;
-        }
-
-    }
-
-    return result;
 }
 
 int dsa_dice_min(dice_t *dice) {
