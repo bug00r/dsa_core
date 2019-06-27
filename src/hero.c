@@ -645,6 +645,12 @@ xmlChar * dsa_heros_get_eye_col(const dsa_hero_t *hero) {
 
 }
 
+xmlChar * dsa_heros_get_attr(const dsa_hero_t *hero, const unsigned char *short_name) {
+
+    return (hero != NULL ? xml_ctx_get_attr_format(hero->xml, (const unsigned char*)"value", (const char*)"/hero/edit/attributes/attribute[@shortname = '%s']", short_name) : NULL);
+
+}
+
 void dsa_heros_set_name(dsa_hero_t *hero, const unsigned char *name) {
     xml_ctx_set_attr_str_xpath(hero->xml, name, "/hero/@name");
 }

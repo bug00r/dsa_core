@@ -107,6 +107,7 @@ xmlChar * dsa_heros_get_base_height(const dsa_hero_t *hero);
 xmlChar * dsa_heros_get_weight(const dsa_hero_t *hero);
 xmlChar * dsa_heros_get_hair_col(const dsa_hero_t *hero);
 xmlChar * dsa_heros_get_eye_col(const dsa_hero_t *hero);
+xmlChar * dsa_heros_get_attr(const dsa_hero_t *hero, const unsigned char *short_name);
 
 void dsa_heros_set_name(dsa_hero_t *hero, const unsigned char *name);
 void dsa_heros_set_gp(dsa_hero_t *hero, const unsigned char *gp);

@@ -14,7 +14,7 @@
 		<attribute name="Gewandheit" shortname="GE" value="8" />
 		<attribute name="Fingerfertigkeit" shortname="FF" value="8" />
 		<attribute name="Intuition" shortname="IN" value="8" />
-		<attribute name="Konstitution" shortname="IN" value="8" />
+		<attribute name="Konstitution" shortname="KO" value="8" />
 		<attribute name="Charisma" shortname="CH" value="8" />
 		<attribute name="Sozialstatus" shortname="SO" value="0" />
 	</attributes>
@@ -97,7 +97,7 @@
 			<attribute name="Gewandheit" shortname="GE" value="0" />
 			<attribute name="Fingerfertigkeit" shortname="FF" value="0" />
 			<attribute name="Intuition" shortname="IN" value="0" />
-			<attribute name="Konstitution" shortname="IN" value="0" />
+			<attribute name="Konstitution" shortname="KO" value="0" />
 			<attribute name="Charisma" shortname="CH" value="0" />
 			<attribute name="Sozialstatus" shortname="SO" value="0" />
 		</attributes>
