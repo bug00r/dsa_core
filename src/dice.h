@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#include "dsa_core_defs.h"
+#include "defs.h"
 
 #include "string_utils.h"
 #include "number_utils.h"

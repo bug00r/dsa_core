@@ -5,7 +5,7 @@
 
 #include "hero.h"
 
-#include "dsa_core_defs.h"
+#include "defs.h"
 
 EXTERN_BLOB(zip_resource, 7z);
 
