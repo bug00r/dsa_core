@@ -15,60 +15,6 @@ static const int tawvalues[9][35] = {
 static const unsigned int coloffset = 3;
 static const int lowest_taw_limit = -3;
 static const int highest_taw_limit = 31;
-/**
-     labels: dsa.resources.text.labels,
-    tawcols : ["A*", "A", "B", "C", "D", "E", "F", "G", "H"],
-    tawcolobj : {},
-    taw: { min: -3, max: 31},
-    selected: { col: 0, min: -3, max: -3, talent: -1},
-    coloffset : 3,
-
-
-
-    calcTawRaw: function(item) {
-      let _min = Math.max(Number(item.min), this.taw.min);
-      let _max = Math.min(Number(item.max), this.taw.max);
-      let range = _max - _min;
-      let add = ( range < 0 ? -1 : 1 );
-      let result = 0;
-      let selectedcol = Number(item.col);
-
-      for (let cur = (_min + 1); cur <= _max; cur += add) {
-        
-        result += this.tawvalues[selectedcol][cur + this.coloffset];
-
-      }
-
-      return result;
-    },
-    calcTaw: function() {
-        
-        let _min = Math.max(Number(this.selected.min), this.taw.min);
-        let _max = Math.min(Number(this.selected.max), this.taw.max);
-
-        let selectedcol = Number(this.selected.col);      
-
-        return this.calcTawRaw({ min: _min, max: _max, col: selectedcol});
-    },
-
-
-    typedef struct {            
-    int start;         
-    int end;            
-    unsigned int ap;    
-    } taw_result_item_t;
-
-    typedef struct {
-        taw_result_item_t *complete;    
-        unsigned int cnt_details;     
-        taw_result_item_t *details;   
-    } taw_result_t;
-
-    typedef enum {
-        A_, A, B, C, D, E, F, G, H 
-    } taw_col_t;
-
-*/
 
 static taw_result_t* taw_result_new() {
     taw_result_t *result = malloc(sizeof(taw_result_t));
