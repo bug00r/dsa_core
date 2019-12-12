@@ -21,7 +21,7 @@ REGEX_LIBS=pcre2-8
 #this c flags is used by regex lib
 CFLAGS+=-DPCRE2_STATIC
 
-OS_LIBS=kernel32 user32 gdi32 winspool comdlg32 advapi32 shell32 uuid ole32 oleaut32 comctl32 ws2_32
+OS_LIBS=kernel32 user32 gdi32 winspool comdlg32 advapi32 shell32 uuid ole32 oleaut32 comctl32 ws2_32 zstd
 
 USED_LIBS=$(patsubst %,-l%, dsa_core utils $(REGEX_LIBS) $(THIRD_PARTY_LIBS) $(OS_LIBS) )
 

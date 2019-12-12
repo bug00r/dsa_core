@@ -62,7 +62,7 @@ static void test_heros_add_hero() {
 	dsa_hero_t *baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
 	dsa_hero_free(&baradon);
 
-	baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon");
+	baradon = dsa_hero_new(heros, (const unsigned char*)"Baradon der Zweite");
 	dsa_hero_free(&baradon);
 
 	baradon = dsa_hero_new(heros, (const unsigned char*)"Ellidon");
@@ -135,10 +135,17 @@ static void test_heros_add_hero() {
 	dsa_hero_free(&found);
 
 	dsa_heros_delete_hero(heros, 0);
-	dsa_heros_delete_hero(heros, 2);
 	dsa_heros_delete_hero(heros, 3);
 
+	found = dsa_hero_get(heros, 2);
+	dsa_heros_delete_hero_obj(heros, found);
+
+	found = dsa_hero_get(heros, 2);
+
+	assert(found == NULL);
+
 	#if debug > 0
+		printf("TEST OUT DELETED HEROS");
 		xmlSaveFileEnc("-", heros->heros->doc,"UTF-8");
 	#endif
 

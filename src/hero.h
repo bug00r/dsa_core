@@ -59,6 +59,7 @@ void dsa_heros_save_hero(dsa_heros_t *heros, const dsa_hero_t *hero);
 
 //deletes hero by id.
 void dsa_heros_delete_hero(dsa_heros_t *heros, const int id);
+void dsa_heros_delete_hero_obj(dsa_heros_t *heros, dsa_hero_t *hero);
 
 void dsa_heros_add_breed(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);
 void dsa_heros_add_culture(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);

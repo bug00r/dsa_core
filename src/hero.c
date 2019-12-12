@@ -368,6 +368,20 @@ void dsa_heros_delete_hero(dsa_heros_t *heros, const int id) {
 
 }
 
+void dsa_heros_delete_hero_obj(dsa_heros_t *heros, dsa_hero_t *hero) {
+
+    if ( heros != NULL && hero != NULL ) {
+        
+        xmlChar * id_str = dsa_heros_get_id(hero);
+        
+        int id = atoi((char *)id_str);
+        
+        dsa_heros_delete_hero(heros, id);
+        
+        xmlFree(id_str);
+    }
+
+}
 
 void dsa_heros_add_breed(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
     if (heros != NULL && hero != NULL) {
