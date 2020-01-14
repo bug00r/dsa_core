@@ -21,7 +21,7 @@
 					<color name="schwarz" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.6" dice="2w20" />
+			<body-height name="Körpergröße" value="160" dice="2w20" />
 			<body-weight name="Gewicht" value="-100" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="10" type="LeP" />
@@ -83,7 +83,7 @@
 					<color name="blau" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.55" dice="2w20" />
+			<body-height name="Körpergröße" value="155" dice="2w20" />
 			<body-weight name="Gewicht" value="-105" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="10" type="LeP" />
@@ -154,8 +154,8 @@
 					<color name="blau" value="19-20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" version="Thorwaler.Fjarninger" value="1.68" dice="2w20" />
-			<body-height name="Körpergröße" version="Gjalskerländer" value="1.73" dice="2w20" />
+			<body-height name="Körpergröße" version="Thorwaler.Fjarninger" value="168" dice="2w20" />
+			<body-height name="Körpergröße" version="Gjalskerländer" value="173" dice="2w20" />
 			<body-weight name="Gewicht" value="-95" type="Stein" />
 			<mods>
 				<le><mod name="LeP" value="10" /></le>
@@ -235,7 +235,7 @@
 					<color name="grau" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.55" dice="2w20" />
+			<body-height name="Körpergröße" value="155" dice="2w20" />
 			<body-weight name="Gewicht" value="-110" type="Stein" />
 			<mods>
 				<le><mod name="LeP" value="9" /></le>
@@ -317,7 +317,7 @@
 					<color name="blau" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.58" dice="2w20" />
+			<body-height name="Körpergröße" value="158" dice="2w20" />
 			<body-weight name="Gewicht" value="-100" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="11" type="LeP" />
@@ -394,7 +394,7 @@
 					<color name="grau" value="19" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.95" dice="w20" />
+			<body-height name="Körpergröße" value="195" dice="w20" />
 			<body-weight name="Gewicht" value="-100" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="11" type="LeP" />
@@ -474,7 +474,7 @@
 					<color name="grau" value="19" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="2.15" dice="w20" />
+			<body-height name="Körpergröße" value="215" dice="w20" />
 			<body-weight name="Gewicht" value="-95" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="12" type="LeP" />
@@ -551,7 +551,7 @@
 					<color name="schwarz" value="11-20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.52" dice="3w6" />
+			<body-height name="Körpergröße" value="152" dice="3w6" />
 			<body-weight name="Gewicht" value="-110" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="8" type="LeP" />
@@ -634,7 +634,7 @@
 					<color name="schwarz" value="11-20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.42" dice="3w6" />
+			<body-height name="Körpergröße" value="142" dice="3w6" />
 			<body-weight name="Gewicht" value="-110" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="8" type="LeP" />
@@ -717,7 +717,7 @@
 					<color name="schwarz" value="11-20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.65" dice="2w20" />
+			<body-height name="Körpergröße" value="165" dice="2w20" />
 			<body-weight name="Gewicht" value="-110" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="11" type="LeP" />
@@ -813,7 +813,7 @@
 					<color name="amethystfarben" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.68" dice="2w20" />
+			<body-height name="Körpergröße" value="168" dice="2w20" />
 			<body-weight name="Gewicht" value="-120" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="6" type="LeP" />
@@ -941,7 +941,7 @@
 					<color name="amethystviolett" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.66" dice="2w20+4w6" />
+			<body-height name="Körpergröße" value="166" dice="2w20+4w6" />
 			<body-weight name="Gewicht" value="-120" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="6" type="LeP" />
@@ -1068,7 +1068,7 @@
 					<color name="rubinrot" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.56" dice="2w20" />
+			<body-height name="Körpergröße" value="156" dice="2w20" />
 			<body-weight name="Gewicht" value="-120" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="7" type="LeP" />
@@ -1202,7 +1202,7 @@
 					<color name="goldgesprenkelt" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.58" dice="w20+4w6" />
+			<body-height name="Körpergröße" value="158" dice="w20+4w6" />
 			<body-weight name="Gewicht" value="-120" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="8" type="LeP" />
@@ -1310,7 +1310,7 @@
 					<color name="goldgesprenkelt" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.58" dice="w20+4w6" />
+			<body-height name="Körpergröße" value="158" dice="w20+4w6" />
 			<body-weight name="Gewicht" value="-120" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="8" type="LeP" />
@@ -1419,7 +1419,7 @@
 					<color name="goldgesprenkelt" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.58" dice="w20+4w6" />
+			<body-height name="Körpergröße" value="158" dice="w20+4w6" />
 			<body-weight name="Gewicht" value="-120" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="8" type="LeP" />
@@ -1532,7 +1532,7 @@
 					<color name="goldgesprenkelt" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.58" dice="w20+4w6" />
+			<body-height name="Körpergröße" value="158" dice="w20+4w6" />
 			<body-weight name="Gewicht" value="-120" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="9" type="LeP" />
@@ -1637,7 +1637,7 @@
 					<color name="schwarz" value="15-20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.28" dice="2w6" />
+			<body-height name="Körpergröße" value="128" dice="2w6" />
 			<body-weight name="Gewicht" value="-80" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="11" type="LeP" />
@@ -1767,7 +1767,7 @@
 					<color name="schwarz" value="15-20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.28" dice="2w6" />
+			<body-height name="Körpergröße" value="128" dice="2w6" />
 			<body-weight name="Gewicht" value="-80" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="10" type="LeP" />
@@ -1897,7 +1897,7 @@
 					<color name="schwarz" value="15-20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.28" dice="2w6" />
+			<body-height name="Körpergröße" value="128" dice="2w6" />
 			<body-weight name="Gewicht" value="-80" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="12" type="LeP" />
@@ -2027,7 +2027,7 @@
 					<color name="schwarz" value="15-20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.28" dice="2w6" />
+			<body-height name="Körpergröße" value="128" dice="2w6" />
 			<body-weight name="Gewicht" value="-80" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="12" type="LeP" />
@@ -2141,7 +2141,7 @@
 					<color name="schwarz" value="17-20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.50" dice="3w6" />
+			<body-height name="Körpergröße" value="150" dice="3w6" />
 			<body-weight name="Gewicht" value="-95" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="12" type="LeP" />
@@ -2268,7 +2268,7 @@
 					<color name="schwarz" value="17-20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.45" dice="3w6" />
+			<body-height name="Körpergröße" value="145" dice="3w6" />
 			<body-weight name="Gewicht" value="-90" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="10" type="LeP" />
@@ -2395,7 +2395,7 @@
 					<color name="schwarz" value="14-20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.60" dice="4w6" />
+			<body-height name="Körpergröße" value="160" dice="4w6" />
 			<body-weight name="Gewicht" value="-90" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="11" type="LeP" />
@@ -2507,7 +2507,7 @@
 					<color name="rotviolett" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.35" dice="4w6" />
+			<body-height name="Körpergröße" value="135" dice="4w6" />
 			<body-weight name="Gewicht" value="-100" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="4" type="LeP" />
@@ -2648,7 +2648,7 @@
 					<color name="rotviolett" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.35" dice="4w6" />
+			<body-height name="Körpergröße" value="135" dice="4w6" />
 			<body-weight name="Gewicht" value="-100" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="4" type="LeP" />
@@ -2793,7 +2793,7 @@
 					<color name="kupfern" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.67" dice="3w6" />
+			<body-height name="Körpergröße" value="167" dice="3w6" />
 			<body-weight name="Gewicht" value="-120" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="8" type="LeP" />
@@ -2950,7 +2950,7 @@
 					<color name="kupfern" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.59" dice="3w6" />
+			<body-height name="Körpergröße" value="159" dice="3w6" />
 			<body-weight name="Gewicht" value="-120" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="8" type="LeP" />
@@ -3098,7 +3098,7 @@
 					<color name="kupfern" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="2.07" dice="3w6" />
+			<body-height name="Körpergröße" value="207" dice="3w6" />
 			<body-weight name="Gewicht" value="-130" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="15" type="LeP" />
@@ -3254,7 +3254,7 @@
 					<color name="kupfern" value="20" />
 				</colors>
 			</colortypes>
-			<body-height name="Körpergröße" value="1.72" dice="3w6" />
+			<body-height name="Körpergröße" value="172" dice="3w6" />
 			<body-weight name="Gewicht" value="-120" type="Stein" />
 			<mods>
 				<le name="LE-Mod" value="8" type="LeP" />

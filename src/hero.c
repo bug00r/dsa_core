@@ -141,11 +141,11 @@ static void __dsa_heros_set_hw_raw(dsa_hero_t *hero, float heightadd, xmlXPathOb
         float height = atof((const char*)hvalue);
         float weight = atof((const char*)wvalue);
 
-        height += (heightadd/100.f);
-        weight += (height*100.f);
+        height += heightadd;
+        weight += height;
 
         unsigned char *strweight = (unsigned char *)format_string_new("%i",(int)weight); 
-        unsigned char *strheight = (unsigned char *)format_string_new("%.2f",height); 
+        unsigned char *strheight = (unsigned char *)format_string_new("%.2f",height/100.f); 
 
         xml_ctx_set_attr_str_xpath(hero->xml, (const unsigned char *)strheight, "/hero/edit/breed/height/@value");
         xml_ctx_set_attr_str_xpath(hero->xml, (const unsigned char *)strweight, "/hero/edit/breed/weight/@value");
