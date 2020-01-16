@@ -717,16 +717,18 @@ void dsa_heros_set_height_weight_by_value(dsa_hero_t *hero, const unsigned char 
     __dsa_heros_set_hw_raw(hero, atof((const char *)value), NULL);
 }
 
-void dsa_heros_set_height_weight_by_dice(dsa_hero_t *hero) {
+int dsa_heros_set_height_weight_by_dice(dsa_hero_t *hero) {
     xml_ctx_t *heroxml = hero->xml;
 
     xmlXPathObjectPtr height_res = xml_ctx_xpath(heroxml, "/hero/breedcontainer/breed/body-height");
+
+    int dice_result = 0;
 
     if (xml_xpath_has_result(height_res)) {
         
         xmlChar *hdpattern = xmlGetProp(height_res->nodesetval->nodeTab[0],(xmlChar*)"dice");
         
-        int dice_result = dsa_dice_result((const char *)hdpattern);
+        dice_result = dsa_dice_result((const char *)hdpattern);
         
         xmlFree(hdpattern);
  
@@ -734,6 +736,8 @@ void dsa_heros_set_height_weight_by_dice(dsa_hero_t *hero) {
     }
 
     xmlXPathFreeObject(height_res);
+
+    return dice_result;
 }
 
 xmlXPathObjectPtr dsa_heros_get_breeds(dsa_heros_t *heros) {
