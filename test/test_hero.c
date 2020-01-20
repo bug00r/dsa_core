@@ -499,6 +499,9 @@ static void	test_heros_add_profession(){
 		xmlSaveFileEnc("-", baradon->xml->doc,"UTF-8");
 	#endif
 	
+	dsa_heros_add_pro_calc_group(heros, baradon, (const unsigned char *)"Ausrüstungsvorteil");
+	dsa_heros_add_pro_calc_group(heros, baradon, (const unsigned char *)"Astrale Regeneration III");
+
 	dsa_hero_free(&baradon);
 
 	dsa_heros_free(&heros);

@@ -400,6 +400,7 @@ void dsa_heros_add_culture(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned 
         free(src_xpath);
     }
 }
+
 void dsa_heros_add_profession(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
     if (heros != NULL && hero != NULL) {
         char *src_xpath = format_string_new("/professions//profession[@name = '%s']", name);
@@ -422,6 +423,15 @@ void dsa_heros_add_pro(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char
         free(dst_xpath);
     }
 
+}
+
+void dsa_heros_add_pro_calc_group(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
+
+    xmlChar *foundGroup = xml_ctx_get_attr_format((xml_ctx_t*)heros->pro_contra, (const unsigned char*)"name", (const char*)"/procontra//pro[@name = '%s']/..", name);
+    
+    dsa_heros_add_pro(heros, hero, (const unsigned char*)foundGroup, name);
+    
+    xmlFree(foundGroup);
 }
 
 void dsa_heros_remove_pro(dsa_hero_t *hero, const unsigned char *name) {

@@ -66,6 +66,7 @@ void dsa_heros_add_culture(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned 
 void dsa_heros_add_profession(dsa_heros_t *heros,  dsa_hero_t *hero, const unsigned char *name);
 
 void dsa_heros_add_pro(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name);
+void dsa_heros_add_pro_calc_group(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);
 void dsa_heros_remove_pro(dsa_hero_t *hero, const unsigned char *name);
 
 void dsa_heros_add_contra(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name);
