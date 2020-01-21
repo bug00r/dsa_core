@@ -70,9 +70,11 @@ void dsa_heros_add_pro_calc_group(dsa_heros_t *heros, dsa_hero_t *hero, const un
 void dsa_heros_remove_pro(dsa_hero_t *hero, const unsigned char *name);
 
 void dsa_heros_add_contra(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name);
+void dsa_heros_add_contra_calc_group(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);
 void dsa_heros_remove_contra(dsa_hero_t *hero, const unsigned char *name);
 
 void dsa_heros_add_specialability(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name);
+void dsa_heros_add_specialability_calc_group(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name);
 void dsa_heros_remove_specialability(dsa_hero_t *hero, const unsigned char *name);
 
 void dsa_heros_add_talent(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name);

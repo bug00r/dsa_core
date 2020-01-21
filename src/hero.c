@@ -412,7 +412,7 @@ void dsa_heros_add_profession(dsa_heros_t *heros, dsa_hero_t *hero, const unsign
 
 void dsa_heros_add_pro(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name) {
     
-    if (!xml_ctx_exist_format(hero->xml, "/hero/procontainer/pro[@name = '%s']", name)) {
+    if (!xml_ctx_exist_format(hero->xml, "/hero/procontainer/group[@name = '%s']/pro[@name = '%s']", group, name)) {
 
         char *src_xpath = format_string_new("/procontra/group[@name = '%s']/pro[@name = '%s']", group, name);
         char *dst_xpath = format_string_new("/hero/procontainer/group[@name = '%s']", group);
@@ -439,7 +439,7 @@ void dsa_heros_remove_pro(dsa_hero_t *hero, const unsigned char *name) {
 }
 
 void dsa_heros_add_contra(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *group, const unsigned char *name) {
-    if (!xml_ctx_exist_format(hero->xml, "/hero/contracontainer/contra[@name = '%s']", name)) {
+    if (!xml_ctx_exist_format(hero->xml, "/hero/contracontainer/group[@name = '%s']/contra[@name = '%s']", group, name)) {
 
         char *src_xpath = format_string_new("/procontra/group[@name = '%s']/contra[@name = '%s']", group, name);
         char *dst_xpath = format_string_new("/hero/contracontainer/group[@name = '%s']", group);
@@ -449,6 +449,15 @@ void dsa_heros_add_contra(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned c
         free(src_xpath); 
         free(dst_xpath);
     }    
+}
+
+void dsa_heros_add_contra_calc_group(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
+
+    xmlChar *foundGroup = xml_ctx_get_attr_format((xml_ctx_t*)heros->pro_contra, (const unsigned char*)"name", (const char*)"/procontra//contra[@name = '%s']/..", name);
+    
+    dsa_heros_add_contra(heros, hero, (const unsigned char*)foundGroup, name);
+    
+    xmlFree(foundGroup);
 }
 
 void dsa_heros_remove_contra(dsa_hero_t *hero, const unsigned char *name) {
@@ -467,6 +476,17 @@ void dsa_heros_add_specialability(dsa_heros_t *heros, dsa_hero_t *hero, const un
         free(src_xpath);
         free(dst_xpath);
     }  
+}
+
+void dsa_heros_add_specialability_calc_group(dsa_heros_t *heros, dsa_hero_t *hero, const unsigned char *name) {
+
+    xmlChar *foundGroup = xml_ctx_get_attr_format((xml_ctx_t*)heros->specialabilities, 
+                                                  (const unsigned char*)"name", 
+                                                  (const char*)"/specialabilities//specialability[@name = '%s']/..", name);
+    
+    dsa_heros_add_specialability(heros, hero, (const unsigned char*)foundGroup, name);
+    
+    xmlFree(foundGroup);
 }
 
 void dsa_heros_remove_specialability(dsa_hero_t *hero, const unsigned char *name) {
